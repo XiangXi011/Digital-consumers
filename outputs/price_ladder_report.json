@@ -1,0 +1,30 @@
+{
+  "concept_name": "舒客儿童益生菌防蛀牙膏概念版",
+  "price_points": [
+    {
+      "price": 29.9,
+      "average_intention": 0.3,
+      "estimated_conversion_rate": 7.5
+    },
+    {
+      "price": 39.9,
+      "average_intention": 0.24,
+      "estimated_conversion_rate": 7.5
+    },
+    {
+      "price": 49.9,
+      "average_intention": 0.19,
+      "estimated_conversion_rate": 7.5
+    },
+    {
+      "price": 59.9,
+      "average_intention": 0.18,
+      "estimated_conversion_rate": 4.8
+    }
+  ],
+  "recommended_price_zone": {
+    "target_price": 29.9,
+    "reason": "Highest modeled intention with current concept configuration."
+  },
+  "drop_off_point": null
+}

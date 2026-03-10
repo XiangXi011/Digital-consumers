@@ -1,0 +1,646 @@
+{
+  "meta": {
+    "concept_name": "舒客儿童益生菌防蛀牙膏概念版",
+    "brand": "舒客",
+    "generated_at": "2026-03-09 17:19:01",
+    "total_personas": 200
+  },
+  "input_summary": {
+    "category": "儿童口腔护理",
+    "price": 39.9,
+    "core_claims": [
+      "益生菌配方",
+      "低氟防蛀",
+      "孩子更愿意坚持刷牙"
+    ],
+    "packaging_summary": "卡通水果视觉，突出年龄段和防蛀卖点。",
+    "tagline": "",
+    "target_channels": [
+      "天猫",
+      "京东",
+      "母婴店"
+    ],
+    "competitive_anchors": [],
+    "context_notes": "用户已明确授权按当前已知信息运行。",
+    "missing_fields": [
+      "包装图/主视觉",
+      "目标人群",
+      "竞品/替代方案",
+      "主文案/slogan",
+      "成分或关键技术点",
+      "详情页/种草文案",
+      "本次最想验证的问题"
+    ]
+  },
+  "executive_summary": {
+    "headline": "The concept is not ready yet and needs sharper value definition before external testing.",
+    "recommendation": "do_not_advance_yet",
+    "avg_intention": 0.24,
+    "key_risk": "担心成分安全性"
+  },
+  "purchase_intent": {
+    "average_score": 5.29,
+    "average_intention": 0.24,
+    "estimated_conversion_rate": 7.5,
+    "decision_distribution": {
+      "考虑购买": 50,
+      "明确拒绝": 120,
+      "犹豫观望": 30
+    }
+  },
+  "segment_opportunity": {
+    "top_segments": [
+      {
+        "segment": "宠爱富养家",
+        "count": 25,
+        "avg_score": 5.4,
+        "avg_intention": 0.54
+      },
+      {
+        "segment": "全能优等家",
+        "count": 25,
+        "avg_score": 5.31,
+        "avg_intention": 0.53
+      },
+      {
+        "segment": "高线忙碌派",
+        "count": 25,
+        "avg_score": 5.2,
+        "avg_intention": 0.39
+      }
+    ],
+    "weak_segments": [
+      {
+        "segment": "传统关爱妈",
+        "count": 25,
+        "avg_score": 5.14,
+        "avg_intention": 0.05
+      },
+      {
+        "segment": "佛系粗养家",
+        "count": 25,
+        "avg_score": 5.2,
+        "avg_intention": 0.05
+      },
+      {
+        "segment": "小镇贵妇妈",
+        "count": 25,
+        "avg_score": 5.46,
+        "avg_intention": 0.06
+      }
+    ],
+    "full_table": [
+      {
+        "segment": "宠爱富养家",
+        "count": 25,
+        "avg_score": 5.4,
+        "avg_intention": 0.54
+      },
+      {
+        "segment": "全能优等家",
+        "count": 25,
+        "avg_score": 5.31,
+        "avg_intention": 0.53
+      },
+      {
+        "segment": "高线忙碌派",
+        "count": 25,
+        "avg_score": 5.2,
+        "avg_intention": 0.39
+      },
+      {
+        "segment": "品质精算师",
+        "count": 25,
+        "avg_score": 5.2,
+        "avg_intention": 0.22
+      },
+      {
+        "segment": "自在成长家",
+        "count": 25,
+        "avg_score": 5.44,
+        "avg_intention": 0.1
+      },
+      {
+        "segment": "小镇贵妇妈",
+        "count": 25,
+        "avg_score": 5.46,
+        "avg_intention": 0.06
+      },
+      {
+        "segment": "佛系粗养家",
+        "count": 25,
+        "avg_score": 5.2,
+        "avg_intention": 0.05
+      },
+      {
+        "segment": "传统关爱妈",
+        "count": 25,
+        "avg_score": 5.14,
+        "avg_intention": 0.05
+      }
+    ]
+  },
+  "reasons_to_buy": [
+    "益生菌配方",
+    "低氟防蛀",
+    "孩子更愿意坚持刷牙"
+  ],
+  "barriers": {
+    "top_barriers": [
+      "担心成分安全性"
+    ],
+    "price_concern_share": 0.0
+  },
+  "voice_of_consumer": {
+    "supporters": [],
+    "hesitant": [
+      {
+        "agent_name": "何梦瑶",
+        "segment": "宠爱富养家",
+        "quote": "[何梦瑶] 大品牌有保障，小牌子不敢用"
+      },
+      {
+        "agent_name": "刘思涵",
+        "segment": "高线忙碌派",
+        "quote": "[刘思涵] 销量高总不会错，懒得研究"
+      },
+      {
+        "agent_name": "蒋雅芙",
+        "segment": "小镇贵妇妈",
+        "quote": "[蒋雅芙] 这个看着高级，送人也有面子"
+      }
+    ],
+    "rejecting": [
+      {
+        "agent_name": "韩晓梅",
+        "segment": "自在成长家",
+        "quote": "[韩晓梅] 这个包装太好看了，小红书刷到就下单了"
+      },
+      {
+        "agent_name": "丁小红",
+        "segment": "传统关爱妈",
+        "quote": "[丁小红] 老牌子用了这么多年，放心"
+      },
+      {
+        "agent_name": "贾晓梅",
+        "segment": "品质精算师",
+        "quote": "[贾晓梅] 我要看成分表，氟含量多少？"
+      }
+    ]
+  },
+  "optimization_suggestions": [
+    "Sharpen the packaging message so the core benefit is visible in the first glance.",
+    "Prioritize messaging toward 宠爱富养家 because it shows the strongest current fit.",
+    "Reduce wasted reach on 传统关爱妈 unless the concept is repositioned for them."
+  ],
+  "appendix": {
+    "discussion": {
+      "topic": "Would you buy this concept: 舒客儿童益生菌防蛀牙膏概念版",
+      "product": "舒客儿童益生菌防蛀牙膏概念版",
+      "participants": [
+        "何梦瑶",
+        "韩晓梅",
+        "丁小红",
+        "刘思涵",
+        "贾晓梅",
+        "蒋雅芙",
+        "罗小艳",
+        "吴梦洁"
+      ],
+      "opinions": [
+        {
+          "agent_id": "M01-09",
+          "agent_name": "何梦瑶",
+          "segment": "宠爱富养家",
+          "opinion": {
+            "agent_id": "M01-09",
+            "agent_name": "何梦瑶",
+            "segment": "宠爱富养家",
+            "product": "舒客儿童益生菌防蛀牙膏概念版",
+            "timestamp": "2026-03-09 17:19:01",
+            "overall_score": 5.4,
+            "dimension_scores": {
+              "function_match": 5,
+              "brand_trust": 5,
+              "reputation": 5,
+              "packaging": 7,
+              "innovation": 5
+            },
+            "purchase_intention": 0.54,
+            "decision": "考虑购买",
+            "price_evaluation": 1.0,
+            "reasoning": "价格在预算范围内",
+            "key_concerns": [],
+            "preferred_features": []
+          },
+          "response": "[何梦瑶] 大品牌有保障，小牌子不敢用",
+          "influence_level": 0.7
+        },
+        {
+          "agent_id": "M02-02",
+          "agent_name": "韩晓梅",
+          "segment": "自在成长家",
+          "opinion": {
+            "agent_id": "M02-02",
+            "agent_name": "韩晓梅",
+            "segment": "自在成长家",
+            "product": "舒客儿童益生菌防蛀牙膏概念版",
+            "timestamp": "2026-03-09 17:19:01",
+            "overall_score": 5.6,
+            "dimension_scores": {
+              "function_match": 5,
+              "brand_trust": 6,
+              "reputation": 5,
+              "packaging": 7,
+              "innovation": 5
+            },
+            "purchase_intention": 0.1,
+            "decision": "明确拒绝",
+            "price_evaluation": 0.17000000000000004,
+            "reasoning": "价格在预算范围内",
+            "key_concerns": [],
+            "preferred_features": []
+          },
+          "response": "[韩晓梅] 这个包装太好看了，小红书刷到就下单了",
+          "influence_level": 0.5
+        },
+        {
+          "agent_id": "M03-01",
+          "agent_name": "丁小红",
+          "segment": "传统关爱妈",
+          "opinion": {
+            "agent_id": "M03-01",
+            "agent_name": "丁小红",
+            "segment": "传统关爱妈",
+            "product": "舒客儿童益生菌防蛀牙膏概念版",
+            "timestamp": "2026-03-09 17:19:01",
+            "overall_score": 5.2,
+            "dimension_scores": {
+              "function_match": 5,
+              "brand_trust": 6,
+              "reputation": 5,
+              "packaging": 5,
+              "innovation": 5
+            },
+            "purchase_intention": 0.05,
+            "decision": "明确拒绝",
+            "price_evaluation": 0.1,
+            "reasoning": "价格在预算范围内",
+            "key_concerns": [],
+            "preferred_features": []
+          },
+          "response": "[丁小红] 老牌子用了这么多年，放心",
+          "influence_level": 0.5
+        },
+        {
+          "agent_id": "M04-01",
+          "agent_name": "刘思涵",
+          "segment": "高线忙碌派",
+          "opinion": {
+            "agent_id": "M04-01",
+            "agent_name": "刘思涵",
+            "segment": "高线忙碌派",
+            "product": "舒客儿童益生菌防蛀牙膏概念版",
+            "timestamp": "2026-03-09 17:19:01",
+            "overall_score": 5.2,
+            "dimension_scores": {
+              "function_match": 5,
+              "brand_trust": 6,
+              "reputation": 5,
+              "packaging": 5,
+              "innovation": 5
+            },
+            "purchase_intention": 0.41,
+            "decision": "犹豫观望",
+            "price_evaluation": 0.7867857142857142,
+            "reasoning": "价格在预算范围内",
+            "key_concerns": [],
+            "preferred_features": []
+          },
+          "response": "[刘思涵] 销量高总不会错，懒得研究",
+          "influence_level": 0.5
+        },
+        {
+          "agent_id": "M05-01",
+          "agent_name": "贾晓梅",
+          "segment": "品质精算师",
+          "opinion": {
+            "agent_id": "M05-01",
+            "agent_name": "贾晓梅",
+            "segment": "品质精算师",
+            "product": "舒客儿童益生菌防蛀牙膏概念版",
+            "timestamp": "2026-03-09 17:19:01",
+            "overall_score": 5.2,
+            "dimension_scores": {
+              "function_match": 5,
+              "brand_trust": 6,
+              "reputation": 5,
+              "packaging": 5,
+              "innovation": 5
+            },
+            "purchase_intention": 0.19,
+            "decision": "明确拒绝",
+            "price_evaluation": 0.36000000000000004,
+            "reasoning": "价格在预算范围内",
+            "key_concerns": [
+              "担心成分安全性"
+            ],
+            "preferred_features": []
+          },
+          "response": "[贾晓梅] 我要看成分表，氟含量多少？",
+          "influence_level": 0.7
+        },
+        {
+          "agent_id": "M06-02",
+          "agent_name": "蒋雅芙",
+          "segment": "小镇贵妇妈",
+          "opinion": {
+            "agent_id": "M06-02",
+            "agent_name": "蒋雅芙",
+            "segment": "小镇贵妇妈",
+            "product": "舒客儿童益生菌防蛀牙膏概念版",
+            "timestamp": "2026-03-09 17:19:01",
+            "overall_score": 5.6,
+            "dimension_scores": {
+              "function_match": 5,
+              "brand_trust": 6,
+              "reputation": 5,
+              "packaging": 7,
+              "innovation": 5
+            },
+            "purchase_intention": 0.06,
+            "decision": "明确拒绝",
+            "price_evaluation": 0.1,
+            "reasoning": "价格在预算范围内",
+            "key_concerns": [],
+            "preferred_features": []
+          },
+          "response": "[蒋雅芙] 这个看着高级，送人也有面子",
+          "influence_level": 0.5
+        },
+        {
+          "agent_id": "M07-02",
+          "agent_name": "罗小艳",
+          "segment": "全能优等家",
+          "opinion": {
+            "agent_id": "M07-02",
+            "agent_name": "罗小艳",
+            "segment": "全能优等家",
+            "product": "舒客儿童益生菌防蛀牙膏概念版",
+            "timestamp": "2026-03-09 17:19:01",
+            "overall_score": 5.2,
+            "dimension_scores": {
+              "function_match": 5,
+              "brand_trust": 6,
+              "reputation": 5,
+              "packaging": 5,
+              "innovation": 5
+            },
+            "purchase_intention": 0.52,
+            "decision": "考虑购买",
+            "price_evaluation": 1.0,
+            "reasoning": "价格在预算范围内",
+            "key_concerns": [],
+            "preferred_features": []
+          },
+          "response": "[罗小艳] 有没有临床数据？效果怎么追踪？",
+          "influence_level": 0.7
+        },
+        {
+          "agent_id": "M08-01",
+          "agent_name": "吴梦洁",
+          "segment": "佛系粗养家",
+          "opinion": {
+            "agent_id": "M08-01",
+            "agent_name": "吴梦洁",
+            "segment": "佛系粗养家",
+            "product": "舒客儿童益生菌防蛀牙膏概念版",
+            "timestamp": "2026-03-09 17:19:01",
+            "overall_score": 5.2,
+            "dimension_scores": {
+              "function_match": 5,
+              "brand_trust": 6,
+              "reputation": 5,
+              "packaging": 5,
+              "innovation": 5
+            },
+            "purchase_intention": 0.05,
+            "decision": "明确拒绝",
+            "price_evaluation": 0.1,
+            "reasoning": "价格在预算范围内",
+            "key_concerns": [],
+            "preferred_features": []
+          },
+          "response": "[吴梦洁] 能防蛀就行，别的无所谓",
+          "influence_level": 0.5
+        }
+      ],
+      "consensus_level": 0.838,
+      "key_insights": [
+        "支持者: 2人, 反对者: 6人",
+        "主要顾虑: 担心成分安全性"
+      ]
+    },
+    "deep_dives": {
+      "high_intent": [
+        {
+          "agent_id": "M07-24",
+          "agent_name": "阎思颖",
+          "segment": "全能优等家",
+          "profile_summary": {
+            "age": 40,
+            "occupation": "企业高管",
+            "income": "200万-300万",
+            "decision_mode": "完美主义"
+          },
+          "interview_responses": [
+            {
+              "question": "What is your first reaction to 舒客儿童益生菌防蛀牙膏概念版?",
+              "answer": "[阎思颖] 要最好的，不能有瑕疵",
+              "underlying_motivation": "核心需求驱动: 最好品质, 效果追踪",
+              "emotional_trigger": "理性考量"
+            },
+            {
+              "question": "Which element makes you most likely or least likely to buy?",
+              "answer": "[阎思颖] 要最好的，不能有瑕疵",
+              "underlying_motivation": "核心需求驱动: 最好品质, 效果追踪",
+              "emotional_trigger": "理性考量"
+            },
+            {
+              "question": "What would need to change before you would feel confident buying it?",
+              "answer": "[阎思颖] 要最好的，不能有瑕疵",
+              "underlying_motivation": "核心需求驱动: 最好品质, 效果追踪",
+              "emotional_trigger": "理性考量"
+            }
+          ],
+          "persona_consistency_score": 0.85
+        },
+        {
+          "agent_id": "M07-20",
+          "agent_name": "余子萱",
+          "segment": "全能优等家",
+          "profile_summary": {
+            "age": 40,
+            "occupation": "大学教授",
+            "income": "200万-300万",
+            "decision_mode": "完美主义"
+          },
+          "interview_responses": [
+            {
+              "question": "What is your first reaction to 舒客儿童益生菌防蛀牙膏概念版?",
+              "answer": "[余子萱] 要最好的，不能有瑕疵",
+              "underlying_motivation": "核心需求驱动: 系统性解决方案, 数据支撑",
+              "emotional_trigger": "理性考量"
+            },
+            {
+              "question": "Which element makes you most likely or least likely to buy?",
+              "answer": "[余子萱] 要最好的，不能有瑕疵",
+              "underlying_motivation": "核心需求驱动: 系统性解决方案, 数据支撑",
+              "emotional_trigger": "理性考量"
+            },
+            {
+              "question": "What would need to change before you would feel confident buying it?",
+              "answer": "[余子萱] 要最好的，不能有瑕疵",
+              "underlying_motivation": "核心需求驱动: 系统性解决方案, 数据支撑",
+              "emotional_trigger": "理性考量"
+            }
+          ],
+          "persona_consistency_score": 0.85
+        }
+      ],
+      "hesitant": [
+        {
+          "agent_id": "M01-14",
+          "agent_name": "阎桂兰",
+          "segment": "宠爱富养家",
+          "profile_summary": {
+            "age": 42,
+            "occupation": "医疗器械公司高管",
+            "income": "80万-120万",
+            "decision_mode": "品牌优先"
+          },
+          "interview_responses": [
+            {
+              "question": "What is your first reaction to 舒客儿童益生菌防蛀牙膏概念版?",
+              "answer": "[阎桂兰] 大品牌有保障，小牌子不敢用",
+              "underlying_motivation": "核心需求驱动: 医生专业背书, 进口品质保障",
+              "emotional_trigger": "理性考量"
+            },
+            {
+              "question": "Which element makes you most likely or least likely to buy?",
+              "answer": "[阎桂兰] 大品牌有保障，小牌子不敢用",
+              "underlying_motivation": "核心需求驱动: 医生专业背书, 进口品质保障",
+              "emotional_trigger": "理性考量"
+            },
+            {
+              "question": "What would need to change before you would feel confident buying it?",
+              "answer": "[阎桂兰] 大品牌有保障，小牌子不敢用",
+              "underlying_motivation": "核心需求驱动: 医生专业背书, 进口品质保障",
+              "emotional_trigger": "理性考量"
+            }
+          ],
+          "persona_consistency_score": 0.85
+        },
+        {
+          "agent_id": "M01-19",
+          "agent_name": "薛晓梅",
+          "segment": "宠爱富养家",
+          "profile_summary": {
+            "age": 39,
+            "occupation": "私募基金合伙人",
+            "income": "200万-300万",
+            "decision_mode": "社交驱动"
+          },
+          "interview_responses": [
+            {
+              "question": "What is your first reaction to 舒客儿童益生菌防蛀牙膏概念版?",
+              "answer": "[薛晓梅] 妈妈群里都在用XX牌子，我不能让孩子用差的",
+              "underlying_motivation": "核心需求驱动: 医生专业背书, 社交圈层匹配",
+              "emotional_trigger": "理性考量"
+            },
+            {
+              "question": "Which element makes you most likely or least likely to buy?",
+              "answer": "[薛晓梅] 妈妈群里都在用XX牌子，我不能让孩子用差的",
+              "underlying_motivation": "核心需求驱动: 医生专业背书, 社交圈层匹配",
+              "emotional_trigger": "理性考量"
+            },
+            {
+              "question": "What would need to change before you would feel confident buying it?",
+              "answer": "[薛晓梅] 妈妈群里都在用XX牌子，我不能让孩子用差的",
+              "underlying_motivation": "核心需求驱动: 医生专业背书, 社交圈层匹配",
+              "emotional_trigger": "理性考量"
+            }
+          ],
+          "persona_consistency_score": 0.85
+        }
+      ],
+      "rejecting": [
+        {
+          "agent_id": "M03-13",
+          "agent_name": "王秀珍",
+          "segment": "传统关爱妈",
+          "profile_summary": {
+            "age": 42,
+            "occupation": "中学老师",
+            "income": "25万-30万",
+            "decision_mode": "品牌忠诚"
+          },
+          "interview_responses": [
+            {
+              "question": "What is your first reaction to 舒客儿童益生菌防蛀牙膏概念版?",
+              "answer": "[王秀珍] 一直用这个牌子，不换",
+              "underlying_motivation": "核心需求驱动: 防蛀效果, 老牌子信任",
+              "emotional_trigger": "理性考量"
+            },
+            {
+              "question": "Which element makes you most likely or least likely to buy?",
+              "answer": "[王秀珍] 一直用这个牌子，不换",
+              "underlying_motivation": "核心需求驱动: 防蛀效果, 老牌子信任",
+              "emotional_trigger": "理性考量"
+            },
+            {
+              "question": "What would need to change before you would feel confident buying it?",
+              "answer": "[王秀珍] 一直用这个牌子，不换",
+              "underlying_motivation": "核心需求驱动: 防蛀效果, 老牌子信任",
+              "emotional_trigger": "理性考量"
+            }
+          ],
+          "persona_consistency_score": 0.85
+        },
+        {
+          "agent_id": "M03-14",
+          "agent_name": "夏丽华",
+          "segment": "传统关爱妈",
+          "profile_summary": {
+            "age": 48,
+            "occupation": "全职妈妈",
+            "income": "25万-30万",
+            "decision_mode": "品牌忠诚"
+          },
+          "interview_responses": [
+            {
+              "question": "What is your first reaction to 舒客儿童益生菌防蛀牙膏概念版?",
+              "answer": "[夏丽华] 一直用这个牌子，不换",
+              "underlying_motivation": "核心需求驱动: 功能简单明确, 老牌子信任",
+              "emotional_trigger": "理性考量"
+            },
+            {
+              "question": "Which element makes you most likely or least likely to buy?",
+              "answer": "[夏丽华] 一直用这个牌子，不换",
+              "underlying_motivation": "核心需求驱动: 功能简单明确, 老牌子信任",
+              "emotional_trigger": "理性考量"
+            },
+            {
+              "question": "What would need to change before you would feel confident buying it?",
+              "answer": "[夏丽华] 一直用这个牌子，不换",
+              "underlying_motivation": "核心需求驱动: 功能简单明确, 老牌子信任",
+              "emotional_trigger": "理性考量"
+            }
+          ],
+          "persona_consistency_score": 0.85
+        }
+      ]
+    },
+    "deep_dive_interview_count": 6
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "session_id": "ding00eef4ce7938738635c2f4657eb6378f__cidbFCud08+zQt8FBmDMkXt4A==",
+  "group_id": "ding00eef4ce7938738635c2f4657eb6378f",
+  "conversation_id": "cidbFCud08+zQt8FBmDMkXt4A==",
+  "user_id": "720331188",
+  "status": "completed",
+  "checklist_sent": true,
+  "partial_run_authorized": true,
+  "fields": {
+    "concept_name": {
+      "label": "产品/方案名称",
+      "priority": "P0",
+      "status": "provided",
+      "value": "舒客宝贝魔法变色儿童牙膏"
+    },
+    "brand": {
+      "label": "品牌名",
+      "priority": "P1",
+      "status": "provided",
+      "value": "舒客宝贝"
+    },
+    "category": {
+      "label": "品类",
+      "priority": "P0",
+      "status": "provided",
+      "value": "儿童牙膏/口腔护理"
+    },
+    "core_claims": {
+      "label": "核心卖点/功能点",
+      "priority": "P0",
+      "status": "provided",
+      "value": [
+        "健白抗糖防蛀，刷出小白牙",
+        "12小时长效防蛀",
+        "魔法变色粒子，刷牙过程可视化管理",
+        "针对5大食物色素，有效清洁外源性色斑",
+        "4效组合防蛀硬齿，形成牙齿防护层",
+        "温和软性磨料，净白不伤牙",
+        "科学含氟量0.08%，安全且有效防蛀",
+        "超20项安全测试，幼嫩口腔无刺激"
+      ]
+    },
+    "price": {
+      "label": "价格或预计价格带",
+      "priority": "P0",
+      "status": "provided",
+      "value": "28块钱一支"
+    },
+    "packaging_summary": {
+      "label": "包装信息",
+      "priority": "P0",
+      "status": "provided",
+      "value": "产品采用软管包装，以粉紫渐变和清新蓝为主色调，正面 prominently 展示\"魔法变色\"和\"健白抗糖防蛀\"字样，配有牙齿变色示意图和水果图案，视觉设计充满童趣和魔法感。"
+    },
+    "packaging_image_path": {
+      "label": "包装图/主视觉",
+      "priority": "P2",
+      "status": "provided",
+      "value": "outputs\\dingtalk_incoming_images\\cidbFCud08+zQt8FBmDMkXt4A==_msgOtFIiPFQVRWbQJ1r7mtPoA==_1.jpg"
+    },
+    "target_channels": {
+      "label": "目标渠道",
+      "priority": "P1",
+      "status": "provided",
+      "value": [
+        "线下和京东"
+      ]
+    },
+    "target_audience": {
+      "label": "目标人群",
+      "priority": "P1",
+      "status": "provided",
+      "value": "2-12岁儿童及其家长"
+    },
+    "competitors": {
+      "label": "竞品/替代方案",
+      "priority": "P1",
+      "status": "missing",
+      "value": null
+    },
+    "slogan": {
+      "label": "主文案/slogan",
+      "priority": "P1",
+      "status": "provided",
+      "value": "健白抗糖防蛀 刷出小白牙"
+    },
+    "ingredients": {
+      "label": "成分或关键技术点",
+      "priority": "P2",
+      "status": "provided",
+      "value": "山梨(糖)醇、水、水合硅石、甘油、聚乙二醇-8、香精、月桂酰肌氨酸钠、焦磷酸四钠、木糖醇、纤维素胶、黄原胶、辛甘醇、椰油酰胺丙基甜菜碱、氟化钠(0.08%，以氟计)、乙基己基甘油；其他微量成分：酪蛋白磷酸肽、副干酪乳酪杆菌、乳酸钙、羟基磷灰石、薄荷醇、CI 16035、CI 74160、甘露糖醇、微晶纤维素、CI 12490等"
+    },
+    "detail_copy": {
+      "label": "详情页/种草文案",
+      "priority": "P2",
+      "status": "provided",
+      "value": "产品主打\"魔法变色\"概念，内含变色粒子让刷牙变有趣，刷牙时间越长变色越明显，有效延长刷牙时间。含健白净齿因子针对可乐、酱油、红茶等5大食物色素。通过鸡蛋测试展示保护力，4效组合(CPP、氟化物、钙、HAP)形成牙齿防护层。采用温和软性磨料，通过超20项安全测试，科学含氟量0.08%平衡安全与防蛀效果。"
+    },
+    "validation_questions": {
+      "label": "本次最想验证的问题",
+      "priority": "P2",
+      "status": "provided",
+      "value": "颜色变化是否足够明显以吸引儿童持续刷牙？12小时长效防蛀的临床依据是否充分？0.08%氟含量对2-6岁低龄儿童的安全性如何？"
+    }
+  },
+  "missing_fields": [
+    "竞品/替代方案"
+  ],
+  "last_task_id": "ding00eef4ce7938738635c2f4657eb6378f__cidbFCud08+zQt8FBmDMkXt4A==__run",
+  "html_report_path": "C:\\Users\\05537\\Desktop\\agent\\市场部agent teams\\outputs\\dingtalk_reports\\ding00eef4ce7938738635c2f4657eb6378f__cidbFCud08+zQt8FBmDMkXt4A==__run.html",
+  "json_report_path": "C:\\Users\\05537\\Desktop\\agent\\市场部agent teams\\outputs\\dingtalk_reports\\ding00eef4ce7938738635c2f4657eb6378f__cidbFCud08+zQt8FBmDMkXt4A==__run.json"
+}

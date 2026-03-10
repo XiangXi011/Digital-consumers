@@ -1,0 +1,6041 @@
+{
+  "overall_stats": {
+    "total_checked": 200,
+    "avg_consistency": 0.55,
+    "consistency_above_80": 3,
+    "consistency_below_60": 176,
+    "anomaly_rate": "88.0%"
+  },
+  "segment_stats": {
+    "宠爱富养家": {
+      "agent_count": 25,
+      "avg_consistency": 0.64,
+      "min_consistency": 0.5,
+      "max_consistency": 0.84,
+      "std": 0.11
+    },
+    "自在成长家": {
+      "agent_count": 25,
+      "avg_consistency": 0.54,
+      "min_consistency": 0.43,
+      "max_consistency": 0.58,
+      "std": 0.04
+    },
+    "传统关爱妈": {
+      "agent_count": 25,
+      "avg_consistency": 0.59,
+      "min_consistency": 0.5,
+      "max_consistency": 0.74,
+      "std": 0.07
+    },
+    "高线忙碌派": {
+      "agent_count": 25,
+      "avg_consistency": 0.49,
+      "min_consistency": 0.43,
+      "max_consistency": 0.58,
+      "std": 0.05
+    },
+    "品质精算师": {
+      "agent_count": 25,
+      "avg_consistency": 0.5,
+      "min_consistency": 0.5,
+      "max_consistency": 0.5,
+      "std": 0.0
+    },
+    "小镇贵妇妈": {
+      "agent_count": 25,
+      "avg_consistency": 0.53,
+      "min_consistency": 0.5,
+      "max_consistency": 0.58,
+      "std": 0.04
+    },
+    "全能优等家": {
+      "agent_count": 25,
+      "avg_consistency": 0.56,
+      "min_consistency": 0.43,
+      "max_consistency": 0.66,
+      "std": 0.06
+    },
+    "佛系粗养家": {
+      "agent_count": 25,
+      "avg_consistency": 0.54,
+      "min_consistency": 0.43,
+      "max_consistency": 0.58,
+      "std": 0.04
+    }
+  },
+  "anomalies": [
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'品牌优先'偏离母群预期['权威依赖', '体验驱动']",
+        "核心需求匹配度仅33%，预期关注['成分安全', '颜值包装', '孩子喜欢']",
+        "开放程度'low'(0.2)偏离预期范围(0.5, 1.0)"
+      ],
+      "matches": [
+        "价格敏感度'low'在预期范围内"
+      ],
+      "details": {
+        "segment": "宠爱富养家",
+        "decision_mode": "品牌优先",
+        "core_needs": [
+          "孩子喜欢",
+          "品牌信任",
+          "医生推荐"
+        ],
+        "price_sensitivity": "low",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M01-09",
+      "agent_name": "萧笑怡"
+    },
+    {
+      "consistency_score": 0.59,
+      "violations": [
+        "决策模式'品牌优先'偏离母群预期['权威依赖', '体验驱动']",
+        "价格敏感度'medium'(0.5)超出预期范围(0, 0.4)",
+        "开放程度'low'(0.2)偏离预期范围(0.5, 1.0)"
+      ],
+      "matches": [
+        "核心需求匹配度67%"
+      ],
+      "details": {
+        "segment": "宠爱富养家",
+        "decision_mode": "品牌优先",
+        "core_needs": [
+          "成分安全",
+          "颜值包装",
+          "价格实惠"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.6666666666666666,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M01-10",
+      "agent_name": "何静怡"
+    },
+    {
+      "consistency_score": 0.59,
+      "violations": [
+        "决策模式'品牌优先'偏离母群预期['权威依赖', '体验驱动']",
+        "价格敏感度'very_low'(0.5)超出预期范围(0, 0.4)",
+        "开放程度'low'(0.2)偏离预期范围(0.5, 1.0)"
+      ],
+      "matches": [
+        "核心需求匹配度67%"
+      ],
+      "details": {
+        "segment": "宠爱富养家",
+        "decision_mode": "品牌优先",
+        "core_needs": [
+          "孩子喜欢",
+          "品牌信任",
+          "颜值包装"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.6666666666666666,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M01-11",
+      "agent_name": "潘漫妮"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'品牌优先'偏离母群预期['权威依赖', '体验驱动']",
+        "核心需求匹配度仅33%，预期关注['成分安全', '颜值包装', '孩子喜欢']",
+        "价格敏感度'medium'(0.5)超出预期范围(0, 0.4)"
+      ],
+      "matches": [
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "宠爱富养家",
+        "decision_mode": "品牌优先",
+        "core_needs": [
+          "老牌子",
+          "品牌信任",
+          "成分安全"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M01-12",
+      "agent_name": "孙小玲"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'品牌优先'偏离母群预期['权威依赖', '体验驱动']",
+        "核心需求匹配度仅0%，预期关注['成分安全', '颜值包装', '孩子喜欢']",
+        "开放程度'low'(0.2)偏离预期范围(0.5, 1.0)"
+      ],
+      "matches": [
+        "价格敏感度'low'在预期范围内"
+      ],
+      "details": {
+        "segment": "宠爱富养家",
+        "decision_mode": "品牌优先",
+        "core_needs": [
+          "防蛀效果",
+          "医生推荐",
+          "价格实惠"
+        ],
+        "price_sensitivity": "low",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M01-13",
+      "agent_name": "蔡小媛"
+    },
+    {
+      "consistency_score": 0.51,
+      "violations": [
+        "决策模式'品牌优先'偏离母群预期['权威依赖', '体验驱动']",
+        "核心需求匹配度仅33%，预期关注['成分安全', '颜值包装', '孩子喜欢']",
+        "价格敏感度'very_low'(0.5)超出预期范围(0, 0.4)",
+        "开放程度'low'(0.2)偏离预期范围(0.5, 1.0)"
+      ],
+      "matches": [],
+      "details": {
+        "segment": "宠爱富养家",
+        "decision_mode": "品牌优先",
+        "core_needs": [
+          "老牌子",
+          "成分安全",
+          "防蛀效果"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M01-15",
+      "agent_name": "陈小菲"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'社交驱动'偏离母群预期['权威依赖', '体验驱动']",
+        "核心需求匹配度仅33%，预期关注['成分安全', '颜值包装', '孩子喜欢']",
+        "价格敏感度'medium'(0.5)超出预期范围(0, 0.4)"
+      ],
+      "matches": [
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "宠爱富养家",
+        "decision_mode": "社交驱动",
+        "core_needs": [
+          "老牌子",
+          "品牌信任",
+          "成分安全"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M01-16",
+      "agent_name": "郭丽华"
+    },
+    {
+      "consistency_score": 0.59,
+      "violations": [
+        "决策模式'社交驱动'偏离母群预期['权威依赖', '体验驱动']",
+        "价格敏感度'high'(0.8)超出预期范围(0, 0.4)",
+        "开放程度'low'(0.2)偏离预期范围(0.5, 1.0)"
+      ],
+      "matches": [
+        "核心需求匹配度67%"
+      ],
+      "details": {
+        "segment": "宠爱富养家",
+        "decision_mode": "社交驱动",
+        "core_needs": [
+          "医生推荐",
+          "成分安全",
+          "颜值包装"
+        ],
+        "price_sensitivity": "high",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.6666666666666666,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M01-18",
+      "agent_name": "夏小珍"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'社交驱动'偏离母群预期['权威依赖', '体验驱动']",
+        "核心需求匹配度仅0%，预期关注['成分安全', '颜值包装', '孩子喜欢']",
+        "价格敏感度'very_low'(0.5)超出预期范围(0, 0.4)"
+      ],
+      "matches": [
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "宠爱富养家",
+        "decision_mode": "社交驱动",
+        "core_needs": [
+          "价格实惠",
+          "品牌信任",
+          "医生推荐"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M01-19",
+      "agent_name": "叶玉兰"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'社交驱动'偏离母群预期['权威依赖', '体验驱动']",
+        "核心需求匹配度仅0%，预期关注['成分安全', '颜值包装', '孩子喜欢']",
+        "价格敏感度'very_low'(0.5)超出预期范围(0, 0.4)"
+      ],
+      "matches": [
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "宠爱富养家",
+        "decision_mode": "社交驱动",
+        "core_needs": [
+          "品牌信任",
+          "医生推荐",
+          "防蛀效果"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M01-20",
+      "agent_name": "邓明美"
+    }
+  ],
+  "all_results": [
+    {
+      "consistency_score": 0.76,
+      "violations": [
+        "核心需求匹配度仅33%，预期关注['成分安全', '颜值包装', '孩子喜欢']",
+        "价格敏感度'medium'(0.5)超出预期范围(0, 0.4)"
+      ],
+      "matches": [
+        "决策模式'权威依赖'符合母群特征",
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "宠爱富养家",
+        "decision_mode": "权威依赖",
+        "core_needs": [
+          "孩子喜欢",
+          "价格实惠",
+          "老牌子"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 1.0,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M01-01",
+      "agent_name": "苏梦瑶"
+    },
+    {
+      "consistency_score": 0.84,
+      "violations": [
+        "价格敏感度'medium'(0.5)超出预期范围(0, 0.4)"
+      ],
+      "matches": [
+        "决策模式'权威依赖'符合母群特征",
+        "核心需求匹配度67%",
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "宠爱富养家",
+        "decision_mode": "权威依赖",
+        "core_needs": [
+          "成分安全",
+          "颜值包装",
+          "品牌信任"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 1.0,
+          "core_needs": 0.6666666666666666,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M01-02",
+      "agent_name": "彭怡香"
+    },
+    {
+      "consistency_score": 0.6,
+      "violations": [
+        "核心需求匹配度仅0%，预期关注['成分安全', '颜值包装', '孩子喜欢']",
+        "价格敏感度'high'(0.8)超出预期范围(0, 0.4)",
+        "开放程度'low'(0.2)偏离预期范围(0.5, 1.0)"
+      ],
+      "matches": [
+        "决策模式'权威依赖'符合母群特征"
+      ],
+      "details": {
+        "segment": "宠爱富养家",
+        "decision_mode": "权威依赖",
+        "core_needs": [
+          "老牌子",
+          "品牌信任",
+          "价格实惠"
+        ],
+        "price_sensitivity": "high",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 1.0,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M01-03",
+      "agent_name": "韩珺瑶"
+    },
+    {
+      "consistency_score": 0.84,
+      "violations": [
+        "价格敏感度'very_low'(0.5)超出预期范围(0, 0.4)"
+      ],
+      "matches": [
+        "决策模式'权威依赖'符合母群特征",
+        "核心需求匹配度67%",
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "宠爱富养家",
+        "decision_mode": "权威依赖",
+        "core_needs": [
+          "孩子喜欢",
+          "老牌子",
+          "颜值包装"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 1.0,
+          "core_needs": 0.6666666666666666,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M01-04",
+      "agent_name": "苏美琳"
+    },
+    {
+      "consistency_score": 0.76,
+      "violations": [
+        "核心需求匹配度仅33%，预期关注['成分安全', '颜值包装', '孩子喜欢']",
+        "价格敏感度'very_low'(0.5)超出预期范围(0, 0.4)"
+      ],
+      "matches": [
+        "决策模式'权威依赖'符合母群特征",
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "宠爱富养家",
+        "decision_mode": "权威依赖",
+        "core_needs": [
+          "成分安全",
+          "价格实惠",
+          "防蛀效果"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 1.0,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M01-05",
+      "agent_name": "曹诗涵"
+    },
+    {
+      "consistency_score": 0.76,
+      "violations": [
+        "核心需求匹配度仅33%，预期关注['成分安全', '颜值包装', '孩子喜欢']",
+        "价格敏感度'high'(0.8)超出预期范围(0, 0.4)"
+      ],
+      "matches": [
+        "决策模式'权威依赖'符合母群特征",
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "宠爱富养家",
+        "decision_mode": "权威依赖",
+        "core_needs": [
+          "防蛀效果",
+          "颜值包装",
+          "老牌子"
+        ],
+        "price_sensitivity": "high",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 1.0,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M01-06",
+      "agent_name": "李雨婷"
+    },
+    {
+      "consistency_score": 0.84,
+      "violations": [
+        "价格敏感度'high'(0.8)超出预期范围(0, 0.4)"
+      ],
+      "matches": [
+        "决策模式'权威依赖'符合母群特征",
+        "核心需求匹配度67%",
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "宠爱富养家",
+        "decision_mode": "权威依赖",
+        "core_needs": [
+          "孩子喜欢",
+          "老牌子",
+          "成分安全"
+        ],
+        "price_sensitivity": "high",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 1.0,
+          "core_needs": 0.6666666666666666,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M01-07",
+      "agent_name": "胡秀芳"
+    },
+    {
+      "consistency_score": 0.76,
+      "violations": [
+        "核心需求匹配度仅33%，预期关注['成分安全', '颜值包装', '孩子喜欢']",
+        "价格敏感度'very_high'(0.5)超出预期范围(0, 0.4)"
+      ],
+      "matches": [
+        "决策模式'权威依赖'符合母群特征",
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "宠爱富养家",
+        "decision_mode": "权威依赖",
+        "core_needs": [
+          "颜值包装",
+          "品牌信任",
+          "价格实惠"
+        ],
+        "price_sensitivity": "very_high",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 1.0,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M01-08",
+      "agent_name": "马凌薇"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'品牌优先'偏离母群预期['权威依赖', '体验驱动']",
+        "核心需求匹配度仅33%，预期关注['成分安全', '颜值包装', '孩子喜欢']",
+        "开放程度'low'(0.2)偏离预期范围(0.5, 1.0)"
+      ],
+      "matches": [
+        "价格敏感度'low'在预期范围内"
+      ],
+      "details": {
+        "segment": "宠爱富养家",
+        "decision_mode": "品牌优先",
+        "core_needs": [
+          "孩子喜欢",
+          "品牌信任",
+          "医生推荐"
+        ],
+        "price_sensitivity": "low",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M01-09",
+      "agent_name": "萧笑怡"
+    },
+    {
+      "consistency_score": 0.59,
+      "violations": [
+        "决策模式'品牌优先'偏离母群预期['权威依赖', '体验驱动']",
+        "价格敏感度'medium'(0.5)超出预期范围(0, 0.4)",
+        "开放程度'low'(0.2)偏离预期范围(0.5, 1.0)"
+      ],
+      "matches": [
+        "核心需求匹配度67%"
+      ],
+      "details": {
+        "segment": "宠爱富养家",
+        "decision_mode": "品牌优先",
+        "core_needs": [
+          "成分安全",
+          "颜值包装",
+          "价格实惠"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.6666666666666666,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M01-10",
+      "agent_name": "何静怡"
+    },
+    {
+      "consistency_score": 0.59,
+      "violations": [
+        "决策模式'品牌优先'偏离母群预期['权威依赖', '体验驱动']",
+        "价格敏感度'very_low'(0.5)超出预期范围(0, 0.4)",
+        "开放程度'low'(0.2)偏离预期范围(0.5, 1.0)"
+      ],
+      "matches": [
+        "核心需求匹配度67%"
+      ],
+      "details": {
+        "segment": "宠爱富养家",
+        "decision_mode": "品牌优先",
+        "core_needs": [
+          "孩子喜欢",
+          "品牌信任",
+          "颜值包装"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.6666666666666666,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M01-11",
+      "agent_name": "潘漫妮"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'品牌优先'偏离母群预期['权威依赖', '体验驱动']",
+        "核心需求匹配度仅33%，预期关注['成分安全', '颜值包装', '孩子喜欢']",
+        "价格敏感度'medium'(0.5)超出预期范围(0, 0.4)"
+      ],
+      "matches": [
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "宠爱富养家",
+        "decision_mode": "品牌优先",
+        "core_needs": [
+          "老牌子",
+          "品牌信任",
+          "成分安全"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M01-12",
+      "agent_name": "孙小玲"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'品牌优先'偏离母群预期['权威依赖', '体验驱动']",
+        "核心需求匹配度仅0%，预期关注['成分安全', '颜值包装', '孩子喜欢']",
+        "开放程度'low'(0.2)偏离预期范围(0.5, 1.0)"
+      ],
+      "matches": [
+        "价格敏感度'low'在预期范围内"
+      ],
+      "details": {
+        "segment": "宠爱富养家",
+        "decision_mode": "品牌优先",
+        "core_needs": [
+          "防蛀效果",
+          "医生推荐",
+          "价格实惠"
+        ],
+        "price_sensitivity": "low",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M01-13",
+      "agent_name": "蔡小媛"
+    },
+    {
+      "consistency_score": 0.67,
+      "violations": [
+        "决策模式'品牌优先'偏离母群预期['权威依赖', '体验驱动']",
+        "价格敏感度'medium'(0.5)超出预期范围(0, 0.4)"
+      ],
+      "matches": [
+        "核心需求匹配度67%",
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "宠爱富养家",
+        "decision_mode": "品牌优先",
+        "core_needs": [
+          "成分安全",
+          "老牌子",
+          "颜值包装"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.6666666666666666,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M01-14",
+      "agent_name": "胡小菲"
+    },
+    {
+      "consistency_score": 0.51,
+      "violations": [
+        "决策模式'品牌优先'偏离母群预期['权威依赖', '体验驱动']",
+        "核心需求匹配度仅33%，预期关注['成分安全', '颜值包装', '孩子喜欢']",
+        "价格敏感度'very_low'(0.5)超出预期范围(0, 0.4)",
+        "开放程度'low'(0.2)偏离预期范围(0.5, 1.0)"
+      ],
+      "matches": [],
+      "details": {
+        "segment": "宠爱富养家",
+        "decision_mode": "品牌优先",
+        "core_needs": [
+          "老牌子",
+          "成分安全",
+          "防蛀效果"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M01-15",
+      "agent_name": "陈小菲"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'社交驱动'偏离母群预期['权威依赖', '体验驱动']",
+        "核心需求匹配度仅33%，预期关注['成分安全', '颜值包装', '孩子喜欢']",
+        "价格敏感度'medium'(0.5)超出预期范围(0, 0.4)"
+      ],
+      "matches": [
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "宠爱富养家",
+        "decision_mode": "社交驱动",
+        "core_needs": [
+          "老牌子",
+          "品牌信任",
+          "成分安全"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M01-16",
+      "agent_name": "郭丽华"
+    },
+    {
+      "consistency_score": 0.67,
+      "violations": [
+        "决策模式'社交驱动'偏离母群预期['权威依赖', '体验驱动']",
+        "价格敏感度'very_high'(0.5)超出预期范围(0, 0.4)"
+      ],
+      "matches": [
+        "核心需求匹配度67%",
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "宠爱富养家",
+        "decision_mode": "社交驱动",
+        "core_needs": [
+          "老牌子",
+          "成分安全",
+          "颜值包装"
+        ],
+        "price_sensitivity": "very_high",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.6666666666666666,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M01-17",
+      "agent_name": "刘明美"
+    },
+    {
+      "consistency_score": 0.59,
+      "violations": [
+        "决策模式'社交驱动'偏离母群预期['权威依赖', '体验驱动']",
+        "价格敏感度'high'(0.8)超出预期范围(0, 0.4)",
+        "开放程度'low'(0.2)偏离预期范围(0.5, 1.0)"
+      ],
+      "matches": [
+        "核心需求匹配度67%"
+      ],
+      "details": {
+        "segment": "宠爱富养家",
+        "decision_mode": "社交驱动",
+        "core_needs": [
+          "医生推荐",
+          "成分安全",
+          "颜值包装"
+        ],
+        "price_sensitivity": "high",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.6666666666666666,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M01-18",
+      "agent_name": "夏小珍"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'社交驱动'偏离母群预期['权威依赖', '体验驱动']",
+        "核心需求匹配度仅0%，预期关注['成分安全', '颜值包装', '孩子喜欢']",
+        "价格敏感度'very_low'(0.5)超出预期范围(0, 0.4)"
+      ],
+      "matches": [
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "宠爱富养家",
+        "decision_mode": "社交驱动",
+        "core_needs": [
+          "价格实惠",
+          "品牌信任",
+          "医生推荐"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M01-19",
+      "agent_name": "叶玉兰"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'社交驱动'偏离母群预期['权威依赖', '体验驱动']",
+        "核心需求匹配度仅0%，预期关注['成分安全', '颜值包装', '孩子喜欢']",
+        "价格敏感度'very_low'(0.5)超出预期范围(0, 0.4)"
+      ],
+      "matches": [
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "宠爱富养家",
+        "decision_mode": "社交驱动",
+        "core_needs": [
+          "品牌信任",
+          "医生推荐",
+          "防蛀效果"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M01-20",
+      "agent_name": "邓明美"
+    },
+    {
+      "consistency_score": 0.66,
+      "violations": [
+        "决策模式'社交驱动'偏离母群预期['权威依赖', '体验驱动']",
+        "核心需求匹配度仅33%，预期关注['成分安全', '颜值包装', '孩子喜欢']"
+      ],
+      "matches": [
+        "价格敏感度'low'在预期范围内",
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "宠爱富养家",
+        "decision_mode": "社交驱动",
+        "core_needs": [
+          "老牌子",
+          "成分安全",
+          "医生推荐"
+        ],
+        "price_sensitivity": "low",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M01-21",
+      "agent_name": "沈睿婕"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'颜值优先'偏离母群预期['权威依赖', '体验驱动']",
+        "核心需求匹配度仅33%，预期关注['成分安全', '颜值包装', '孩子喜欢']",
+        "价格敏感度'very_high'(0.5)超出预期范围(0, 0.4)"
+      ],
+      "matches": [
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "宠爱富养家",
+        "decision_mode": "颜值优先",
+        "core_needs": [
+          "成分安全",
+          "医生推荐",
+          "防蛀效果"
+        ],
+        "price_sensitivity": "very_high",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M01-22",
+      "agent_name": "刘小艳"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'颜值优先'偏离母群预期['权威依赖', '体验驱动']",
+        "核心需求匹配度仅0%，预期关注['成分安全', '颜值包装', '孩子喜欢']",
+        "价格敏感度'very_high'(0.5)超出预期范围(0, 0.4)"
+      ],
+      "matches": [
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "宠爱富养家",
+        "decision_mode": "颜值优先",
+        "core_needs": [
+          "防蛀效果",
+          "老牌子",
+          "价格实惠"
+        ],
+        "price_sensitivity": "very_high",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M01-23",
+      "agent_name": "徐煜婷"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'颜值优先'偏离母群预期['权威依赖', '体验驱动']",
+        "核心需求匹配度仅33%，预期关注['成分安全', '颜值包装', '孩子喜欢']",
+        "价格敏感度'very_high'(0.5)超出预期范围(0, 0.4)"
+      ],
+      "matches": [
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "宠爱富养家",
+        "decision_mode": "颜值优先",
+        "core_needs": [
+          "医生推荐",
+          "成分安全",
+          "防蛀效果"
+        ],
+        "price_sensitivity": "very_high",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M01-24",
+      "agent_name": "于小霞"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'颜值优先'偏离母群预期['权威依赖', '体验驱动']",
+        "核心需求匹配度仅33%，预期关注['成分安全', '颜值包装', '孩子喜欢']",
+        "价格敏感度'high'(0.8)超出预期范围(0, 0.4)"
+      ],
+      "matches": [
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "宠爱富养家",
+        "decision_mode": "颜值优先",
+        "core_needs": [
+          "医生推荐",
+          "价格实惠",
+          "成分安全"
+        ],
+        "price_sensitivity": "high",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M01-25",
+      "agent_name": "叶静怡"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'颜值优先'偏离母群预期['自我主导', '体验驱动']",
+        "核心需求匹配度仅0%，预期关注['自然成长', '快乐童年', '亲子体验']",
+        "价格敏感度'high'(0.8)超出预期范围(0.3, 0.7)"
+      ],
+      "matches": [
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "自在成长家",
+        "decision_mode": "颜值优先",
+        "core_needs": [
+          "品牌信任",
+          "成分安全",
+          "防蛀效果"
+        ],
+        "price_sensitivity": "high",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M02-01",
+      "agent_name": "阎佳慧"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'颜值优先'偏离母群预期['自我主导', '体验驱动']",
+        "核心需求匹配度仅0%，预期关注['自然成长', '快乐童年', '亲子体验']"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内",
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "自在成长家",
+        "decision_mode": "颜值优先",
+        "core_needs": [
+          "价格实惠",
+          "成分安全",
+          "医生推荐"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M02-02",
+      "agent_name": "邓桂英"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'颜值优先'偏离母群预期['自我主导', '体验驱动']",
+        "核心需求匹配度仅0%，预期关注['自然成长', '快乐童年', '亲子体验']"
+      ],
+      "matches": [
+        "价格敏感度'medium'在预期范围内",
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "自在成长家",
+        "decision_mode": "颜值优先",
+        "core_needs": [
+          "孩子喜欢",
+          "颜值包装",
+          "成分安全"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M02-03",
+      "agent_name": "谢丽华"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'颜值优先'偏离母群预期['自我主导', '体验驱动']",
+        "核心需求匹配度仅0%，预期关注['自然成长', '快乐童年', '亲子体验']"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内",
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "自在成长家",
+        "decision_mode": "颜值优先",
+        "core_needs": [
+          "颜值包装",
+          "医生推荐",
+          "价格实惠"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M02-04",
+      "agent_name": "林子怡"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'颜值优先'偏离母群预期['自我主导', '体验驱动']",
+        "核心需求匹配度仅0%，预期关注['自然成长', '快乐童年', '亲子体验']"
+      ],
+      "matches": [
+        "价格敏感度'very_high'在预期范围内",
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "自在成长家",
+        "decision_mode": "颜值优先",
+        "core_needs": [
+          "老牌子",
+          "医生推荐",
+          "颜值包装"
+        ],
+        "price_sensitivity": "very_high",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M02-05",
+      "agent_name": "余玉梅"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'颜值优先'偏离母群预期['自我主导', '体验驱动']",
+        "核心需求匹配度仅0%，预期关注['自然成长', '快乐童年', '亲子体验']",
+        "价格敏感度'high'(0.8)超出预期范围(0.3, 0.7)"
+      ],
+      "matches": [
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "自在成长家",
+        "decision_mode": "颜值优先",
+        "core_needs": [
+          "价格实惠",
+          "老牌子",
+          "成分安全"
+        ],
+        "price_sensitivity": "high",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M02-06",
+      "agent_name": "汪彩霞"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'颜值优先'偏离母群预期['自我主导', '体验驱动']",
+        "核心需求匹配度仅0%，预期关注['自然成长', '快乐童年', '亲子体验']"
+      ],
+      "matches": [
+        "价格敏感度'medium'在预期范围内",
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "自在成长家",
+        "decision_mode": "颜值优先",
+        "core_needs": [
+          "品牌信任",
+          "老牌子",
+          "孩子喜欢"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M02-07",
+      "agent_name": "林欣妍"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'颜值优先'偏离母群预期['自我主导', '体验驱动']",
+        "核心需求匹配度仅0%，预期关注['自然成长', '快乐童年', '亲子体验']"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内",
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "自在成长家",
+        "decision_mode": "颜值优先",
+        "core_needs": [
+          "防蛀效果",
+          "成分安全",
+          "老牌子"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M02-08",
+      "agent_name": "蒋雨萱"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'颜值优先'偏离母群预期['自我主导', '体验驱动']",
+        "核心需求匹配度仅0%，预期关注['自然成长', '快乐童年', '亲子体验']"
+      ],
+      "matches": [
+        "价格敏感度'medium'在预期范围内",
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "自在成长家",
+        "decision_mode": "颜值优先",
+        "core_needs": [
+          "孩子喜欢",
+          "品牌信任",
+          "价格实惠"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M02-09",
+      "agent_name": "梁小倩"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'颜值优先'偏离母群预期['自我主导', '体验驱动']",
+        "核心需求匹配度仅0%，预期关注['自然成长', '快乐童年', '亲子体验']"
+      ],
+      "matches": [
+        "价格敏感度'very_high'在预期范围内",
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "自在成长家",
+        "decision_mode": "颜值优先",
+        "core_needs": [
+          "成分安全",
+          "老牌子",
+          "医生推荐"
+        ],
+        "price_sensitivity": "very_high",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M02-10",
+      "agent_name": "薛小婷"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'尝鲜驱动'偏离母群预期['自我主导', '体验驱动']",
+        "核心需求匹配度仅0%，预期关注['自然成长', '快乐童年', '亲子体验']"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内",
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "自在成长家",
+        "decision_mode": "尝鲜驱动",
+        "core_needs": [
+          "品牌信任",
+          "价格实惠",
+          "孩子喜欢"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M02-11",
+      "agent_name": "贾小娜"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'尝鲜驱动'偏离母群预期['自我主导', '体验驱动']",
+        "核心需求匹配度仅0%，预期关注['自然成长', '快乐童年', '亲子体验']",
+        "开放程度'low'(0.2)偏离预期范围(0.5, 1.0)"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内"
+      ],
+      "details": {
+        "segment": "自在成长家",
+        "decision_mode": "尝鲜驱动",
+        "core_needs": [
+          "防蛀效果",
+          "成分安全",
+          "颜值包装"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M02-12",
+      "agent_name": "曹小倩"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'尝鲜驱动'偏离母群预期['自我主导', '体验驱动']",
+        "核心需求匹配度仅0%，预期关注['自然成长', '快乐童年', '亲子体验']"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内",
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "自在成长家",
+        "decision_mode": "尝鲜驱动",
+        "core_needs": [
+          "成分安全",
+          "医生推荐",
+          "孩子喜欢"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M02-13",
+      "agent_name": "戴小琴"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'尝鲜驱动'偏离母群预期['自我主导', '体验驱动']",
+        "核心需求匹配度仅0%，预期关注['自然成长', '快乐童年', '亲子体验']",
+        "价格敏感度'low'(0.2)超出预期范围(0.3, 0.7)"
+      ],
+      "matches": [
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "自在成长家",
+        "decision_mode": "尝鲜驱动",
+        "core_needs": [
+          "医生推荐",
+          "防蛀效果",
+          "成分安全"
+        ],
+        "price_sensitivity": "low",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M02-14",
+      "agent_name": "高雨嘉"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'尝鲜驱动'偏离母群预期['自我主导', '体验驱动']",
+        "核心需求匹配度仅0%，预期关注['自然成长', '快乐童年', '亲子体验']",
+        "开放程度'low'(0.2)偏离预期范围(0.5, 1.0)"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内"
+      ],
+      "details": {
+        "segment": "自在成长家",
+        "decision_mode": "尝鲜驱动",
+        "core_needs": [
+          "成分安全",
+          "颜值包装",
+          "医生推荐"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M02-15",
+      "agent_name": "陈煜婷"
+    },
+    {
+      "consistency_score": 0.43,
+      "violations": [
+        "决策模式'尝鲜驱动'偏离母群预期['自我主导', '体验驱动']",
+        "核心需求匹配度仅0%，预期关注['自然成长', '快乐童年', '亲子体验']",
+        "价格敏感度'high'(0.8)超出预期范围(0.3, 0.7)",
+        "开放程度'low'(0.2)偏离预期范围(0.5, 1.0)"
+      ],
+      "matches": [],
+      "details": {
+        "segment": "自在成长家",
+        "decision_mode": "尝鲜驱动",
+        "core_needs": [
+          "颜值包装",
+          "老牌子",
+          "价格实惠"
+        ],
+        "price_sensitivity": "high",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M02-16",
+      "agent_name": "任睿婕"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'尝鲜驱动'偏离母群预期['自我主导', '体验驱动']",
+        "核心需求匹配度仅0%，预期关注['自然成长', '快乐童年', '亲子体验']",
+        "开放程度'low'(0.2)偏离预期范围(0.5, 1.0)"
+      ],
+      "matches": [
+        "价格敏感度'very_high'在预期范围内"
+      ],
+      "details": {
+        "segment": "自在成长家",
+        "decision_mode": "尝鲜驱动",
+        "core_needs": [
+          "孩子喜欢",
+          "老牌子",
+          "颜值包装"
+        ],
+        "price_sensitivity": "very_high",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M02-17",
+      "agent_name": "罗月婵"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'尝鲜驱动'偏离母群预期['自我主导', '体验驱动']",
+        "核心需求匹配度仅0%，预期关注['自然成长', '快乐童年', '亲子体验']",
+        "价格敏感度'low'(0.2)超出预期范围(0.3, 0.7)"
+      ],
+      "matches": [
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "自在成长家",
+        "decision_mode": "尝鲜驱动",
+        "core_needs": [
+          "医生推荐",
+          "品牌信任",
+          "防蛀效果"
+        ],
+        "price_sensitivity": "low",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M02-18",
+      "agent_name": "谢小云"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'社媒种草'偏离母群预期['自我主导', '体验驱动']",
+        "核心需求匹配度仅0%，预期关注['自然成长', '快乐童年', '亲子体验']"
+      ],
+      "matches": [
+        "价格敏感度'medium'在预期范围内",
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "自在成长家",
+        "decision_mode": "社媒种草",
+        "core_needs": [
+          "成分安全",
+          "品牌信任",
+          "防蛀效果"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M02-19",
+      "agent_name": "杨子萱"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'社媒种草'偏离母群预期['自我主导', '体验驱动']",
+        "核心需求匹配度仅0%，预期关注['自然成长', '快乐童年', '亲子体验']",
+        "开放程度'low'(0.2)偏离预期范围(0.5, 1.0)"
+      ],
+      "matches": [
+        "价格敏感度'medium'在预期范围内"
+      ],
+      "details": {
+        "segment": "自在成长家",
+        "decision_mode": "社媒种草",
+        "core_needs": [
+          "价格实惠",
+          "品牌信任",
+          "医生推荐"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M02-20",
+      "agent_name": "戴凤英"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'社媒种草'偏离母群预期['自我主导', '体验驱动']",
+        "核心需求匹配度仅0%，预期关注['自然成长', '快乐童年', '亲子体验']",
+        "开放程度'low'(0.2)偏离预期范围(0.5, 1.0)"
+      ],
+      "matches": [
+        "价格敏感度'medium'在预期范围内"
+      ],
+      "details": {
+        "segment": "自在成长家",
+        "decision_mode": "社媒种草",
+        "core_needs": [
+          "孩子喜欢",
+          "防蛀效果",
+          "品牌信任"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M02-21",
+      "agent_name": "许娅楠"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'社媒种草'偏离母群预期['自我主导', '体验驱动']",
+        "核心需求匹配度仅0%，预期关注['自然成长', '快乐童年', '亲子体验']"
+      ],
+      "matches": [
+        "价格敏感度'medium'在预期范围内",
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "自在成长家",
+        "decision_mode": "社媒种草",
+        "core_needs": [
+          "老牌子",
+          "品牌信任",
+          "颜值包装"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M02-22",
+      "agent_name": "曹小蓉"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'社媒种草'偏离母群预期['自我主导', '体验驱动']",
+        "核心需求匹配度仅0%，预期关注['自然成长', '快乐童年', '亲子体验']"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内",
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "自在成长家",
+        "decision_mode": "社媒种草",
+        "core_needs": [
+          "品牌信任",
+          "成分安全",
+          "孩子喜欢"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M02-23",
+      "agent_name": "王思颖"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'社媒种草'偏离母群预期['自我主导', '体验驱动']",
+        "核心需求匹配度仅0%，预期关注['自然成长', '快乐童年', '亲子体验']",
+        "价格敏感度'low'(0.2)超出预期范围(0.3, 0.7)"
+      ],
+      "matches": [
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "自在成长家",
+        "decision_mode": "社媒种草",
+        "core_needs": [
+          "医生推荐",
+          "防蛀效果",
+          "品牌信任"
+        ],
+        "price_sensitivity": "low",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M02-24",
+      "agent_name": "朱小艳"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'社媒种草'偏离母群预期['自我主导', '体验驱动']",
+        "核心需求匹配度仅0%，预期关注['自然成长', '快乐童年', '亲子体验']",
+        "开放程度'low'(0.2)偏离预期范围(0.5, 1.0)"
+      ],
+      "matches": [
+        "价格敏感度'medium'在预期范围内"
+      ],
+      "details": {
+        "segment": "自在成长家",
+        "decision_mode": "社媒种草",
+        "core_needs": [
+          "价格实惠",
+          "品牌信任",
+          "医生推荐"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M02-25",
+      "agent_name": "唐小菲"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'经验依赖'偏离母群预期['权威依赖', '传统保守']",
+        "核心需求匹配度仅33%，预期关注['老牌子', '医生推荐', '安全可靠']",
+        "开放程度'high'(0.8)偏离预期范围(0, 0.4)"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内"
+      ],
+      "details": {
+        "segment": "传统关爱妈",
+        "decision_mode": "经验依赖",
+        "core_needs": [
+          "品牌信任",
+          "成分安全",
+          "老牌子"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M03-01",
+      "agent_name": "曾小玲"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'经验依赖'偏离母群预期['权威依赖', '传统保守']",
+        "核心需求匹配度仅33%，预期关注['老牌子', '医生推荐', '安全可靠']",
+        "价格敏感度'low'(0.2)超出预期范围(0.4, 0.8)"
+      ],
+      "matches": [
+        "开放程度'low'符合母群特征"
+      ],
+      "details": {
+        "segment": "传统关爱妈",
+        "decision_mode": "经验依赖",
+        "core_needs": [
+          "医生推荐",
+          "孩子喜欢",
+          "成分安全"
+        ],
+        "price_sensitivity": "low",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M03-02",
+      "agent_name": "魏明美"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'经验依赖'偏离母群预期['权威依赖', '传统保守']",
+        "核心需求匹配度仅0%，预期关注['老牌子', '医生推荐', '安全可靠']",
+        "开放程度'medium'(0.5)偏离预期范围(0, 0.4)"
+      ],
+      "matches": [
+        "价格敏感度'medium'在预期范围内"
+      ],
+      "details": {
+        "segment": "传统关爱妈",
+        "decision_mode": "经验依赖",
+        "core_needs": [
+          "孩子喜欢",
+          "防蛀效果",
+          "成分安全"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M03-03",
+      "agent_name": "萧雪丽"
+    },
+    {
+      "consistency_score": 0.66,
+      "violations": [
+        "决策模式'经验依赖'偏离母群预期['权威依赖', '传统保守']",
+        "核心需求匹配度仅33%，预期关注['老牌子', '医生推荐', '安全可靠']"
+      ],
+      "matches": [
+        "价格敏感度'medium'在预期范围内",
+        "开放程度'low'符合母群特征"
+      ],
+      "details": {
+        "segment": "传统关爱妈",
+        "decision_mode": "经验依赖",
+        "core_needs": [
+          "医生推荐",
+          "颜值包装",
+          "孩子喜欢"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M03-04",
+      "agent_name": "唐子萱"
+    },
+    {
+      "consistency_score": 0.74,
+      "violations": [
+        "决策模式'经验依赖'偏离母群预期['权威依赖', '传统保守']"
+      ],
+      "matches": [
+        "核心需求匹配度67%",
+        "价格敏感度'very_high'在预期范围内",
+        "开放程度'low'符合母群特征"
+      ],
+      "details": {
+        "segment": "传统关爱妈",
+        "decision_mode": "经验依赖",
+        "core_needs": [
+          "医生推荐",
+          "老牌子",
+          "颜值包装"
+        ],
+        "price_sensitivity": "very_high",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.6666666666666666,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M03-05",
+      "agent_name": "冯小玲"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'经验依赖'偏离母群预期['权威依赖', '传统保守']",
+        "核心需求匹配度仅0%，预期关注['老牌子', '医生推荐', '安全可靠']",
+        "开放程度'medium'(0.5)偏离预期范围(0, 0.4)"
+      ],
+      "matches": [
+        "价格敏感度'medium'在预期范围内"
+      ],
+      "details": {
+        "segment": "传统关爱妈",
+        "decision_mode": "经验依赖",
+        "core_needs": [
+          "价格实惠",
+          "孩子喜欢",
+          "颜值包装"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M03-06",
+      "agent_name": "蒋晓梅"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'经验依赖'偏离母群预期['权威依赖', '传统保守']",
+        "核心需求匹配度仅0%，预期关注['老牌子', '医生推荐', '安全可靠']",
+        "开放程度'medium'(0.5)偏离预期范围(0, 0.4)"
+      ],
+      "matches": [
+        "价格敏感度'very_high'在预期范围内"
+      ],
+      "details": {
+        "segment": "传统关爱妈",
+        "decision_mode": "经验依赖",
+        "core_needs": [
+          "品牌信任",
+          "成分安全",
+          "颜值包装"
+        ],
+        "price_sensitivity": "very_high",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M03-07",
+      "agent_name": "丁欣怡"
+    },
+    {
+      "consistency_score": 0.51,
+      "violations": [
+        "决策模式'经验依赖'偏离母群预期['权威依赖', '传统保守']",
+        "核心需求匹配度仅33%，预期关注['老牌子', '医生推荐', '安全可靠']",
+        "价格敏感度'low'(0.2)超出预期范围(0.4, 0.8)",
+        "开放程度'medium'(0.5)偏离预期范围(0, 0.4)"
+      ],
+      "matches": [],
+      "details": {
+        "segment": "传统关爱妈",
+        "decision_mode": "经验依赖",
+        "core_needs": [
+          "医生推荐",
+          "品牌信任",
+          "价格实惠"
+        ],
+        "price_sensitivity": "low",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M03-08",
+      "agent_name": "卢思琪"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'经验依赖'偏离母群预期['权威依赖', '传统保守']",
+        "核心需求匹配度仅0%，预期关注['老牌子', '医生推荐', '安全可靠']",
+        "开放程度'medium'(0.5)偏离预期范围(0, 0.4)"
+      ],
+      "matches": [
+        "价格敏感度'very_high'在预期范围内"
+      ],
+      "details": {
+        "segment": "传统关爱妈",
+        "decision_mode": "经验依赖",
+        "core_needs": [
+          "防蛀效果",
+          "品牌信任",
+          "颜值包装"
+        ],
+        "price_sensitivity": "very_high",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M03-09",
+      "agent_name": "李小婷"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'经验依赖'偏离母群预期['权威依赖', '传统保守']",
+        "核心需求匹配度仅33%，预期关注['老牌子', '医生推荐', '安全可靠']",
+        "开放程度'high'(0.8)偏离预期范围(0, 0.4)"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内"
+      ],
+      "details": {
+        "segment": "传统关爱妈",
+        "decision_mode": "经验依赖",
+        "core_needs": [
+          "成分安全",
+          "孩子喜欢",
+          "老牌子"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M03-10",
+      "agent_name": "徐语嫣"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'经验依赖'偏离母群预期['权威依赖', '传统保守']",
+        "核心需求匹配度仅0%，预期关注['老牌子', '医生推荐', '安全可靠']"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内",
+        "开放程度'low'符合母群特征"
+      ],
+      "details": {
+        "segment": "传统关爱妈",
+        "decision_mode": "经验依赖",
+        "core_needs": [
+          "价格实惠",
+          "成分安全",
+          "防蛀效果"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M03-11",
+      "agent_name": "丁小玲"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'经验依赖'偏离母群预期['权威依赖', '传统保守']",
+        "核心需求匹配度仅33%，预期关注['老牌子', '医生推荐', '安全可靠']",
+        "开放程度'medium'(0.5)偏离预期范围(0, 0.4)"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内"
+      ],
+      "details": {
+        "segment": "传统关爱妈",
+        "decision_mode": "经验依赖",
+        "core_needs": [
+          "防蛀效果",
+          "老牌子",
+          "颜值包装"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M03-12",
+      "agent_name": "董子怡"
+    },
+    {
+      "consistency_score": 0.66,
+      "violations": [
+        "决策模式'品牌忠诚'偏离母群预期['权威依赖', '传统保守']",
+        "核心需求匹配度仅33%，预期关注['老牌子', '医生推荐', '安全可靠']"
+      ],
+      "matches": [
+        "价格敏感度'medium'在预期范围内",
+        "开放程度'low'符合母群特征"
+      ],
+      "details": {
+        "segment": "传统关爱妈",
+        "decision_mode": "品牌忠诚",
+        "core_needs": [
+          "防蛀效果",
+          "孩子喜欢",
+          "老牌子"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M03-13",
+      "agent_name": "彭梦琪"
+    },
+    {
+      "consistency_score": 0.67,
+      "violations": [
+        "决策模式'品牌忠诚'偏离母群预期['权威依赖', '传统保守']",
+        "开放程度'medium'(0.5)偏离预期范围(0, 0.4)"
+      ],
+      "matches": [
+        "核心需求匹配度67%",
+        "价格敏感度'very_low'在预期范围内"
+      ],
+      "details": {
+        "segment": "传统关爱妈",
+        "decision_mode": "品牌忠诚",
+        "core_needs": [
+          "医生推荐",
+          "老牌子",
+          "品牌信任"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.6666666666666666,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M03-14",
+      "agent_name": "卢小琴"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'品牌忠诚'偏离母群预期['权威依赖', '传统保守']",
+        "核心需求匹配度仅33%，预期关注['老牌子', '医生推荐', '安全可靠']",
+        "开放程度'medium'(0.5)偏离预期范围(0, 0.4)"
+      ],
+      "matches": [
+        "价格敏感度'medium'在预期范围内"
+      ],
+      "details": {
+        "segment": "传统关爱妈",
+        "decision_mode": "品牌忠诚",
+        "core_needs": [
+          "孩子喜欢",
+          "品牌信任",
+          "医生推荐"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M03-15",
+      "agent_name": "蔡小倩"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'品牌忠诚'偏离母群预期['权威依赖', '传统保守']",
+        "核心需求匹配度仅33%，预期关注['老牌子', '医生推荐', '安全可靠']",
+        "开放程度'medium'(0.5)偏离预期范围(0, 0.4)"
+      ],
+      "matches": [
+        "价格敏感度'very_high'在预期范围内"
+      ],
+      "details": {
+        "segment": "传统关爱妈",
+        "decision_mode": "品牌忠诚",
+        "core_needs": [
+          "医生推荐",
+          "价格实惠",
+          "孩子喜欢"
+        ],
+        "price_sensitivity": "very_high",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M03-16",
+      "agent_name": "梁诗琪"
+    },
+    {
+      "consistency_score": 0.66,
+      "violations": [
+        "决策模式'品牌忠诚'偏离母群预期['权威依赖', '传统保守']",
+        "核心需求匹配度仅33%，预期关注['老牌子', '医生推荐', '安全可靠']"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内",
+        "开放程度'low'符合母群特征"
+      ],
+      "details": {
+        "segment": "传统关爱妈",
+        "decision_mode": "品牌忠诚",
+        "core_needs": [
+          "品牌信任",
+          "价格实惠",
+          "老牌子"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M03-17",
+      "agent_name": "周小娟"
+    },
+    {
+      "consistency_score": 0.51,
+      "violations": [
+        "决策模式'品牌忠诚'偏离母群预期['权威依赖', '传统保守']",
+        "核心需求匹配度仅33%，预期关注['老牌子', '医生推荐', '安全可靠']",
+        "价格敏感度'low'(0.2)超出预期范围(0.4, 0.8)",
+        "开放程度'high'(0.8)偏离预期范围(0, 0.4)"
+      ],
+      "matches": [],
+      "details": {
+        "segment": "传统关爱妈",
+        "decision_mode": "品牌忠诚",
+        "core_needs": [
+          "医生推荐",
+          "品牌信任",
+          "防蛀效果"
+        ],
+        "price_sensitivity": "low",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M03-18",
+      "agent_name": "唐桂英"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'品牌忠诚'偏离母群预期['权威依赖', '传统保守']",
+        "核心需求匹配度仅0%，预期关注['老牌子', '医生推荐', '安全可靠']",
+        "开放程度'medium'(0.5)偏离预期范围(0, 0.4)"
+      ],
+      "matches": [
+        "价格敏感度'medium'在预期范围内"
+      ],
+      "details": {
+        "segment": "传统关爱妈",
+        "decision_mode": "品牌忠诚",
+        "core_needs": [
+          "防蛀效果",
+          "颜值包装",
+          "品牌信任"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M03-19",
+      "agent_name": "王梦洁"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'品牌忠诚'偏离母群预期['权威依赖', '传统保守']",
+        "核心需求匹配度仅33%，预期关注['老牌子', '医生推荐', '安全可靠']",
+        "开放程度'medium'(0.5)偏离预期范围(0, 0.4)"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内"
+      ],
+      "details": {
+        "segment": "传统关爱妈",
+        "decision_mode": "品牌忠诚",
+        "core_needs": [
+          "品牌信任",
+          "成分安全",
+          "老牌子"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M03-20",
+      "agent_name": "蔡小玲"
+    },
+    {
+      "consistency_score": 0.74,
+      "violations": [
+        "决策模式'实用优先'偏离母群预期['权威依赖', '传统保守']"
+      ],
+      "matches": [
+        "核心需求匹配度67%",
+        "价格敏感度'medium'在预期范围内",
+        "开放程度'low'符合母群特征"
+      ],
+      "details": {
+        "segment": "传统关爱妈",
+        "decision_mode": "实用优先",
+        "core_needs": [
+          "医生推荐",
+          "老牌子",
+          "防蛀效果"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.6666666666666666,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M03-21",
+      "agent_name": "彭小静"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'实用优先'偏离母群预期['权威依赖', '传统保守']",
+        "核心需求匹配度仅33%，预期关注['老牌子', '医生推荐', '安全可靠']",
+        "开放程度'high'(0.8)偏离预期范围(0, 0.4)"
+      ],
+      "matches": [
+        "价格敏感度'high'在预期范围内"
+      ],
+      "details": {
+        "segment": "传统关爱妈",
+        "decision_mode": "实用优先",
+        "core_needs": [
+          "孩子喜欢",
+          "老牌子",
+          "成分安全"
+        ],
+        "price_sensitivity": "high",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M03-22",
+      "agent_name": "周雪雁"
+    },
+    {
+      "consistency_score": 0.67,
+      "violations": [
+        "决策模式'实用优先'偏离母群预期['权威依赖', '传统保守']",
+        "开放程度'high'(0.8)偏离预期范围(0, 0.4)"
+      ],
+      "matches": [
+        "核心需求匹配度67%",
+        "价格敏感度'very_low'在预期范围内"
+      ],
+      "details": {
+        "segment": "传统关爱妈",
+        "decision_mode": "实用优先",
+        "core_needs": [
+          "价格实惠",
+          "老牌子",
+          "医生推荐"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.6666666666666666,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M03-23",
+      "agent_name": "王小琳"
+    },
+    {
+      "consistency_score": 0.66,
+      "violations": [
+        "决策模式'实用优先'偏离母群预期['权威依赖', '传统保守']",
+        "核心需求匹配度仅33%，预期关注['老牌子', '医生推荐', '安全可靠']"
+      ],
+      "matches": [
+        "价格敏感度'high'在预期范围内",
+        "开放程度'low'符合母群特征"
+      ],
+      "details": {
+        "segment": "传统关爱妈",
+        "decision_mode": "实用优先",
+        "core_needs": [
+          "成分安全",
+          "孩子喜欢",
+          "医生推荐"
+        ],
+        "price_sensitivity": "high",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M03-24",
+      "agent_name": "叶雨嘉"
+    },
+    {
+      "consistency_score": 0.66,
+      "violations": [
+        "决策模式'实用优先'偏离母群预期['权威依赖', '传统保守']",
+        "核心需求匹配度仅33%，预期关注['老牌子', '医生推荐', '安全可靠']"
+      ],
+      "matches": [
+        "价格敏感度'high'在预期范围内",
+        "开放程度'low'符合母群特征"
+      ],
+      "details": {
+        "segment": "传统关爱妈",
+        "decision_mode": "实用优先",
+        "core_needs": [
+          "老牌子",
+          "防蛀效果",
+          "颜值包装"
+        ],
+        "price_sensitivity": "high",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M03-25",
+      "agent_name": "罗晓雯"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'效率优先'偏离母群预期['权威依赖', '社交跟随']",
+        "核心需求匹配度仅0%，预期关注['省时省力', '口碑推荐', '一站式解决']",
+        "价格敏感度'low'(0.2)超出预期范围(0.3, 0.7)"
+      ],
+      "matches": [
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "高线忙碌派",
+        "decision_mode": "效率优先",
+        "core_needs": [
+          "颜值包装",
+          "医生推荐",
+          "价格实惠"
+        ],
+        "price_sensitivity": "low",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M04-01",
+      "agent_name": "谢优璇"
+    },
+    {
+      "consistency_score": 0.43,
+      "violations": [
+        "决策模式'效率优先'偏离母群预期['权威依赖', '社交跟随']",
+        "核心需求匹配度仅0%，预期关注['省时省力', '口碑推荐', '一站式解决']",
+        "价格敏感度'low'(0.2)超出预期范围(0.3, 0.7)",
+        "开放程度'high'(0.8)偏离预期范围(0.3, 0.7)"
+      ],
+      "matches": [],
+      "details": {
+        "segment": "高线忙碌派",
+        "decision_mode": "效率优先",
+        "core_needs": [
+          "价格实惠",
+          "孩子喜欢",
+          "防蛀效果"
+        ],
+        "price_sensitivity": "low",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M04-02",
+      "agent_name": "曹小霞"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'效率优先'偏离母群预期['权威依赖', '社交跟随']",
+        "核心需求匹配度仅0%，预期关注['省时省力', '口碑推荐', '一站式解决']",
+        "价格敏感度'low'(0.2)超出预期范围(0.3, 0.7)"
+      ],
+      "matches": [
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "高线忙碌派",
+        "decision_mode": "效率优先",
+        "core_needs": [
+          "颜值包装",
+          "老牌子",
+          "医生推荐"
+        ],
+        "price_sensitivity": "low",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M04-03",
+      "agent_name": "徐桂英"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'效率优先'偏离母群预期['权威依赖', '社交跟随']",
+        "核心需求匹配度仅0%，预期关注['省时省力', '口碑推荐', '一站式解决']",
+        "开放程度'low'(0.2)偏离预期范围(0.3, 0.7)"
+      ],
+      "matches": [
+        "价格敏感度'medium'在预期范围内"
+      ],
+      "details": {
+        "segment": "高线忙碌派",
+        "decision_mode": "效率优先",
+        "core_needs": [
+          "老牌子",
+          "成分安全",
+          "医生推荐"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M04-04",
+      "agent_name": "沈明美"
+    },
+    {
+      "consistency_score": 0.43,
+      "violations": [
+        "决策模式'效率优先'偏离母群预期['权威依赖', '社交跟随']",
+        "核心需求匹配度仅0%，预期关注['省时省力', '口碑推荐', '一站式解决']",
+        "价格敏感度'low'(0.2)超出预期范围(0.3, 0.7)",
+        "开放程度'low'(0.2)偏离预期范围(0.3, 0.7)"
+      ],
+      "matches": [],
+      "details": {
+        "segment": "高线忙碌派",
+        "decision_mode": "效率优先",
+        "core_needs": [
+          "医生推荐",
+          "成分安全",
+          "防蛀效果"
+        ],
+        "price_sensitivity": "low",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M04-05",
+      "agent_name": "萧红梅"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'效率优先'偏离母群预期['权威依赖', '社交跟随']",
+        "核心需求匹配度仅0%，预期关注['省时省力', '口碑推荐', '一站式解决']",
+        "开放程度'high'(0.8)偏离预期范围(0.3, 0.7)"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内"
+      ],
+      "details": {
+        "segment": "高线忙碌派",
+        "decision_mode": "效率优先",
+        "core_needs": [
+          "老牌子",
+          "颜值包装",
+          "价格实惠"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M04-06",
+      "agent_name": "杨小英"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'效率优先'偏离母群预期['权威依赖', '社交跟随']",
+        "核心需求匹配度仅0%，预期关注['省时省力', '口碑推荐', '一站式解决']",
+        "开放程度'low'(0.2)偏离预期范围(0.3, 0.7)"
+      ],
+      "matches": [
+        "价格敏感度'medium'在预期范围内"
+      ],
+      "details": {
+        "segment": "高线忙碌派",
+        "decision_mode": "效率优先",
+        "core_needs": [
+          "品牌信任",
+          "价格实惠",
+          "医生推荐"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M04-07",
+      "agent_name": "赵笑怡"
+    },
+    {
+      "consistency_score": 0.43,
+      "violations": [
+        "决策模式'效率优先'偏离母群预期['权威依赖', '社交跟随']",
+        "核心需求匹配度仅0%，预期关注['省时省力', '口碑推荐', '一站式解决']",
+        "价格敏感度'high'(0.8)超出预期范围(0.3, 0.7)",
+        "开放程度'high'(0.8)偏离预期范围(0.3, 0.7)"
+      ],
+      "matches": [],
+      "details": {
+        "segment": "高线忙碌派",
+        "decision_mode": "效率优先",
+        "core_needs": [
+          "价格实惠",
+          "防蛀效果",
+          "孩子喜欢"
+        ],
+        "price_sensitivity": "high",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M04-08",
+      "agent_name": "夏小凤"
+    },
+    {
+      "consistency_score": 0.43,
+      "violations": [
+        "决策模式'效率优先'偏离母群预期['权威依赖', '社交跟随']",
+        "核心需求匹配度仅0%，预期关注['省时省力', '口碑推荐', '一站式解决']",
+        "价格敏感度'high'(0.8)超出预期范围(0.3, 0.7)",
+        "开放程度'low'(0.2)偏离预期范围(0.3, 0.7)"
+      ],
+      "matches": [],
+      "details": {
+        "segment": "高线忙碌派",
+        "decision_mode": "效率优先",
+        "core_needs": [
+          "防蛀效果",
+          "品牌信任",
+          "颜值包装"
+        ],
+        "price_sensitivity": "high",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M04-09",
+      "agent_name": "袁睿婕"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'效率优先'偏离母群预期['权威依赖', '社交跟随']",
+        "核心需求匹配度仅0%，预期关注['省时省力', '口碑推荐', '一站式解决']",
+        "开放程度'high'(0.8)偏离预期范围(0.3, 0.7)"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内"
+      ],
+      "details": {
+        "segment": "高线忙碌派",
+        "decision_mode": "效率优先",
+        "core_needs": [
+          "价格实惠",
+          "医生推荐",
+          "颜值包装"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M04-10",
+      "agent_name": "郑桂兰"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'效率优先'偏离母群预期['权威依赖', '社交跟随']",
+        "核心需求匹配度仅0%，预期关注['省时省力', '口碑推荐', '一站式解决']"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内",
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "高线忙碌派",
+        "decision_mode": "效率优先",
+        "core_needs": [
+          "颜值包装",
+          "价格实惠",
+          "品牌信任"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M04-11",
+      "agent_name": "韩雨欣"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'效率优先'偏离母群预期['权威依赖', '社交跟随']",
+        "核心需求匹配度仅0%，预期关注['省时省力', '口碑推荐', '一站式解决']",
+        "开放程度'low'(0.2)偏离预期范围(0.3, 0.7)"
+      ],
+      "matches": [
+        "价格敏感度'very_high'在预期范围内"
+      ],
+      "details": {
+        "segment": "高线忙碌派",
+        "decision_mode": "效率优先",
+        "core_needs": [
+          "老牌子",
+          "颜值包装",
+          "品牌信任"
+        ],
+        "price_sensitivity": "very_high",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M04-12",
+      "agent_name": "曹静香"
+    },
+    {
+      "consistency_score": 0.43,
+      "violations": [
+        "决策模式'KOL信任'偏离母群预期['权威依赖', '社交跟随']",
+        "核心需求匹配度仅0%，预期关注['省时省力', '口碑推荐', '一站式解决']",
+        "价格敏感度'high'(0.8)超出预期范围(0.3, 0.7)",
+        "开放程度'low'(0.2)偏离预期范围(0.3, 0.7)"
+      ],
+      "matches": [],
+      "details": {
+        "segment": "高线忙碌派",
+        "decision_mode": "KOL信任",
+        "core_needs": [
+          "价格实惠",
+          "孩子喜欢",
+          "品牌信任"
+        ],
+        "price_sensitivity": "high",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M04-13",
+      "agent_name": "苏思涵"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'KOL信任'偏离母群预期['权威依赖', '社交跟随']",
+        "核心需求匹配度仅0%，预期关注['省时省力', '口碑推荐', '一站式解决']"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内",
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "高线忙碌派",
+        "decision_mode": "KOL信任",
+        "core_needs": [
+          "成分安全",
+          "价格实惠",
+          "老牌子"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M04-14",
+      "agent_name": "徐小珍"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'KOL信任'偏离母群预期['权威依赖', '社交跟随']",
+        "核心需求匹配度仅0%，预期关注['省时省力', '口碑推荐', '一站式解决']",
+        "开放程度'low'(0.2)偏离预期范围(0.3, 0.7)"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内"
+      ],
+      "details": {
+        "segment": "高线忙碌派",
+        "decision_mode": "KOL信任",
+        "core_needs": [
+          "成分安全",
+          "颜值包装",
+          "品牌信任"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M04-15",
+      "agent_name": "陈静香"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'KOL信任'偏离母群预期['权威依赖', '社交跟随']",
+        "核心需求匹配度仅0%，预期关注['省时省力', '口碑推荐', '一站式解决']"
+      ],
+      "matches": [
+        "价格敏感度'very_high'在预期范围内",
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "高线忙碌派",
+        "decision_mode": "KOL信任",
+        "core_needs": [
+          "成分安全",
+          "价格实惠",
+          "防蛀效果"
+        ],
+        "price_sensitivity": "very_high",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M04-16",
+      "agent_name": "韩佳琪"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'KOL信任'偏离母群预期['权威依赖', '社交跟随']",
+        "核心需求匹配度仅0%，预期关注['省时省力', '口碑推荐', '一站式解决']",
+        "开放程度'low'(0.2)偏离预期范围(0.3, 0.7)"
+      ],
+      "matches": [
+        "价格敏感度'very_high'在预期范围内"
+      ],
+      "details": {
+        "segment": "高线忙碌派",
+        "decision_mode": "KOL信任",
+        "core_needs": [
+          "医生推荐",
+          "防蛀效果",
+          "品牌信任"
+        ],
+        "price_sensitivity": "very_high",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M04-17",
+      "agent_name": "夏梓萱"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'KOL信任'偏离母群预期['权威依赖', '社交跟随']",
+        "核心需求匹配度仅0%，预期关注['省时省力', '口碑推荐', '一站式解决']"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内",
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "高线忙碌派",
+        "decision_mode": "KOL信任",
+        "core_needs": [
+          "老牌子",
+          "医生推荐",
+          "孩子喜欢"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M04-18",
+      "agent_name": "王思颖"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'KOL信任'偏离母群预期['权威依赖', '社交跟随']",
+        "核心需求匹配度仅0%，预期关注['省时省力', '口碑推荐', '一站式解决']",
+        "价格敏感度'high'(0.8)超出预期范围(0.3, 0.7)"
+      ],
+      "matches": [
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "高线忙碌派",
+        "decision_mode": "KOL信任",
+        "core_needs": [
+          "老牌子",
+          "品牌信任",
+          "孩子喜欢"
+        ],
+        "price_sensitivity": "high",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M04-19",
+      "agent_name": "赵凤英"
+    },
+    {
+      "consistency_score": 0.43,
+      "violations": [
+        "决策模式'KOL信任'偏离母群预期['权威依赖', '社交跟随']",
+        "核心需求匹配度仅0%，预期关注['省时省力', '口碑推荐', '一站式解决']",
+        "价格敏感度'high'(0.8)超出预期范围(0.3, 0.7)",
+        "开放程度'low'(0.2)偏离预期范围(0.3, 0.7)"
+      ],
+      "matches": [],
+      "details": {
+        "segment": "高线忙碌派",
+        "decision_mode": "KOL信任",
+        "core_needs": [
+          "孩子喜欢",
+          "颜值包装",
+          "品牌信任"
+        ],
+        "price_sensitivity": "high",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M04-20",
+      "agent_name": "陈梦琪"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'销量导向'偏离母群预期['权威依赖', '社交跟随']",
+        "核心需求匹配度仅0%，预期关注['省时省力', '口碑推荐', '一站式解决']",
+        "价格敏感度'low'(0.2)超出预期范围(0.3, 0.7)"
+      ],
+      "matches": [
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "高线忙碌派",
+        "decision_mode": "销量导向",
+        "core_needs": [
+          "颜值包装",
+          "成分安全",
+          "品牌信任"
+        ],
+        "price_sensitivity": "low",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M04-21",
+      "agent_name": "戴红梅"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'销量导向'偏离母群预期['权威依赖', '社交跟随']",
+        "核心需求匹配度仅0%，预期关注['省时省力', '口碑推荐', '一站式解决']",
+        "开放程度'high'(0.8)偏离预期范围(0.3, 0.7)"
+      ],
+      "matches": [
+        "价格敏感度'very_high'在预期范围内"
+      ],
+      "details": {
+        "segment": "高线忙碌派",
+        "decision_mode": "销量导向",
+        "core_needs": [
+          "品牌信任",
+          "防蛀效果",
+          "成分安全"
+        ],
+        "price_sensitivity": "very_high",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M04-22",
+      "agent_name": "高珺瑶"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'销量导向'偏离母群预期['权威依赖', '社交跟随']",
+        "核心需求匹配度仅0%，预期关注['省时省力', '口碑推荐', '一站式解决']",
+        "开放程度'low'(0.2)偏离预期范围(0.3, 0.7)"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内"
+      ],
+      "details": {
+        "segment": "高线忙碌派",
+        "decision_mode": "销量导向",
+        "core_needs": [
+          "价格实惠",
+          "老牌子",
+          "品牌信任"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M04-23",
+      "agent_name": "杨小珍"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'销量导向'偏离母群预期['权威依赖', '社交跟随']",
+        "核心需求匹配度仅0%，预期关注['省时省力', '口碑推荐', '一站式解决']",
+        "价格敏感度'high'(0.8)超出预期范围(0.3, 0.7)"
+      ],
+      "matches": [
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "高线忙碌派",
+        "decision_mode": "销量导向",
+        "core_needs": [
+          "颜值包装",
+          "品牌信任",
+          "医生推荐"
+        ],
+        "price_sensitivity": "high",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M04-24",
+      "agent_name": "程梦琪"
+    },
+    {
+      "consistency_score": 0.43,
+      "violations": [
+        "决策模式'销量导向'偏离母群预期['权威依赖', '社交跟随']",
+        "核心需求匹配度仅0%，预期关注['省时省力', '口碑推荐', '一站式解决']",
+        "价格敏感度'high'(0.8)超出预期范围(0.3, 0.7)",
+        "开放程度'low'(0.2)偏离预期范围(0.3, 0.7)"
+      ],
+      "matches": [],
+      "details": {
+        "segment": "高线忙碌派",
+        "decision_mode": "销量导向",
+        "core_needs": [
+          "老牌子",
+          "颜值包装",
+          "防蛀效果"
+        ],
+        "price_sensitivity": "high",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M04-25",
+      "agent_name": "任诗琪"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "未找到母群定义"
+      ],
+      "matches": [],
+      "details": {},
+      "agent_id": "M05-01",
+      "agent_name": "曾海燕"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "未找到母群定义"
+      ],
+      "matches": [],
+      "details": {},
+      "agent_id": "M05-02",
+      "agent_name": "萧雪雁"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "未找到母群定义"
+      ],
+      "matches": [],
+      "details": {},
+      "agent_id": "M05-03",
+      "agent_name": "曾小薇"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "未找到母群定义"
+      ],
+      "matches": [],
+      "details": {},
+      "agent_id": "M05-04",
+      "agent_name": "曾小慧"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "未找到母群定义"
+      ],
+      "matches": [],
+      "details": {},
+      "agent_id": "M05-05",
+      "agent_name": "唐晓燕"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "未找到母群定义"
+      ],
+      "matches": [],
+      "details": {},
+      "agent_id": "M05-06",
+      "agent_name": "叶嫦曦"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "未找到母群定义"
+      ],
+      "matches": [],
+      "details": {},
+      "agent_id": "M05-07",
+      "agent_name": "蒋桂兰"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "未找到母群定义"
+      ],
+      "matches": [],
+      "details": {},
+      "agent_id": "M05-08",
+      "agent_name": "陈小璐"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "未找到母群定义"
+      ],
+      "matches": [],
+      "details": {},
+      "agent_id": "M05-09",
+      "agent_name": "萧珺瑶"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "未找到母群定义"
+      ],
+      "matches": [],
+      "details": {},
+      "agent_id": "M05-10",
+      "agent_name": "邓桂兰"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "未找到母群定义"
+      ],
+      "matches": [],
+      "details": {},
+      "agent_id": "M05-11",
+      "agent_name": "梁紫萱"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "未找到母群定义"
+      ],
+      "matches": [],
+      "details": {},
+      "agent_id": "M05-12",
+      "agent_name": "谢小萍"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "未找到母群定义"
+      ],
+      "matches": [],
+      "details": {},
+      "agent_id": "M05-13",
+      "agent_name": "贾小玲"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "未找到母群定义"
+      ],
+      "matches": [],
+      "details": {},
+      "agent_id": "M05-14",
+      "agent_name": "叶子涵"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "未找到母群定义"
+      ],
+      "matches": [],
+      "details": {},
+      "agent_id": "M05-15",
+      "agent_name": "韩雪丽"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "未找到母群定义"
+      ],
+      "matches": [],
+      "details": {},
+      "agent_id": "M05-16",
+      "agent_name": "夏雅芙"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "未找到母群定义"
+      ],
+      "matches": [],
+      "details": {},
+      "agent_id": "M05-17",
+      "agent_name": "黄小琴"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "未找到母群定义"
+      ],
+      "matches": [],
+      "details": {},
+      "agent_id": "M05-18",
+      "agent_name": "许小萍"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "未找到母群定义"
+      ],
+      "matches": [],
+      "details": {},
+      "agent_id": "M05-19",
+      "agent_name": "郑春梅"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "未找到母群定义"
+      ],
+      "matches": [],
+      "details": {},
+      "agent_id": "M05-20",
+      "agent_name": "吴美琳"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "未找到母群定义"
+      ],
+      "matches": [],
+      "details": {},
+      "agent_id": "M05-21",
+      "agent_name": "谢笑怡"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "未找到母群定义"
+      ],
+      "matches": [],
+      "details": {},
+      "agent_id": "M05-22",
+      "agent_name": "任梦琪"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "未找到母群定义"
+      ],
+      "matches": [],
+      "details": {},
+      "agent_id": "M05-23",
+      "agent_name": "蒋梦洁"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "未找到母群定义"
+      ],
+      "matches": [],
+      "details": {},
+      "agent_id": "M05-24",
+      "agent_name": "朱雨欣"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "未找到母群定义"
+      ],
+      "matches": [],
+      "details": {},
+      "agent_id": "M05-25",
+      "agent_name": "苏诗涵"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'面子导向'偏离母群预期['社交跟随', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['面子消费', '品质感', '社交货币']",
+        "开放程度'low'(0.2)偏离预期范围(0.4, 0.8)"
+      ],
+      "matches": [
+        "价格敏感度'medium'在预期范围内"
+      ],
+      "details": {
+        "segment": "小镇贵妇妈",
+        "decision_mode": "面子导向",
+        "core_needs": [
+          "老牌子",
+          "品牌信任",
+          "价格实惠"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M06-01",
+      "agent_name": "叶紫萱"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'面子导向'偏离母群预期['社交跟随', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['面子消费', '品质感', '社交货币']"
+      ],
+      "matches": [
+        "价格敏感度'very_high'在预期范围内",
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "小镇贵妇妈",
+        "decision_mode": "面子导向",
+        "core_needs": [
+          "颜值包装",
+          "老牌子",
+          "医生推荐"
+        ],
+        "price_sensitivity": "very_high",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M06-02",
+      "agent_name": "韩小英"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'面子导向'偏离母群预期['社交跟随', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['面子消费', '品质感', '社交货币']"
+      ],
+      "matches": [
+        "价格敏感度'medium'在预期范围内",
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "小镇贵妇妈",
+        "decision_mode": "面子导向",
+        "core_needs": [
+          "防蛀效果",
+          "老牌子",
+          "价格实惠"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M06-03",
+      "agent_name": "赵凌薇"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'面子导向'偏离母群预期['社交跟随', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['面子消费', '品质感', '社交货币']"
+      ],
+      "matches": [
+        "价格敏感度'medium'在预期范围内",
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "小镇贵妇妈",
+        "decision_mode": "面子导向",
+        "core_needs": [
+          "孩子喜欢",
+          "价格实惠",
+          "医生推荐"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M06-04",
+      "agent_name": "余小静"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'面子导向'偏离母群预期['社交跟随', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['面子消费', '品质感', '社交货币']"
+      ],
+      "matches": [
+        "价格敏感度'low'在预期范围内",
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "小镇贵妇妈",
+        "decision_mode": "面子导向",
+        "core_needs": [
+          "成分安全",
+          "老牌子",
+          "品牌信任"
+        ],
+        "price_sensitivity": "low",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M06-05",
+      "agent_name": "冯春梅"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'面子导向'偏离母群预期['社交跟随', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['面子消费', '品质感', '社交货币']",
+        "开放程度'low'(0.2)偏离预期范围(0.4, 0.8)"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内"
+      ],
+      "details": {
+        "segment": "小镇贵妇妈",
+        "decision_mode": "面子导向",
+        "core_needs": [
+          "价格实惠",
+          "防蛀效果",
+          "颜值包装"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M06-06",
+      "agent_name": "林睿婕"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'面子导向'偏离母群预期['社交跟随', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['面子消费', '品质感', '社交货币']"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内",
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "小镇贵妇妈",
+        "decision_mode": "面子导向",
+        "core_needs": [
+          "成分安全",
+          "医生推荐",
+          "孩子喜欢"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M06-07",
+      "agent_name": "吕笑怡"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'面子导向'偏离母群预期['社交跟随', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['面子消费', '品质感', '社交货币']",
+        "开放程度'low'(0.2)偏离预期范围(0.4, 0.8)"
+      ],
+      "matches": [
+        "价格敏感度'low'在预期范围内"
+      ],
+      "details": {
+        "segment": "小镇贵妇妈",
+        "decision_mode": "面子导向",
+        "core_needs": [
+          "品牌信任",
+          "成分安全",
+          "防蛀效果"
+        ],
+        "price_sensitivity": "low",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M06-08",
+      "agent_name": "何雪丽"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'面子导向'偏离母群预期['社交跟随', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['面子消费', '品质感', '社交货币']",
+        "开放程度'low'(0.2)偏离预期范围(0.4, 0.8)"
+      ],
+      "matches": [
+        "价格敏感度'very_high'在预期范围内"
+      ],
+      "details": {
+        "segment": "小镇贵妇妈",
+        "decision_mode": "面子导向",
+        "core_needs": [
+          "品牌信任",
+          "老牌子",
+          "医生推荐"
+        ],
+        "price_sensitivity": "very_high",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M06-09",
+      "agent_name": "何彩霞"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'面子导向'偏离母群预期['社交跟随', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['面子消费', '品质感', '社交货币']",
+        "价格敏感度'high'(0.8)超出预期范围(0.2, 0.5)"
+      ],
+      "matches": [
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "小镇贵妇妈",
+        "decision_mode": "面子导向",
+        "core_needs": [
+          "颜值包装",
+          "医生推荐",
+          "孩子喜欢"
+        ],
+        "price_sensitivity": "high",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M06-10",
+      "agent_name": "汪欣怡"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'直播冲动'偏离母群预期['社交跟随', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['面子消费', '品质感', '社交货币']",
+        "开放程度'low'(0.2)偏离预期范围(0.4, 0.8)"
+      ],
+      "matches": [
+        "价格敏感度'low'在预期范围内"
+      ],
+      "details": {
+        "segment": "小镇贵妇妈",
+        "decision_mode": "直播冲动",
+        "core_needs": [
+          "品牌信任",
+          "防蛀效果",
+          "老牌子"
+        ],
+        "price_sensitivity": "low",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M06-11",
+      "agent_name": "蒋雅芙"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'直播冲动'偏离母群预期['社交跟随', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['面子消费', '品质感', '社交货币']",
+        "开放程度'low'(0.2)偏离预期范围(0.4, 0.8)"
+      ],
+      "matches": [
+        "价格敏感度'low'在预期范围内"
+      ],
+      "details": {
+        "segment": "小镇贵妇妈",
+        "decision_mode": "直播冲动",
+        "core_needs": [
+          "颜值包装",
+          "品牌信任",
+          "成分安全"
+        ],
+        "price_sensitivity": "low",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M06-12",
+      "agent_name": "傅淑芬"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'直播冲动'偏离母群预期['社交跟随', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['面子消费', '品质感', '社交货币']"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内",
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "小镇贵妇妈",
+        "decision_mode": "直播冲动",
+        "core_needs": [
+          "品牌信任",
+          "价格实惠",
+          "医生推荐"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M06-13",
+      "agent_name": "潘馨蕊"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'直播冲动'偏离母群预期['社交跟随', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['面子消费', '品质感', '社交货币']",
+        "价格敏感度'high'(0.8)超出预期范围(0.2, 0.5)"
+      ],
+      "matches": [
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "小镇贵妇妈",
+        "decision_mode": "直播冲动",
+        "core_needs": [
+          "防蛀效果",
+          "品牌信任",
+          "医生推荐"
+        ],
+        "price_sensitivity": "high",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M06-14",
+      "agent_name": "曹嫦曦"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'直播冲动'偏离母群预期['社交跟随', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['面子消费', '品质感', '社交货币']",
+        "价格敏感度'high'(0.8)超出预期范围(0.2, 0.5)"
+      ],
+      "matches": [
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "小镇贵妇妈",
+        "decision_mode": "直播冲动",
+        "core_needs": [
+          "孩子喜欢",
+          "价格实惠",
+          "品牌信任"
+        ],
+        "price_sensitivity": "high",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M06-15",
+      "agent_name": "孙嫦曦"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'直播冲动'偏离母群预期['社交跟随', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['面子消费', '品质感', '社交货币']",
+        "价格敏感度'high'(0.8)超出预期范围(0.2, 0.5)"
+      ],
+      "matches": [
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "小镇贵妇妈",
+        "decision_mode": "直播冲动",
+        "core_needs": [
+          "成分安全",
+          "品牌信任",
+          "孩子喜欢"
+        ],
+        "price_sensitivity": "high",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M06-16",
+      "agent_name": "梁雅琳"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'直播冲动'偏离母群预期['社交跟随', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['面子消费', '品质感', '社交货币']",
+        "价格敏感度'high'(0.8)超出预期范围(0.2, 0.5)"
+      ],
+      "matches": [
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "小镇贵妇妈",
+        "decision_mode": "直播冲动",
+        "core_needs": [
+          "防蛀效果",
+          "老牌子",
+          "颜值包装"
+        ],
+        "price_sensitivity": "high",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M06-17",
+      "agent_name": "郑小璐"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'直播冲动'偏离母群预期['社交跟随', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['面子消费', '品质感', '社交货币']",
+        "开放程度'low'(0.2)偏离预期范围(0.4, 0.8)"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内"
+      ],
+      "details": {
+        "segment": "小镇贵妇妈",
+        "decision_mode": "直播冲动",
+        "core_needs": [
+          "老牌子",
+          "颜值包装",
+          "成分安全"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M06-18",
+      "agent_name": "梁小璐"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'功能数量'偏离母群预期['社交跟随', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['面子消费', '品质感', '社交货币']"
+      ],
+      "matches": [
+        "价格敏感度'low'在预期范围内",
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "小镇贵妇妈",
+        "decision_mode": "功能数量",
+        "core_needs": [
+          "品牌信任",
+          "孩子喜欢",
+          "颜值包装"
+        ],
+        "price_sensitivity": "low",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M06-19",
+      "agent_name": "卢红梅"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'功能数量'偏离母群预期['社交跟随', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['面子消费', '品质感', '社交货币']",
+        "价格敏感度'high'(0.8)超出预期范围(0.2, 0.5)"
+      ],
+      "matches": [
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "小镇贵妇妈",
+        "decision_mode": "功能数量",
+        "core_needs": [
+          "老牌子",
+          "防蛀效果",
+          "颜值包装"
+        ],
+        "price_sensitivity": "high",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M06-20",
+      "agent_name": "贾小琴"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'功能数量'偏离母群预期['社交跟随', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['面子消费', '品质感', '社交货币']",
+        "开放程度'low'(0.2)偏离预期范围(0.4, 0.8)"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内"
+      ],
+      "details": {
+        "segment": "小镇贵妇妈",
+        "decision_mode": "功能数量",
+        "core_needs": [
+          "颜值包装",
+          "老牌子",
+          "成分安全"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M06-21",
+      "agent_name": "罗美莲"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'功能数量'偏离母群预期['社交跟随', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['面子消费', '品质感', '社交货币']",
+        "价格敏感度'high'(0.8)超出预期范围(0.2, 0.5)"
+      ],
+      "matches": [
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "小镇贵妇妈",
+        "decision_mode": "功能数量",
+        "core_needs": [
+          "价格实惠",
+          "医生推荐",
+          "成分安全"
+        ],
+        "price_sensitivity": "high",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M06-22",
+      "agent_name": "张小琳"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'功能数量'偏离母群预期['社交跟随', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['面子消费', '品质感', '社交货币']",
+        "价格敏感度'high'(0.8)超出预期范围(0.2, 0.5)"
+      ],
+      "matches": [
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "小镇贵妇妈",
+        "decision_mode": "功能数量",
+        "core_needs": [
+          "老牌子",
+          "品牌信任",
+          "医生推荐"
+        ],
+        "price_sensitivity": "high",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M06-23",
+      "agent_name": "程小芳"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'功能数量'偏离母群预期['社交跟随', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['面子消费', '品质感', '社交货币']"
+      ],
+      "matches": [
+        "价格敏感度'very_high'在预期范围内",
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "小镇贵妇妈",
+        "decision_mode": "功能数量",
+        "core_needs": [
+          "成分安全",
+          "价格实惠",
+          "孩子喜欢"
+        ],
+        "price_sensitivity": "very_high",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M06-24",
+      "agent_name": "郑小艳"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'功能数量'偏离母群预期['社交跟随', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['面子消费', '品质感', '社交货币']"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内",
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "小镇贵妇妈",
+        "decision_mode": "功能数量",
+        "core_needs": [
+          "颜值包装",
+          "成分安全",
+          "孩子喜欢"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M06-25",
+      "agent_name": "韩小玲"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'数据驱动'偏离母群预期['自我主导', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['成分安全', '功能全面', '长期健康']",
+        "开放程度'low'(0.2)偏离预期范围(0.4, 0.8)"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内"
+      ],
+      "details": {
+        "segment": "全能优等家",
+        "decision_mode": "数据驱动",
+        "core_needs": [
+          "老牌子",
+          "孩子喜欢",
+          "颜值包装"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M07-01",
+      "agent_name": "张依娜"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'数据驱动'偏离母群预期['自我主导', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['成分安全', '功能全面', '长期健康']"
+      ],
+      "matches": [
+        "价格敏感度'medium'在预期范围内",
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "全能优等家",
+        "decision_mode": "数据驱动",
+        "core_needs": [
+          "医生推荐",
+          "颜值包装",
+          "老牌子"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M07-02",
+      "agent_name": "任小倩"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'数据驱动'偏离母群预期['自我主导', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['成分安全', '功能全面', '长期健康']",
+        "开放程度'low'(0.2)偏离预期范围(0.4, 0.8)"
+      ],
+      "matches": [
+        "价格敏感度'medium'在预期范围内"
+      ],
+      "details": {
+        "segment": "全能优等家",
+        "decision_mode": "数据驱动",
+        "core_needs": [
+          "老牌子",
+          "价格实惠",
+          "颜值包装"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M07-03",
+      "agent_name": "叶小艳"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'数据驱动'偏离母群预期['自我主导', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['成分安全', '功能全面', '长期健康']",
+        "价格敏感度'high'(0.8)超出预期范围(0.2, 0.6)"
+      ],
+      "matches": [
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "全能优等家",
+        "decision_mode": "数据驱动",
+        "core_needs": [
+          "孩子喜欢",
+          "老牌子",
+          "品牌信任"
+        ],
+        "price_sensitivity": "high",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M07-04",
+      "agent_name": "曹小蓉"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'数据驱动'偏离母群预期['自我主导', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['成分安全', '功能全面', '长期健康']"
+      ],
+      "matches": [
+        "价格敏感度'medium'在预期范围内",
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "全能优等家",
+        "decision_mode": "数据驱动",
+        "core_needs": [
+          "价格实惠",
+          "孩子喜欢",
+          "颜值包装"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M07-05",
+      "agent_name": "田思颖"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'数据驱动'偏离母群预期['自我主导', '权威依赖']",
+        "核心需求匹配度仅33%，预期关注['成分安全', '功能全面', '长期健康']",
+        "价格敏感度'high'(0.8)超出预期范围(0.2, 0.6)"
+      ],
+      "matches": [
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "全能优等家",
+        "decision_mode": "数据驱动",
+        "core_needs": [
+          "成分安全",
+          "价格实惠",
+          "孩子喜欢"
+        ],
+        "price_sensitivity": "high",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M07-06",
+      "agent_name": "韩晓雯"
+    },
+    {
+      "consistency_score": 0.66,
+      "violations": [
+        "决策模式'数据驱动'偏离母群预期['自我主导', '权威依赖']",
+        "核心需求匹配度仅33%，预期关注['成分安全', '功能全面', '长期健康']"
+      ],
+      "matches": [
+        "价格敏感度'very_high'在预期范围内",
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "全能优等家",
+        "decision_mode": "数据驱动",
+        "core_needs": [
+          "品牌信任",
+          "成分安全",
+          "颜值包装"
+        ],
+        "price_sensitivity": "very_high",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M07-07",
+      "agent_name": "李依娜"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'数据驱动'偏离母群预期['自我主导', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['成分安全', '功能全面', '长期健康']"
+      ],
+      "matches": [
+        "价格敏感度'low'在预期范围内",
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "全能优等家",
+        "decision_mode": "数据驱动",
+        "core_needs": [
+          "医生推荐",
+          "孩子喜欢",
+          "颜值包装"
+        ],
+        "price_sensitivity": "low",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M07-08",
+      "agent_name": "杜佳怡"
+    },
+    {
+      "consistency_score": 0.66,
+      "violations": [
+        "决策模式'数据驱动'偏离母群预期['自我主导', '权威依赖']",
+        "核心需求匹配度仅33%，预期关注['成分安全', '功能全面', '长期健康']"
+      ],
+      "matches": [
+        "价格敏感度'medium'在预期范围内",
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "全能优等家",
+        "decision_mode": "数据驱动",
+        "core_needs": [
+          "颜值包装",
+          "成分安全",
+          "医生推荐"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M07-09",
+      "agent_name": "胡婉清"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'数据驱动'偏离母群预期['自我主导', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['成分安全', '功能全面', '长期健康']",
+        "开放程度'low'(0.2)偏离预期范围(0.4, 0.8)"
+      ],
+      "matches": [
+        "价格敏感度'very_high'在预期范围内"
+      ],
+      "details": {
+        "segment": "全能优等家",
+        "decision_mode": "数据驱动",
+        "core_needs": [
+          "老牌子",
+          "价格实惠",
+          "孩子喜欢"
+        ],
+        "price_sensitivity": "very_high",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M07-10",
+      "agent_name": "任秀英"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'系统管理'偏离母群预期['自我主导', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['成分安全', '功能全面', '长期健康']"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内",
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "全能优等家",
+        "decision_mode": "系统管理",
+        "core_needs": [
+          "品牌信任",
+          "价格实惠",
+          "颜值包装"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M07-11",
+      "agent_name": "杨凤英"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'系统管理'偏离母群预期['自我主导', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['成分安全', '功能全面', '长期健康']",
+        "开放程度'low'(0.2)偏离预期范围(0.4, 0.8)"
+      ],
+      "matches": [
+        "价格敏感度'very_high'在预期范围内"
+      ],
+      "details": {
+        "segment": "全能优等家",
+        "decision_mode": "系统管理",
+        "core_needs": [
+          "价格实惠",
+          "医生推荐",
+          "孩子喜欢"
+        ],
+        "price_sensitivity": "very_high",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M07-12",
+      "agent_name": "姜晓雯"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'系统管理'偏离母群预期['自我主导', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['成分安全', '功能全面', '长期健康']"
+      ],
+      "matches": [
+        "价格敏感度'medium'在预期范围内",
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "全能优等家",
+        "decision_mode": "系统管理",
+        "core_needs": [
+          "孩子喜欢",
+          "品牌信任",
+          "价格实惠"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M07-13",
+      "agent_name": "沈依娜"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'系统管理'偏离母群预期['自我主导', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['成分安全', '功能全面', '长期健康']"
+      ],
+      "matches": [
+        "价格敏感度'very_high'在预期范围内",
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "全能优等家",
+        "decision_mode": "系统管理",
+        "core_needs": [
+          "品牌信任",
+          "孩子喜欢",
+          "防蛀效果"
+        ],
+        "price_sensitivity": "very_high",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M07-14",
+      "agent_name": "赵桂英"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'系统管理'偏离母群预期['自我主导', '权威依赖']",
+        "核心需求匹配度仅33%，预期关注['成分安全', '功能全面', '长期健康']",
+        "开放程度'low'(0.2)偏离预期范围(0.4, 0.8)"
+      ],
+      "matches": [
+        "价格敏感度'very_high'在预期范围内"
+      ],
+      "details": {
+        "segment": "全能优等家",
+        "decision_mode": "系统管理",
+        "core_needs": [
+          "价格实惠",
+          "老牌子",
+          "成分安全"
+        ],
+        "price_sensitivity": "very_high",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M07-15",
+      "agent_name": "余雪雁"
+    },
+    {
+      "consistency_score": 0.43,
+      "violations": [
+        "决策模式'系统管理'偏离母群预期['自我主导', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['成分安全', '功能全面', '长期健康']",
+        "价格敏感度'high'(0.8)超出预期范围(0.2, 0.6)",
+        "开放程度'low'(0.2)偏离预期范围(0.4, 0.8)"
+      ],
+      "matches": [],
+      "details": {
+        "segment": "全能优等家",
+        "decision_mode": "系统管理",
+        "core_needs": [
+          "品牌信任",
+          "老牌子",
+          "医生推荐"
+        ],
+        "price_sensitivity": "high",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M07-16",
+      "agent_name": "阎子怡"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'系统管理'偏离母群预期['自我主导', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['成分安全', '功能全面', '长期健康']",
+        "开放程度'low'(0.2)偏离预期范围(0.4, 0.8)"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内"
+      ],
+      "details": {
+        "segment": "全能优等家",
+        "decision_mode": "系统管理",
+        "core_needs": [
+          "防蛀效果",
+          "价格实惠",
+          "颜值包装"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M07-17",
+      "agent_name": "杜子涵"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'系统管理'偏离母群预期['自我主导', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['成分安全', '功能全面', '长期健康']",
+        "价格敏感度'high'(0.8)超出预期范围(0.2, 0.6)"
+      ],
+      "matches": [
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "全能优等家",
+        "decision_mode": "系统管理",
+        "core_needs": [
+          "价格实惠",
+          "医生推荐",
+          "颜值包装"
+        ],
+        "price_sensitivity": "high",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M07-18",
+      "agent_name": "钟桂英"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'完美主义'偏离母群预期['自我主导', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['成分安全', '功能全面', '长期健康']"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内",
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "全能优等家",
+        "decision_mode": "完美主义",
+        "core_needs": [
+          "孩子喜欢",
+          "老牌子",
+          "颜值包装"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M07-19",
+      "agent_name": "苏小婷"
+    },
+    {
+      "consistency_score": 0.51,
+      "violations": [
+        "决策模式'完美主义'偏离母群预期['自我主导', '权威依赖']",
+        "核心需求匹配度仅33%，预期关注['成分安全', '功能全面', '长期健康']",
+        "价格敏感度'high'(0.8)超出预期范围(0.2, 0.6)",
+        "开放程度'low'(0.2)偏离预期范围(0.4, 0.8)"
+      ],
+      "matches": [],
+      "details": {
+        "segment": "全能优等家",
+        "decision_mode": "完美主义",
+        "core_needs": [
+          "成分安全",
+          "颜值包装",
+          "医生推荐"
+        ],
+        "price_sensitivity": "high",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M07-20",
+      "agent_name": "夏婉婷"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'完美主义'偏离母群预期['自我主导', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['成分安全', '功能全面', '长期健康']",
+        "开放程度'low'(0.2)偏离预期范围(0.4, 0.8)"
+      ],
+      "matches": [
+        "价格敏感度'medium'在预期范围内"
+      ],
+      "details": {
+        "segment": "全能优等家",
+        "decision_mode": "完美主义",
+        "core_needs": [
+          "颜值包装",
+          "品牌信任",
+          "老牌子"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M07-21",
+      "agent_name": "叶梦瑶"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'完美主义'偏离母群预期['自我主导', '权威依赖']",
+        "核心需求匹配度仅0%，预期关注['成分安全', '功能全面', '长期健康']",
+        "开放程度'low'(0.2)偏离预期范围(0.4, 0.8)"
+      ],
+      "matches": [
+        "价格敏感度'low'在预期范围内"
+      ],
+      "details": {
+        "segment": "全能优等家",
+        "decision_mode": "完美主义",
+        "core_needs": [
+          "价格实惠",
+          "颜值包装",
+          "防蛀效果"
+        ],
+        "price_sensitivity": "low",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M07-22",
+      "agent_name": "魏小云"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'完美主义'偏离母群预期['自我主导', '权威依赖']",
+        "核心需求匹配度仅33%，预期关注['成分安全', '功能全面', '长期健康']",
+        "价格敏感度'high'(0.8)超出预期范围(0.2, 0.6)"
+      ],
+      "matches": [
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "全能优等家",
+        "decision_mode": "完美主义",
+        "core_needs": [
+          "成分安全",
+          "孩子喜欢",
+          "医生推荐"
+        ],
+        "price_sensitivity": "high",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M07-23",
+      "agent_name": "潘月婵"
+    },
+    {
+      "consistency_score": 0.66,
+      "violations": [
+        "决策模式'完美主义'偏离母群预期['自我主导', '权威依赖']",
+        "核心需求匹配度仅33%，预期关注['成分安全', '功能全面', '长期健康']"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内",
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "全能优等家",
+        "decision_mode": "完美主义",
+        "core_needs": [
+          "成分安全",
+          "防蛀效果",
+          "医生推荐"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M07-24",
+      "agent_name": "朱小艳"
+    },
+    {
+      "consistency_score": 0.66,
+      "violations": [
+        "决策模式'完美主义'偏离母群预期['自我主导', '权威依赖']",
+        "核心需求匹配度仅33%，预期关注['成分安全', '功能全面', '长期健康']"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内",
+        "开放程度'high'符合母群特征"
+      ],
+      "details": {
+        "segment": "全能优等家",
+        "decision_mode": "完美主义",
+        "core_needs": [
+          "成分安全",
+          "医生推荐",
+          "老牌子"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.3333333333333333,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M07-25",
+      "agent_name": "唐思琪"
+    },
+    {
+      "consistency_score": 0.43,
+      "violations": [
+        "决策模式'实用优先'偏离母群预期['随意决策', '极简主义']",
+        "核心需求匹配度仅0%，预期关注['简单方便', '便宜够用', '不讲究']",
+        "价格敏感度'low'(0.2)超出预期范围(0.5, 0.9)",
+        "开放程度'high'(0.8)偏离预期范围(0, 0.5)"
+      ],
+      "matches": [],
+      "details": {
+        "segment": "佛系粗养家",
+        "decision_mode": "实用优先",
+        "core_needs": [
+          "防蛀效果",
+          "品牌信任",
+          "医生推荐"
+        ],
+        "price_sensitivity": "low",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M08-01",
+      "agent_name": "王梦琪"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'实用优先'偏离母群预期['随意决策', '极简主义']",
+        "核心需求匹配度仅0%，预期关注['简单方便', '便宜够用', '不讲究']"
+      ],
+      "matches": [
+        "价格敏感度'high'在预期范围内",
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "佛系粗养家",
+        "decision_mode": "实用优先",
+        "core_needs": [
+          "成分安全",
+          "孩子喜欢",
+          "防蛀效果"
+        ],
+        "price_sensitivity": "high",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M08-02",
+      "agent_name": "曹小静"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'实用优先'偏离母群预期['随意决策', '极简主义']",
+        "核心需求匹配度仅0%，预期关注['简单方便', '便宜够用', '不讲究']",
+        "开放程度'high'(0.8)偏离预期范围(0, 0.5)"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内"
+      ],
+      "details": {
+        "segment": "佛系粗养家",
+        "decision_mode": "实用优先",
+        "core_needs": [
+          "成分安全",
+          "价格实惠",
+          "防蛀效果"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M08-03",
+      "agent_name": "汪红梅"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'实用优先'偏离母群预期['随意决策', '极简主义']",
+        "核心需求匹配度仅0%，预期关注['简单方便', '便宜够用', '不讲究']",
+        "开放程度'high'(0.8)偏离预期范围(0, 0.5)"
+      ],
+      "matches": [
+        "价格敏感度'very_high'在预期范围内"
+      ],
+      "details": {
+        "segment": "佛系粗养家",
+        "decision_mode": "实用优先",
+        "core_needs": [
+          "价格实惠",
+          "防蛀效果",
+          "医生推荐"
+        ],
+        "price_sensitivity": "very_high",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M08-04",
+      "agent_name": "郭静怡"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'实用优先'偏离母群预期['随意决策', '极简主义']",
+        "核心需求匹配度仅0%，预期关注['简单方便', '便宜够用', '不讲究']"
+      ],
+      "matches": [
+        "价格敏感度'medium'在预期范围内",
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "佛系粗养家",
+        "decision_mode": "实用优先",
+        "core_needs": [
+          "成分安全",
+          "品牌信任",
+          "价格实惠"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M08-05",
+      "agent_name": "高梦瑶"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'实用优先'偏离母群预期['随意决策', '极简主义']",
+        "核心需求匹配度仅0%，预期关注['简单方便', '便宜够用', '不讲究']",
+        "开放程度'high'(0.8)偏离预期范围(0, 0.5)"
+      ],
+      "matches": [
+        "价格敏感度'very_high'在预期范围内"
+      ],
+      "details": {
+        "segment": "佛系粗养家",
+        "decision_mode": "实用优先",
+        "core_needs": [
+          "成分安全",
+          "孩子喜欢",
+          "价格实惠"
+        ],
+        "price_sensitivity": "very_high",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M08-06",
+      "agent_name": "夏玉兰"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'实用优先'偏离母群预期['随意决策', '极简主义']",
+        "核心需求匹配度仅0%，预期关注['简单方便', '便宜够用', '不讲究']"
+      ],
+      "matches": [
+        "价格敏感度'very_high'在预期范围内",
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "佛系粗养家",
+        "decision_mode": "实用优先",
+        "core_needs": [
+          "防蛀效果",
+          "成分安全",
+          "老牌子"
+        ],
+        "price_sensitivity": "very_high",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M08-07",
+      "agent_name": "张晓燕"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'实用优先'偏离母群预期['随意决策', '极简主义']",
+        "核心需求匹配度仅0%，预期关注['简单方便', '便宜够用', '不讲究']"
+      ],
+      "matches": [
+        "价格敏感度'medium'在预期范围内",
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "佛系粗养家",
+        "decision_mode": "实用优先",
+        "core_needs": [
+          "品牌信任",
+          "颜值包装",
+          "孩子喜欢"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M08-08",
+      "agent_name": "丁小霞"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'实用优先'偏离母群预期['随意决策', '极简主义']",
+        "核心需求匹配度仅0%，预期关注['简单方便', '便宜够用', '不讲究']",
+        "开放程度'high'(0.8)偏离预期范围(0, 0.5)"
+      ],
+      "matches": [
+        "价格敏感度'very_high'在预期范围内"
+      ],
+      "details": {
+        "segment": "佛系粗养家",
+        "decision_mode": "实用优先",
+        "core_needs": [
+          "颜值包装",
+          "老牌子",
+          "医生推荐"
+        ],
+        "price_sensitivity": "very_high",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M08-09",
+      "agent_name": "许梦瑶"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'实用优先'偏离母群预期['随意决策', '极简主义']",
+        "核心需求匹配度仅0%，预期关注['简单方便', '便宜够用', '不讲究']"
+      ],
+      "matches": [
+        "价格敏感度'medium'在预期范围内",
+        "开放程度'low'符合母群特征"
+      ],
+      "details": {
+        "segment": "佛系粗养家",
+        "decision_mode": "实用优先",
+        "core_needs": [
+          "老牌子",
+          "孩子喜欢",
+          "品牌信任"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M08-10",
+      "agent_name": "马雨婷"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'实用优先'偏离母群预期['随意决策', '极简主义']",
+        "核心需求匹配度仅0%，预期关注['简单方便', '便宜够用', '不讲究']"
+      ],
+      "matches": [
+        "价格敏感度'high'在预期范围内",
+        "开放程度'low'符合母群特征"
+      ],
+      "details": {
+        "segment": "佛系粗养家",
+        "decision_mode": "实用优先",
+        "core_needs": [
+          "孩子喜欢",
+          "品牌信任",
+          "价格实惠"
+        ],
+        "price_sensitivity": "high",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M08-11",
+      "agent_name": "沈可馨"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'实用优先'偏离母群预期['随意决策', '极简主义']",
+        "核心需求匹配度仅0%，预期关注['简单方便', '便宜够用', '不讲究']",
+        "开放程度'high'(0.8)偏离预期范围(0, 0.5)"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内"
+      ],
+      "details": {
+        "segment": "佛系粗养家",
+        "decision_mode": "实用优先",
+        "core_needs": [
+          "孩子喜欢",
+          "防蛀效果",
+          "成分安全"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M08-12",
+      "agent_name": "谢秀兰"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'实用优先'偏离母群预期['随意决策', '极简主义']",
+        "核心需求匹配度仅0%，预期关注['简单方便', '便宜够用', '不讲究']",
+        "开放程度'high'(0.8)偏离预期范围(0, 0.5)"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内"
+      ],
+      "details": {
+        "segment": "佛系粗养家",
+        "decision_mode": "实用优先",
+        "core_needs": [
+          "孩子喜欢",
+          "品牌信任",
+          "老牌子"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M08-13",
+      "agent_name": "卢嫦曦"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'实用优先'偏离母群预期['随意决策', '极简主义']",
+        "核心需求匹配度仅0%，预期关注['简单方便', '便宜够用', '不讲究']"
+      ],
+      "matches": [
+        "价格敏感度'high'在预期范围内",
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "佛系粗养家",
+        "decision_mode": "实用优先",
+        "core_needs": [
+          "品牌信任",
+          "价格实惠",
+          "老牌子"
+        ],
+        "price_sensitivity": "high",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M08-14",
+      "agent_name": "薛佳慧"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'实用优先'偏离母群预期['随意决策', '极简主义']",
+        "核心需求匹配度仅0%，预期关注['简单方便', '便宜够用', '不讲究']"
+      ],
+      "matches": [
+        "价格敏感度'high'在预期范围内",
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "佛系粗养家",
+        "decision_mode": "实用优先",
+        "core_needs": [
+          "老牌子",
+          "医生推荐",
+          "品牌信任"
+        ],
+        "price_sensitivity": "high",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M08-15",
+      "agent_name": "罗凤英"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'价格敏感'偏离母群预期['随意决策', '极简主义']",
+        "核心需求匹配度仅0%，预期关注['简单方便', '便宜够用', '不讲究']",
+        "开放程度'high'(0.8)偏离预期范围(0, 0.5)"
+      ],
+      "matches": [
+        "价格敏感度'medium'在预期范围内"
+      ],
+      "details": {
+        "segment": "佛系粗养家",
+        "decision_mode": "价格敏感",
+        "core_needs": [
+          "孩子喜欢",
+          "颜值包装",
+          "老牌子"
+        ],
+        "price_sensitivity": "medium",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M08-16",
+      "agent_name": "曾思琪"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'价格敏感'偏离母群预期['随意决策', '极简主义']",
+        "核心需求匹配度仅0%，预期关注['简单方便', '便宜够用', '不讲究']"
+      ],
+      "matches": [
+        "价格敏感度'high'在预期范围内",
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "佛系粗养家",
+        "decision_mode": "价格敏感",
+        "core_needs": [
+          "颜值包装",
+          "价格实惠",
+          "医生推荐"
+        ],
+        "price_sensitivity": "high",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M08-17",
+      "agent_name": "周桂兰"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'价格敏感'偏离母群预期['随意决策', '极简主义']",
+        "核心需求匹配度仅0%，预期关注['简单方便', '便宜够用', '不讲究']"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内",
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "佛系粗养家",
+        "decision_mode": "价格敏感",
+        "core_needs": [
+          "价格实惠",
+          "孩子喜欢",
+          "医生推荐"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M08-18",
+      "agent_name": "贾雅静"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'价格敏感'偏离母群预期['随意决策', '极简主义']",
+        "核心需求匹配度仅0%，预期关注['简单方便', '便宜够用', '不讲究']",
+        "价格敏感度'low'(0.2)超出预期范围(0.5, 0.9)"
+      ],
+      "matches": [
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "佛系粗养家",
+        "decision_mode": "价格敏感",
+        "core_needs": [
+          "颜值包装",
+          "成分安全",
+          "老牌子"
+        ],
+        "price_sensitivity": "low",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M08-19",
+      "agent_name": "夏小媛"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'价格敏感'偏离母群预期['随意决策', '极简主义']",
+        "核心需求匹配度仅0%，预期关注['简单方便', '便宜够用', '不讲究']",
+        "价格敏感度'low'(0.2)超出预期范围(0.5, 0.9)"
+      ],
+      "matches": [
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "佛系粗养家",
+        "decision_mode": "价格敏感",
+        "core_needs": [
+          "防蛀效果",
+          "颜值包装",
+          "成分安全"
+        ],
+        "price_sensitivity": "low",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M08-20",
+      "agent_name": "萧梦瑶"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'价格敏感'偏离母群预期['随意决策', '极简主义']",
+        "核心需求匹配度仅0%，预期关注['简单方便', '便宜够用', '不讲究']"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内",
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "佛系粗养家",
+        "decision_mode": "价格敏感",
+        "core_needs": [
+          "价格实惠",
+          "品牌信任",
+          "成分安全"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M08-21",
+      "agent_name": "唐语嫣"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'价格敏感'偏离母群预期['随意决策', '极简主义']",
+        "核心需求匹配度仅0%，预期关注['简单方便', '便宜够用', '不讲究']",
+        "开放程度'high'(0.8)偏离预期范围(0, 0.5)"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内"
+      ],
+      "details": {
+        "segment": "佛系粗养家",
+        "decision_mode": "价格敏感",
+        "core_needs": [
+          "老牌子",
+          "防蛀效果",
+          "成分安全"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M08-22",
+      "agent_name": "戴佳怡"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'价格敏感'偏离母群预期['随意决策', '极简主义']",
+        "核心需求匹配度仅0%，预期关注['简单方便', '便宜够用', '不讲究']",
+        "开放程度'high'(0.8)偏离预期范围(0, 0.5)"
+      ],
+      "matches": [
+        "价格敏感度'very_low'在预期范围内"
+      ],
+      "details": {
+        "segment": "佛系粗养家",
+        "decision_mode": "价格敏感",
+        "core_needs": [
+          "防蛀效果",
+          "价格实惠",
+          "品牌信任"
+        ],
+        "price_sensitivity": "very_low",
+        "openness": "high",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 0.5
+        }
+      },
+      "agent_id": "M08-23",
+      "agent_name": "孙彩霞"
+    },
+    {
+      "consistency_score": 0.58,
+      "violations": [
+        "决策模式'价格敏感'偏离母群预期['随意决策', '极简主义']",
+        "核心需求匹配度仅0%，预期关注['简单方便', '便宜够用', '不讲究']"
+      ],
+      "matches": [
+        "价格敏感度'high'在预期范围内",
+        "开放程度'low'符合母群特征"
+      ],
+      "details": {
+        "segment": "佛系粗养家",
+        "decision_mode": "价格敏感",
+        "core_needs": [
+          "孩子喜欢",
+          "防蛀效果",
+          "颜值包装"
+        ],
+        "price_sensitivity": "high",
+        "openness": "low",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 1.0,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M08-24",
+      "agent_name": "韩语桐"
+    },
+    {
+      "consistency_score": 0.5,
+      "violations": [
+        "决策模式'价格敏感'偏离母群预期['随意决策', '极简主义']",
+        "核心需求匹配度仅0%，预期关注['简单方便', '便宜够用', '不讲究']",
+        "价格敏感度'low'(0.2)超出预期范围(0.5, 0.9)"
+      ],
+      "matches": [
+        "开放程度'medium'符合母群特征"
+      ],
+      "details": {
+        "segment": "佛系粗养家",
+        "decision_mode": "价格敏感",
+        "core_needs": [
+          "价格实惠",
+          "颜值包装",
+          "孩子喜欢"
+        ],
+        "price_sensitivity": "low",
+        "openness": "medium",
+        "dimension_scores": {
+          "decision_mode": 0.3,
+          "core_needs": 0.0,
+          "forbidden_traits": 1.0,
+          "price_sensitivity": 0.5,
+          "openness": 1.0
+        }
+      },
+      "agent_id": "M08-25",
+      "agent_name": "梁小芳"
+    }
+  ]
+}

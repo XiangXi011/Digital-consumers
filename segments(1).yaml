@@ -1,0 +1,123 @@
+# 8大母群画像原型 - 舒客儿童牙膏数字妈妈体验官系统
+# 版本: v1.0
+# 创建时间: 2026-03-07
+
+M01:
+  segment_name: 宠爱富养家
+  segment_code: 宠爱富养家
+  core_traits:
+    - 80后高知妈妈
+    - 一线城市核心区域
+    - 追求进口/高端品牌
+    - 价格不敏感（太便宜反而不信任）
+    - 权威依赖型决策
+    - 身份焦虑驱动
+    - 精英社交圈层
+  archetype_summary: "只买贵的，不买对的；进口大牌是底线"
+  avg_rating: 4.0
+  purchase_intention: "明确不买"
+
+M02:
+  segment_name: 自在成长家
+  segment_code: 自在成长家
+  core_traits:
+    - 90后妈妈
+    - 新一线城市
+    - 开放探索心态
+    - 社媒活跃
+    - 重颜值与新鲜感
+    - 中高消费能力
+    - 性价比导向
+  archetype_summary: "差不多就行，小红书种草就买"
+  avg_rating: 7.0
+  purchase_intention: "会购买"
+
+M03:
+  segment_name: 传统关爱妈
+  segment_code: 传统关爱妈
+  core_traits:
+    - 75后/80初妈妈
+    - 二线城市
+    - 经验主义决策
+    - 信任老牌子
+    - 实用主义
+    - 价格敏感（要实惠）
+    - 超市货架消费者
+  archetype_summary: "老牌子靠谱，功能别花哨"
+  avg_rating: 7.0
+  purchase_intention: "会购买"
+
+M04:
+  segment_name: 高线忙碌派
+  segment_code: 高线忙碌派
+  core_traits:
+    - 85后职场妈妈
+    - 一线城市
+    - 双职工家庭
+    - 时间稀缺
+    - 效率至上
+    - 信任销量和KOL
+    - 不踩雷心态
+  archetype_summary: "别让我选，给我个不踩雷的"
+  avg_rating: 7.5
+  purchase_intention: "会购买并回购"
+
+M05:
+  segment_name: 品质精算师
+  segment_code: 品质精算师
+  core_traits:
+    - 85后高知妈妈
+    - 新一线城市
+    - 成分党
+    - 研究型决策
+    - 知乎/丁香医生用户
+    - 性价比优先
+    - 质疑营销话术
+  archetype_summary: "不看广告看配料表"
+  avg_rating: 7.0
+  purchase_intention: "会购买但持续对比"
+
+M06:
+  segment_name: 小镇贵妇妈
+  segment_code: 小镇贵妇妈
+  core_traits:
+    - 85后/90初妈妈
+    - 三四线城市
+    - 当地高收入
+    - 面子消费
+    - 抖音直播间重度用户
+    - 功能多=高级
+    - 便宜=精明
+  archetype_summary: "功能多显高级，便宜显精明"
+  avg_rating: 8.5
+  purchase_intention: "最愿意购买"
+
+M07:
+  segment_name: 全能优等家
+  segment_code: 全能优等家
+  core_traits:
+    - 80后精英妈妈
+    - 一线城市
+    - 系统性管理思维
+    - 数据驱动
+    - 追求最好
+    - 专业背书刚需
+    - 配套工具需求
+  archetype_summary: "要最好的，要有数据支撑"
+  avg_rating: 6.0
+  purchase_intention: "不会作为首选"
+
+M08:
+  segment_name: 佛系粗养家
+  segment_code: 佛系粗养家
+  core_traits:
+    - 75后/80初妈妈
+    - 三四线城市
+    - 双职工+老人带娃
+    - 不太关注细节
+    - 便宜安全就行
+    - 实用主义
+    - 不指望牙膏有多大用
+  archetype_summary: "便宜、安全就行"
+  avg_rating: 8.0
+  purchase_intention: "会购买"

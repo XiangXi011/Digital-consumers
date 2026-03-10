@@ -1,0 +1,1135 @@
+# 人物生成规则 - 舒客儿童牙膏数字妈妈体验官系统
+# 版本: v1.0
+# 创建时间: 2026-03-07
+
+# ==================== M01: 宠爱富养家 ====================
+M01:
+  age_range: [35, 45]
+  
+  city_tiers:
+    - 一线
+  
+  cities:
+    - 北京
+    - 上海
+    - 深圳
+    - 广州
+  
+  city_districts:
+    北京: [朝阳区, 海淀区, 顺义区, 通州区]
+    上海: [静安区, 浦东新区, 徐汇区, 长宁区, 黄浦区]
+    深圳: [南山区, 福田区, 宝安区, 龙华区, 蛇口]
+    广州: [天河区, 番禺区, 珠江新城]
+  
+  occupations:
+    - 投行高管
+    - 律所合伙人
+    - 科技公司CFO
+    - 企业主
+    - 大学教授
+    - 奢侈品品牌高管
+    - 私募基金合伙人
+    - 医院副院长
+    - 咨询公司合伙人
+    - 影视制片人
+    - 画廊主理人
+    - 珠宝品牌创始人
+    - 国际学校校长
+    - 建筑设计事务所合伙人
+    - 医疗器械公司高管
+    - 全职妈妈(前高管)
+  
+  child_age_stages:
+    - 3岁
+    - 4岁
+    - 5岁
+    - 6岁
+    - 7岁
+    - 8岁
+    - 9岁
+    - 10岁
+    - 12岁
+  
+  household_income_bands:
+    - 80万-120万
+    - 120万-200万
+    - 200万-300万
+    - 300万-600万
+    - 600万以上
+  
+  family_structures:
+    - 三口之家
+    - 三口之家+保姆
+    - 三口之家+住家阿姨
+    - 三口之家+育儿嫂
+    - 三口之家+司机+保姆
+    - 三口之家+两个保姆
+  
+  subtype_distribution:
+    权威依赖型: 8
+    品牌崇拜型: 7
+    身份焦虑型: 6
+    审美驱动型: 4
+  
+  decision_mode_options:
+    - 权威依赖
+    - 品牌优先
+    - 精英思维
+    - 数据驱动
+  
+  openness_level: low
+  time_investment: high
+  appearance_sensitivity: high
+  evidence_sensitivity: high
+  trend_sensitivity: low
+  price_sensitivity: very_low
+  
+  core_needs_options:
+    - 进口品质保障
+    - 医生专业背书
+    - 身份认同
+    - 社交圈层匹配
+    - 最高标准
+  
+  preferred_channels:
+    - Ole'精品超市
+    - CitySuper
+    - 天猫国际
+    - 高端母婴店
+    - 私立医院
+    - 跨境电商
+    - 进口超市
+    - 海外代购
+    - 香港采购
+  
+  trust_triggers:
+    - 进口标识
+    - 医生推荐
+    - 高端渠道
+    - 品牌历史
+    - 专业认证
+    - 社交圈层口碑
+  
+  rejection_triggers:
+    - 国产品牌
+    - 低价
+    - 无进口标识
+    - 无医生背书
+    - 包装廉价
+  
+  budget_range: "60-100元/支，不敏感"
+  
+  content_habits:
+    - 高端母婴社群
+    - 进口超市货架
+    - 小红书高端消费内容
+    - 专业医疗建议
+  
+  decision_styles:
+    - 理性分析型
+    - 身份焦虑型
+    - 权威依赖型
+  
+  family_roles:
+    - 决策者
+    - 品质把关人
+  
+  switching_willingness: very_low
+  
+  tone_styles:
+    - 理性分析型
+    - 权威口吻
+    - 精英视角
+    - 质疑态度
+  
+  review_focus_options:
+    - 品牌国籍
+    - 医生背书
+    - 成分透明度
+    - 包装质感
+    - 价格档次
+
+# ==================== M02: 自在成长家 ====================
+M02:
+  age_range: [25, 35]
+  
+  city_tiers:
+    - 新一线
+    - 二线
+  
+  cities:
+    - 杭州
+    - 成都
+    - 南京
+    - 苏州
+    - 武汉
+    - 西安
+    - 长沙
+    - 郑州
+    - 青岛
+    - 宁波
+    - 厦门
+    - 合肥
+    - 济南
+    - 东莞
+    - 福州
+    - 无锡
+    - 常州
+    - 石家庄
+    - 南昌
+    - 昆明
+    - 南宁
+    - 贵阳
+    - 海口
+    - 兰州
+    - 乌鲁木齐
+  
+  occupations:
+    - 互联网产品经理
+    - UI设计师
+    - 市场营销
+    - 外企HR
+    - 小学老师
+    - 银行职员
+    - 新媒体运营
+    - 会计
+    - 设计师
+    - 旅游策划
+    - 公务员
+    - 护士
+    - 电商运营
+    - 行政
+    - 人事经理
+    - 平面设计师
+    - 教师
+    - 保险代理
+    - 旅行社经理
+    - 房产中介
+    - 导游
+    - 国企职员
+    - 事业单位
+    - 外贸公司职员
+  
+  child_age_stages:
+    - 0岁
+    - 1岁
+    - 2岁
+    - 3岁
+    - 4岁
+    - 5岁
+    - 6岁
+    - 7岁
+    - 8岁
+  
+  household_income_bands:
+    - 20万-25万
+    - 25万-30万
+    - 30万-35万
+    - 35万-40万
+  
+  family_structures:
+    - 三口之家
+    - 三口之家(老人偶尔帮忙)
+  
+  subtype_distribution:
+    颜值种草型: 10
+    新概念尝鲜型: 8
+    社媒跟风型: 7
+  
+  decision_mode_options:
+    - 社媒种草
+    - 颜值优先
+    - 性价比导向
+    - 品牌信任
+  
+  openness_level: high
+  time_investment: medium
+  appearance_sensitivity: high
+  evidence_sensitivity: low
+  trend_sensitivity: high
+  price_sensitivity: medium
+  
+  core_needs_options:
+    - 颜值与新鲜感
+    - 性价比
+    - 社媒认可
+    - 孩子喜欢
+    - 不踩雷
+  
+  preferred_channels:
+    - 天猫
+    - 京东
+    - 小红书
+    - 抖音
+    - 盒马
+    - 拼多多
+    - 永辉超市
+    - 山姆会员店
+    - 超市
+  
+  trust_triggers:
+    - 小红书好评
+    - 博主推荐
+    - 包装颜值
+    - 销量高
+    - 价格适中
+    - 老牌子
+  
+  rejection_triggers:
+    - 包装丑
+    - 价格太高
+    - 差评多
+    - 没听过
+  
+  budget_range: "15-30元/支"
+  
+  content_habits:
+    - 小红书种草
+    - 抖音视频
+    - 电商详情页
+    - 评论区
+    - 直播间
+  
+  decision_styles:
+    - 情绪直觉型
+    - 小红书风格
+    - 颜值驱动型
+  
+  family_roles:
+    - 主要购买者
+    - 品质筛选者
+  
+  switching_willingness: high
+  
+  tone_styles:
+    - 轻松随意
+    - 种草口吻
+    - 真实分享
+    - 颜值导向
+  
+  review_focus_options:
+    - 包装颜值
+    - 味道口感
+    - 孩子接受度
+    - 性价比
+    - 小红书口碑
+
+# ==================== M03: 传统关爱妈 ====================
+M03:
+  age_range: [38, 48]
+  
+  city_tiers:
+    - 二线
+    - 三线
+  
+  cities:
+    - 武汉
+    - 西安
+    - 郑州
+    - 长沙
+    - 合肥
+    - 南昌
+    - 昆明
+    - 南宁
+    - 贵阳
+    - 兰州
+    - 太原
+    - 石家庄
+    - 哈尔滨
+    - 长春
+    - 沈阳
+    - 济南
+    - 青岛
+    - 大连
+    - 无锡
+    - 常州
+    - 南通
+    - 徐州
+    - 温州
+    - 嘉兴
+    - 绍兴
+    - 金华
+    - 台州
+    - 扬州
+    - 镇江
+    - 泰州
+  
+  occupations:
+    - 中学老师
+    - 小学老师
+    - 银行职员
+    - 会计
+    - 行政主管
+    - 事业单位职员
+    - 国企员工
+    - 护士
+    - 医生(非口腔)
+    - 公务员
+    - 超市收银员
+    - 工厂管理人员
+    - 小企业主
+    - 个体户
+    - 全职妈妈
+  
+  child_age_stages:
+    - 6岁
+    - 7岁
+    - 8岁
+    - 9岁
+    - 10岁
+    - 11岁
+    - 12岁
+    - 13岁
+    - 14岁
+  
+  household_income_bands:
+    - 15万-20万
+    - 20万-25万
+    - 25万-30万
+  
+  family_structures:
+    - 三口之家
+    - 三口之家+老人同住
+  
+  subtype_distribution:
+    经验主义型: 12
+    老牌子忠诚型: 8
+    实用主义型: 5
+  
+  decision_mode_options:
+    - 经验依赖
+    - 品牌忠诚
+    - 实用优先
+    - 价格敏感
+  
+  openness_level: low
+  time_investment: low
+  appearance_sensitivity: low
+  evidence_sensitivity: medium
+  trend_sensitivity: very_low
+  price_sensitivity: high
+  
+  core_needs_options:
+    - 老牌子信任
+    - 价格实惠
+    - 功能简单明确
+    - 防蛀效果
+    - 安全可靠
+  
+  preferred_channels:
+    - 大润发
+    - 永辉超市
+    - 当地超市
+    - 京东
+    - 天猫
+    - 拼多多
+    - 牙医建议
+    - 邻居口碑
+  
+  trust_triggers:
+    - 老牌子
+    - 超市有卖
+    - 邻居推荐
+    - 牙医建议
+    - 价格实惠
+    - 功能简单
+  
+  rejection_triggers:
+    - 新牌子
+    - 功能花哨
+    - 价格太贵
+    - 看不懂宣传
+    - 网上才有
+  
+  budget_range: "10-20元/支"
+  
+  content_habits:
+    - 超市货架
+    - 牙医建议
+    - 邻居口碑
+    - 电视广告
+  
+  decision_styles:
+    - 货架消费者
+    - 经验主义
+    - 实用主义
+  
+  family_roles:
+    - 家庭采购员
+    - 传统守护者
+  
+  switching_willingness: low
+  
+  tone_styles:
+    - 朴实直接
+    - 经验口吻
+    - 质疑新事物
+    - 实用导向
+  
+  review_focus_options:
+    - 品牌历史
+    - 防蛀效果
+    - 价格合适
+    - 功能简单
+    - 老牌子信任
+
+# ==================== M04: 高线忙碌派 ====================
+M04:
+  age_range: [32, 40]
+  
+  city_tiers:
+    - 一线
+    - 新一线
+  
+  cities:
+    - 北京
+    - 上海
+    - 深圳
+    - 广州
+    - 杭州
+    - 成都
+    - 南京
+    - 苏州
+    - 武汉
+  
+  occupations:
+    - 互联网大厂经理
+    - 金融分析师
+    - 外企中层
+    - 律师
+    - 医生
+    - 建筑师
+    - 市场总监
+    - 销售总监
+    - 运营总监
+    - 产品经理
+    - 项目经理
+    - 咨询顾问
+    - 审计师
+    - 税务师
+  
+  child_age_stages:
+    - 3岁
+    - 4岁
+    - 5岁
+    - 6岁
+    - 7岁
+    - 8岁
+  
+  household_income_bands:
+    - 50万-70万
+    - 70万-100万
+    - 100万-150万
+  
+  family_structures:
+    - 三口之家+老人帮忙
+    - 双职工+育儿嫂
+  
+  subtype_distribution:
+    效率至上型: 12
+    KOL依赖型: 8
+    销量导向型: 5
+  
+  decision_mode_options:
+    - 效率优先
+    - KOL信任
+    - 销量导向
+    - 品牌信任
+  
+  openness_level: medium
+  time_investment: very_low
+  appearance_sensitivity: low
+  evidence_sensitivity: low
+  trend_sensitivity: medium
+  price_sensitivity: low
+  
+  core_needs_options:
+    - 省时省力
+    - 不踩雷
+    - 销量证明
+    - KOL推荐
+    - 一站式解决
+  
+  preferred_channels:
+    - 京东
+    - 盒马
+    - 山姆
+    - 天猫超市
+    - 小红书
+    - 直播间
+  
+  trust_triggers:
+    - 销量高
+    - 好评率高
+    - KOL推荐
+    - 品牌知名
+    - 京东自营
+  
+  rejection_triggers:
+    - 需要研究对比
+    - 差评多
+    - 没听过
+    - 购买流程复杂
+  
+  budget_range: "20-40元/支"
+  
+  content_habits:
+    - 小红书快速种草
+    - 京东销量排行
+    - 直播间推荐
+    - 盒马随手拿
+  
+  decision_styles:
+    - 效率至上
+    - 直觉决策
+    - 信任转移
+  
+  family_roles:
+    - 快速决策者
+    - 品质把关人
+  
+  switching_willingness: medium
+  
+  tone_styles:
+    - 简洁直接
+    - 效率口吻
+    - 信任KOL
+    - 不纠结
+  
+  review_focus_options:
+    - 销量数据
+    - 好评率
+    - KOL推荐
+    - 使用便捷性
+    - 不踩雷
+
+# ==================== M05: 品质精算师 ====================
+M05:
+  age_range: [30, 38]
+  
+  city_tiers:
+    - 新一线
+    - 一线
+  
+  cities:
+    - 杭州
+    - 南京
+    - 苏州
+    - 成都
+    - 武汉
+    - 北京
+    - 上海
+    - 深圳
+    - 广州
+    - 宁波
+    - 无锡
+    - 青岛
+  
+  occupations:
+    - 工程师
+    - 数据分析师
+    - 科研人员
+    - 医生
+    - 药剂师
+    - 营养师
+    - 教师
+    - 会计师
+    - 审计师
+    - 律师
+    - 记者
+    - 编辑
+    - IT工程师
+    - 产品经理
+  
+  child_age_stages:
+    - 2岁
+    - 3岁
+    - 4岁
+    - 5岁
+    - 6岁
+    - 7岁
+    - 8岁
+    - 9岁
+  
+  household_income_bands:
+    - 35万-50万
+    - 50万-70万
+    - 70万-100万
+  
+  family_structures:
+    - 三口之家
+    - 三口之家(偶尔老人帮忙)
+  
+  subtype_distribution:
+    成分党型: 12
+    研究型: 8
+    性价比导向型: 5
+  
+  decision_mode_options:
+    - 成分研究
+    - 数据驱动
+    - 专业验证
+    - 性价比计算
+  
+  openness_level: medium
+  time_investment: high
+  appearance_sensitivity: low
+  evidence_sensitivity: very_high
+  trend_sensitivity: low
+  price_sensitivity: medium
+  
+  core_needs_options:
+    - 成分透明
+    - 科学依据
+    - 专业背书
+    - 性价比
+    - 无添加
+  
+  preferred_channels:
+    - 知乎
+    - 丁香医生
+    - 京东
+    - 天猫
+    - 专业母婴社区
+    - 成分查询APP
+  
+  trust_triggers:
+    - 成分表详细
+    - 专业文章
+    - 医生推荐
+    - 检测报告
+    - 氟含量明确
+    - 无添加认证
+  
+  rejection_triggers:
+    - 成分表模糊
+    - 营销话术
+    - 功能堆砌
+    - 无科学依据
+    - 价格虚高
+  
+  budget_range: "15-35元/支"
+  
+  content_habits:
+    - 知乎专业文章
+    - 丁香医生科普
+    - 成分表对比
+    - 检测报告
+  
+  decision_styles:
+    - 理性分析型
+    - 研究型
+    - 知乎风格
+  
+  family_roles:
+    - 品质研究员
+    - 成分把关人
+  
+  switching_willingness: high
+  
+  tone_styles:
+    - 理性分析
+    - 质疑态度
+    - 数据导向
+    - 专业口吻
+  
+  review_focus_options:
+    - 成分表
+    - 氟含量
+    - 科学依据
+    - 专业背书
+    - 性价比分析
+
+# ==================== M06: 小镇贵妇妈 ====================
+M06:
+  age_range: [28, 38]
+  
+  city_tiers:
+    - 三线
+    - 四线
+  
+  cities:
+    - 县城
+    - 小镇
+    - 县级市
+    - 地级市(非省会)
+  
+  city_prefixes:
+    - 浙江某县
+    - 江苏某县
+    - 福建某县
+    - 广东某县
+    - 山东某县
+    - 河南某县
+    - 河北某县
+    - 四川某县
+    - 湖南某县
+    - 湖北某县
+  
+  occupations:
+    - 个体户老板娘
+    - 小企业主
+    - 美容院老板
+    - 服装店店主
+    - 微商
+    - 直播主播
+    - 幼儿园老师
+    - 小学老师
+    - 银行职员
+    - 公务员
+    - 事业单位
+    - 医院护士
+    - 全职妈妈
+    - 老公做生意
+  
+  child_age_stages:
+    - 2岁
+    - 3岁
+    - 4岁
+    - 5岁
+    - 6岁
+    - 7岁
+    - 8岁
+  
+  household_income_bands:
+    - 20万-30万
+    - 30万-40万
+    - 40万-50万
+  
+  family_structures:
+    - 三口之家+老人带娃
+    - 三口之家(老公做生意)
+  
+  subtype_distribution:
+    面子消费型: 10
+    直播间冲动型: 8
+    功能崇拜型: 7
+  
+  decision_mode_options:
+    - 面子导向
+    - 直播冲动
+    - 功能数量
+    - 价格敏感
+  
+  openness_level: high
+  time_investment: medium
+  appearance_sensitivity: high
+  evidence_sensitivity: low
+  trend_sensitivity: high
+  price_sensitivity: high
+  
+  core_needs_options:
+    - 面子/高级感
+    - 功能多显值
+    - 便宜显精明
+    - 包装好看
+    - 直播间优惠
+  
+  preferred_channels:
+    - 抖音直播间
+    - 县城母婴店
+    - 拼多多
+    - 快手
+    - 微信群
+    - 当地商场
+  
+  trust_triggers:
+    - 直播间推荐
+    - 功能多
+    - 包装高级
+    - 价格便宜
+    - 主播说效果好
+    - 赠品多
+  
+  rejection_triggers:
+    - 价格太贵
+    - 功能少
+    - 包装普通
+    - 没听过
+    - 没有优惠
+  
+  budget_range: "10-25元/支"
+  
+  content_habits:
+    - 抖音直播间
+    - 母婴店推荐
+    - 邻居口碑
+    - 微信群分享
+  
+  decision_styles:
+    - 情绪直觉型
+    - 抖音风格
+    - 冲动型
+  
+  family_roles:
+    - 家庭采购员
+    - 面子维护者
+  
+  switching_willingness: high
+  
+  tone_styles:
+    - 热情夸张
+    - 面子口吻
+    - 精明算计
+    - 跟风型
+  
+  review_focus_options:
+    - 功能数量
+    - 包装颜值
+    - 价格优惠
+    - 直播间话术
+    - 面子感
+
+# ==================== M07: 全能优等家 ====================
+M07:
+  age_range: [33, 42]
+  
+  city_tiers:
+    - 一线
+    - 新一线
+  
+  cities:
+    - 北京
+    - 上海
+    - 深圳
+    - 广州
+    - 杭州
+    - 南京
+    - 苏州
+    - 成都
+  
+  occupations:
+    - 企业高管
+    - 医生
+    - 律师
+    - 投行VP
+    - 咨询公司总监
+    - 科技公司高管
+    - 大学教授
+    - 研究所负责人
+    - 高级公务员
+    - 外企总监
+  
+  child_age_stages:
+    - 5岁
+    - 6岁
+    - 7岁
+    - 8岁
+    - 9岁
+    - 10岁
+    - 11岁
+    - 12岁
+  
+  household_income_bands:
+    - 80万-120万
+    - 120万-200万
+    - 200万-300万
+  
+  family_structures:
+    - 三口之家+家教
+    - 三口之家+保姆
+    - 精英教育家庭
+  
+  subtype_distribution:
+    数据驱动型: 10
+    系统管理型: 8
+    完美主义型: 7
+  
+  decision_mode_options:
+    - 数据驱动
+    - 系统管理
+    - 完美主义
+    - 专业验证
+  
+  openness_level: medium
+  time_investment: very_high
+  appearance_sensitivity: medium
+  evidence_sensitivity: very_high
+  trend_sensitivity: low
+  price_sensitivity: very_low
+  
+  core_needs_options:
+    - 系统性解决方案
+    - 专业背书
+    - 数据支撑
+    - 效果追踪
+    - 最好品质
+  
+  preferred_channels:
+    - 私立医院
+    - 高端母婴平台
+    - 专业社群
+    - 学术文章
+    - 医生推荐
+  
+  trust_triggers:
+    - 临床数据
+    - 医生背书
+    - 专业认证
+    - 配套工具
+    - 效果追踪
+    - 系统性方案
+  
+  rejection_triggers:
+    - 无专业背书
+    - 无数据支撑
+    - 单一产品
+    - 无配套方案
+    - 普通品牌
+  
+  budget_range: "50-100元/支，不敏感"
+  
+  content_habits:
+    - 私立医院牙医
+    - 专业母婴社群
+    - 学术文章
+    - 专业评测
+  
+  decision_styles:
+    - 理性分析型
+    - 数据驱动
+    - 系统思维
+  
+  family_roles:
+    - 教育规划者
+    - 品质把关人
+    - 系统管理者
+  
+  switching_willingness: low
+  
+  tone_styles:
+    - 理性分析
+    - 数据导向
+    - 专业口吻
+    - 高标准
+  
+  review_focus_options:
+    - 临床数据
+    - 医生背书
+    - 配套工具
+    - 效果追踪
+    - 系统性方案
+
+# ==================== M08: 佛系粗养家 ====================
+M08:
+  age_range: [35, 45]
+  
+  city_tiers:
+    - 三线
+    - 四线
+  
+  cities:
+    - 地级市
+    - 县级市
+    - 县城
+  
+  occupations:
+    - 工厂工人
+    - 超市员工
+    - 服务员
+    - 保洁
+    - 保安
+    - 司机
+    - 小职员
+    - 小学老师
+    - 幼儿园老师
+    - 护士
+    - 银行柜员
+    - 普通公务员
+    - 事业单位普通职员
+  
+  child_age_stages:
+    - 4岁
+    - 5岁
+    - 6岁
+    - 7岁
+    - 8岁
+    - 9岁
+    - 10岁
+  
+  household_income_bands:
+    - 12万-15万
+    - 15万-18万
+    - 18万-22万
+  
+  family_structures:
+    - 三口之家+老人带娃
+    - 双职工+老人
+  
+  subtype_distribution:
+    实用主义型: 15
+    价格敏感型: 10
+  
+  decision_mode_options:
+    - 实用优先
+    - 价格敏感
+    - 简单决策
+    - 经验依赖
+  
+  openness_level: low
+  time_investment: very_low
+  appearance_sensitivity: very_low
+  evidence_sensitivity: low
+  trend_sensitivity: very_low
+  price_sensitivity: very_high
+  
+  core_needs_options:
+    - 便宜
+    - 安全
+    - 老牌子
+    - 简单
+    - 能用就行
+  
+  preferred_channels:
+    - 当地超市
+    - 拼多多
+    - 京东
+    - 天猫
+    - 抖音
+    - 老人推荐
+  
+  trust_triggers:
+    - 价格便宜
+    - 老牌子
+    - 超市有卖
+    - 老人说好用
+    - 孩子没喊疼
+  
+  rejection_triggers:
+    - 价格太贵
+    - 新牌子
+    - 功能复杂
+    - 网上才有
+    - 需要研究
+  
+  budget_range: "10-20元/支"
+  
+  content_habits:
+    - 当地超市货架
+    - 拼多多搜索
+    - 老人推荐
+    - 抖音随便看
+  
+  decision_styles:
+    - 货架消费者
+    - 实用主义
+    - 简单决策
+  
+  family_roles:
+    - 日常采购者
+    - 被动决策者
+  
+  switching_willingness: low
+  
+  tone_styles:
+    - 朴实随意
+    - 不讲究
+    - 实用导向
+    - 简单直接
+  
+  review_focus_options:
+    - 价格便宜
+    - 老牌子
+    - 孩子没蛀牙
+    - 简单好用
+    - 不讲究

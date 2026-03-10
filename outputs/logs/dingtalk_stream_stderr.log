@@ -1,0 +1,4 @@
+C:\Python314\Lib\site-packages\langchain_core\_api\deprecation.py:25: UserWarning: Core Pydantic V1 functionality isn't compatible with Python 3.14 or greater.
+  from pydantic.v1.fields import FieldInfo as FieldInfoV1
+2026-03-10 16:09:33,256 dingtalk_stream.client INFO     open connection, url=https://api.dingtalk.com/v1.0/gateway/connections/open [stream.py:149]
+2026-03-10 16:09:34,733 dingtalk_stream.client INFO     endpoint is {'endpoint': 'wss://wss-open-connection-union.dingtalk.com:443/connect', 'ticket': '7f7efefb-1c58-11f1-8859-6e93dbd8800c'} [stream.py:71]

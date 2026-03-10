@@ -1,0 +1,112 @@
+{
+  "session_id": "ding00eef4ce7938738635c2f4657eb6378f__cidbFCud08+zQt8FBmDMkXt4A==__720331188",
+  "group_id": "ding00eef4ce7938738635c2f4657eb6378f",
+  "conversation_id": "cidbFCud08+zQt8FBmDMkXt4A==",
+  "user_id": "720331188",
+  "status": "running",
+  "checklist_sent": true,
+  "partial_run_authorized": true,
+  "fields": {
+    "concept_name": {
+      "label": "产品/方案名称",
+      "priority": "P0",
+      "status": "provided",
+      "value": "暇美姿贝保护蛀儿童牙（新国标管理）"
+    },
+    "brand": {
+      "label": "品牌名",
+      "priority": "P1",
+      "status": "provided",
+      "value": "舒客宝贝"
+    },
+    "category": {
+      "label": "品类",
+      "priority": "P0",
+      "status": "provided",
+      "value": "儿童牙膏"
+    },
+    "core_claims": {
+      "label": "核心卖点/功能点",
+      "priority": "P0",
+      "status": "provided",
+      "value": [
+        "防蛀护齿",
+        "泡沫细腻绵密，温和清洁",
+        "防护防蛀儿童牙膏",
+        "高效刷牙方式",
+        "清洁牙齿表面",
+        "清洁牙齿外侧",
+        "清洁牙齿内侧"
+      ]
+    },
+    "price": {
+      "label": "价格或预计价格带",
+      "priority": "P0",
+      "status": "provided",
+      "value": "19.9元"
+    },
+    "packaging_summary": {
+      "label": "包装信息",
+      "priority": "P0",
+      "status": "provided",
+      "value": "图片展示的是暇美姿贝保护蛀儿童牙（新国标管理）相关详情页。主打信息包括：防蛀护齿；泡沫细腻绵密，温和清洁；防护防蛀儿童牙膏；高效刷牙方式。适用人群指向2-12岁儿童。"
+    },
+    "packaging_image_path": {
+      "label": "包装图/主视觉",
+      "priority": "P2",
+      "status": "provided",
+      "value": "outputs\\dingtalk_incoming_images\\cidbFCud08+zQt8FBmDMkXt4A==_msgHntayn0m5KTIKq3dIZuEFw==_1.png"
+    },
+    "target_channels": {
+      "label": "目标渠道",
+      "priority": "P1",
+      "status": "provided",
+      "value": [
+        "是京东"
+      ]
+    },
+    "target_audience": {
+      "label": "目标人群",
+      "priority": "P1",
+      "status": "provided",
+      "value": "2-12岁儿童"
+    },
+    "competitors": {
+      "label": "竞品/替代方案",
+      "priority": "P1",
+      "status": "missing",
+      "value": null
+    },
+    "slogan": {
+      "label": "主文案/slogan",
+      "priority": "P1",
+      "status": "provided",
+      "value": "防蛀护齿"
+    },
+    "ingredients": {
+      "label": "成分或关键技术点",
+      "priority": "P2",
+      "status": "provided",
+      "value": "在这里"
+    },
+    "detail_copy": {
+      "label": "详情页/种草文案",
+      "priority": "P2",
+      "status": "provided",
+      "value": "产品信息\n产品名称：暇美姿贝保护蛀儿童牙（新国标管理）\n适用年龄：2-12岁\n国标年号：2024年1月\n国标编号：GB/T 29806.1-2024\n生产单位：广州市天河区中 contentent 64、\n鼎信大厦104、708室\n电话：10605\n邮箱：40089-3138\n网址：http://www.qainet.com.cn\n生产单位：广东省佛山市顺德区科思创实业有限公司\n地址：广东省佛山市顺德区科思创实业有限公司\n邮政编号：苏E20180095\n产品名称：QWMZSY 29 谷棉产品执行检测标准：国牙网字2024年12月皮肤黏膜卫生规范\n卫生标准：苏E20180095\n高效刷牙方式\nEFFICIENT BRUSHING METHOD\n3岁以下用量：米粒大小\n3-6岁用量：豌豆大小\n牙齿怎么刷？\n1. 上下刷\n清洁牙齿表面\n2. 画圈圈\n清洁牙齿外侧\n3. 辊齿式刷\n清洁牙齿内侧\n规格参数\n品牌\n舒客宝贝（sakykids）\n长按或扫描查看"
+    },
+    "validation_questions": {
+      "label": "本次最想验证的问题",
+      "priority": "P2",
+      "status": "missing",
+      "value": null
+    }
+  },
+  "missing_fields": [
+    "竞品/替代方案",
+    "本次最想验证的问题"
+  ],
+  "last_task_id": "ding00eef4ce7938738635c2f4657eb6378f__cidbFCud08+zQt8FBmDMkXt4A==__720331188__run",
+  "html_report_path": null,
+  "json_report_path": null
+}

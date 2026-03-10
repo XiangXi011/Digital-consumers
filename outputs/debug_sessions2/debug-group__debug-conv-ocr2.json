@@ -1,0 +1,113 @@
+{
+  "session_id": "debug-group__debug-conv-ocr2",
+  "group_id": "debug-group",
+  "conversation_id": "debug-conv-ocr2",
+  "user_id": "u1",
+  "status": "awaiting_run_confirmation",
+  "checklist_sent": true,
+  "partial_run_authorized": false,
+  "fields": {
+    "concept_name": {
+      "label": "产品/方案名称",
+      "priority": "P0",
+      "status": "provided",
+      "value": "舒客宝贝魔法变色儿童牙膏"
+    },
+    "brand": {
+      "label": "品牌名",
+      "priority": "P1",
+      "status": "provided",
+      "value": "舒客宝贝"
+    },
+    "category": {
+      "label": "品类",
+      "priority": "P0",
+      "status": "provided",
+      "value": "儿童牙膏"
+    },
+    "core_claims": {
+      "label": "核心卖点/功能点",
+      "priority": "P0",
+      "status": "provided",
+      "value": [
+        "健白抗糖防蛀",
+        "魔法变色牙膏",
+        "魔法变色",
+        "抗糖酸防蛀",
+        "有效清洁外源性色斑",
+        "素及牙齿发黄，有效清洁外源性色斑。",
+        "12小时长效防蛀",
+        "12h长效抗糖盾"
+      ]
+    },
+    "price": {
+      "label": "价格或预计价格带",
+      "priority": "P0",
+      "status": "missing",
+      "value": null
+    },
+    "packaging_summary": {
+      "label": "包装信息",
+      "priority": "P0",
+      "status": "provided",
+      "value": "图片展示的是舒客宝贝魔法变色儿童牙膏相关详情页。主打信息包括：健白抗糖防蛀；魔法变色牙膏；魔法变色；抗糖酸防蛀。适用人群指向2-12岁。"
+    },
+    "packaging_image_path": {
+      "label": "包装图/主视觉",
+      "priority": "P2",
+      "status": "provided",
+      "value": "outputs\\dingtalk_incoming_images\\cidbFCud08+zQt8FBmDMkXt4A==_msgOtFIiPFQVRWbQJ1r7mtPoA==_1.jpg"
+    },
+    "target_channels": {
+      "label": "目标渠道",
+      "priority": "P1",
+      "status": "missing",
+      "value": null
+    },
+    "target_audience": {
+      "label": "目标人群",
+      "priority": "P1",
+      "status": "provided",
+      "value": "2-12岁"
+    },
+    "competitors": {
+      "label": "竞品/替代方案",
+      "priority": "P1",
+      "status": "missing",
+      "value": null
+    },
+    "slogan": {
+      "label": "主文案/slogan",
+      "priority": "P1",
+      "status": "provided",
+      "value": "健白抗糖防蛀"
+    },
+    "ingredients": {
+      "label": "成分或关键技术点",
+      "priority": "P2",
+      "status": "provided",
+      "value": "山梨（糖）醇、水、水合硅石、甘油、聚乙二醇-8、香精、月桂酰肌氨酸钠、焦磷酸四钠、木糖醇、纤维素胶、黄原胶、辛甘醇、椰油酰胺丙基甜菜碱、氟化钠（0.08%，以氟计）、乙基己基甘油"
+    },
+    "detail_copy": {
+      "label": "详情页/种草文案",
+      "priority": "P2",
+      "status": "provided",
+      "value": "产品信息\nPRODUCT INFORMATION\n产品名称：舒客宝贝魔法变色儿童牙膏\n净含量：60g\n龄段：2-12岁\n成分：\n山梨（糖）醇、水、水合硅石、甘油、聚乙二醇-8、香精、月桂酰肌氨酸钠、焦磷酸四钠、木糖醇、纤维素胶、黄原胶、辛甘醇、椰油酰胺丙基甜菜碱、氟化钠（0.08%，以氟计）、乙基己基甘油\n其他微量成分：酪蛋白磷酸肽、副干酪乳酪杆菌、乳酸钙、羟基磷灰石、薄荷醇、CI 16035、CI 74160、甘露糖醇、微晶纤维素、CI 12490、聚甘油-6 二硬脂酸酯、羟丙基甲基纤维素、乙基纤维素、三氯半乳糖\n功效成分：氟化钠（防龋）\n使用方法：\n挤适量牙膏于牙刷上刷牙，刷完用清水漱口吐净；建议每天至少刷牙两次\n注意事项：\n建议3岁以下儿童每次使用米粒大小的牙膏，3-6岁儿童每次使豆大小的牙膏，并在成人指导下刷牙，谨防吞咽。含氟化钠，不可食用。\n贮存条件：存放于阴凉处，避免阳光直射\n产地：中国·江苏\n问京言\n客服\n育婴师\n购物车\n加入购物车\n立即购买"
+    },
+    "validation_questions": {
+      "label": "本次最想验证的问题",
+      "priority": "P2",
+      "status": "missing",
+      "value": null
+    }
+  },
+  "missing_fields": [
+    "价格或预计价格带",
+    "目标渠道",
+    "竞品/替代方案",
+    "本次最想验证的问题"
+  ],
+  "last_task_id": null,
+  "html_report_path": null,
+  "json_report_path": null
+}

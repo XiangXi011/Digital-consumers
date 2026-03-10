@@ -1,0 +1,115 @@
+{
+  "session_id": "demo-group__demo-conversation",
+  "group_id": "demo-group",
+  "conversation_id": "demo-conversation",
+  "user_id": "demo-user",
+  "status": "completed",
+  "checklist_sent": true,
+  "partial_run_authorized": true,
+  "fields": {
+    "concept_name": {
+      "label": "产品/方案名称",
+      "priority": "P0",
+      "status": "provided",
+      "value": "舒客儿童益生菌防蛀牙膏概念版"
+    },
+    "brand": {
+      "label": "品牌名",
+      "priority": "P1",
+      "status": "provided",
+      "value": "舒客"
+    },
+    "category": {
+      "label": "品类",
+      "priority": "P0",
+      "status": "provided",
+      "value": "儿童口腔护理"
+    },
+    "core_claims": {
+      "label": "核心卖点/功能点",
+      "priority": "P0",
+      "status": "provided",
+      "value": [
+        "益生菌配方",
+        "低氟防蛀",
+        "孩子更愿意坚持刷牙"
+      ]
+    },
+    "price": {
+      "label": "价格或预计价格带",
+      "priority": "P0",
+      "status": "provided",
+      "value": "39.9元"
+    },
+    "packaging_summary": {
+      "label": "包装信息",
+      "priority": "P0",
+      "status": "provided",
+      "value": "卡通水果视觉，突出年龄段和防蛀卖点。"
+    },
+    "packaging_image_path": {
+      "label": "包装图/主视觉",
+      "priority": "P2",
+      "status": "missing",
+      "value": null
+    },
+    "target_channels": {
+      "label": "目标渠道",
+      "priority": "P1",
+      "status": "provided",
+      "value": [
+        "天猫",
+        "京东",
+        "母婴店"
+      ]
+    },
+    "target_audience": {
+      "label": "目标人群",
+      "priority": "P1",
+      "status": "missing",
+      "value": null
+    },
+    "competitors": {
+      "label": "竞品/替代方案",
+      "priority": "P1",
+      "status": "missing",
+      "value": null
+    },
+    "slogan": {
+      "label": "主文案/slogan",
+      "priority": "P1",
+      "status": "missing",
+      "value": null
+    },
+    "ingredients": {
+      "label": "成分或关键技术点",
+      "priority": "P2",
+      "status": "missing",
+      "value": null
+    },
+    "detail_copy": {
+      "label": "详情页/种草文案",
+      "priority": "P2",
+      "status": "missing",
+      "value": null
+    },
+    "validation_questions": {
+      "label": "本次最想验证的问题",
+      "priority": "P2",
+      "status": "missing",
+      "value": null
+    }
+  },
+  "missing_fields": [
+    "包装图/主视觉",
+    "目标人群",
+    "竞品/替代方案",
+    "主文案/slogan",
+    "成分或关键技术点",
+    "详情页/种草文案",
+    "本次最想验证的问题"
+  ],
+  "last_task_id": "demo-group__demo-conversation__run",
+  "html_report_path": "C:\\Users\\05537\\Desktop\\agent\\市场部agent teams\\outputs\\dingtalk_reports\\demo-group__demo-conversation__run.html",
+  "json_report_path": "C:\\Users\\05537\\Desktop\\agent\\市场部agent teams\\outputs\\dingtalk_reports\\demo-group__demo-conversation__run.json"
+}

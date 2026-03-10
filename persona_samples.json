@@ -1,0 +1,502 @@
+{
+  "metadata": {
+    "system": "数字妈妈体验官系统",
+    "version": "1.0",
+    "created_at": "2026-03-07",
+    "total_samples": 200,
+    "segments": 8,
+    "samples_per_segment": 25
+  },
+  "samples": [
+    {
+      "sample_id": "M01-01",
+      "segment_id": "M01",
+      "segment_name": "宠爱富养家",
+      "basic_profile": {
+        "nickname": "林婉清",
+        "age": 38,
+        "city": "北京",
+        "city_tier": "一线",
+        "district": "朝阳区",
+        "marital_status": "已婚",
+        "child_age_stage": "7岁",
+        "child_gender": "女",
+        "occupation": "投行高管",
+        "household_income_band": "120万-200万",
+        "family_structure": "三口之家+住家保姆"
+      },
+      "mindset_profile": {
+        "decision_mode": "权威依赖",
+        "openness_level": "low",
+        "time_investment": "high",
+        "appearance_sensitivity": "high",
+        "evidence_sensitivity": "high",
+        "trend_sensitivity": "low",
+        "price_sensitivity": "very_low"
+      },
+      "consumption_profile": {
+        "core_needs": ["进口品质保障", "医生专业背书", "身份认同"],
+        "preferred_channels": ["Ole'精品超市", "天猫国际", "高端母婴店", "私立医院"],
+        "trust_trigger": "进口标识+医生推荐",
+        "rejection_trigger": "国产品牌+低价",
+        "budget_range": "60-100元/支"
+      },
+      "behavior_profile": {
+        "content_habit": "高端母婴社群+进口超市货架",
+        "decision_style": "理性分析型",
+        "family_role": "决策者+品质把关人",
+        "switching_willingness": "very_low"
+      },
+      "expression_profile": {
+        "tone_style": "理性分析+精英视角",
+        "likely_quote": "这个成分表我看不太懂，但德国那个牌子我闺蜜孩子用了三年"
+      },
+      "review_focus": ["品牌国籍", "医生背书", "成分透明度", "包装质感", "价格档次"],
+      "subtype": "权威依赖型",
+      "product_rating": 3,
+      "purchase_decision": "明确不买",
+      "simulated_feedback": "舒客？没听过。15块钱？这能防蛀？我给孩子用的是德国牙医推荐的，一支68，用了两年没蛀牙。"
+    },
+    {
+      "sample_id": "M01-02",
+      "segment_id": "M01",
+      "segment_name": "宠爱富养家",
+      "basic_profile": {
+        "nickname": "张雅琳",
+        "age": 40,
+        "city": "上海",
+        "city_tier": "一线",
+        "district": "静安区",
+        "marital_status": "已婚",
+        "child_age_stage": "9岁",
+        "child_gender": "男",
+        "occupation": "律所合伙人",
+        "household_income_band": "150万-200万",
+        "family_structure": "三口之家+育儿嫂"
+      },
+      "mindset_profile": {
+        "decision_mode": "权威依赖",
+        "openness_level": "low",
+        "time_investment": "high",
+        "appearance_sensitivity": "high",
+        "evidence_sensitivity": "high",
+        "trend_sensitivity": "low",
+        "price_sensitivity": "very_low"
+      },
+      "consumption_profile": {
+        "core_needs": ["医生专业背书", "进口品质保障", "社交圈层匹配"],
+        "preferred_channels": ["CitySuper", "跨境电商", "私立医院", "高端母婴店"],
+        "trust_trigger": "专业背书+进口标识",
+        "rejection_trigger": "无医生推荐+国产",
+        "budget_range": "60-100元/支"
+      },
+      "behavior_profile": {
+        "content_habit": "私立医院+高端进口渠道",
+        "decision_style": "理性分析型+数据驱动",
+        "family_role": "决策者+品质把关人",
+        "switching_willingness": "very_low"
+      },
+      "expression_profile": {
+        "tone_style": "理性分析+权威口吻",
+        "likely_quote": "有没有儿科牙医推荐？有没有临床数据？"
+      },
+      "review_focus": ["医生背书", "临床数据", "进口标识", "专业认证"],
+      "subtype": "权威依赖型",
+      "product_rating": 4,
+      "purchase_decision": "明确不买",
+      "simulated_feedback": "我在CitySuper买儿童牙膏，只看进口区。舒客放在国产货架上，我看都不会看一眼。不是崇洋媚外，是给孩子用的，不敢冒险。"
+    },
+    {
+      "sample_id": "M01-03",
+      "segment_id": "M01",
+      "segment_name": "宠爱富养家",
+      "basic_profile": {
+        "nickname": "王诗涵",
+        "age": 36,
+        "city": "深圳",
+        "city_tier": "一线",
+        "district": "南山区",
+        "marital_status": "已婚",
+        "child_age_stage": "5岁",
+        "child_gender": "女",
+        "occupation": "科技公司CFO",
+        "household_income_band": "200万-300万",
+        "family_structure": "三口之家+住家阿姨"
+      },
+      "mindset_profile": {
+        "decision_mode": "品牌优先",
+        "openness_level": "low",
+        "time_investment": "medium",
+        "appearance_sensitivity": "high",
+        "evidence_sensitivity": "medium",
+        "trend_sensitivity": "low",
+        "price_sensitivity": "very_low"
+      },
+      "consumption_profile": {
+        "core_needs": ["身份认同", "社交圈层匹配", "进口品质保障"],
+        "preferred_channels": ["进口母婴店", "高端电商平台", "天猫国际"],
+        "trust_trigger": "品牌档次+社交圈层口碑",
+        "rejection_trigger": "国产品牌+低价",
+        "budget_range": "60-100元/支"
+      },
+      "behavior_profile": {
+        "content_habit": "高端妈妈群+社交圈层口碑",
+        "decision_style": "身份焦虑型+社交驱动",
+        "family_role": "决策者",
+        "switching_willingness": "very_low"
+      },
+      "expression_profile": {
+        "tone_style": "身份焦虑+社交口吻",
+        "likely_quote": "妈妈群里都在用XX牌子，我不能让孩子用差的"
+      },
+      "review_focus": ["品牌档次", "社交圈层", "进口标识", "包装质感"],
+      "subtype": "身份焦虑型",
+      "product_rating": 4,
+      "purchase_decision": "明确不买",
+      "simulated_feedback": "我们小区妈妈群，孩子用的东西都是互相推荐的。舒客？没人提过。我要是给孩子用15块钱的牙膏，群里都不好意思说。"
+    },
+    {
+      "sample_id": "M01-04",
+      "segment_id": "M01",
+      "segment_name": "宠爱富养家",
+      "basic_profile": {
+        "nickname": "陈雨萱",
+        "age": 42,
+        "city": "广州",
+        "city_tier": "一线",
+        "district": "天河区",
+        "marital_status": "已婚",
+        "child_age_stage": "8岁",
+        "child_gender": "男",
+        "occupation": "企业主",
+        "household_income_band": "300万以上",
+        "family_structure": "三口之家+司机+保姆"
+      },
+      "mindset_profile": {
+        "decision_mode": "权威依赖",
+        "openness_level": "low",
+        "time_investment": "high",
+        "appearance_sensitivity": "high",
+        "evidence_sensitivity": "high",
+        "trend_sensitivity": "low",
+        "price_sensitivity": "very_low"
+      },
+      "consumption_profile": {
+        "core_needs": ["医生专业背书", "最高标准", "进口品质保障"],
+        "preferred_channels": ["私人采购", "高端进口店", "私立医院"],
+        "trust_trigger": "牙医推荐+医院渠道",
+        "rejection_trigger": "无医生背书+零售渠道",
+        "budget_range": "60-100元/支"
+      },
+      "behavior_profile": {
+        "content_habit": "牙医建议+医院渠道",
+        "decision_style": "理性分析型+权威依赖",
+        "family_role": "决策者+品质把关人",
+        "switching_willingness": "very_low"
+      },
+      "expression_profile": {
+        "tone_style": "权威依赖+精英视角",
+        "likely_quote": "牙医说用什么我就用什么"
+      },
+      "review_focus": ["医生背书", "医院渠道", "专业认证", "矫正专用"],
+      "subtype": "权威依赖型",
+      "product_rating": 3,
+      "purchase_decision": "明确不买",
+      "simulated_feedback": "我儿子的牙医是省口腔的主任，他推荐什么我买什么。舒客？牙医没提过，我不会自己乱买。孩子牙齿都蛀了，我不敢试错。"
+    },
+    {
+      "sample_id": "M01-05",
+      "segment_id": "M01",
+      "segment_name": "宠爱富养家",
+      "basic_profile": {
+        "nickname": "李梦琪",
+        "age": 35,
+        "city": "北京",
+        "city_tier": "一线",
+        "district": "海淀区",
+        "marital_status": "已婚",
+        "child_age_stage": "6岁",
+        "child_gender": "女",
+        "occupation": "大学教授",
+        "household_income_band": "80万-120万",
+        "family_structure": "三口之家"
+      },
+      "mindset_profile": {
+        "decision_mode": "品牌优先",
+        "openness_level": "low",
+        "time_investment": "high",
+        "appearance_sensitivity": "medium",
+        "evidence_sensitivity": "high",
+        "trend_sensitivity": "low",
+        "price_sensitivity": "very_low"
+      },
+      "consumption_profile": {
+        "core_needs": ["成分透明度", "科学依据", "进口品质保障"],
+        "preferred_channels": ["京东国际", "天猫国际", "进口超市"],
+        "trust_trigger": "成分表+检测报告+品牌背景",
+        "rejection_trigger": "成分表模糊+国产",
+        "budget_range": "60-100元/支"
+      },
+      "behavior_profile": {
+        "content_habit": "学术文献+成分对比",
+        "decision_style": "理性分析型+学术思维",
+        "family_role": "决策者+品质把关人",
+        "switching_willingness": "very_low"
+      },
+      "expression_profile": {
+        "tone_style": "理性分析+学术口吻",
+        "likely_quote": "我要看成分表和检测报告"
+      },
+      "review_focus": ["成分表", "检测报告", "品牌背景", "学术文献"],
+      "subtype": "权威依赖型",
+      "product_rating": 5,
+      "purchase_decision": "明确不买",
+      "simulated_feedback": "我研究过儿童牙膏，舒客的成分表写得不够详细。德国Putzi的成分标注很清楚，每样都有说明。这种透明度我才放心。"
+    },
+    {
+      "sample_id": "M01-06",
+      "segment_id": "M01",
+      "segment_name": "宠爱富养家",
+      "basic_profile": {
+        "nickname": "赵雅婷",
+        "age": 39,
+        "city": "上海",
+        "city_tier": "一线",
+        "district": "浦东新区",
+        "marital_status": "已婚",
+        "child_age_stage": "10岁",
+        "child_gender": "女",
+        "occupation": "奢侈品品牌高管",
+        "household_income_band": "180万-200万",
+        "family_structure": "三口之家+住家保姆"
+      },
+      "mindset_profile": {
+        "decision_mode": "品牌优先",
+        "openness_level": "low",
+        "time_investment": "medium",
+        "appearance_sensitivity": "very_high",
+        "evidence_sensitivity": "medium",
+        "trend_sensitivity": "low",
+        "price_sensitivity": "very_low"
+      },
+      "consumption_profile": {
+        "core_needs": ["品牌档次", "身份认同", "包装质感"],
+        "preferred_channels": ["高端商场", "品牌专柜", "私人买手"],
+        "trust_trigger": "品牌档次+包装设计+专柜陈列",
+        "rejection_trigger": "包装廉价+国产品牌",
+        "budget_range": "60-100元/支"
+      },
+      "behavior_profile": {
+        "content_habit": "高端品牌+专柜体验",
+        "decision_style": "身份焦虑型+品牌崇拜",
+        "family_role": "决策者",
+        "switching_willingness": "very_low"
+      },
+      "expression_profile": {
+        "tone_style": "身份焦虑+品牌崇拜",
+        "likely_quote": "大品牌有保障，小牌子不敢用"
+      },
+      "review_focus": ["品牌档次", "包装设计", "专柜陈列", "品牌国籍"],
+      "subtype": "品牌崇拜型",
+      "product_rating": 4,
+      "purchase_decision": "明确不买",
+      "simulated_feedback": "我做奢侈品这么多年，太清楚品牌意味着什么。舒客这种国产牌子，包装就透着一股廉价感。孩子用的东西，我宁愿多花点钱买安心。"
+    },
+    {
+      "sample_id": "M01-07",
+      "segment_id": "M01",
+      "segment_name": "宠爱富养家",
+      "basic_profile": {
+        "nickname": "周雪梅",
+        "age": 37,
+        "city": "深圳",
+        "city_tier": "一线",
+        "district": "福田区",
+        "marital_status": "已婚",
+        "child_age_stage": "4岁",
+        "child_gender": "男",
+        "occupation": "私募基金合伙人",
+        "household_income_band": "500万以上",
+        "family_structure": "三口之家+两个保姆"
+      },
+      "mindset_profile": {
+        "decision_mode": "权威依赖",
+        "openness_level": "low",
+        "time_investment": "high",
+        "appearance_sensitivity": "high",
+        "evidence_sensitivity": "high",
+        "trend_sensitivity": "low",
+        "price_sensitivity": "very_low"
+      },
+      "consumption_profile": {
+        "core_needs": ["医生专业背书", "最高标准", "专业认证"],
+        "preferred_channels": ["全球购", "私人医生推荐", "高端会所"],
+        "trust_trigger": "专业背书+医生推荐+高端渠道",
+        "rejection_trigger": "无专业背书+大众品牌",
+        "budget_range": "60-100元/支"
+      },
+      "behavior_profile": {
+        "content_habit": "私人医生+高端渠道",
+        "decision_style": "理性分析型+精英思维",
+        "family_role": "决策者+品质把关人",
+        "switching_willingness": "very_low"
+      },
+      "expression_profile": {
+        "tone_style": "精英思维+权威口吻",
+        "likely_quote": "我只相信专业人士的推荐"
+      },
+      "review_focus": ["医生背书", "专业认证", "高端渠道", "私人定制"],
+      "subtype": "权威依赖型",
+      "product_rating": 3,
+      "purchase_decision": "明确不买",
+      "simulated_feedback": "我儿子的所有用品，从奶粉到牙膏，都是儿科医生开的单子。舒客？没出现在医生的推荐清单里，我不会考虑。"
+    },
+    {
+      "sample_id": "M01-08",
+      "segment_id": "M01",
+      "segment_name": "宠爱富养家",
+      "basic_profile": {
+        "nickname": "吴思琪",
+        "age": 38,
+        "city": "杭州",
+        "city_tier": "新一线",
+        "district": "滨江区",
+        "marital_status": "已婚",
+        "child_age_stage": "7岁",
+        "child_gender": "女",
+        "occupation": "互联网公司VP",
+        "household_income_band": "200万-300万",
+        "family_structure": "三口之家+育儿嫂"
+      },
+      "mindset_profile": {
+        "decision_mode": "品牌优先",
+        "openness_level": "low",
+        "time_investment": "low",
+        "appearance_sensitivity": "medium",
+        "evidence_sensitivity": "low",
+        "trend_sensitivity": "low",
+        "price_sensitivity": "very_low"
+      },
+      "consumption_profile": {
+        "core_needs": ["省时省力", "品牌保障", "不踩雷"],
+        "preferred_channels": ["天猫国际", "进口超市", "高端母婴店"],
+        "trust_trigger": "品牌知名度+销量排行",
+        "rejection_trigger": "没听过+低价",
+        "budget_range": "60-100元/支"
+      },
+      "behavior_profile": {
+        "content_habit": "品牌知名度+销量排行",
+        "decision_style": "理性分析型+效率优先",
+        "family_role": "决策者",
+        "switching_willingness": "very_low"
+      },
+      "expression_profile": {
+        "tone_style": "效率优先+精英视角",
+        "likely_quote": "我没时间研究，买大牌总不会错"
+      },
+      "review_focus": ["品牌知名度", "销量排行", "包装质感"],
+      "subtype": "品牌崇拜型",
+      "product_rating": 4,
+      "purchase_decision": "明确不买",
+      "simulated_feedback": "我工作太忙，没时间对比各种牙膏。我的策略是：买最贵的进口牌子，至少不会踩雷。舒客这种价格，我根本不会考虑。"
+    },
+    {
+      "sample_id": "M01-09",
+      "segment_id": "M01",
+      "segment_name": "宠爱富养家",
+      "basic_profile": {
+        "nickname": "郑晓雯",
+        "age": 34,
+        "city": "北京",
+        "city_tier": "一线",
+        "district": "朝阳区",
+        "marital_status": "已婚",
+        "child_age_stage": "3岁",
+        "child_gender": "女",
+        "occupation": "时尚杂志主编",
+        "household_income_band": "100万-120万",
+        "family_structure": "三口之家"
+      },
+      "mindset_profile": {
+        "decision_mode": "品牌优先",
+        "openness_level": "low",
+        "time_investment": "medium",
+        "appearance_sensitivity": "very_high",
+        "evidence_sensitivity": "low",
+        "trend_sensitivity": "medium",
+        "price_sensitivity": "very_low"
+      },
+      "consumption_profile": {
+        "core_needs": ["审美满足", "品牌调性", "设计感"],
+        "preferred_channels": ["买手店", "设计师品牌", "进口超市"],
+        "trust_trigger": "包装设计+品牌调性+颜值",
+        "rejection_trigger": "包装丑+国产品牌",
+        "budget_range": "60-100元/支"
+      },
+      "behavior_profile": {
+        "content_habit": "设计美学+品牌调性",
+        "decision_style": "身份焦虑型+审美驱动",
+        "family_role": "决策者",
+        "switching_willingness": "very_low"
+      },
+      "expression_profile": {
+        "tone_style": "审美驱动+精英视角",
+        "likely_quote": "包装太丑了，我不想放在洗漱台上"
+      },
+      "review_focus": ["包装设计", "品牌调性", "颜值", "设计感"],
+      "subtype": "审美驱动型",
+      "product_rating": 4,
+      "purchase_decision": "明确不买",
+      "simulated_feedback": "我是做时尚的，对审美有要求。舒客的包装...怎么说呢，太普通了。我给孩子用的是日本的一个牌子，包装像艺术品，放在浴室里看着都舒服。"
+    },
+    {
+      "sample_id": "M01-10",
+      "segment_id": "M01",
+      "segment_name": "宠爱富养家",
+      "basic_profile": {
+        "nickname": "黄静怡",
+        "age": 43,
+        "city": "上海",
+        "city_tier": "一线",
+        "district": "徐汇区",
+        "marital_status": "已婚",
+        "child_age_stage": "12岁",
+        "child_gender": "男",
+        "occupation": "美术馆馆长",
+        "household_income_band": "90万-120万",
+        "family_structure": "三口之家"
+      },
+      "mindset_profile": {
+        "decision_mode": "权威依赖",
+        "openness_level": "low",
+        "time_investment": "high",
+        "appearance_sensitivity": "high",
+        "evidence_sensitivity": "high",
+        "trend_sensitivity": "low",
+        "price_sensitivity": "very_low"
+      },
+      "consumption_profile": {
+        "core_needs": ["专业认证", "医生背书", "矫正专用"],
+        "preferred_channels": ["私立医院", "进口超市", "专业推荐"],
+        "trust_trigger": "专业认证+医生推荐+矫正专用",
+        "rejection_trigger": "通用型+无专业认证",
+        "budget_range": "60-100元/支"
+      },
+      "behavior_profile": {
+        "content_habit": "专业医疗建议+矫正专用产品",
+        "decision_style": "理性分析型+品质至上",
+        "family_role": "决策者+品质把关人",
+        "switching_willingness": "very_low"
+      },
+      "expression_profile": {
+        "tone_style": "品质至上+专业口吻",
+        "likely_quote": "矫正期间要用专业的牙膏"
+      },
+      "review_focus": ["专业认证", "医生背书", "矫正专用", "医疗标准"],
+      "subtype": "权威依赖型",
+      "product_rating": 3,
+      "purchase_decision": "明确不买",
+      "simulated_feedback": "我儿子戴牙套，牙医专门推荐了矫正期专用牙膏。舒客这种通用型的，不适合我们。而且15块钱的价格，我也不敢给孩子用。"
+    }
+  ]
+}
