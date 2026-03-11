@@ -6,63 +6,57 @@ from typing import Any, Dict, List, Optional
 
 
 FIELD_SPECS = [
-    {"key": "concept_name", "label": "产品/方案名称", "priority": "P0"},
-    {"key": "brand", "label": "品牌名", "priority": "P1"},
-    {"key": "category", "label": "品类", "priority": "P0"},
-    {"key": "core_claims", "label": "核心卖点/功能点", "priority": "P0"},
-    {"key": "price", "label": "价格或预计价格带", "priority": "P0"},
-    {"key": "packaging_summary", "label": "包装信息", "priority": "P0"},
-    {"key": "packaging_image_path", "label": "包装图/主视觉", "priority": "P2"},
-    {"key": "target_channels", "label": "目标渠道", "priority": "P1"},
-    {"key": "target_audience", "label": "目标人群", "priority": "P1"},
-    {"key": "competitors", "label": "竞品/替代方案", "priority": "P1"},
-    {"key": "slogan", "label": "主文案/slogan", "priority": "P1"},
-    {"key": "ingredients", "label": "成分或关键技术点", "priority": "P2"},
-    {"key": "detail_copy", "label": "详情页/种草文案", "priority": "P2"},
-    {"key": "validation_questions", "label": "本次最想验证的问题", "priority": "P2"},
+    {"key": "mode", "label": "模式", "priority": "P0"},
+    {"key": "question_type", "label": "研究问题", "priority": "P0"},
+    {"key": "persona_id", "label": "指定妈妈画像", "priority": "P0"},
+    {"key": "user_question", "label": "用户问题", "priority": "P0"},
+    {"key": "background_material", "label": "背景资料", "priority": "P1"},
+    {"key": "product_info", "label": "产品信息", "priority": "P1"},
+    {"key": "copy_material", "label": "文案或卖点", "priority": "P1"},
 ]
 
 FIELD_LABEL_MAP = {
-    "产品名称": "concept_name",
-    "方案名称": "concept_name",
-    "产品/方案名称": "concept_name",
-    "品牌": "brand",
-    "品牌名": "brand",
-    "品类": "category",
-    "产品类型": "category",
-    "核心卖点": "core_claims",
-    "功能点": "core_claims",
-    "卖点": "core_claims",
-    "价格": "price",
-    "价格带": "price",
-    "包装信息": "packaging_summary",
-    "包装描述": "packaging_summary",
-    "包装": "packaging_summary",
-    "包装图": "packaging_image_path",
-    "主视觉": "packaging_image_path",
-    "目标渠道": "target_channels",
-    "渠道": "target_channels",
-    "目标人群": "target_audience",
-    "人群": "target_audience",
-    "竞品": "competitors",
-    "替代方案": "competitors",
-    "主文案": "slogan",
-    "slogan": "slogan",
-    "成分": "ingredients",
-    "关键技术点": "ingredients",
-    "详情页": "detail_copy",
-    "种草文案": "detail_copy",
-    "验证问题": "validation_questions",
-    "最想验证的问题": "validation_questions",
+    "模式": "mode",
+    "研究问题": "question_type",
+    "指定妈妈画像": "persona_id",
+    "妈妈画像": "persona_id",
+    "画像": "persona_id",
+    "用户问题": "user_question",
+    "问题": "user_question",
+    "背景资料": "background_material",
+    "背景": "background_material",
+    "产品信息": "product_info",
+    "产品": "product_info",
+    "文案或卖点": "copy_material",
+    "文案": "copy_material",
+    "卖点": "copy_material",
 }
 
-UNKNOWN_TOKENS = ["未定", "未知", "暂缺", "待定", "先不管", "没有", "暂无"]
-RUN_CONFIRM_TOKENS = ["按现有", "先跑", "先运行", "先分析", "先出初版", "就按这些", "按当前信息"]
+MODE_ALIASES = {
+    "多人模式": "multi",
+    "多人": "multi",
+    "8类妈妈": "multi",
+    "八类妈妈": "multi",
+    "单人模式": "single",
+    "单人": "single",
+}
+
+QUESTION_TYPE_ALIASES = {
+    "产品概念": "product_concept",
+    "购买决策": "purchase_decision",
+    "需求痛点": "needs_pain_points",
+    "文案和卖点反馈": "copy_feedback",
+    "文案反馈": "copy_feedback",
+    "卖点反馈": "copy_feedback",
+}
+
+RUN_CONFIRM_TOKENS = ["按当前信息运行", "开始分析", "运行", "开始跑", "开始研究"]
 RESET_COMMAND_TOKENS = ["新任务", "重置任务", "清空任务", "重新开始"]
+QUESTION_HINTS = ["?", "？", "会不会", "有没有", "为什么", "什么", "顾虑", "痛点", "文案", "卖点", "吸引力"]
 FIELD_ALIASES = sorted(FIELD_LABEL_MAP.items(), key=lambda item: len(item[0]), reverse=True)
 FIELD_ALIAS_PATTERN = re.compile("|".join(re.escape(alias) for alias, _ in FIELD_ALIASES))
-FIELD_PREFIX_BOUNDARIES = set(" \t,，;；。!！?？、/@")
-FIELD_VALUE_PREFIX_CHARS = " ：:，,;；"
+FIELD_PREFIX_BOUNDARIES = set(" \t,，：:；;。.!！?？@")
+FIELD_VALUE_PREFIX_CHARS = " ：:;；，, "
 
 
 def build_empty_fields() -> Dict[str, Dict[str, Any]]:
@@ -88,6 +82,8 @@ class TaskSession:
     partial_run_authorized: bool = False
     fields: Dict[str, Dict[str, Any]] = field(default_factory=build_empty_fields)
     missing_fields: List[str] = field(default_factory=list)
+    attachments: List[str] = field(default_factory=list)
+    follow_up_context: str = ""
     last_task_id: Optional[str] = None
     html_report_path: Optional[str] = None
     json_report_path: Optional[str] = None
@@ -107,6 +103,8 @@ class TaskSession:
             partial_run_authorized=data.get("partial_run_authorized", False),
             fields=data.get("fields") or build_empty_fields(),
             missing_fields=data.get("missing_fields", []),
+            attachments=data.get("attachments", []),
+            follow_up_context=data.get("follow_up_context", ""),
             last_task_id=data.get("last_task_id"),
             html_report_path=data.get("html_report_path"),
             json_report_path=data.get("json_report_path"),
@@ -114,10 +112,11 @@ class TaskSession:
 
 
 class TaskSessionManager:
-    def __init__(self, session_dir: Path | str, ai_client: Any | None = None):
+    def __init__(self, session_dir: Path | str, persona_path: Path | str, ai_client: Any | None = None):
         self.session_dir = Path(session_dir)
         self.session_dir.mkdir(parents=True, exist_ok=True)
         self.ai_client = ai_client
+        self.persona_alias_map = self._load_persona_alias_map(Path(persona_path))
 
     def has_session_for(self, group_id: str, conversation_id: str, user_id: str) -> bool:
         return self._path_for(self._build_session_id(group_id, conversation_id, user_id)).exists()
@@ -143,12 +142,7 @@ class TaskSessionManager:
         path = self._path_for(session_id)
         if path.exists():
             path.unlink()
-        session = TaskSession(
-            session_id=session_id,
-            group_id=group_id,
-            conversation_id=conversation_id,
-            user_id=user_id,
-        )
+        session = TaskSession(session_id=session_id, group_id=group_id, conversation_id=conversation_id, user_id=user_id)
         self.save(session)
         return session
 
@@ -162,21 +156,21 @@ class TaskSessionManager:
             json.dump(session.to_dict(), handle, ensure_ascii=False, indent=2)
 
     def update_from_message(self, session: TaskSession, text: str, attachments: Optional[List[str]] = None):
-        attachments = attachments or []
-        if attachments:
-            self._set_field_value(session, "packaging_image_path", str(attachments[0]))
-            self._fill_missing_fields_from_images(session, attachments)
+        normalized_text = (text or "").strip()
+        for attachment in attachments or []:
+            if attachment not in session.attachments:
+                session.attachments.append(attachment)
 
-        normalized = (text or "").replace("：", ":")
-        for key, value in self._extract_field_updates(normalized):
+        for key, value in self._extract_field_updates(normalized_text):
             self._set_field_value(session, key, value)
 
-        session.missing_fields = self.get_missing_fields(session)
+        self._apply_inference(session, normalized_text)
         self.save(session)
 
     def has_run_confirmation(self, text: str) -> bool:
-        lowered = (text or "").lower()
-        return any(token in (text or "") for token in RUN_CONFIRM_TOKENS) or "run" in lowered
+        normalized = (text or "").strip()
+        lowered = normalized.lower()
+        return any(token in normalized for token in RUN_CONFIRM_TOKENS) or lowered == "run"
 
     def has_reset_command(self, text: str) -> bool:
         normalized = (text or "").strip()
@@ -184,134 +178,128 @@ class TaskSessionManager:
 
     def get_missing_fields(self, session: TaskSession) -> List[str]:
         missing = []
+        required_keys = {"mode", "question_type", "user_question"}
+        if session.fields["mode"]["value"] == "single":
+            required_keys.add("persona_id")
+
         for spec in FIELD_SPECS:
-            field_state = session.fields[spec["key"]]
-            if field_state["status"] == "missing":
+            if spec["key"] not in required_keys:
+                continue
+            if session.fields[spec["key"]]["status"] == "missing":
                 missing.append(spec["label"])
         return missing
 
     def has_minimum_runnable_info(self, session: TaskSession) -> bool:
-        required_keys = ["concept_name", "category", "core_claims", "price"]
-        if not all(session.fields[key]["status"] != "missing" for key in required_keys):
-            return False
-
-        has_packaging_text = session.fields["packaging_summary"]["status"] != "missing"
-        has_packaging_image = session.fields["packaging_image_path"]["status"] != "missing"
-        return has_packaging_text or has_packaging_image
-
-    def summarize_known_information(self, session: TaskSession) -> Dict[str, Any]:
-        provided = {}
-        unknown = {}
-        for _, field_state in session.fields.items():
-            if field_state["status"] == "provided":
-                provided[field_state["label"]] = self._format_display_value(field_state["value"])
-            elif field_state["status"] == "unknown":
-                unknown[field_state["label"]] = self._format_display_value(field_state["value"])
-        return {"provided": provided, "unknown": unknown}
+        return not self.get_missing_fields(session)
 
     def checklist_text(self) -> str:
-        lines = ["已收到需求。请优先按以下完整资料清单提供信息：", "", "完整资料清单："]
+        lines = ["已收到需求。请优先按以下研究任务信息清单提供信息：", "", "研究任务信息清单："]
         for spec in FIELD_SPECS:
             lines.append(f"- {spec['label']}（{spec['priority']}）")
         lines.append("")
-        lines.append("你可以一次性发送，也可以先发一部分。我会先整理缺失项，再询问是否按当前已知信息运行。")
+        lines.append("你可以一次性发完整，也可以先发一部分。我会先整理缺失项，再提醒你运行。")
         return "\n".join(lines)
 
     def reset_confirmation_text(self) -> str:
-        return "已为你清空当前群里的当前任务，会按新任务重新收集资料。"
+        return "已为你清空当前群里的当前研究任务，会按新任务重新收集信息。"
 
     def build_follow_up_text(self, session: TaskSession) -> str:
         known = self.summarize_known_information(session)
-        lines = ["已整理当前信息。"]
-        if known["provided"]:
+        lines = ["已整理当前研究任务。"]
+        if known:
             lines.append("已提供：")
-            for label, value in known["provided"].items():
+            for label, value in known.items():
                 lines.append(f"- {label}：{value}")
-        if known["unknown"]:
-            lines.append("已标记为未定/未知：")
-            for label, value in known["unknown"].items():
-                lines.append(f"- {label}：{value}")
+
         if session.missing_fields:
             lines.append("还缺以下信息：")
             for label in session.missing_fields:
                 lines.append(f"- {label}")
-        lines.append("是否按当前已知信息先运行分析？如果要继续，请直接回复“按现有资料运行”。")
+            if "指定妈妈画像" in session.missing_fields:
+                lines.append("请指定妈妈画像，例如：高线忙碌妈 或 M04。")
+        else:
+            lines.append("信息已收齐，如继续请直接回复“按当前信息运行”。")
         return "\n".join(lines)
 
-    def build_concept_payload(self, session: TaskSession) -> Dict[str, Any]:
-        price_value = session.fields["price"]["value"] or "39.9"
-        price_match = re.search(r"\d+(?:\.\d+)?", str(price_value))
-        numeric_price = float(price_match.group()) if price_match else 39.9
+    def summarize_known_information(self, session: TaskSession) -> Dict[str, str]:
+        provided = {}
+        for field_state in session.fields.values():
+            if field_state["status"] == "provided" and field_state["value"] is not None:
+                provided[field_state["label"]] = str(field_state["value"])
+        return provided
 
-        core_claims = session.fields["core_claims"]["value"] or []
-        if isinstance(core_claims, str):
-            core_claims = self._split_list_values(core_claims)
-
-        packaging_summary = self._field_text(session, "packaging_summary", "包装信息待补充")
-        if (
-            session.fields["packaging_summary"]["status"] == "missing"
-            and session.fields["packaging_image_path"]["status"] != "missing"
-        ):
-            packaging_summary = "Uploaded packaging image is available for visual analysis."
-
+    def build_research_input_payload(self, session: TaskSession) -> Dict[str, Any]:
         return {
-            "concept_name": self._field_text(session, "concept_name", "未命名方案"),
-            "brand": self._field_text(session, "brand", "未提供品牌"),
-            "category": self._field_text(session, "category", "未提供品类"),
-            "price": numeric_price,
-            "core_claims": core_claims or ["卖点待补充"],
-            "packaging_summary": packaging_summary,
-            "tagline": self._field_text(session, "slogan", ""),
-            "target_channels": self._field_list(session, "target_channels"),
-            "competitive_anchors": self._field_list(session, "competitors"),
-            "context_notes": self._build_context_notes(session),
-            "missing_fields": list(session.missing_fields),
-            "packaging_image_path": self._field_text(session, "packaging_image_path", ""),
+            "mode": self._field_text(session, "mode"),
+            "question_type": self._field_text(session, "question_type"),
+            "persona_id": self._field_text(session, "persona_id"),
+            "user_question": self._field_text(session, "user_question"),
+            "background_material": self._field_text(session, "background_material"),
+            "product_info": self._field_text(session, "product_info"),
+            "copy_material": self._field_text(session, "copy_material"),
+            "attachments": list(session.attachments),
+            "follow_up_context": session.follow_up_context,
         }
 
-    def _build_context_notes(self, session: TaskSession) -> str:
-        parts = []
-        validation = self._field_text(session, "validation_questions", "")
-        if validation:
-            parts.append(f"重点验证问题：{validation}")
-        ingredients = self._field_text(session, "ingredients", "")
-        if ingredients:
-            parts.append(f"成分/技术点：{ingredients}")
-        detail_copy = self._field_text(session, "detail_copy", "")
-        if detail_copy:
-            parts.append(f"详情页/种草文案：{detail_copy}")
-        if session.partial_run_authorized:
-            parts.append("用户已明确授权按当前已知信息运行。")
-        return "\n".join(parts)
-
-    def _field_text(self, session: TaskSession, key: str, default: str) -> str:
+    def _field_text(self, session: TaskSession, key: str) -> str:
         value = session.fields[key]["value"]
-        if value is None:
-            return default
-        return str(value)
+        return "" if value is None else str(value)
 
-    def _field_list(self, session: TaskSession, key: str) -> List[str]:
-        value = session.fields[key]["value"]
-        if not value:
-            return []
-        if isinstance(value, list):
-            return value
-        return self._split_list_values(str(value))
+    def _apply_inference(self, session: TaskSession, text: str):
+        if session.fields["mode"]["status"] == "missing":
+            inferred_mode = self.infer_mode(text)
+            if inferred_mode:
+                self._set_field_value(session, "mode", inferred_mode)
 
-    def _fill_missing_fields_from_images(self, session: TaskSession, attachments: List[str]):
-        if not self.ai_client or not hasattr(self.ai_client, "extract_product_fields_from_image"):
-            return
+        if session.fields["question_type"]["status"] == "missing":
+            inferred_type = self.infer_question_type(text)
+            if inferred_type:
+                self._set_field_value(session, "question_type", inferred_type)
 
-        for image_path in attachments:
-            extracted = self.ai_client.extract_product_fields_from_image(Path(image_path))
-            for key, value in (extracted.get("fields") or {}).items():
-                if key not in session.fields:
-                    continue
-                if session.fields[key]["status"] != "missing":
-                    continue
-                if self._is_empty_value(value):
-                    continue
-                self._set_field_value(session, key, value)
+        if session.fields["persona_id"]["status"] == "missing":
+            inferred_persona = self.infer_persona_id(text)
+            if inferred_persona:
+                self._set_field_value(session, "persona_id", inferred_persona)
+
+        if session.fields["user_question"]["status"] == "missing":
+            inferred_question = self.infer_user_question(text)
+            if inferred_question:
+                self._set_field_value(session, "user_question", inferred_question)
+
+    def infer_mode(self, text: str) -> str:
+        for alias, normalized in MODE_ALIASES.items():
+            if alias in text:
+                return normalized
+        return ""
+
+    def infer_question_type(self, text: str) -> str:
+        for alias, normalized in QUESTION_TYPE_ALIASES.items():
+            if alias in text:
+                return normalized
+        if "文案" in text or "卖点" in text:
+            return "copy_feedback"
+        if "痛点" in text or "怎么解决" in text or "缺少什么" in text:
+            return "needs_pain_points"
+        if "会不会买" in text or "为什么买" in text or "最大顾虑" in text or "购买决策" in text:
+            return "purchase_decision"
+        if "概念" in text or "吸引力" in text or "感兴趣" in text:
+            return "product_concept"
+        return ""
+
+    def infer_persona_id(self, text: str) -> str:
+        for alias, persona_id in self.persona_alias_map.items():
+            if alias and alias in text:
+                return persona_id
+        return ""
+
+    def infer_user_question(self, text: str) -> str:
+        if not text:
+            return ""
+        if "妈妈定性研究" in text and len(text) <= 20:
+            return ""
+        if any(hint in text for hint in QUESTION_HINTS):
+            return text.strip()
+        return ""
 
     def _extract_field_updates(self, text: str) -> List[tuple[str, str]]:
         updates: List[tuple[str, str]] = []
@@ -329,62 +317,41 @@ class TaskSessionManager:
             if start > 0 and line[start - 1] not in FIELD_PREFIX_BOUNDARIES:
                 continue
             alias = match.group(0)
-            matches.append((alias, FIELD_LABEL_MAP[alias], match.start(), match.end()))
+            matches.append((FIELD_LABEL_MAP[alias], match.start(), match.end()))
 
         updates: List[tuple[str, str]] = []
-        for index, (_, key, _, end) in enumerate(matches):
-            next_start = matches[index + 1][2] if index + 1 < len(matches) else len(line)
+        for index, (key, _, end) in enumerate(matches):
+            next_start = matches[index + 1][1] if index + 1 < len(matches) else len(line)
             raw_value = line[end:next_start].strip(FIELD_VALUE_PREFIX_CHARS)
             value = raw_value.strip()
-            if not value:
-                continue
-            updates.append((key, value))
+            if value:
+                updates.append((key, value))
         return updates
 
     def _set_field_value(self, session: TaskSession, key: str, value: Any):
-        if value is None:
-            return
+        normalized_value = value
+        if key == "mode":
+            normalized_value = MODE_ALIASES.get(str(value), value)
+        elif key == "question_type":
+            normalized_value = QUESTION_TYPE_ALIASES.get(str(value), self.infer_question_type(str(value)) or value)
+        elif key == "persona_id":
+            normalized_value = self.persona_alias_map.get(str(value), value)
 
         state = session.fields[key]
-        if isinstance(value, str) and any(token in value for token in UNKNOWN_TOKENS):
-            state["status"] = "unknown"
-            state["value"] = value
-            return
-
-        if key in {"core_claims", "target_channels", "competitors"}:
-            state["status"] = "provided"
-            if isinstance(value, list):
-                state["value"] = [str(item).strip() for item in value if str(item).strip()]
-            else:
-                state["value"] = self._split_list_values(str(value))
-            return
-
         state["status"] = "provided"
-        if isinstance(value, list):
-            state["value"] = "，".join(str(item).strip() for item in value if str(item).strip())
-        else:
-            state["value"] = str(value)
+        state["value"] = str(normalized_value)
 
-    def _resolve_field_key(self, label: str) -> Optional[str]:
-        for candidate, key in FIELD_LABEL_MAP.items():
-            if candidate in label:
-                return key
-        return None
-
-    def _split_list_values(self, value: str) -> List[str]:
-        return [item.strip() for item in re.split(r"[；;，,、\n]", value) if item.strip()]
-
-    def _is_empty_value(self, value: Any) -> bool:
-        if value is None:
-            return True
-        if isinstance(value, list):
-            return not any(str(item).strip() for item in value)
-        return not str(value).strip()
-
-    def _format_display_value(self, value: Any) -> str:
-        if isinstance(value, list):
-            return "；".join(str(item).strip() for item in value if str(item).strip())
-        return str(value)
+    def _load_persona_alias_map(self, persona_path: Path) -> Dict[str, str]:
+        payload = json.loads(persona_path.read_text(encoding="utf-8"))
+        alias_map: Dict[str, str] = {}
+        for sample in payload.get("samples", []):
+            persona_id = sample["segment_id"]
+            basic_profile = sample.get("basic_profile", {})
+            alias_map.setdefault(persona_id, persona_id)
+            alias_map.setdefault(sample.get("segment_name", ""), persona_id)
+            alias_map.setdefault(basic_profile.get("nickname", ""), persona_id)
+        sorted_aliases = sorted(alias_map.items(), key=lambda item: len(item[0]), reverse=True)
+        return {alias: persona_id for alias, persona_id in sorted_aliases if alias}
 
     def _build_session_id(self, group_id: str, conversation_id: str, user_id: str) -> str:
         return f"{group_id}__{conversation_id}__{user_id}"

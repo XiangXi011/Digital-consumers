@@ -3,16 +3,9 @@ from typing import Any, Dict, List, Optional, TypedDict
 
 
 class AnalysisGraphState(TypedDict, total=False):
-    concept_input: Any
-    product: Any
-    evaluation_results: List[Dict[str, Any]]
-    discussion_participants: List[str]
-    deep_dive_candidates: Dict[str, List[str]]
-    discussion: Dict[str, Any]
-    deep_dives: Dict[str, List[Dict[str, Any]]]
-    orchestrator_report: Dict[str, Any]
+    research_input: Any
     report: Dict[str, Any]
-    markdown: str
+    html: str
     error: str
 
 
@@ -27,8 +20,8 @@ class DingTalkWorkflowState(TypedDict, total=False):
     has_minimum_runnable_info: bool
     missing_fields: List[str]
     response: Dict[str, Any]
-    concept_payload: Dict[str, Any]
-    concept_input: Any
+    research_input_payload: Dict[str, Any]
+    research_input: Any
     report: Dict[str, Any]
     html: str
     html_report_path: str

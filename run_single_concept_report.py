@@ -1,36 +1,39 @@
+import json
 from pathlib import Path
 
-from concept_testing import ConceptTestInput, ConceptTestRunner
+from html_report_renderer import HTMLReportRenderer
+from qualitative_research import QualitativeResearchInput, QualitativeResearchRunner
 
 
-def build_sample_concept() -> ConceptTestInput:
-    return ConceptTestInput(
-        concept_name="舒客儿童益生菌防蛀牙膏概念版",
-        brand="舒客",
-        category="儿童口腔护理",
-        price=39.9,
-        core_claims=[
-            "益生菌配方",
-            "低氟防蛀",
-            "孩子更愿意坚持刷牙",
-        ],
-        packaging_summary="卡通水果视觉，正面突出年龄段和防蛀卖点。",
-        tagline="一支让孩子愿意每天使用的防蛀牙膏。",
-        target_channels=["天猫", "京东", "母婴店"],
-        competitive_anchors=["欧乐B儿童牙膏", "Putzi"],
-        context_notes="用于正式消费者调研前的概念预验证。",
+def build_sample_research_request() -> QualitativeResearchInput:
+    return QualitativeResearchInput(
+        mode="multi",
+        question_type="purchase_decision",
+        user_question="这款儿童牙膏 8 类妈妈会不会买，最大的顾虑是什么？",
+        product_info="低氟防蛀，孩子更愿意坚持刷牙。",
+        copy_material="专业防蛀，孩子喜欢，妈妈省心。",
+        background_material="用于上市前的定性预研究。",
     )
 
 
 def main():
     base_dir = Path(__file__).resolve().parent
-    runner = ConceptTestRunner(base_dir / "persona_samples_complete.json")
-    report = runner.run(build_sample_concept())
-    output_paths = runner.save_outputs(report, base_dir / "outputs")
+    output_dir = base_dir / "outputs"
+    output_dir.mkdir(parents=True, exist_ok=True)
 
-    print("Single concept report generated.")
-    print(f"JSON: {output_paths['json']}")
-    print(f"Markdown: {output_paths['markdown']}")
+    runner = QualitativeResearchRunner(base_dir / "persona_samples_complete.json")
+    report = runner.run(build_sample_research_request())
+    html = HTMLReportRenderer().render(report)
+
+    json_path = output_dir / "qualitative_research_report.json"
+    html_path = output_dir / "qualitative_research_report.html"
+
+    json_path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+    html_path.write_text(html, encoding="utf-8")
+
+    print("Qualitative research report generated.")
+    print(f"JSON: {json_path}")
+    print(f"HTML: {html_path}")
 
 
 if __name__ == "__main__":

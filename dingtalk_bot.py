@@ -1,14 +1,13 @@
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from advanced_testing import AdvancedTestRunner
 from ai_clients import AIClientConfig, OpenAICompatibleClient
-from concept_testing import ConceptTestInput, ConceptTestRunner
 from html_report_renderer import HTMLReportRenderer
 from langgraph_flows import (
     build_dingtalk_task_graph as _build_dingtalk_task_graph_impl,
     build_dingtalk_workflow_graph as _build_dingtalk_workflow_graph_impl,
 )
+from qualitative_research import QualitativeResearchInput, QualitativeResearchRunner
 from report_publisher import VercelStaticPublisher
 from task_session_manager import TaskSessionManager
 
@@ -34,12 +33,11 @@ class DingTalkBotWorkflow:
         self.ai_client = ai_client or OpenAICompatibleClient(
             config=AIClientConfig.from_env(base_dir=Path(__file__).resolve().parent)
         )
-        self.session_manager = TaskSessionManager(session_dir, ai_client=self.ai_client)
+        self.session_manager = TaskSessionManager(session_dir, persona_path=self.persona_path, ai_client=self.ai_client)
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
-        self.concept_input_cls = ConceptTestInput
-        self.runner = ConceptTestRunner(self.persona_path, ai_client=self.ai_client)
-        self.advanced_runner = AdvancedTestRunner(self.persona_path, ai_client=self.ai_client)
+        self.research_input_cls = QualitativeResearchInput
+        self.runner = QualitativeResearchRunner(self.persona_path, ai_client=self.ai_client)
         self.renderer = HTMLReportRenderer()
         self.report_publisher = report_publisher or VercelStaticPublisher(base_dir=Path(__file__).resolve().parent)
         self.graph = build_dingtalk_workflow_graph(self)
@@ -59,7 +57,7 @@ class DingTalkBotWorkflow:
             self.session_manager.save(session)
             return self._response(
                 session,
-                [{"type": "text", "content": "绯荤粺鍦ㄥ鐞嗕换鍔℃椂鍑虹幇寮傚父锛岃绋嶅悗閲嶈瘯銆?"}],
+                [{"type": "text", "content": "处理研究任务时发生错误，请稍后再试。"}],
             )
 
     def run_pending_task(self, task_id: str) -> Dict[str, Any]:
@@ -72,32 +70,21 @@ class DingTalkBotWorkflow:
             self.session_manager.save(session)
             return self._response(
                 session,
-                [{"type": "text", "content": "绯荤粺鍦ㄧ敓鎴愭姤鍛婃椂鍑虹幇寮傚父锛岃绋嶅悗閲嶈瘯銆?"}],
+                [{"type": "text", "content": "生成研究报告时发生错误，请稍后再试。"}],
             )
 
     def _build_short_summary(self, report: Dict[str, Any]) -> str:
-        top_segment = (
-            report["segment_opportunity"]["top_segments"][0]["segment"]
-            if report["segment_opportunity"]["top_segments"]
-            else "未识别"
+        summary = report.get("research_summary", {})
+        mode = report.get("meta", {}).get("mode", "multi")
+        mode_label = "多人模式" if mode == "multi" else "单人模式"
+        consensus = (summary.get("consensus") or ["多数妈妈会先看信息是否可信。"])[0]
+        barrier = (summary.get("barriers") or ["主要障碍是信息还不够清楚。"])[0]
+        covered = (
+            f"{report.get('meta', {}).get('total_agents', 0)} 位妈妈画像"
+            if mode == "multi"
+            else report.get("appendix", {}).get("selected_persona") or "指定妈妈画像"
         )
-        recommendation_label = self._translate_recommendation(
-            report["executive_summary"]["recommendation"]
-        )
-        return (
-            f"{report['executive_summary']['headline']} "
-            f"当前建议：{recommendation_label}。"
-            f"高潜人群：{top_segment}。"
-            f"预计转化率：{report['purchase_intent']['estimated_conversion_rate']}%。"
-        )
-
-    def _translate_recommendation(self, recommendation: str) -> str:
-        mapping = {
-            "advance_to_real_research": "可进入真实调研验证",
-            "revise_then_retest": "建议优化后再测",
-            "do_not_advance_yet": "暂不建议推进",
-        }
-        return mapping.get(recommendation, recommendation)
+        return f"{mode_label}，覆盖 {covered}。{consensus} {barrier}"
 
     def _load_session_by_task_id(self, task_id: str):
         session_id = task_id.rsplit("__run", 1)[0]
