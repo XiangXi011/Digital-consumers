@@ -22,6 +22,25 @@ class DingTalkStreamServiceTest(unittest.TestCase):
             self.fail("dingtalk_stream_service.py is missing")
         return load_module("dingtalk_stream_service_under_test", self.module_path)
 
+    def build_callback_message(self, text: str):
+        return type(
+            "CallbackMessage",
+            (),
+            {
+                "data": {
+                    "conversationId": "conv-1",
+                    "senderStaffId": "user-1",
+                    "senderId": "sender-1",
+                    "senderCorpId": "corp-1",
+                    "msgtype": "text",
+                    "text": {"content": text},
+                    "sessionWebhook": "https://example.com/webhook",
+                    "isInAtList": True,
+                    "conversationType": "2",
+                }
+            },
+        )()
+
     def test_stream_config_can_load_workspace_dotenv(self):
         module = self.load_or_fail()
 
@@ -83,25 +102,8 @@ class DingTalkStreamServiceTest(unittest.TestCase):
         workflow = FakeWorkflow()
         config = module.DingTalkStreamConfig(app_key="k", app_secret="s")
         handler = RecordingHandler(workflow, config)
-        callback_message = type(
-            "CallbackMessage",
-            (),
-            {
-                "data": {
-                    "conversationId": "conv-1",
-                    "senderStaffId": "user-1",
-                    "senderId": "sender-1",
-                    "senderCorpId": "corp-1",
-                    "msgtype": "text",
-                    "text": {"content": "@机器人 我想做妈妈定性研究"},
-                    "sessionWebhook": "https://example.com/webhook",
-                    "isInAtList": True,
-                    "conversationType": "2",
-                }
-            },
-        )()
 
-        handler.process(callback_message)
+        handler.process(self.build_callback_message("@机器人 我想做妈妈定性研究"))
 
         self.assertEqual(len(workflow.events), 1)
         self.assertEqual(workflow.events[0]["group_id"], "corp-1")
@@ -109,8 +111,9 @@ class DingTalkStreamServiceTest(unittest.TestCase):
         self.assertEqual(workflow.events[0]["user_id"], "user-1")
         self.assertIn("妈妈定性研究", workflow.events[0]["text"])
         self.assertEqual(handler.sent_text, ["研究任务信息清单"])
+        self.assertEqual(handler.sent_markdown, [])
 
-    def test_handler_runs_pending_task_and_sends_qualitative_markdown_report(self):
+    def test_handler_runs_pending_task_and_sends_only_final_markdown_report(self):
         module = self.load_or_fail()
 
         class FakeWorkflow:
@@ -131,7 +134,7 @@ class DingTalkStreamServiceTest(unittest.TestCase):
                 return {
                     "status": "completed",
                     "task_id": task_id,
-                    "messages": [{"type": "text", "content": "简版结论：多数妈妈先看可信度，最大的障碍是信息不够清楚。"}],
+                    "messages": [{"type": "text", "content": "简版结论：多数妈妈先看可信度"}],
                     "html_report_path": "C:/reports/task-123.html",
                     "json_report_path": "C:/reports/task-123.json",
                 }
@@ -160,32 +163,68 @@ class DingTalkStreamServiceTest(unittest.TestCase):
             report_public_base_url="https://bot.example.com/reports",
         )
         handler = RecordingHandler(workflow, config)
-        callback_message = type(
-            "CallbackMessage",
-            (),
-            {
-                "data": {
-                    "conversationId": "conv-1",
-                    "senderStaffId": "user-1",
-                    "senderId": "sender-1",
-                    "senderCorpId": "corp-1",
-                    "msgtype": "text",
-                    "text": {"content": "按当前信息运行"},
-                    "sessionWebhook": "https://example.com/webhook",
-                    "isInAtList": True,
-                    "conversationType": "2",
-                }
-            },
-        )()
 
-        handler.process(callback_message)
+        handler.process(self.build_callback_message("按当前信息运行"))
 
         self.assertEqual(workflow.task_ids, ["task-123"])
-        self.assertEqual(handler.sent_text, ["开始生成妈妈原声与研究总结"])
+        self.assertEqual(handler.sent_text, [])
         self.assertEqual(len(handler.sent_markdown), 1)
         self.assertEqual(handler.sent_markdown[0][0], "数字消费者洞察报告")
         self.assertIn("简版结论：多数妈妈先看可信度", handler.sent_markdown[0][1])
         self.assertIn("https://bot.example.com/reports/task-123.html", handler.sent_markdown[0][1])
+
+    def test_handler_incomplete_run_sends_only_error_text(self):
+        module = self.load_or_fail()
+
+        class FakeWorkflow:
+            def __init__(self):
+                self.task_ids = []
+
+            def handle_message(self, event):
+                return {
+                    "status": "running",
+                    "task_id": "task-123",
+                    "messages": [{"type": "text", "content": "开始生成妈妈原声与研究总结"}],
+                    "html_report_path": None,
+                    "json_report_path": None,
+                }
+
+            def run_pending_task(self, task_id):
+                self.task_ids.append(task_id)
+                return {
+                    "status": "error",
+                    "task_id": task_id,
+                    "messages": [{"type": "text", "content": "本次结果不完整，请稍后重试"}],
+                    "html_report_path": None,
+                    "json_report_path": None,
+                }
+
+        class RecordingHandler(module.DingTalkLangGraphHandler):
+            def __init__(self, workflow, config):
+                super().__init__(workflow, config)
+                self.sent_text = []
+                self.sent_markdown = []
+
+            def reply_text(self, text, incoming_message):
+                self.sent_text.append(text)
+                return {"ok": True}
+
+            def reply_markdown(self, title, text, incoming_message):
+                self.sent_markdown.append((title, text))
+                return {"ok": True}
+
+            def _extract_attachment_paths(self, incoming_message):
+                return []
+
+        workflow = FakeWorkflow()
+        config = module.DingTalkStreamConfig(app_key="k", app_secret="s")
+        handler = RecordingHandler(workflow, config)
+
+        handler.process(self.build_callback_message("按当前信息运行"))
+
+        self.assertEqual(workflow.task_ids, ["task-123"])
+        self.assertEqual(handler.sent_text, ["本次结果不完整，请稍后重试"])
+        self.assertEqual(handler.sent_markdown, [])
 
 
 if __name__ == "__main__":

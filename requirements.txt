@@ -1,1 +1,2 @@
+dashscope>=1.25.13
 langsmith>=0.7.11

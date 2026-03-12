@@ -75,6 +75,7 @@ def make_ingest_message_node(workflow):
         return {
             "session": session,
             "explicit_run_requested": explicit_run_requested,
+            "allow_assumption_run": session.allow_assumption_run,
             "has_minimum_runnable_info": has_minimum,
             "missing_fields": missing_fields,
         }
@@ -84,14 +85,41 @@ def make_ingest_message_node(workflow):
 
 def route_after_ingest(state: Dict[str, Any]) -> str:
     if state.get("explicit_run_requested") and state.get("has_minimum_runnable_info"):
-        return "start_analysis"
+        return "plan_research"
     return "send_follow_up"
+
+
+def make_plan_research_node(workflow):
+    def node(state: Dict[str, Any]) -> Dict[str, Any]:
+        session = state["session"]
+        payload = workflow.session_manager.build_research_input_payload(session)
+        research_input = workflow.research_input_cls(**payload)
+        research_plan = workflow.runner.plan(research_input)
+        session.planner_result = research_plan
+        workflow.session_manager.save(session)
+        return {
+            "session": session,
+            "research_plan": research_plan,
+            "planner_requires_clarification": bool(research_plan.get("needs_clarification")),
+            "allow_assumption_run": session.allow_assumption_run,
+        }
+
+    return node
+
+
+def route_after_planning(state: Dict[str, Any]) -> str:
+    if state.get("planner_requires_clarification") and not state.get("allow_assumption_run"):
+        return "send_follow_up"
+    return "start_analysis"
 
 
 def make_send_follow_up_node(workflow):
     def node(state: Dict[str, Any]) -> Dict[str, Any]:
         session = state["session"]
-        session.status = "collecting" if state.get("missing_fields") else "awaiting_run_confirmation"
+        if state.get("planner_requires_clarification"):
+            session.status = "awaiting_clarification"
+        else:
+            session.status = "collecting" if state.get("missing_fields") else "awaiting_run_confirmation"
         workflow.session_manager.save(session)
         response = workflow._response(
             session,
@@ -105,7 +133,7 @@ def make_send_follow_up_node(workflow):
 def make_start_analysis_node(workflow):
     def node(state: Dict[str, Any]) -> Dict[str, Any]:
         session = state["session"]
-        session.partial_run_authorized = bool(state.get("explicit_run_requested"))
+        session.partial_run_authorized = bool(state.get("allow_assumption_run"))
         session.status = "running"
         session.last_task_id = f"{session.session_id}__run"
         workflow.session_manager.save(session)

@@ -5,12 +5,18 @@ import os
 import re
 import tempfile
 from dataclasses import dataclass
+from http import HTTPStatus
 from pathlib import Path
 from typing import Any, Callable, Dict, Optional
 
 from openai import OpenAI
 from PIL import Image
 import requests
+
+try:
+    import dashscope
+except Exception:  # pragma: no cover - optional dependency
+    dashscope = None
 
 try:
     from langsmith import traceable as _langsmith_traceable
@@ -52,7 +58,14 @@ def _normalize_openai_base_url(base_url: Optional[str]) -> Optional[str]:
     return normalized
 
 
-def _get_config_value(name: str, dotenv_values: Dict[str, str], default: str = "") -> str:
+def _get_config_value(
+    name: str,
+    dotenv_values: Dict[str, str],
+    default: str = "",
+    prefer_dotenv: bool = False,
+) -> str:
+    if prefer_dotenv and name in dotenv_values:
+        return dotenv_values[name]
     if name in os.environ:
         return os.environ[name]
     if name in dotenv_values:
@@ -70,6 +83,8 @@ class AIClientConfig:
     base_url: Optional[str] = None
     model: str = "gpt-4.1-mini"
     fallback_model: str = ""
+    vision_api_key: str = ""
+    vision_base_url: Optional[str] = None
     vision_model: str = "gpt-4.1-mini"
     timeout_seconds: float = 30.0
     ocr_base_url: Optional[str] = "http://192.168.118.80:18080/v1"
@@ -90,18 +105,27 @@ class AIClientConfig:
         except ValueError:
             ocr_timeout_seconds = 120.0
 
+        text_api_key = _get_config_value("OPENAI_API_KEY", dotenv_values, "")
+        text_base_url = _normalize_openai_base_url(_get_config_value("OPENAI_BASE_URL", dotenv_values, "")) or None
         default_model = _get_config_value("OPENAI_MODEL", dotenv_values, "gpt-4.1-mini")
-        vision_model_raw = _get_config_value("OPENAI_VISION_MODEL", dotenv_values, default_model)
+        dashscope_base_url_raw = _get_config_value("DASHSCOPE_BASE_URL", dotenv_values, "", prefer_dotenv=True)
+        dashscope_api_key = _get_config_value("DASHSCOPE_API_KEY", dotenv_values, "", prefer_dotenv=True)
+        dashscope_vision_model = _get_config_value("DASHSCOPE_VISION_MODEL", dotenv_values, "", prefer_dotenv=True)
+        dashscope_enabled = bool(dashscope_api_key or dashscope_base_url_raw or dashscope_vision_model)
+        dashscope_base_url = dashscope_base_url_raw or ("https://dashscope.aliyuncs.com/api/v1" if dashscope_enabled else "")
+        vision_model_raw = dashscope_vision_model or _get_config_value("OPENAI_VISION_MODEL", dotenv_values, default_model)
         if vision_model_raw.strip().lower() in {"", "disabled", "none", "off"}:
             vision_model = ""
         else:
             vision_model = vision_model_raw
 
         return cls(
-            api_key=_get_config_value("OPENAI_API_KEY", dotenv_values, ""),
-            base_url=_normalize_openai_base_url(_get_config_value("OPENAI_BASE_URL", dotenv_values, "")) or None,
+            api_key=text_api_key,
+            base_url=text_base_url,
             model=default_model,
             fallback_model=_get_config_value("OPENAI_FALLBACK_MODEL", dotenv_values, ""),
+            vision_api_key=dashscope_api_key,
+            vision_base_url=dashscope_base_url or None,
             vision_model=vision_model,
             timeout_seconds=timeout_seconds,
             ocr_base_url=_normalize_openai_base_url(
@@ -321,6 +345,7 @@ class OpenAICompatibleClient(BaseAIClient):
         super().__init__(langsmith_config=langsmith_config)
         self.config = config or AIClientConfig.from_env()
         self.is_configured = bool(self.config.api_key)
+        self.supports_parallel_calls = True
         self.client = None
         self._ocr_engine = None
         self._ocr_unavailable = RapidOCR is None
@@ -496,29 +521,56 @@ class OpenAICompatibleClient(BaseAIClient):
             },
         )
 
-    def _build_image_content(self, image_path: Path, prompt: str) -> list[dict[str, Any]]:
+    def _build_dashscope_image_content(self, image_path: Path, prompt: str) -> list[dict[str, Any]]:
         mime_type = "image/png"
         if image_path.suffix.lower() in {".jpg", ".jpeg"}:
             mime_type = "image/jpeg"
         image_base64 = base64.b64encode(image_path.read_bytes()).decode("ascii")
         return [
-            {"type": "text", "text": prompt},
-            {
-                "type": "image_url",
-                "image_url": {"url": f"data:{mime_type};base64,{image_base64}"},
-            },
+            {"image": f"data:{mime_type};base64,{image_base64}"},
+            {"text": prompt},
         ]
 
+    def _extract_dashscope_text(self, response: Any) -> str:
+        try:
+            content = response.output.choices[0].message.content
+        except Exception as exc:  # pragma: no cover - defensive parsing
+            raise RuntimeError(f"Unexpected DashScope response format: {exc}") from exc
+
+        if isinstance(content, str):
+            return content
+
+        if isinstance(content, list):
+            text_parts = [str(item.get("text", "")).strip() for item in content if isinstance(item, dict)]
+            text = "\n".join(part for part in text_parts if part)
+            if text:
+                return text
+
+        raise RuntimeError("DashScope response did not contain any text content.")
+
     def _create_vision_completion(self, image_path: Path, prompt: str):
-        return self.client.chat.completions.create(
+        if dashscope is None:
+            raise RuntimeError("DashScope SDK is unavailable.")
+        if not self.config.vision_api_key:
+            raise RuntimeError("DashScope API key is missing.")
+
+        dashscope.base_http_api_url = self.config.vision_base_url or "https://dashscope.aliyuncs.com/api/v1"
+        response = dashscope.MultiModalConversation.call(
+            api_key=self.config.vision_api_key,
             model=self.config.vision_model,
             messages=[
                 {
                     "role": "user",
-                    "content": self._build_image_content(image_path, prompt),
+                    "content": self._build_dashscope_image_content(image_path, prompt),
                 }
             ],
         )
+        status_code = getattr(response, "status_code", None)
+        if status_code not in {None, HTTPStatus.OK, 200}:
+            code = getattr(response, "code", "")
+            message = getattr(response, "message", "") or getattr(response, "msg", "")
+            raise RuntimeError(f"DashScope request failed with status {status_code}: {code} {message}".strip())
+        return response
 
     def _build_extraction_image_parts(self, image_path: Path, temp_dir: Path) -> list[Path]:
         file_size = image_path.stat().st_size
@@ -816,18 +868,6 @@ class OpenAICompatibleClient(BaseAIClient):
 
     def analyze_image(self, image_path: Path, prompt: str) -> Dict[str, Any]:
         def execute() -> Dict[str, Any]:
-            if not self.is_configured or not self.client:
-                return {
-                    "mode": "fallback_vision",
-                    "text": "Fallback visual summary: API configuration is missing, so image analysis used local defaults.",
-                    "structured_signals": {
-                        "clarity": "unknown",
-                        "child_appeal": "unknown",
-                        "safety_signal": "unknown",
-                        "premium_feel": "unknown",
-                    },
-                }
-
             if not self.config.vision_model:
                 return {
                     "mode": "fallback_vision",
@@ -840,9 +880,33 @@ class OpenAICompatibleClient(BaseAIClient):
                     },
                 }
 
+            if dashscope is None:
+                return {
+                    "mode": "fallback_vision",
+                    "text": "Fallback visual summary: DashScope SDK is unavailable, so image analysis used local defaults.",
+                    "structured_signals": {
+                        "clarity": "unknown",
+                        "child_appeal": "unknown",
+                        "safety_signal": "unknown",
+                        "premium_feel": "unknown",
+                    },
+                }
+
+            if not self.config.vision_api_key:
+                return {
+                    "mode": "fallback_vision",
+                    "text": "Fallback visual summary: DashScope API configuration is missing, so image analysis used local defaults.",
+                    "structured_signals": {
+                        "clarity": "unknown",
+                        "child_appeal": "unknown",
+                        "safety_signal": "unknown",
+                        "premium_feel": "unknown",
+                    },
+                }
+
             try:
                 response = self._create_vision_completion(image_path, prompt)
-                text = response.choices[0].message.content or ""
+                text = self._extract_dashscope_text(response)
                 return {
                     "mode": "live_vision",
                     "model": self.config.vision_model,
@@ -879,14 +943,14 @@ class OpenAICompatibleClient(BaseAIClient):
         )
 
     def extract_product_fields_from_image(self, image_path: Path) -> Dict[str, Any]:
-        if not self.is_configured or not self.client:
+        if not self.config.vision_model:
             return {
                 "mode": "fallback_vision_extraction",
                 "fields": {},
                 "raw_text": "",
             }
 
-        if not self.config.vision_model:
+        if dashscope is None or not self.config.vision_api_key:
             return {
                 "mode": "fallback_vision_extraction",
                 "fields": {},
@@ -929,7 +993,7 @@ class OpenAICompatibleClient(BaseAIClient):
                 for image_part in image_parts:
                     try:
                         response = self._create_vision_completion(image_part, prompt)
-                        text = response.choices[0].message.content or ""
+                        text = self._extract_dashscope_text(response)
                         raw_text_parts.append(text)
                         raw_fields = _normalize_extracted_fields(_extract_json_object(text))
                         merged_fields = self._merge_extracted_fields(merged_fields, raw_fields)

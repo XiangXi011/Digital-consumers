@@ -17,8 +17,11 @@ class DingTalkWorkflowState(TypedDict, total=False):
     reset_requested: bool
     reset_completed: bool
     explicit_run_requested: bool
+    allow_assumption_run: bool
     has_minimum_runnable_info: bool
     missing_fields: List[str]
+    research_plan: Dict[str, Any]
+    planner_requires_clarification: bool
     response: Dict[str, Any]
     research_input_payload: Dict[str, Any]
     research_input: Any

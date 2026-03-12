@@ -7,7 +7,11 @@ from langgraph_flows import (
     build_dingtalk_task_graph as _build_dingtalk_task_graph_impl,
     build_dingtalk_workflow_graph as _build_dingtalk_workflow_graph_impl,
 )
-from qualitative_research import QualitativeResearchInput, QualitativeResearchRunner
+from qualitative_research import (
+    IncompleteResearchRunError,
+    QualitativeResearchInput,
+    QualitativeResearchRunner,
+)
 from report_publisher import VercelStaticPublisher
 from task_session_manager import TaskSessionManager
 
@@ -30,9 +34,12 @@ class DingTalkBotWorkflow:
         report_publisher=None,
     ):
         self.persona_path = Path(persona_path)
-        self.ai_client = ai_client or OpenAICompatibleClient(
-            config=AIClientConfig.from_env(base_dir=Path(__file__).resolve().parent)
-        )
+        if ai_client is None:
+            default_config = AIClientConfig.from_env(base_dir=Path(__file__).resolve().parent)
+            default_config.timeout_seconds = max(default_config.timeout_seconds, 180.0)
+            self.ai_client = OpenAICompatibleClient(config=default_config)
+        else:
+            self.ai_client = ai_client
         self.session_manager = TaskSessionManager(session_dir, persona_path=self.persona_path, ai_client=self.ai_client)
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
@@ -64,6 +71,18 @@ class DingTalkBotWorkflow:
         try:
             state = self.task_graph.invoke({"task_id": task_id})
             return state["response"]
+        except IncompleteResearchRunError:
+            session = self._load_session_by_task_id(task_id)
+            session.status = "error"
+            session.html_report_path = None
+            session.json_report_path = None
+            self.session_manager.save(session)
+            return self._response(
+                session,
+                [{"type": "text", "content": "本次结果不完整，请稍后重试"}],
+                html_report_path=None,
+                json_report_path=None,
+            )
         except Exception:
             session = self._load_session_by_task_id(task_id)
             session.status = "error"

@@ -72,11 +72,16 @@ class DingTalkLangGraphHandler(AsyncChatbotHandler):
 
         event = self._build_workflow_event(incoming_message)
         result = self.workflow.handle_message(event)
-        self._send_workflow_messages(result, incoming_message)
 
         if result.get("status") == "running" and result.get("task_id"):
             finished = self.workflow.run_pending_task(result["task_id"])
-            self._send_completion_message(finished, incoming_message)
+            if finished.get("status") == "completed":
+                self._send_completion_message(finished, incoming_message)
+            else:
+                self._send_workflow_messages(finished, incoming_message)
+            return
+
+        self._send_workflow_messages(result, incoming_message)
 
     def _should_process(self, incoming_message: ChatbotMessage) -> bool:
         if incoming_message.conversation_type == "1":

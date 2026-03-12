@@ -8,6 +8,7 @@ from langgraph_nodes import (
     make_load_session_node,
     make_load_task_session_node,
     make_persist_outputs_node,
+    make_plan_research_node,
     make_publish_report_node,
     make_render_html_node,
     make_reset_session_node,
@@ -18,6 +19,7 @@ from langgraph_nodes import (
     make_workflow_error_node,
     route_after_detect_command,
     route_after_ingest,
+    route_after_planning,
 )
 from langgraph_state import AnalysisGraphState, DingTalkWorkflowState
 
@@ -37,6 +39,7 @@ def build_dingtalk_workflow_graph(workflow):
     graph.add_node("reset_session", make_reset_session_node(workflow))
     graph.add_node("send_checklist", make_send_checklist_node(workflow))
     graph.add_node("ingest_message", make_ingest_message_node(workflow))
+    graph.add_node("plan_research", make_plan_research_node(workflow))
     graph.add_node("send_follow_up", make_send_follow_up_node(workflow))
     graph.add_node("start_analysis", make_start_analysis_node(workflow))
     graph.add_node("error", make_workflow_error_node(workflow))
@@ -56,6 +59,14 @@ def build_dingtalk_workflow_graph(workflow):
     graph.add_conditional_edges(
         "ingest_message",
         route_after_ingest,
+        {
+            "send_follow_up": "send_follow_up",
+            "plan_research": "plan_research",
+        },
+    )
+    graph.add_conditional_edges(
+        "plan_research",
+        route_after_planning,
         {
             "send_follow_up": "send_follow_up",
             "start_analysis": "start_analysis",
