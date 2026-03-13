@@ -17,35 +17,19 @@ FIELD_SPECS = [
 
 FIELD_LABEL_MAP = {
     "模式": "mode",
-    "mode": "mode",
     "研究问题": "question_type",
-    "问题类型": "question_type",
-    "question_type": "question_type",
     "指定妈妈画像": "persona_id",
     "妈妈画像": "persona_id",
     "画像": "persona_id",
-    "persona": "persona_id",
-    "persona_id": "persona_id",
     "用户问题": "user_question",
-    "用户提问": "user_question",
-    "原始问题": "user_question",
-    "question": "user_question",
-    "user_question": "user_question",
+    "问题": "user_question",
     "背景资料": "background_material",
     "背景": "background_material",
-    "background": "background_material",
-    "background_material": "background_material",
     "产品信息": "product_info",
-    "产品资料": "product_info",
     "产品": "product_info",
-    "product": "product_info",
-    "product_info": "product_info",
     "文案或卖点": "copy_material",
-    "文案和卖点": "copy_material",
     "文案": "copy_material",
     "卖点": "copy_material",
-    "copy": "copy_material",
-    "copy_material": "copy_material",
 }
 
 MODE_ALIASES = {
@@ -53,79 +37,29 @@ MODE_ALIASES = {
     "多人": "multi",
     "8类妈妈": "multi",
     "八类妈妈": "multi",
-    "multi": "multi",
-    "multi mode": "multi",
     "单人模式": "single",
     "单人": "single",
-    "single": "single",
-    "single mode": "single",
 }
 
 QUESTION_TYPE_ALIASES = {
     "产品概念": "product_concept",
-    "product concept": "product_concept",
     "购买决策": "purchase_decision",
-    "purchase decision": "purchase_decision",
     "需求痛点": "needs_pain_points",
-    "pain points": "needs_pain_points",
-    "needs": "needs_pain_points",
     "文案和卖点反馈": "copy_feedback",
     "文案反馈": "copy_feedback",
     "卖点反馈": "copy_feedback",
-    "copy feedback": "copy_feedback",
-    "copy": "copy_feedback",
 }
 
-RUN_CONFIRM_TOKENS = [
-    "按当前信息运行",
-    "开始分析",
-    "运行",
-    "开始跑",
-    "开始研究",
-    "run",
-    "start",
-]
-ASSUMPTION_RUN_TOKENS = [
-    "先按当前信息跑一次",
-    "先按现有资料跑一次",
-    "先跑一次",
-    "可以先跑",
-    "可以先假设",
-    "带假设先跑",
-    "run once with assumptions",
-    "run with assumptions",
-    "assume and run",
-    "use assumptions and run",
-]
-RESET_COMMAND_TOKENS = [
-    "新任务",
-    "重置任务",
-    "清空任务",
-    "重新开始",
-    "reset",
-    "new task",
-]
-QUESTION_HINTS = [
-    "?",
-    "？",
-    "会不会",
-    "有没有",
-    "为什么",
-    "什么",
-    "顾虑",
-    "痛点",
-    "文案",
-    "卖点",
-    "吸引力",
-    "why",
-    "what",
-    "which",
-    "will",
-]
+RUN_CONFIRM_TOKENS = ["按当前信息运行", "开始分析", "运行", "开始跑", "开始研究"]
+WEAK_AFFIRM_TOKENS = ["好", "可以", "嗯", "好的", "行", "ok", "OK"]
+DENIAL_TOKENS = ["等等", "先别", "不要", "暂停", "停", "别跑", "取消"]
+AUTHORIZATION_WINDOW_SECONDS = 300  # 5 minutes
+RESET_COMMAND_TOKENS = ["新任务", "重置任务", "清空任务", "重新开始"]
+QUESTION_HINTS = ["?", "？", "会不会", "有没有", "为什么", "什么", "顾虑", "痛点", "文案", "卖点", "吸引力"]
 FIELD_ALIASES = sorted(FIELD_LABEL_MAP.items(), key=lambda item: len(item[0]), reverse=True)
-FIELD_ALIAS_PATTERN = re.compile("|".join(re.escape(alias) for alias, _ in FIELD_ALIASES), re.IGNORECASE)
-FIELD_PREFIX_BOUNDARIES = set(" \t,，：:？。?!；;()（）[]【】")
-FIELD_VALUE_PREFIX_CHARS = " ：:；;，,。"
+FIELD_ALIAS_PATTERN = re.compile("|".join(re.escape(alias) for alias, _ in FIELD_ALIASES))
+FIELD_PREFIX_BOUNDARIES = set(" \t,，:：;；。!?？！[]【】()（）")
+FIELD_VALUE_PREFIX_CHARS = " ：:;；，, \t"
 
 
 def build_empty_fields() -> Dict[str, Dict[str, Any]]:
@@ -172,15 +106,16 @@ class TaskSession:
     status: str = "collecting"
     checklist_sent: bool = False
     partial_run_authorized: bool = False
-    allow_assumption_run: bool = False
     fields: Dict[str, Dict[str, Any]] = field(default_factory=build_empty_fields)
     missing_fields: List[str] = field(default_factory=list)
     attachments: List[str] = field(default_factory=list)
     follow_up_context: str = ""
-    planner_result: Dict[str, Any] = field(default_factory=dict)
     last_task_id: Optional[str] = None
     html_report_path: Optional[str] = None
     json_report_path: Optional[str] = None
+    research_plan: Optional[Dict[str, Any]] = None
+    authorization_requested_at: Optional[float] = None
+    authorization_requested_by: Optional[str] = None
 
     def to_dict(self) -> Dict[str, Any]:
         return asdict(self)
@@ -194,18 +129,8 @@ class TaskSession:
                 group_id=data["group_id"],
                 conversation_id=data["conversation_id"],
                 user_id=data["user_id"],
-                status="collecting",
-                checklist_sent=False,
-                partial_run_authorized=False,
-                allow_assumption_run=False,
                 fields=fields,
-                missing_fields=[],
                 attachments=data.get("attachments", []),
-                follow_up_context="",
-                planner_result={},
-                last_task_id=None,
-                html_report_path=None,
-                json_report_path=None,
             )
         return cls(
             session_id=data["session_id"],
@@ -215,15 +140,16 @@ class TaskSession:
             status=data.get("status", "collecting"),
             checklist_sent=data.get("checklist_sent", False),
             partial_run_authorized=data.get("partial_run_authorized", False),
-            allow_assumption_run=data.get("allow_assumption_run", False),
             fields=fields,
             missing_fields=data.get("missing_fields", []),
             attachments=data.get("attachments", []),
             follow_up_context=data.get("follow_up_context", ""),
-            planner_result=data.get("planner_result", {}),
             last_task_id=data.get("last_task_id"),
             html_report_path=data.get("html_report_path"),
             json_report_path=data.get("json_report_path"),
+            research_plan=data.get("research_plan"),
+            authorization_requested_at=data.get("authorization_requested_at"),
+            authorization_requested_by=data.get("authorization_requested_by"),
         )
 
 
@@ -241,15 +167,19 @@ class TaskSessionManager:
         path = self._path_for(self._build_session_id(group_id, conversation_id, user_id))
         if not path.exists():
             return None
-        with open(path, "r", encoding="utf-8") as handle:
-            return TaskSession.from_dict(json.load(handle))
+        return TaskSession.from_dict(json.loads(path.read_text(encoding="utf-8")))
 
     def get_or_create(self, group_id: str, conversation_id: str, user_id: str) -> TaskSession:
         session_id = self._build_session_id(group_id, conversation_id, user_id)
         path = self._path_for(session_id)
         if path.exists():
             return self.load(session_id)
-        session = TaskSession(session_id=session_id, group_id=group_id, conversation_id=conversation_id, user_id=user_id)
+        session = TaskSession(
+            session_id=session_id,
+            group_id=group_id,
+            conversation_id=conversation_id,
+            user_id=user_id,
+        )
         self.save(session)
         return session
 
@@ -258,59 +188,91 @@ class TaskSessionManager:
         path = self._path_for(session_id)
         if path.exists():
             path.unlink()
-        session = TaskSession(session_id=session_id, group_id=group_id, conversation_id=conversation_id, user_id=user_id)
+        session = TaskSession(
+            session_id=session_id,
+            group_id=group_id,
+            conversation_id=conversation_id,
+            user_id=user_id,
+        )
         self.save(session)
         return session
 
     def load(self, session_id: str) -> TaskSession:
-        with open(self._path_for(session_id), "r", encoding="utf-8") as handle:
-            return TaskSession.from_dict(json.load(handle))
+        return TaskSession.from_dict(
+            json.loads(self._path_for(session_id).read_text(encoding="utf-8"))
+        )
 
     def save(self, session: TaskSession):
         session.missing_fields = self.get_missing_fields(session)
-        with open(self._path_for(session.session_id), "w", encoding="utf-8") as handle:
-            json.dump(session.to_dict(), handle, ensure_ascii=False, indent=2)
+        self._path_for(session.session_id).write_text(
+            json.dumps(session.to_dict(), ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
 
     def update_from_message(self, session: TaskSession, text: str, attachments: Optional[List[str]] = None):
         normalized_text = (text or "").strip()
-        changed = False
-
         for attachment in attachments or []:
             if attachment not in session.attachments:
                 session.attachments.append(attachment)
-                changed = True
 
         for key, value in self._extract_field_updates(normalized_text):
-            changed = self._set_field_value(session, key, value) or changed
+            self._set_field_value(session, key, value)
 
-        changed = self._apply_inference(session, normalized_text) or changed
-
-        if self.has_assumption_authorization(normalized_text):
-            session.allow_assumption_run = True
-        elif changed:
-            session.allow_assumption_run = False
-
-        if changed:
-            session.planner_result = {}
-            if session.status == "awaiting_clarification":
-                session.status = "collecting"
-
+        self._apply_inference(session, normalized_text)
         self.save(session)
 
     def has_run_confirmation(self, text: str) -> bool:
         normalized = (text or "").strip()
         lowered = normalized.lower()
-        return lowered == "run" or any(token in normalized or token in lowered for token in RUN_CONFIRM_TOKENS)
+        return any(token in normalized for token in RUN_CONFIRM_TOKENS) or lowered == "run"
 
-    def has_assumption_authorization(self, text: str) -> bool:
+    def classify_authorization(
+        self, text: str, user_id: str, event: dict, session: Optional["TaskSession"] = None,
+    ) -> str:
+        """Classify authorization intent with user_id binding and time-window checks.
+
+        Returns one of: "strong_affirm", "weak_affirm", "denial", "none".
+        """
+        import time
+
         normalized = (text or "").strip()
         lowered = normalized.lower()
-        return any(token in normalized or token in lowered for token in ASSUMPTION_RUN_TOKENS)
+        is_direct = event.get("is_bot_mentioned", False) or event.get("is_private_chat", False)
+
+        # Check denial first
+        if any(token in normalized for token in DENIAL_TOKENS):
+            return "denial"
+
+        # Strong affirmation: explicit run tokens + bot-mention/private chat
+        has_run_token = any(token in normalized for token in RUN_CONFIRM_TOKENS) or lowered == "run"
+        if has_run_token:
+            if is_direct:
+                return "strong_affirm"
+            return "none"
+
+        # Weak affirmation: short confirmation words
+        if lowered in [t.lower() for t in WEAK_AFFIRM_TOKENS]:
+            if not is_direct:
+                return "none"
+            if session is None or session.status != "awaiting_run_confirmation":
+                return "none"
+            if session.authorization_requested_by != user_id:
+                return "none"
+            if session.authorization_requested_at is None:
+                return "none"
+            now = event.get("create_ts")
+            if now is None:
+                now = time.time() * 1000  # fallback to current time in ms
+            elapsed_seconds = (float(now) - session.authorization_requested_at) / 1000
+            if elapsed_seconds > AUTHORIZATION_WINDOW_SECONDS:
+                return "none"
+            return "weak_affirm"
+
+        return "none"
 
     def has_reset_command(self, text: str) -> bool:
         normalized = (text or "").strip()
-        lowered = normalized.lower()
-        return any(token in normalized or token in lowered for token in RESET_COMMAND_TOKENS)
+        return any(token in normalized for token in RESET_COMMAND_TOKENS)
 
     def get_missing_fields(self, session: TaskSession) -> List[str]:
         missing = []
@@ -329,11 +291,7 @@ class TaskSessionManager:
         return not self.get_missing_fields(session)
 
     def checklist_text(self) -> str:
-        lines = [
-            "已收到需求。请优先按以下研究任务信息清单提供信息：",
-            "",
-            "研究任务信息清单：",
-        ]
+        lines = ["已收到需求。请优先按以下研究任务信息清单提供信息：", "", "研究任务信息清单："]
         for spec in FIELD_SPECS:
             lines.append(f"- {spec['label']}（{spec['priority']}）")
         lines.append("")
@@ -345,9 +303,6 @@ class TaskSessionManager:
 
     def build_follow_up_text(self, session: TaskSession) -> str:
         known = self.summarize_known_information(session)
-        if session.status == "awaiting_clarification" and session.planner_result:
-            return self._build_planner_follow_up_text(session, known)
-
         lines = ["已整理当前研究任务。"]
         if known:
             lines.append("已提供：")
@@ -359,9 +314,23 @@ class TaskSessionManager:
             for label in session.missing_fields:
                 lines.append(f"- {label}")
             if "指定妈妈画像" in session.missing_fields:
-                lines.append("请指定妈妈画像，例如：高线忙碌妈 或 M04。")
+                lines.append("请指定妈妈画像，例如：高线忙碌妈妈 或 M04。")
         else:
             lines.append("信息已收齐，如继续请直接回复“按当前信息运行”。")
+        return "\n".join(lines)
+
+    def build_clarification_text(self, session: TaskSession) -> str:
+        plan = session.research_plan or {}
+        questions = plan.get("clarifying_questions", [])
+        missing = plan.get("missing_information", [])
+        lines = ["当前资料还不足以发起调研，请先补充以下信息："]
+        for item in missing:
+            lines.append(f"- {item}")
+        if questions:
+            lines.append("")
+            lines.append("建议你补充：")
+            for item in questions:
+                lines.append(f"- {item}")
         return "\n".join(lines)
 
     def summarize_known_information(self, session: TaskSession) -> Dict[str, str]:
@@ -382,76 +351,66 @@ class TaskSessionManager:
             "copy_material": self._field_text(session, "copy_material"),
             "attachments": list(session.attachments),
             "follow_up_context": session.follow_up_context,
-            "allow_assumption_run": session.allow_assumption_run,
-            "planner_result": dict(session.planner_result),
         }
 
     def _field_text(self, session: TaskSession, key: str) -> str:
         value = session.fields[key]["value"]
         return "" if value is None else str(value)
 
-    def _apply_inference(self, session: TaskSession, text: str) -> bool:
-        changed = False
+    def _apply_inference(self, session: TaskSession, text: str):
         if session.fields["mode"]["status"] == "missing":
             inferred_mode = self.infer_mode(text)
             if inferred_mode:
-                changed = self._set_field_value(session, "mode", inferred_mode) or changed
+                self._set_field_value(session, "mode", inferred_mode)
 
         if session.fields["question_type"]["status"] == "missing":
             inferred_type = self.infer_question_type(text)
             if inferred_type:
-                changed = self._set_field_value(session, "question_type", inferred_type) or changed
+                self._set_field_value(session, "question_type", inferred_type)
 
         if session.fields["persona_id"]["status"] == "missing":
             inferred_persona = self.infer_persona_id(text)
             if inferred_persona:
-                changed = self._set_field_value(session, "persona_id", inferred_persona) or changed
+                self._set_field_value(session, "persona_id", inferred_persona)
 
         if session.fields["user_question"]["status"] == "missing":
             inferred_question = self.infer_user_question(text)
             if inferred_question:
-                changed = self._set_field_value(session, "user_question", inferred_question) or changed
-
-        return changed
+                self._set_field_value(session, "user_question", inferred_question)
 
     def infer_mode(self, text: str) -> str:
-        lowered = text.lower()
         for alias, normalized in MODE_ALIASES.items():
-            if alias in text or alias in lowered:
+            if alias in text:
                 return normalized
         return ""
 
     def infer_question_type(self, text: str) -> str:
-        lowered = text.lower()
         for alias, normalized in QUESTION_TYPE_ALIASES.items():
-            if alias in text or alias in lowered:
+            if alias in text:
                 return normalized
-        if "文案" in text or "卖点" in text or "copy" in lowered:
+        if "文案" in text or "卖点" in text:
             return "copy_feedback"
-        if "痛点" in text or "怎么解决" in text or "还缺什么" in text or "pain" in lowered:
+        if "痛点" in text or "怎么解决" in text or "缺少什么" in text:
             return "needs_pain_points"
-        if "会不会买" in text or "为什么买" in text or "最大顾虑" in text or "购买决策" in text or "buy" in lowered:
+        if "会不会买" in text or "为什么买" in text or "最大顾虑" in text or "购买决策" in text:
             return "purchase_decision"
-        if "概念" in text or "吸引力" in text or "感兴趣" in text or "concept" in lowered:
+        if "概念" in text or "吸引力" in text or "感兴趣" in text:
             return "product_concept"
         return ""
 
     def infer_persona_id(self, text: str) -> str:
-        lowered = text.lower()
         for alias, persona_id in self.persona_alias_map.items():
-            if alias and (alias in text or alias.lower() in lowered):
+            if alias and alias in text:
                 return persona_id
         return ""
 
     def infer_user_question(self, text: str) -> str:
-        normalized = text.strip()
-        if not normalized:
+        if not text:
             return ""
-        lowered = normalized.lower()
-        if "妈妈定性研究" in normalized and len(normalized) <= 20:
+        if "妈妈定性研究" in text and len(text) <= 20:
             return ""
-        if any(hint in normalized or hint in lowered for hint in QUESTION_HINTS):
-            return normalized
+        if any(hint in text for hint in QUESTION_HINTS):
+            return text.strip()
         return ""
 
     def _extract_field_updates(self, text: str) -> List[tuple[str, str]]:
@@ -470,9 +429,7 @@ class TaskSessionManager:
             if start > 0 and line[start - 1] not in FIELD_PREFIX_BOUNDARIES:
                 continue
             alias = match.group(0)
-            key = self._resolve_field_alias(alias)
-            if key:
-                matches.append((key, match.start(), match.end()))
+            matches.append((FIELD_LABEL_MAP[alias], match.start(), match.end()))
 
         updates: List[tuple[str, str]] = []
         for index, (key, _, end) in enumerate(matches):
@@ -483,57 +440,21 @@ class TaskSessionManager:
                 updates.append((key, value))
         return updates
 
-    def _resolve_field_alias(self, alias: str) -> str:
-        return FIELD_LABEL_MAP.get(alias, FIELD_LABEL_MAP.get(alias.lower(), ""))
-
-    def _set_field_value(self, session: TaskSession, key: str, value: Any) -> bool:
-        normalized_value = self._normalize_field_value(key, value)
-        state = session.fields[key]
-        next_value = str(normalized_value)
-        changed = state["status"] != "provided" or state["value"] != next_value
-        state["status"] = "provided"
-        state["value"] = next_value
-        return changed
-
-    def _normalize_field_value(self, key: str, value: Any) -> str:
-        text = str(value).strip()
-        lowered = text.lower()
+    def _set_field_value(self, session: TaskSession, key: str, value: Any):
+        normalized_value = value
         if key == "mode":
-            return MODE_ALIASES.get(text, MODE_ALIASES.get(lowered, text))
-        if key == "question_type":
-            return QUESTION_TYPE_ALIASES.get(text, QUESTION_TYPE_ALIASES.get(lowered, self.infer_question_type(text) or text))
-        if key == "persona_id":
-            return self.persona_alias_map.get(text, self.persona_alias_map.get(lowered, text))
-        return text
+            normalized_value = MODE_ALIASES.get(str(value), value)
+        elif key == "question_type":
+            normalized_value = QUESTION_TYPE_ALIASES.get(
+                str(value),
+                self.infer_question_type(str(value)) or value,
+            )
+        elif key == "persona_id":
+            normalized_value = self.persona_alias_map.get(str(value), value)
 
-    def _build_planner_follow_up_text(self, session: TaskSession, known: Dict[str, str]) -> str:
-        plan = session.planner_result
-        lines = ["研究助理已先完成需求拆解。"]
-        if known:
-            lines.append("当前已知信息：")
-            for label, value in known.items():
-                lines.append(f"- {label}：{value}")
-
-        missing_information = list(plan.get("missing_information") or [])
-        clarification_questions = list(plan.get("clarification_questions") or [])
-        assumptions = list(plan.get("assumptions_if_run_now") or [])
-
-        if missing_information:
-            lines.append("还需要补充：")
-            for item in missing_information:
-                lines.append(f"- {item}")
-
-        if clarification_questions:
-            lines.append("请先回答以下问题：")
-            for item in clarification_questions:
-                lines.append(f"- {item}")
-
-        if assumptions:
-            lines.append("如果你接受先基于以下假设跑第一轮，也可以直接授权：")
-            for item in assumptions:
-                lines.append(f"- {item}")
-            lines.append("可回复“先按当前信息跑一次”或“run once with assumptions”。")
-        return "\n".join(lines)
+        state = session.fields[key]
+        state["status"] = "provided"
+        state["value"] = str(normalized_value)
 
     def _load_persona_alias_map(self, persona_path: Path) -> Dict[str, str]:
         payload = json.loads(persona_path.read_text(encoding="utf-8"))
@@ -541,16 +462,9 @@ class TaskSessionManager:
         for sample in payload.get("samples", []):
             persona_id = sample["segment_id"]
             basic_profile = sample.get("basic_profile", {})
-            aliases = {
-                persona_id,
-                sample.get("segment_name", ""),
-                basic_profile.get("nickname", ""),
-            }
-            for alias in aliases:
-                if not alias:
-                    continue
-                alias_map.setdefault(alias, persona_id)
-                alias_map.setdefault(alias.lower(), persona_id)
+            alias_map.setdefault(persona_id, persona_id)
+            alias_map.setdefault(sample.get("segment_name", ""), persona_id)
+            alias_map.setdefault(basic_profile.get("nickname", ""), persona_id)
         sorted_aliases = sorted(alias_map.items(), key=lambda item: len(item[0]), reverse=True)
         return {alias: persona_id for alias, persona_id in sorted_aliases if alias}
 

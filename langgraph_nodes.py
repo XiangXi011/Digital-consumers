@@ -1,6 +1,8 @@
 import json
 from typing import Any, Dict
 
+from prompt_shield import check_prompt_injection
+
 
 def make_load_session_node(workflow):
     def node(state: Dict[str, Any]) -> Dict[str, Any]:
@@ -21,6 +23,37 @@ def make_detect_command_node(workflow):
         return {"reset_requested": workflow.session_manager.has_reset_command(text)}
 
     return node
+
+
+def make_prompt_shield_node(workflow):
+    """Pre-routing prompt injection shield (runtime-and-state.md §Pre-Routing Shield).
+
+    Must run before any LLM call. If injection detected, the message
+    is rejected and a warning is returned to the user.
+    """
+    def node(state: Dict[str, Any]) -> Dict[str, Any]:
+        text = state["event"].get("text", "").strip()
+        is_injection = check_prompt_injection(text)
+        if is_injection:
+            session = state["session"]
+            response = workflow._response(
+                session,
+                [{"type": "text", "content": "检测到不安全的指令内容，该消息已被拦截。请发送正常的研究任务信息。"}],
+            )
+            return {
+                "prompt_injection_detected": True,
+                "response": response,
+            }
+        return {"prompt_injection_detected": False}
+
+    return node
+
+
+def route_after_prompt_shield(state: Dict[str, Any]) -> str:
+    """Route after prompt shield: if injection detected, go to end; otherwise continue."""
+    if state.get("prompt_injection_detected"):
+        return "end"
+    return "continue"
 
 
 def route_after_detect_command(state: Dict[str, Any]) -> str:
@@ -69,13 +102,16 @@ def make_ingest_message_node(workflow):
         workflow.session_manager.update_from_message(session, text, attachments=attachments)
         session = workflow.session_manager.load(session.session_id)
         explicit_run_requested = workflow.session_manager.has_run_confirmation(text)
+        authorization_result = workflow.session_manager.classify_authorization(
+            text, event.get("user_id", ""), event, session=session,
+        )
         has_minimum = workflow.session_manager.has_minimum_runnable_info(session)
         missing_fields = list(session.missing_fields)
 
         return {
             "session": session,
             "explicit_run_requested": explicit_run_requested,
-            "allow_assumption_run": session.allow_assumption_run,
+            "authorization_result": authorization_result,
             "has_minimum_runnable_info": has_minimum,
             "missing_fields": missing_fields,
         }
@@ -83,43 +119,57 @@ def make_ingest_message_node(workflow):
     return node
 
 
-def route_after_ingest(state: Dict[str, Any]) -> str:
-    if state.get("explicit_run_requested") and state.get("has_minimum_runnable_info"):
-        return "plan_research"
-    return "send_follow_up"
+def make_readiness_gate_node(workflow):
+    """ReadinessGate — the ONLY node that decides whether info is sufficient.
 
-
-def make_plan_research_node(workflow):
+    Per master-spec.md: ReadinessGate is the only node allowed to decide
+    whether information is sufficient for execution. Centralizes readiness
+    logic that was previously split between ingest_message and start_analysis.
+    """
     def node(state: Dict[str, Any]) -> Dict[str, Any]:
-        session = state["session"]
-        payload = workflow.session_manager.build_research_input_payload(session)
-        research_input = workflow.research_input_cls(**payload)
-        research_plan = workflow.runner.plan(research_input)
-        session.planner_result = research_plan
-        workflow.session_manager.save(session)
-        return {
-            "session": session,
-            "research_plan": research_plan,
-            "planner_requires_clarification": bool(research_plan.get("needs_clarification")),
-            "allow_assumption_run": session.allow_assumption_run,
-        }
+        authorization_result = state.get("authorization_result", "none")
+        has_minimum = state.get("has_minimum_runnable_info", False)
+
+        authorized = authorization_result in ("strong_affirm", "weak_affirm")
+        readiness_passed = authorized and has_minimum
+        return {"readiness_passed": readiness_passed}
 
     return node
 
 
-def route_after_planning(state: Dict[str, Any]) -> str:
-    if state.get("planner_requires_clarification") and not state.get("allow_assumption_run"):
-        return "send_follow_up"
-    return "start_analysis"
+def route_after_readiness_gate(state: Dict[str, Any]) -> str:
+    """Route after ReadinessGate check."""
+    if state.get("readiness_passed"):
+        return "build_business_brief"
+    return "send_follow_up"
+
+
+def make_build_business_brief_node(workflow):
+    """Convert session fields into a typed BusinessBrief.
+
+    Per master-spec.md: downstream nodes must consume BusinessBrief,
+    not raw chat or untyped session fields.
+    """
+    def node(state: Dict[str, Any]) -> Dict[str, Any]:
+        from business_brief import BusinessBrief
+
+        session = state["session"]
+        brief = BusinessBrief.from_session_fields(session.fields)
+        return {"business_brief": brief.model_dump()}
+
+    return node
 
 
 def make_send_follow_up_node(workflow):
     def node(state: Dict[str, Any]) -> Dict[str, Any]:
+        import time
+
         session = state["session"]
-        if state.get("planner_requires_clarification"):
-            session.status = "awaiting_clarification"
-        else:
-            session.status = "collecting" if state.get("missing_fields") else "awaiting_run_confirmation"
+        event = state.get("event", {})
+        session.status = "collecting" if state.get("missing_fields") else "awaiting_run_confirmation"
+        if session.status == "awaiting_run_confirmation":
+            session.authorization_requested_at = event.get("create_ts") or time.time() * 1000
+            session.authorization_requested_by = event.get("user_id", session.user_id)
         workflow.session_manager.save(session)
         response = workflow._response(
             session,
@@ -133,19 +183,43 @@ def make_send_follow_up_node(workflow):
 def make_start_analysis_node(workflow):
     def node(state: Dict[str, Any]) -> Dict[str, Any]:
         session = state["session"]
-        session.partial_run_authorized = bool(state.get("allow_assumption_run"))
+        research_input = workflow.research_input_cls(
+            **workflow.session_manager.build_research_input_payload(session)
+        )
+
+        session.status = "planning"
+        workflow.session_manager.save(session)
+
+        research_plan = workflow.runner.plan(research_input)
+        session.research_plan = research_plan
+
+        if not research_plan.get("ready_to_dispatch"):
+            session.status = "awaiting_clarification"
+            session.last_task_id = None
+            session.html_report_path = None
+            session.json_report_path = None
+            workflow.session_manager.save(session)
+            response = workflow._response(
+                session,
+                [{"type": "text", "content": workflow.session_manager.build_clarification_text(session)}],
+                task_id=None,
+            )
+            return {"session": session, "status": session.status, "response": response}
+
+        session.partial_run_authorized = bool(state.get("explicit_run_requested"))
         session.status = "running"
         session.last_task_id = f"{session.session_id}__run"
         workflow.session_manager.save(session)
         response = workflow._response(
             session,
-            [{"type": "text", "content": "研究任务已收齐，开始生成妈妈原声与研究总结。"}],
+            [{"type": "text", "content": "开始生成妈妈原声与研究总结"}],
             task_id=session.last_task_id,
         )
         return {
             "session": session,
             "status": session.status,
             "task_id": session.last_task_id,
+            "research_plan": research_plan,
             "response": response,
         }
 
@@ -175,7 +249,7 @@ def make_load_task_session_node(workflow):
         task_id = state["task_id"]
         session_id = task_id.rsplit("__run", 1)[0]
         session = workflow.session_manager.load(session_id)
-        return {"session": session}
+        return {"session": session, "research_plan": session.research_plan}
 
     return node
 
@@ -184,14 +258,21 @@ def make_build_research_input_node(workflow):
     def node(state: Dict[str, Any]) -> Dict[str, Any]:
         payload = workflow.session_manager.build_research_input_payload(state["session"])
         research_input = workflow.research_input_cls(**payload)
-        return {"research_input_payload": payload, "research_input": research_input}
+        return {
+            "research_input_payload": payload,
+            "research_input": research_input,
+            "research_plan": state.get("research_plan") or state["session"].research_plan,
+        }
 
     return node
 
 
 def make_run_research_node(workflow):
     def node(state: Dict[str, Any]) -> Dict[str, Any]:
-        report = workflow.runner.run(state["research_input"])
+        report = workflow.runner.run(
+            state["research_input"],
+            research_plan=state.get("research_plan"),
+        )
         return {"report": report}
 
     return node
@@ -212,10 +293,8 @@ def make_persist_outputs_node(workflow):
         json_path = workflow.output_dir / f"{task_id}.json"
         html_path = workflow.output_dir / f"{task_id}.html"
 
-        with open(json_path, "w", encoding="utf-8") as handle:
-            json.dump(state["report"], handle, ensure_ascii=False, indent=2)
-        with open(html_path, "w", encoding="utf-8") as handle:
-            handle.write(state["html"])
+        json_path.write_text(json.dumps(state["report"], ensure_ascii=False, indent=2), encoding="utf-8")
+        html_path.write_text(state["html"], encoding="utf-8")
 
         session.status = "completed"
         session.html_report_path = str(html_path)

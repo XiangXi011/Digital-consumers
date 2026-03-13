@@ -4,7 +4,11 @@ from typing import Any, Dict, List, Optional, TypedDict
 
 class AnalysisGraphState(TypedDict, total=False):
     research_input: Any
+    business_brief: Dict[str, Any]
+    research_plan: Dict[str, Any]
     report: Dict[str, Any]
+    evidence_atoms: List[Dict[str, Any]]
+    persona_evaluations: List[Dict[str, Any]]
     html: str
     error: str
 
@@ -16,16 +20,20 @@ class DingTalkWorkflowState(TypedDict, total=False):
     status: str
     reset_requested: bool
     reset_completed: bool
+    prompt_injection_detected: bool
     explicit_run_requested: bool
-    allow_assumption_run: bool
     has_minimum_runnable_info: bool
+    readiness_passed: bool
+    authorization_result: str
     missing_fields: List[str]
-    research_plan: Dict[str, Any]
-    planner_requires_clarification: bool
+    business_brief: Dict[str, Any]
     response: Dict[str, Any]
     research_input_payload: Dict[str, Any]
     research_input: Any
+    research_plan: Dict[str, Any]
     report: Dict[str, Any]
+    evidence_atoms: List[Dict[str, Any]]
+    persona_evaluations: List[Dict[str, Any]]
     html: str
     html_report_path: str
     json_report_path: str

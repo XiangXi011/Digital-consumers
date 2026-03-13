@@ -1,4 +1,6 @@
 import os
+import sys
+from importlib import metadata
 from dataclasses import dataclass
 from pathlib import Path
 from typing import List, Optional
@@ -29,6 +31,41 @@ def _get_config_value(name: str, dotenv_values: dict[str, str], default: str = "
     if name in dotenv_values:
         return dotenv_values[name]
     return default
+
+
+def _parse_version_tuple(version_text: str) -> tuple[int, ...]:
+    values = []
+    for part in version_text.split("."):
+        digits = "".join(ch for ch in part if ch.isdigit())
+        if not digits:
+            break
+        values.append(int(digits))
+    return tuple(values)
+
+
+def _safe_package_version(package_name: str) -> str:
+    try:
+        return metadata.version(package_name)
+    except Exception:
+        return "unknown"
+
+
+def validate_runtime_environment(
+    python_version: str | None = None,
+    dingtalk_stream_version: str | None = None,
+    websockets_version: str | None = None,
+) -> str:
+    python_version = python_version or f"{sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}"
+    dingtalk_stream_version = dingtalk_stream_version or _safe_package_version("dingtalk-stream")
+    websockets_version = websockets_version or _safe_package_version("websockets")
+
+    if _parse_version_tuple(python_version) >= (3, 14):
+        return (
+            "Unsupported DingTalk stream runtime: Python 3.14+ is not approved for the "
+            f"current dingtalk-stream/websockets stack ({dingtalk_stream_version} / {websockets_version})."
+        )
+
+    return ""
 
 
 @dataclass
@@ -72,16 +109,14 @@ class DingTalkLangGraphHandler(AsyncChatbotHandler):
 
         event = self._build_workflow_event(incoming_message)
         result = self.workflow.handle_message(event)
+        self._send_workflow_messages(result, incoming_message)
 
         if result.get("status") == "running" and result.get("task_id"):
             finished = self.workflow.run_pending_task(result["task_id"])
-            if finished.get("status") == "completed":
-                self._send_completion_message(finished, incoming_message)
-            else:
+            if finished.get("status") == "error":
                 self._send_workflow_messages(finished, incoming_message)
-            return
-
-        self._send_workflow_messages(result, incoming_message)
+            else:
+                self._send_completion_message(finished, incoming_message)
 
     def _should_process(self, incoming_message: ChatbotMessage) -> bool:
         if incoming_message.conversation_type == "1":
@@ -106,6 +141,9 @@ class DingTalkLangGraphHandler(AsyncChatbotHandler):
             "user_id": incoming_message.sender_staff_id or incoming_message.sender_id or "unknown-user",
             "text": text,
             "attachments": attachments,
+            "is_bot_mentioned": bool(incoming_message.is_in_at_list),
+            "is_private_chat": incoming_message.conversation_type == "1",
+            "create_ts": incoming_message.create_at,
         }
 
     def _extract_attachment_paths(self, incoming_message: ChatbotMessage) -> List[str]:
@@ -173,4 +211,11 @@ class DingTalkStreamBotService:
         self.client.register_callback_handler(ChatbotMessage.DELEGATE_TOPIC, self.handler)
 
     def start_forever(self):
+        if not self.config.app_key or not self.config.app_secret:
+            raise RuntimeError("Missing DingTalk credentials: app_key/app_secret.")
+
+        runtime_warning = validate_runtime_environment()
+        if runtime_warning:
+            raise RuntimeError(runtime_warning)
+
         self.client.start_forever()
