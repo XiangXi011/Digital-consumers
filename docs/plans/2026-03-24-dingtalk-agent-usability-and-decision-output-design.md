@@ -48,6 +48,14 @@ Intake should support three user behaviors equally well:
 - messy natural-language task descriptions
 - screenshots / posters / detail-page images
 
+It must also support the way business users actually brief products:
+
+- pasted ecommerce links such as Taobao item links
+- pasted product titles next to links
+- a short list of selling points
+- multiple question groups in one request
+- personalized free-form questions mixed into the standard research prompts
+
 Design changes:
 
 - parse the first real message before deciding whether a checklist reminder is still necessary
@@ -55,6 +63,23 @@ Design changes:
 - keep field inference for `mode`, `question_type`, `persona_id`, and `user_question`, but reduce the expectation that users must label every field
 - when attachments are present, run OCR / product-field extraction and merge the extracted signals into the session before readiness evaluation
 - when information is still partial, continue with the best current brief instead of insisting on a complete research form
+- preserve source links as first-class input context instead of dropping them as noise
+- allow `product_info` to be assembled from mixed sources:
+  - direct product description text
+  - ecommerce link + visible title
+  - OCR-extracted packaging / detail-page text
+- allow `copy_material` to be a list of claims rather than one flat paragraph
+- allow `user_question` to be represented internally as a question bundle instead of a single sentence when the user provides multiple sub-questions
+
+Recommended intake interpretation:
+
+- keep one primary task mode for orchestration
+- allow one request to contain multiple question clusters such as:
+  - product concept questions
+  - purchase decision questions
+  - copy / selling point questions
+- preserve user-authored question wording whenever possible instead of rewriting everything into a fixed generic template
+- treat personalized questions as valid research prompts, not as malformed input
 
 ### 2. Personas become instinctive instead of rubric-driven
 
@@ -107,6 +132,20 @@ The primary DingTalk output becomes a decision card with five blocks:
 - `优先人群`
 - `立即动作`
 
+When the user asks multiple concrete questions, the decision card should still answer them in a usable way.
+
+Recommended addition:
+
+- `关键问题答复`: 3-5 short answers mapped to the user's most decision-relevant questions
+
+Example:
+
+- 这款产品有吸引力吗
+- 最打动人的点是什么
+- 最大顾虑是什么
+- 是否愿意为变色功能多花钱
+- 哪句文案最值得保留 / 重写
+
 Decision behavior rules:
 
 - every completed run must return one explicit recommendation
@@ -148,6 +187,8 @@ Recommended additions:
 
 - `decision_card`
 - `decision_frame`
+- `source_links`
+- `custom_questions`
 
 `decision_card` should include:
 
@@ -158,6 +199,9 @@ Recommended additions:
 - `major_risk`
 - `immediate_action`
 - `confidence_mode`
+- `question_answers`
+
+`custom_questions` should preserve user-authored question text in order, so synthesis can answer the user's actual wording rather than only the system's normalized categories.
 
 `research_summary` and `structured_recommendation` can remain during migration, but should become secondary compatibility layers rather than the main product surface.
 
