@@ -1,0 +1,5 @@
+.venv-dingtalk310/
+outputs/logs/dingtalk_stream_live_current.pid
+outputs/logs/dingtalk_stream_live_current_stdout.log
+outputs/logs/dingtalk_stream_live_current_stderr.log
+.worktrees/
