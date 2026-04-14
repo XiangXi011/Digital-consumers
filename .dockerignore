@@ -1,0 +1,44 @@
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Python cache/artifacts
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node artifacts
+frontend/node_modules/
+frontend/dist/
+
+# Local environments
+.venv/
+.venv-dingtalk310/
+venv/
+.env
+.env.example
+
+# Runtime outputs (mounted via volume at runtime)
+outputs/
+
+# IDE / editor
+.vscode/
+.idea/
+
+# Docs / design assets not needed in image
+stitch/
+docs/
+*.md
+*.log
+
+# CI/CD and tests
+.github/
+.worktrees/
+tests/
+scripts/
