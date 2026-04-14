@@ -164,6 +164,9 @@ class HTMLReportRenderer:
         opportunity = structured.get("opportunity_areas") or summary.get("drivers") or []
         if key_risks and not opportunity:
             decision = "建议先优化后推进"
+        elif len(key_risks) > len(opportunity):
+            # More risks than opportunities: cautious recommendation
+            decision = "建议优化风险后推进"
         else:
             decision = "建议推进"
 

@@ -1,0 +1,41 @@
+id: M06
+name: 低意识渠道依赖型
+budget_band: "low"
+
+# 原型: 人群6：关注意识低，预防性的
+# 代表: 郭女士(40岁/行政职员/月入1.2万)
+# 特征: 决策快, 依赖他人推荐和渠道筛选, 对产品了解少, 朋友推荐>外观, 品牌不忠诚
+
+decision_weights:
+  efficacy_clarity: 0.20
+  trust_signal: 0.20
+  convenience: 0.30
+  price_fit: 0.30
+
+veto_trigger: "身边人说不好 / 太贵 / 买不到"
+
+veto_rules:
+  - code: "bad_word_of_mouth"
+    description: "身边人有负面评价"
+  - code: "too_expensive"
+    description: "价格超出预期"
+  - code: "hard_to_find"
+    description: "购买渠道不方便"
+
+feature_scoring_rubric:
+  efficacy_clarity:
+    5: "简单直白地说明产品功能，不绕弯子，一看就懂"
+    3: "功效说得还行但不确定实际效果"
+    1: "说得天花乱坠但看不出到底有什么用"
+  trust_signal:
+    5: "线下大超市/屈臣氏有售，身边朋友/亲属推荐过"
+    3: "品牌听说过但不熟悉，渠道一般"
+    1: "完全没听过，线下也买不到"
+  convenience:
+    5: "线下超市随手能买到，使用最简单"
+    3: "需要网购或专门找，使用还行"
+    1: "买不到或使用复杂"
+  price_fit:
+    5: "大超市常见价格，实惠不心疼"
+    3: "比平时用的贵一些"
+    1: "太贵了，超出消费习惯"

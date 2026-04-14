@@ -1,502 +1,630 @@
 {
-  "metadata": {
-    "system": "数字妈妈体验官系统",
-    "version": "1.0",
-    "created_at": "2026-03-07",
-    "total_samples": 200,
-    "segments": 8,
-    "samples_per_segment": 25
-  },
   "samples": [
     {
       "sample_id": "M01-01",
       "segment_id": "M01",
-      "segment_name": "宠爱富养家",
+      "segment_name": "高意识品牌忠诚型",
       "basic_profile": {
-        "nickname": "林婉清",
-        "age": 38,
-        "city": "北京",
-        "city_tier": "一线",
-        "district": "朝阳区",
+        "nickname": "张女士",
+        "age": 44,
+        "city": "一线城市",
         "marital_status": "已婚",
-        "child_age_stage": "7岁",
-        "child_gender": "女",
-        "occupation": "投行高管",
-        "household_income_band": "120万-200万",
-        "family_structure": "三口之家+住家保姆"
+        "child_age_stage": "6-9岁",
+        "occupation": "地产行业审计经理",
+        "household_income_band": "月入5万",
+        "education": "本科"
       },
       "mindset_profile": {
-        "decision_mode": "权威依赖",
+        "decision_mode": "品牌忠诚型",
         "openness_level": "low",
-        "time_investment": "high",
-        "appearance_sensitivity": "high",
-        "evidence_sensitivity": "high",
-        "trend_sensitivity": "low",
-        "price_sensitivity": "very_low"
+        "price_sensitivity": "very_low",
+        "brand_loyalty": "high",
+        "research_depth": "low"
       },
       "consumption_profile": {
-        "core_needs": ["进口品质保障", "医生专业背书", "身份认同"],
-        "preferred_channels": ["Ole'精品超市", "天猫国际", "高端母婴店", "私立医院"],
-        "trust_trigger": "进口标识+医生推荐",
-        "rejection_trigger": "国产品牌+低价",
-        "budget_range": "60-100元/支"
+        "core_needs": [
+          "品牌价值信任",
+          "权威推荐",
+          "专业口腔品牌"
+        ],
+        "preferred_channels": [
+          "天猫旗舰店",
+          "抖音",
+          "小红书",
+          "b站",
+          "快手"
+        ],
+        "kol_preferences": "美食相关（吃播、菜谱）",
+        "key_decision_factors": "品牌忠诚 > 适龄 > 功效（口气清新）"
       },
       "behavior_profile": {
-        "content_habit": "高端母婴社群+进口超市货架",
-        "decision_style": "理性分析型",
-        "family_role": "决策者+品质把关人",
-        "switching_willingness": "very_low"
-      },
-      "expression_profile": {
-        "tone_style": "理性分析+精英视角",
-        "likely_quote": "这个成分表我看不太懂，但德国那个牌子我闺蜜孩子用了三年"
-      },
-      "review_focus": ["品牌国籍", "医生背书", "成分透明度", "包装质感", "价格档次"],
-      "subtype": "权威依赖型",
-      "product_rating": 3,
-      "purchase_decision": "明确不买",
-      "simulated_feedback": "舒客？没听过。15块钱？这能防蛀？我给孩子用的是德国牙医推荐的，一支68，用了两年没蛀牙。"
+        "decision_speed": "快",
+        "comparison_behavior": "不做功课，依赖推荐",
+        "impulse_tendency": "不是冲动消费，有选择性",
+        "brand_loyalty_desc": "品牌忠诚，信任品牌价值（进口更好，大牌更可靠），信任权威医生推荐"
+      }
     },
     {
       "sample_id": "M01-02",
       "segment_id": "M01",
-      "segment_name": "宠爱富养家",
+      "segment_name": "高意识品牌忠诚型",
       "basic_profile": {
-        "nickname": "张雅琳",
-        "age": 40,
-        "city": "上海",
-        "city_tier": "一线",
-        "district": "静安区",
+        "nickname": "凌女士",
+        "age": 29,
+        "city": "一线城市",
         "marital_status": "已婚",
-        "child_age_stage": "9岁",
-        "child_gender": "男",
-        "occupation": "律所合伙人",
-        "household_income_band": "150万-200万",
-        "family_structure": "三口之家+育儿嫂"
+        "child_age_stage": "1-5岁",
+        "occupation": "建筑石材销售",
+        "household_income_band": "月入5万",
+        "education": "本科"
       },
       "mindset_profile": {
-        "decision_mode": "权威依赖",
-        "openness_level": "low",
-        "time_investment": "high",
-        "appearance_sensitivity": "high",
-        "evidence_sensitivity": "high",
-        "trend_sensitivity": "low",
-        "price_sensitivity": "very_low"
+        "decision_mode": "品牌专业型",
+        "openness_level": "medium",
+        "price_sensitivity": "low",
+        "brand_loyalty": "medium",
+        "research_depth": "medium"
       },
       "consumption_profile": {
-        "core_needs": ["医生专业背书", "进口品质保障", "社交圈层匹配"],
-        "preferred_channels": ["CitySuper", "跨境电商", "私立医院", "高端母婴店"],
-        "trust_trigger": "专业背书+进口标识",
-        "rejection_trigger": "无医生推荐+国产",
-        "budget_range": "60-100元/支"
+        "core_needs": [
+          "品牌专业属性",
+          "权威推荐",
+          "新品兴趣"
+        ],
+        "preferred_channels": [
+          "小红书",
+          "抖音直播",
+          "淘宝",
+          "盒马",
+          "山姆"
+        ],
+        "kol_preferences": "搞笑视频，品牌自播，天猫小黑盒上新",
+        "key_decision_factors": "品牌（专业产品）> 适合孩子的功能"
       },
       "behavior_profile": {
-        "content_habit": "私立医院+高端进口渠道",
-        "decision_style": "理性分析型+数据驱动",
-        "family_role": "决策者+品质把关人",
-        "switching_willingness": "very_low"
-      },
-      "expression_profile": {
-        "tone_style": "理性分析+权威口吻",
-        "likely_quote": "有没有儿科牙医推荐？有没有临床数据？"
-      },
-      "review_focus": ["医生背书", "临床数据", "进口标识", "专业认证"],
-      "subtype": "权威依赖型",
-      "product_rating": 4,
-      "purchase_decision": "明确不买",
-      "simulated_feedback": "我在CitySuper买儿童牙膏，只看进口区。舒客放在国产货架上，我看都不会看一眼。不是崇洋媚外，是给孩子用的，不敢冒险。"
+        "decision_speed": "慢",
+        "comparison_behavior": "精挑细选，细致比较",
+        "impulse_tendency": "不是冲动消费，细致比较",
+        "brand_loyalty_desc": "品牌基本决定，依赖专业属性，不忠诚源自没有好的体验"
+      }
     },
     {
       "sample_id": "M01-03",
       "segment_id": "M01",
-      "segment_name": "宠爱富养家",
+      "segment_name": "高意识品牌忠诚型",
       "basic_profile": {
-        "nickname": "王诗涵",
-        "age": 36,
-        "city": "深圳",
-        "city_tier": "一线",
-        "district": "南山区",
-        "marital_status": "已婚",
-        "child_age_stage": "5岁",
-        "child_gender": "女",
-        "occupation": "科技公司CFO",
-        "household_income_band": "200万-300万",
-        "family_structure": "三口之家+住家阿姨"
-      },
-      "mindset_profile": {
-        "decision_mode": "品牌优先",
-        "openness_level": "low",
-        "time_investment": "medium",
-        "appearance_sensitivity": "high",
-        "evidence_sensitivity": "medium",
-        "trend_sensitivity": "low",
-        "price_sensitivity": "very_low"
-      },
-      "consumption_profile": {
-        "core_needs": ["身份认同", "社交圈层匹配", "进口品质保障"],
-        "preferred_channels": ["进口母婴店", "高端电商平台", "天猫国际"],
-        "trust_trigger": "品牌档次+社交圈层口碑",
-        "rejection_trigger": "国产品牌+低价",
-        "budget_range": "60-100元/支"
-      },
-      "behavior_profile": {
-        "content_habit": "高端妈妈群+社交圈层口碑",
-        "decision_style": "身份焦虑型+社交驱动",
-        "family_role": "决策者",
-        "switching_willingness": "very_low"
-      },
-      "expression_profile": {
-        "tone_style": "身份焦虑+社交口吻",
-        "likely_quote": "妈妈群里都在用XX牌子，我不能让孩子用差的"
-      },
-      "review_focus": ["品牌档次", "社交圈层", "进口标识", "包装质感"],
-      "subtype": "身份焦虑型",
-      "product_rating": 4,
-      "purchase_decision": "明确不买",
-      "simulated_feedback": "我们小区妈妈群，孩子用的东西都是互相推荐的。舒客？没人提过。我要是给孩子用15块钱的牙膏，群里都不好意思说。"
-    },
-    {
-      "sample_id": "M01-04",
-      "segment_id": "M01",
-      "segment_name": "宠爱富养家",
-      "basic_profile": {
-        "nickname": "陈雨萱",
-        "age": 42,
-        "city": "广州",
-        "city_tier": "一线",
-        "district": "天河区",
-        "marital_status": "已婚",
-        "child_age_stage": "8岁",
-        "child_gender": "男",
-        "occupation": "企业主",
-        "household_income_band": "300万以上",
-        "family_structure": "三口之家+司机+保姆"
-      },
-      "mindset_profile": {
-        "decision_mode": "权威依赖",
-        "openness_level": "low",
-        "time_investment": "high",
-        "appearance_sensitivity": "high",
-        "evidence_sensitivity": "high",
-        "trend_sensitivity": "low",
-        "price_sensitivity": "very_low"
-      },
-      "consumption_profile": {
-        "core_needs": ["医生专业背书", "最高标准", "进口品质保障"],
-        "preferred_channels": ["私人采购", "高端进口店", "私立医院"],
-        "trust_trigger": "牙医推荐+医院渠道",
-        "rejection_trigger": "无医生背书+零售渠道",
-        "budget_range": "60-100元/支"
-      },
-      "behavior_profile": {
-        "content_habit": "牙医建议+医院渠道",
-        "decision_style": "理性分析型+权威依赖",
-        "family_role": "决策者+品质把关人",
-        "switching_willingness": "very_low"
-      },
-      "expression_profile": {
-        "tone_style": "权威依赖+精英视角",
-        "likely_quote": "牙医说用什么我就用什么"
-      },
-      "review_focus": ["医生背书", "医院渠道", "专业认证", "矫正专用"],
-      "subtype": "权威依赖型",
-      "product_rating": 3,
-      "purchase_decision": "明确不买",
-      "simulated_feedback": "我儿子的牙医是省口腔的主任，他推荐什么我买什么。舒客？牙医没提过，我不会自己乱买。孩子牙齿都蛀了，我不敢试错。"
-    },
-    {
-      "sample_id": "M01-05",
-      "segment_id": "M01",
-      "segment_name": "宠爱富养家",
-      "basic_profile": {
-        "nickname": "李梦琪",
-        "age": 35,
-        "city": "北京",
-        "city_tier": "一线",
-        "district": "海淀区",
-        "marital_status": "已婚",
-        "child_age_stage": "6岁",
-        "child_gender": "女",
-        "occupation": "大学教授",
-        "household_income_band": "80万-120万",
-        "family_structure": "三口之家"
-      },
-      "mindset_profile": {
-        "decision_mode": "品牌优先",
-        "openness_level": "low",
-        "time_investment": "high",
-        "appearance_sensitivity": "medium",
-        "evidence_sensitivity": "high",
-        "trend_sensitivity": "low",
-        "price_sensitivity": "very_low"
-      },
-      "consumption_profile": {
-        "core_needs": ["成分透明度", "科学依据", "进口品质保障"],
-        "preferred_channels": ["京东国际", "天猫国际", "进口超市"],
-        "trust_trigger": "成分表+检测报告+品牌背景",
-        "rejection_trigger": "成分表模糊+国产",
-        "budget_range": "60-100元/支"
-      },
-      "behavior_profile": {
-        "content_habit": "学术文献+成分对比",
-        "decision_style": "理性分析型+学术思维",
-        "family_role": "决策者+品质把关人",
-        "switching_willingness": "very_low"
-      },
-      "expression_profile": {
-        "tone_style": "理性分析+学术口吻",
-        "likely_quote": "我要看成分表和检测报告"
-      },
-      "review_focus": ["成分表", "检测报告", "品牌背景", "学术文献"],
-      "subtype": "权威依赖型",
-      "product_rating": 5,
-      "purchase_decision": "明确不买",
-      "simulated_feedback": "我研究过儿童牙膏，舒客的成分表写得不够详细。德国Putzi的成分标注很清楚，每样都有说明。这种透明度我才放心。"
-    },
-    {
-      "sample_id": "M01-06",
-      "segment_id": "M01",
-      "segment_name": "宠爱富养家",
-      "basic_profile": {
-        "nickname": "赵雅婷",
-        "age": 39,
-        "city": "上海",
-        "city_tier": "一线",
-        "district": "浦东新区",
-        "marital_status": "已婚",
-        "child_age_stage": "10岁",
-        "child_gender": "女",
-        "occupation": "奢侈品品牌高管",
-        "household_income_band": "180万-200万",
-        "family_structure": "三口之家+住家保姆"
-      },
-      "mindset_profile": {
-        "decision_mode": "品牌优先",
-        "openness_level": "low",
-        "time_investment": "medium",
-        "appearance_sensitivity": "very_high",
-        "evidence_sensitivity": "medium",
-        "trend_sensitivity": "low",
-        "price_sensitivity": "very_low"
-      },
-      "consumption_profile": {
-        "core_needs": ["品牌档次", "身份认同", "包装质感"],
-        "preferred_channels": ["高端商场", "品牌专柜", "私人买手"],
-        "trust_trigger": "品牌档次+包装设计+专柜陈列",
-        "rejection_trigger": "包装廉价+国产品牌",
-        "budget_range": "60-100元/支"
-      },
-      "behavior_profile": {
-        "content_habit": "高端品牌+专柜体验",
-        "decision_style": "身份焦虑型+品牌崇拜",
-        "family_role": "决策者",
-        "switching_willingness": "very_low"
-      },
-      "expression_profile": {
-        "tone_style": "身份焦虑+品牌崇拜",
-        "likely_quote": "大品牌有保障，小牌子不敢用"
-      },
-      "review_focus": ["品牌档次", "包装设计", "专柜陈列", "品牌国籍"],
-      "subtype": "品牌崇拜型",
-      "product_rating": 4,
-      "purchase_decision": "明确不买",
-      "simulated_feedback": "我做奢侈品这么多年，太清楚品牌意味着什么。舒客这种国产牌子，包装就透着一股廉价感。孩子用的东西，我宁愿多花点钱买安心。"
-    },
-    {
-      "sample_id": "M01-07",
-      "segment_id": "M01",
-      "segment_name": "宠爱富养家",
-      "basic_profile": {
-        "nickname": "周雪梅",
-        "age": 37,
-        "city": "深圳",
-        "city_tier": "一线",
-        "district": "福田区",
-        "marital_status": "已婚",
-        "child_age_stage": "4岁",
-        "child_gender": "男",
-        "occupation": "私募基金合伙人",
-        "household_income_band": "500万以上",
-        "family_structure": "三口之家+两个保姆"
-      },
-      "mindset_profile": {
-        "decision_mode": "权威依赖",
-        "openness_level": "low",
-        "time_investment": "high",
-        "appearance_sensitivity": "high",
-        "evidence_sensitivity": "high",
-        "trend_sensitivity": "low",
-        "price_sensitivity": "very_low"
-      },
-      "consumption_profile": {
-        "core_needs": ["医生专业背书", "最高标准", "专业认证"],
-        "preferred_channels": ["全球购", "私人医生推荐", "高端会所"],
-        "trust_trigger": "专业背书+医生推荐+高端渠道",
-        "rejection_trigger": "无专业背书+大众品牌",
-        "budget_range": "60-100元/支"
-      },
-      "behavior_profile": {
-        "content_habit": "私人医生+高端渠道",
-        "decision_style": "理性分析型+精英思维",
-        "family_role": "决策者+品质把关人",
-        "switching_willingness": "very_low"
-      },
-      "expression_profile": {
-        "tone_style": "精英思维+权威口吻",
-        "likely_quote": "我只相信专业人士的推荐"
-      },
-      "review_focus": ["医生背书", "专业认证", "高端渠道", "私人定制"],
-      "subtype": "权威依赖型",
-      "product_rating": 3,
-      "purchase_decision": "明确不买",
-      "simulated_feedback": "我儿子的所有用品，从奶粉到牙膏，都是儿科医生开的单子。舒客？没出现在医生的推荐清单里，我不会考虑。"
-    },
-    {
-      "sample_id": "M01-08",
-      "segment_id": "M01",
-      "segment_name": "宠爱富养家",
-      "basic_profile": {
-        "nickname": "吴思琪",
-        "age": 38,
-        "city": "杭州",
-        "city_tier": "新一线",
-        "district": "滨江区",
-        "marital_status": "已婚",
-        "child_age_stage": "7岁",
-        "child_gender": "女",
-        "occupation": "互联网公司VP",
-        "household_income_band": "200万-300万",
-        "family_structure": "三口之家+育儿嫂"
-      },
-      "mindset_profile": {
-        "decision_mode": "品牌优先",
-        "openness_level": "low",
-        "time_investment": "low",
-        "appearance_sensitivity": "medium",
-        "evidence_sensitivity": "low",
-        "trend_sensitivity": "low",
-        "price_sensitivity": "very_low"
-      },
-      "consumption_profile": {
-        "core_needs": ["省时省力", "品牌保障", "不踩雷"],
-        "preferred_channels": ["天猫国际", "进口超市", "高端母婴店"],
-        "trust_trigger": "品牌知名度+销量排行",
-        "rejection_trigger": "没听过+低价",
-        "budget_range": "60-100元/支"
-      },
-      "behavior_profile": {
-        "content_habit": "品牌知名度+销量排行",
-        "decision_style": "理性分析型+效率优先",
-        "family_role": "决策者",
-        "switching_willingness": "very_low"
-      },
-      "expression_profile": {
-        "tone_style": "效率优先+精英视角",
-        "likely_quote": "我没时间研究，买大牌总不会错"
-      },
-      "review_focus": ["品牌知名度", "销量排行", "包装质感"],
-      "subtype": "品牌崇拜型",
-      "product_rating": 4,
-      "purchase_decision": "明确不买",
-      "simulated_feedback": "我工作太忙，没时间对比各种牙膏。我的策略是：买最贵的进口牌子，至少不会踩雷。舒客这种价格，我根本不会考虑。"
-    },
-    {
-      "sample_id": "M01-09",
-      "segment_id": "M01",
-      "segment_name": "宠爱富养家",
-      "basic_profile": {
-        "nickname": "郑晓雯",
+        "nickname": "许女士",
         "age": 34,
-        "city": "北京",
-        "city_tier": "一线",
-        "district": "朝阳区",
+        "city": "二三线城市",
         "marital_status": "已婚",
-        "child_age_stage": "3岁",
-        "child_gender": "女",
-        "occupation": "时尚杂志主编",
-        "household_income_band": "100万-120万",
-        "family_structure": "三口之家"
+        "child_age_stage": "6-9岁",
+        "occupation": "教育行业教师",
+        "household_income_band": "月入1.5万",
+        "education": "本科"
       },
       "mindset_profile": {
-        "decision_mode": "品牌优先",
-        "openness_level": "low",
-        "time_investment": "medium",
-        "appearance_sensitivity": "very_high",
-        "evidence_sensitivity": "low",
-        "trend_sensitivity": "medium",
-        "price_sensitivity": "very_low"
+        "decision_mode": "体验忠诚型",
+        "openness_level": "medium",
+        "price_sensitivity": "medium",
+        "brand_loyalty": "high",
+        "research_depth": "high"
       },
       "consumption_profile": {
-        "core_needs": ["审美满足", "品牌调性", "设计感"],
-        "preferred_channels": ["买手店", "设计师品牌", "进口超市"],
-        "trust_trigger": "包装设计+品牌调性+颜值",
-        "rejection_trigger": "包装丑+国产品牌",
-        "budget_range": "60-100元/支"
+        "core_needs": [
+          "品牌推荐人信任",
+          "评测对比",
+          "配方安全"
+        ],
+        "preferred_channels": [
+          "抖音直播",
+          "小红书",
+          "淘宝"
+        ],
+        "kol_preferences": "直播带货与评测（信赖董宇辉），教育类+短剧",
+        "key_decision_factors": "品牌 > 外观 > 含氟/配方温和，防蛀，低泡"
       },
       "behavior_profile": {
-        "content_habit": "设计美学+品牌调性",
-        "decision_style": "身份焦虑型+审美驱动",
-        "family_role": "决策者",
-        "switching_willingness": "very_low"
-      },
-      "expression_profile": {
-        "tone_style": "审美驱动+精英视角",
-        "likely_quote": "包装太丑了，我不想放在洗漱台上"
-      },
-      "review_focus": ["包装设计", "品牌调性", "颜值", "设计感"],
-      "subtype": "审美驱动型",
-      "product_rating": 4,
-      "purchase_decision": "明确不买",
-      "simulated_feedback": "我是做时尚的，对审美有要求。舒客的包装...怎么说呢，太普通了。我给孩子用的是日本的一个牌子，包装像艺术品，放在浴室里看着都舒服。"
+        "decision_speed": "慢",
+        "comparison_behavior": "会对比，看测评，做功课",
+        "impulse_tendency": "不冲动，直播间可能冲动购买有推荐的产品",
+        "brand_loyalty_desc": "品牌基本决定，依赖品牌体验特性，对负反馈品牌不再接受"
+      }
     },
     {
-      "sample_id": "M01-10",
-      "segment_id": "M01",
-      "segment_name": "宠爱富养家",
+      "sample_id": "M02-01",
+      "segment_id": "M02",
+      "segment_name": "高意识研究比较型",
       "basic_profile": {
-        "nickname": "黄静怡",
-        "age": 43,
-        "city": "上海",
-        "city_tier": "一线",
-        "district": "徐汇区",
+        "nickname": "巩女士",
+        "age": 37,
+        "city": "一线城市",
         "marital_status": "已婚",
-        "child_age_stage": "12岁",
-        "child_gender": "男",
-        "occupation": "美术馆馆长",
-        "household_income_band": "90万-120万",
-        "family_structure": "三口之家"
+        "child_age_stage": "10-12岁",
+        "occupation": "建筑行业运营经理",
+        "household_income_band": "月入3.5万"
       },
       "mindset_profile": {
-        "decision_mode": "权威依赖",
-        "openness_level": "low",
-        "time_investment": "high",
-        "appearance_sensitivity": "high",
-        "evidence_sensitivity": "high",
-        "trend_sensitivity": "low",
-        "price_sensitivity": "very_low"
+        "decision_mode": "理性比较型",
+        "openness_level": "medium",
+        "price_sensitivity": "medium",
+        "brand_loyalty": "low",
+        "research_depth": "high"
       },
       "consumption_profile": {
-        "core_needs": ["专业认证", "医生背书", "矫正专用"],
-        "preferred_channels": ["私立医院", "进口超市", "专业推荐"],
-        "trust_trigger": "专业认证+医生推荐+矫正专用",
-        "rejection_trigger": "通用型+无专业认证",
-        "budget_range": "60-100元/支"
+        "core_needs": [
+          "品牌可靠性",
+          "测评比较",
+          "外观设计"
+        ],
+        "preferred_channels": [
+          "小红书",
+          "天猫"
+        ],
+        "kol_preferences": "旅行、护肤精华、二次元，关注崔玉涛",
+        "key_decision_factors": "品牌（大牌）> 外观 > 口味 > 功效"
       },
       "behavior_profile": {
-        "content_habit": "专业医疗建议+矫正专用产品",
-        "decision_style": "理性分析型+品质至上",
-        "family_role": "决策者+品质把关人",
-        "switching_willingness": "very_low"
+        "decision_speed": "快但有选择",
+        "comparison_behavior": "需要测评和比较，非盲目",
+        "impulse_tendency": "不是冲动消费",
+        "brand_loyalty_desc": "大品牌背书，品牌可靠性，不忠诚"
+      }
+    },
+    {
+      "sample_id": "M02-02",
+      "segment_id": "M02",
+      "segment_name": "高意识研究比较型",
+      "basic_profile": {
+        "nickname": "薛女士",
+        "age": 35,
+        "city": "二三线城市",
+        "marital_status": "已婚",
+        "child_age_stage": "1-5岁",
+        "occupation": "医疗销售",
+        "household_income_band": "月入1.3万",
+        "education": "大专"
       },
-      "expression_profile": {
-        "tone_style": "品质至上+专业口吻",
-        "likely_quote": "矫正期间要用专业的牙膏"
+      "mindset_profile": {
+        "decision_mode": "多渠道研究型",
+        "openness_level": "high",
+        "price_sensitivity": "high",
+        "brand_loyalty": "low",
+        "research_depth": "high"
       },
-      "review_focus": ["专业认证", "医生背书", "矫正专用", "医疗标准"],
-      "subtype": "权威依赖型",
-      "product_rating": 3,
-      "purchase_decision": "明确不买",
-      "simulated_feedback": "我儿子戴牙套，牙医专门推荐了矫正期专用牙膏。舒客这种通用型的，不适合我们。而且15块钱的价格，我也不敢给孩子用。"
+      "consumption_profile": {
+        "core_needs": [
+          "线下导购推荐",
+          "朋友推荐",
+          "线上种草"
+        ],
+        "preferred_channels": [
+          "淘宝",
+          "抖音",
+          "线下商超"
+        ],
+        "kol_preferences": "短剧，育儿励志/明星代言都感兴趣",
+        "key_decision_factors": "大品牌 > 外观 > 功效 > 口味，功效：防蛀（清洁力）"
+      },
+      "behavior_profile": {
+        "decision_speed": "慢",
+        "comparison_behavior": "多平台做功课",
+        "impulse_tendency": "消费不冲动",
+        "brand_loyalty_desc": "代言人带来的可靠性很重要，品牌不忠诚"
+      }
+    },
+    {
+      "sample_id": "M03-01",
+      "segment_id": "M03",
+      "segment_name": "一般意识功效导向型",
+      "basic_profile": {
+        "nickname": "臧女士",
+        "age": 32,
+        "city": "一线城市",
+        "marital_status": "已婚",
+        "child_age_stage": "2岁前&2胎",
+        "occupation": "互联网行业翻译",
+        "household_income_band": "月入4万"
+      },
+      "mindset_profile": {
+        "decision_mode": "功效研究型",
+        "openness_level": "high",
+        "price_sensitivity": "medium",
+        "brand_loyalty": "low",
+        "research_depth": "high"
+      },
+      "consumption_profile": {
+        "core_needs": [
+          "对症下药",
+          "功效明确",
+          "配方安全"
+        ],
+        "preferred_channels": [
+          "淘宝",
+          "小红书",
+          "天猫"
+        ],
+        "kol_preferences": "老爸测评，年糕妈妈，李玫瑾",
+        "key_decision_factors": "功效 > 口味/外观（大宝需防蛀、清新口气、美白）"
+      },
+      "behavior_profile": {
+        "decision_speed": "慢",
+        "comparison_behavior": "对症下药、仔细比较",
+        "impulse_tendency": "不是冲动消费",
+        "brand_loyalty_desc": "品牌加分项，不忠诚"
+      }
+    },
+    {
+      "sample_id": "M03-02",
+      "segment_id": "M03",
+      "segment_name": "一般意识功效导向型",
+      "basic_profile": {
+        "nickname": "罗女士",
+        "age": 30,
+        "city": "二三线城市",
+        "marital_status": "已婚",
+        "child_age_stage": "6-9岁",
+        "occupation": "个体老板",
+        "household_income_band": "月入2万",
+        "education": "大专"
+      },
+      "mindset_profile": {
+        "decision_mode": "功能导向型",
+        "openness_level": "medium",
+        "price_sensitivity": "medium",
+        "brand_loyalty": "low",
+        "research_depth": "medium"
+      },
+      "consumption_profile": {
+        "core_needs": [
+          "功能实用",
+          "品牌可靠"
+        ],
+        "preferred_channels": [
+          "抖音",
+          "小红书",
+          "京东"
+        ],
+        "kol_preferences": "美妆、穿搭、美食，看红黑榜不记名字",
+        "key_decision_factors": "品牌 > 成分"
+      },
+      "behavior_profile": {
+        "decision_speed": "慢",
+        "comparison_behavior": "精挑细选",
+        "impulse_tendency": "不是冲动消费",
+        "brand_loyalty_desc": "品牌加分项，不忠诚"
+      }
+    },
+    {
+      "sample_id": "M03-03",
+      "segment_id": "M03",
+      "segment_name": "一般意识功效导向型",
+      "basic_profile": {
+        "nickname": "黄女士",
+        "age": 34,
+        "city": "二三线城市",
+        "marital_status": "已婚",
+        "child_age_stage": "13-15岁",
+        "occupation": "金融行业业务员",
+        "household_income_band": "月入4万"
+      },
+      "mindset_profile": {
+        "decision_mode": "品牌忠诚型",
+        "openness_level": "low",
+        "price_sensitivity": "low",
+        "brand_loyalty": "high",
+        "research_depth": "low"
+      },
+      "consumption_profile": {
+        "core_needs": [
+          "品牌价值",
+          "使用舒适度",
+          "医生推荐"
+        ],
+        "preferred_channels": [
+          "抖音",
+          "微博",
+          "屈臣氏"
+        ],
+        "kol_preferences": "看电视追剧，关注线下电梯/商超广告",
+        "key_decision_factors": "品牌 > 功效（清新口气）> 口味（柠檬味），不喜欢药品包装"
+      },
+      "behavior_profile": {
+        "decision_speed": "快",
+        "comparison_behavior": "功课较少",
+        "impulse_tendency": "不是冲动消费",
+        "brand_loyalty_desc": "品牌忠诚，喜欢中药相关（如云南白药），品牌内筛选"
+      }
+    },
+    {
+      "sample_id": "M03-04",
+      "segment_id": "M03",
+      "segment_name": "一般意识功效导向型",
+      "basic_profile": {
+        "nickname": "杨女士",
+        "age": 32,
+        "city": "二三线城市",
+        "marital_status": "已婚",
+        "child_age_stage": "1-5岁",
+        "occupation": "鞋服行业业务员",
+        "household_income_band": "月入1.5万",
+        "education": "大专"
+      },
+      "mindset_profile": {
+        "decision_mode": "平台信任型",
+        "openness_level": "medium",
+        "price_sensitivity": "medium",
+        "brand_loyalty": "low",
+        "research_depth": "low"
+      },
+      "consumption_profile": {
+        "core_needs": [
+          "品牌背书",
+          "进口专业",
+          "趣味外观"
+        ],
+        "preferred_channels": [
+          "知乎",
+          "抖音",
+          "微博",
+          "屈臣氏",
+          "山姆"
+        ],
+        "kol_preferences": "交个朋友（有质检），心理类博主，崔玉涛/丁香医生更专业",
+        "key_decision_factors": "品牌背书，好玩的产品（外观有小动物/恐龙）"
+      },
+      "behavior_profile": {
+        "decision_speed": "快",
+        "comparison_behavior": "功课做的较少",
+        "impulse_tendency": "不冲动，需要信赖的平台",
+        "brand_loyalty_desc": "看中进口品牌和专业度，不忠诚"
+      }
+    },
+    {
+      "sample_id": "M03-05",
+      "segment_id": "M03",
+      "segment_name": "一般意识功效导向型",
+      "basic_profile": {
+        "nickname": "张女士",
+        "age": 26,
+        "city": "二三线城市",
+        "marital_status": "已婚",
+        "child_age_stage": "1-5岁",
+        "occupation": "电商行业财务主管",
+        "household_income_band": "月入2万"
+      },
+      "mindset_profile": {
+        "decision_mode": "流行跟随型",
+        "openness_level": "high",
+        "price_sensitivity": "medium",
+        "brand_loyalty": "low",
+        "research_depth": "medium"
+      },
+      "consumption_profile": {
+        "core_needs": [
+          "抖音种草",
+          "亲友推荐",
+          "外观孩子喜欢"
+        ],
+        "preferred_channels": [
+          "抖音",
+          "小红书",
+          "淘宝",
+          "线下超市"
+        ],
+        "kol_preferences": "追剧、直播带货、八卦娱乐，愿意接受明广",
+        "key_decision_factors": "推广过都可以接受，孩子喜欢的外观 > 功效（清新口气）"
+      },
+      "behavior_profile": {
+        "decision_speed": "慢",
+        "comparison_behavior": "做功课前置，推送到第三次再买",
+        "impulse_tendency": "不是非常冲动，有背书价格合适决策更快",
+        "brand_loyalty_desc": "推广多的品牌，不忠诚"
+      }
+    },
+    {
+      "sample_id": "M04-01",
+      "segment_id": "M04",
+      "segment_name": "一般意识品牌筛选型",
+      "basic_profile": {
+        "nickname": "马女士",
+        "age": 41,
+        "city": "二三线城市",
+        "marital_status": "已婚",
+        "child_age_stage": "13-15岁",
+        "occupation": "行政主管",
+        "household_income_band": "月入2.3万"
+      },
+      "mindset_profile": {
+        "decision_mode": "专家影响型",
+        "openness_level": "medium",
+        "price_sensitivity": "medium",
+        "brand_loyalty": "low",
+        "research_depth": "high"
+      },
+      "consumption_profile": {
+        "core_needs": [
+          "专家推荐",
+          "KOL/KOC影响",
+          "成分安全"
+        ],
+        "preferred_channels": [
+          "小红书",
+          "抖音",
+          "淘宝"
+        ],
+        "kol_preferences": "旅行相关内容",
+        "key_decision_factors": "品牌（专业产品）> 成分（含氟）= 功效（防蛀、清新口气、固齿）"
+      },
+      "behavior_profile": {
+        "decision_speed": "慢",
+        "comparison_behavior": "精挑细选，受KOL推荐影响",
+        "impulse_tendency": "不是冲动消费",
+        "brand_loyalty_desc": "品牌成分带来的价值，不忠诚"
+      }
+    },
+    {
+      "sample_id": "M04-02",
+      "segment_id": "M04",
+      "segment_name": "一般意识品牌筛选型",
+      "basic_profile": {
+        "nickname": "陈女士",
+        "age": 37,
+        "city": "二三线城市",
+        "marital_status": "已婚",
+        "child_age_stage": "10-12岁",
+        "occupation": "烟酒店老板",
+        "household_income_band": "月入4万"
+      },
+      "mindset_profile": {
+        "decision_mode": "品牌忠诚型",
+        "openness_level": "low",
+        "price_sensitivity": "low",
+        "brand_loyalty": "high",
+        "research_depth": "low"
+      },
+      "consumption_profile": {
+        "core_needs": [
+          "品牌认可",
+          "进口品质",
+          "分龄设计"
+        ],
+        "preferred_channels": [
+          "小红书",
+          "淘宝",
+          "线下超市"
+        ],
+        "kol_preferences": "烘焙、运动、育儿博主，李佳琦直播",
+        "key_decision_factors": "一直以来认可的品牌，进口>国产，含氟且分龄"
+      },
+      "behavior_profile": {
+        "decision_speed": "快",
+        "comparison_behavior": "选择一直在用的产品",
+        "impulse_tendency": "不是冲动，只选信任的品牌",
+        "brand_loyalty_desc": "品牌是主要的，专业度，进口品牌，品牌忠诚"
+      }
+    },
+    {
+      "sample_id": "M05-01",
+      "segment_id": "M05",
+      "segment_name": "低意识冲动购买型",
+      "basic_profile": {
+        "nickname": "郑女士",
+        "age": 36,
+        "city": "二三线城市",
+        "marital_status": "已婚",
+        "child_age_stage": "6-9岁",
+        "occupation": "物业部门文员",
+        "household_income_band": "月入1万",
+        "education": "大专"
+      },
+      "mindset_profile": {
+        "decision_mode": "冲动型",
+        "openness_level": "high",
+        "price_sensitivity": "very_high",
+        "brand_loyalty": "low",
+        "research_depth": "low"
+      },
+      "consumption_profile": {
+        "core_needs": [
+          "适合自己的",
+          "价格实惠"
+        ],
+        "preferred_channels": [
+          "抖音",
+          "小红书",
+          "妈妈群"
+        ],
+        "kol_preferences": "美食、吃播视频",
+        "key_decision_factors": "适合自己的（没有特别考虑孩子）"
+      },
+      "behavior_profile": {
+        "decision_speed": "快",
+        "comparison_behavior": "不比较",
+        "impulse_tendency": "冲动消费",
+        "brand_loyalty_desc": "品牌不重要，不忠诚"
+      }
+    },
+    {
+      "sample_id": "M05-02",
+      "segment_id": "M05",
+      "segment_name": "低意识冲动购买型",
+      "basic_profile": {
+        "nickname": "苏女士",
+        "age": 37,
+        "city": "二三线城市",
+        "marital_status": "已婚",
+        "child_age_stage": "6-9岁",
+        "occupation": "会计行业财务",
+        "household_income_band": "月入1.6万"
+      },
+      "mindset_profile": {
+        "decision_mode": "性价比型",
+        "openness_level": "low",
+        "price_sensitivity": "high",
+        "brand_loyalty": "low",
+        "research_depth": "low"
+      },
+      "consumption_profile": {
+        "core_needs": [
+          "性价比",
+          "大品牌",
+          "权威推荐"
+        ],
+        "preferred_channels": [
+          "微信视频号",
+          "公众号",
+          "b站",
+          "线下超市"
+        ],
+        "kol_preferences": "财经、社会新闻，没有特别关注的KOL",
+        "key_decision_factors": "品牌 > 价格"
+      },
+      "behavior_profile": {
+        "decision_speed": "快",
+        "comparison_behavior": "产品对比少，关注性价比",
+        "impulse_tendency": "不是冲动，还需要比较",
+        "brand_loyalty_desc": "大超市里熟知的品牌，不忠诚"
+      }
+    },
+    {
+      "sample_id": "M06-01",
+      "segment_id": "M06",
+      "segment_name": "低意识渠道依赖型",
+      "basic_profile": {
+        "nickname": "郭女士",
+        "age": 40,
+        "city": "二三线城市",
+        "marital_status": "已婚",
+        "child_age_stage": "10-15岁",
+        "occupation": "行政部职员",
+        "household_income_band": "月入1.2万",
+        "education": "大专"
+      },
+      "mindset_profile": {
+        "decision_mode": "口碑依赖型",
+        "openness_level": "low",
+        "price_sensitivity": "high",
+        "brand_loyalty": "low",
+        "research_depth": "low"
+      },
+      "consumption_profile": {
+        "core_needs": [
+          "身边人推荐",
+          "简单好用"
+        ],
+        "preferred_channels": [
+          "淘宝",
+          "线下超市"
+        ],
+        "kol_preferences": "吃播、搞笑的、育儿的、化妆的博主",
+        "key_decision_factors": "牙刷：朋友推荐 > 外观 > 刷毛大小；牙膏：主要考虑味道"
+      },
+      "behavior_profile": {
+        "decision_speed": "快",
+        "comparison_behavior": "他人评价好的产品直接购买",
+        "impulse_tendency": "不冲动，需要他人推荐和背书",
+        "brand_loyalty_desc": "渠道筛选的品牌作为加分项，不忠诚"
+      }
     }
   ]
 }

@@ -1,0 +1,41 @@
+id: M01
+name: 高意识品牌忠诚型
+budget_band: "high"
+
+# 原型: 人群1=关注意识高，预防性
+# 代表: 张女士(44岁/地产审计/月入5万), 凌女士(29岁/石材销售/月入5万), 许女士(34岁/教师/月入1.5万)
+# 特征: 信任品牌价值和权威推荐, 进口>国产, 品牌忠诚度高, 快速决策不比价
+
+decision_weights:
+  efficacy_clarity: 0.20
+  trust_signal: 0.40
+  convenience: 0.15
+  price_fit: 0.25
+
+veto_trigger: "非进口 / 无权威背书 / 杂牌白牌"
+
+veto_rules:
+  - code: "not_imported_or_authority"
+    description: "非进口品牌且无权威背书"
+  - code: "no_brand_heritage"
+    description: "品牌无专业口腔领域积累"
+  - code: "unverified_safety"
+    description: "产品安全性未经验证"
+
+feature_scoring_rubric:
+  efficacy_clarity:
+    5: "核心功效一句话秒懂，直击高端妈妈的品质追求，有权威临床支撑"
+    3: "知道是什么但表述不够专业，缺乏权威数据"
+    1: "功效描述模糊，看起来像大众低端产品"
+  trust_signal:
+    5: "进口大牌、权威医学背书、医生推荐、专业口腔品牌"
+    3: "普通正规品牌，无特别高端信号"
+    1: "看起来像杂牌、白牌感重"
+  convenience:
+    5: "到手即用，适合孩子年龄段，无需额外折腾"
+    3: "需要看说明书操作"
+    1: "使用流程复杂或需要多步骤"
+  price_fit:
+    5: "价格匹配高端定位，体现品牌价值"
+    3: "价格适中但缺乏高端感支撑"
+    1: "价格太低让人怀疑品质"

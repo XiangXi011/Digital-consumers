@@ -1,0 +1,41 @@
+id: M02
+name: 高意识研究比较型
+budget_band: "mid_high"
+
+# 原型: 人群2：关注意识高，问题解决型
+# 代表: 巩女士(37岁/建筑运营/月入3.5万), 薛女士(35岁/医疗销售/月入1.3万)
+# 特征: 需测评和比较, 多平台做功课, 关注权威推荐, 外观>口味>功效, 品牌不忠诚
+
+decision_weights:
+  efficacy_clarity: 0.30
+  trust_signal: 0.25
+  convenience: 0.15
+  price_fit: 0.30
+
+veto_trigger: "无测评口碑 / 完全没有推荐来源 / 不适合年龄段"
+
+veto_rules:
+  - code: "no_reviews"
+    description: "完全没有测评或口碑信息"
+  - code: "no_recommendation_source"
+    description: "没有任何推荐来源（导购/朋友/主播）"
+  - code: "wrong_age_range"
+    description: "产品不适合孩子当前年龄段"
+
+feature_scoring_rubric:
+  efficacy_clarity:
+    5: "功效有测评数据支撑，能一句话说清核心价值，适合种草分享"
+    3: "功效表述一般，不够新鲜，缺乏对比"
+    1: "看不出有什么特别的，无差异化"
+  trust_signal:
+    5: "有权威测评背书，大品牌，多平台有口碑，代言人可靠"
+    3: "普通品牌，有一些评价但不够突出"
+    1: "完全没听说过，查不到口碑信息"
+  convenience:
+    5: "操作简单颜值高，不同年龄段有对应产品线"
+    3: "普通使用体验，需要自己比较选择"
+    1: "包装丑/难用/没有适龄产品"
+  price_fit:
+    5: "性价比高，价格合理，大牌不贵"
+    3: "稍贵但能接受，需要看值不值"
+    1: "超出预算且看不出值在哪"

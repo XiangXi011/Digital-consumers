@@ -887,14 +887,23 @@ def _extract_evidence_atoms(mom_outputs: List[Dict[str, Any]]) -> List[Dict[str,
 
 
 def _classify_evidence_field(text: str) -> str:
-    """Classify a text snippet into an evidence field category."""
-    if any(kw in text for kw in ["功效", "效果", "作用", "成分", "配方"]):
+    """Classify a text snippet into an evidence field category.
+
+    Uses word-boundary matching to avoid false positives like
+    '副作用' matching '作用' or '成分不明' matching '成分'.
+    """
+    import re as _re
+    # efficacy: positive evidence for product effectiveness
+    if _re.search(r"(?:功效|效果|配方|成分|防蛀|清洁力|美白|清新口气|固齿)", text):
         return "efficacy"
-    if any(kw in text for kw in ["信任", "品牌", "背书", "安全", "权威", "医生"]):
+    # trust: brand, authority, safety signals
+    if _re.search(r"(?:信任|品牌|背书|安全|权威|医生|专业|可靠)", text):
         return "trust"
-    if any(kw in text for kw in ["价格", "贵", "便宜", "预算", "性价比", "值"]):
+    # price: cost, value, budget
+    if _re.search(r"(?:价格|贵|便宜|预算|性价比|划算|值)", text):
         return "price"
-    if any(kw in text for kw in ["方便", "简单", "操作", "使用", "步骤"]):
+    # convenience: ease of use
+    if _re.search(r"(?:方便|简单|操作|步骤|使用体验)", text):
         return "convenience"
     return "other"
 
@@ -953,7 +962,12 @@ def _extract_winner_signals(mom_outputs: List[Dict[str, Any]]) -> List[Dict[str,
 
 
 def _group_evidence_atoms(atoms: List[Dict[str, Any]]) -> Dict[str, List[Dict[str, Any]]]:
-    """Group evidence atoms into consensus, divergence, and minority-reject."""
+    """Group evidence atoms into consensus, divergence, and minority-reject.
+
+    Consensus is defined per-field: if majority atoms come from >= 2 distinct
+    personas AND represent > 50% of all atoms in that field, they are consensus.
+    This adapts to different group sizes (3-persona tests or 8-persona production).
+    """
     consensus = []
     divergence = []
     minority_reject = []
@@ -969,7 +983,12 @@ def _group_evidence_atoms(atoms: List[Dict[str, Any]]) -> Dict[str, List[Dict[st
         if minority_atoms:
             minority_reject.extend(minority_atoms)
 
-        if len(majority_atoms) >= 2:
+        # Count distinct personas in majority
+        majority_persona_ids = {a.get("agent_id", "") for a in majority_atoms}
+        total_field_atoms = len(field_atoms)
+
+        # Consensus: at least 2 majority personas AND majority > 50% of total
+        if len(majority_persona_ids) >= 2 and len(majority_atoms) > total_field_atoms * 0.5:
             consensus.extend(majority_atoms[:3])
         elif majority_atoms:
             divergence.extend(majority_atoms)

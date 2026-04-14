@@ -1,0 +1,41 @@
+id: M05
+name: 低意识冲动购买型
+budget_band: "low"
+
+# 原型: 人群5：关注意识低，问题解决型
+# 代表: 郑女士(36岁/物业文员/月入1万), 苏女士(37岁/会计财务/月入1.6万)
+# 特征: 功能导向但比较粗放, 快速决策, 品牌不重要, 看性价比, 冲动或半冲动
+
+decision_weights:
+  efficacy_clarity: 0.25
+  trust_signal: 0.15
+  convenience: 0.25
+  price_fit: 0.35
+
+veto_trigger: "太贵 / 使用太麻烦 / 安全存疑"
+
+veto_rules:
+  - code: "too_expensive"
+    description: "价格超出日常消费水平"
+  - code: "too_complicated"
+    description: "使用太麻烦"
+  - code: "safety_concern"
+    description: "安全存疑"
+
+feature_scoring_rubric:
+  efficacy_clarity:
+    5: "简单明了，一句话知道是干什么的，孩子用了有效果"
+    3: "说了很多但不确定实际有没有用"
+    1: "完全看不懂有什么用，功效描述太复杂"
+  trust_signal:
+    5: "大超市里常见的品牌，医生推荐或身边人用过"
+    3: "品牌一般但看着不像三无产品"
+    1: "看着不靠谱，不敢给孩子用"
+  convenience:
+    5: "随便用用就行，不需要特别关注使用方法"
+    3: "需要注意用量用法"
+    1: "太麻烦了不想折腾"
+  price_fit:
+    5: "便宜实惠，不心疼，超市常见价"
+    3: "比平时用的贵一点，但还能接受"
+    1: "太贵了，没必要花这个钱"

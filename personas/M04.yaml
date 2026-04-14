@@ -1,0 +1,41 @@
+id: M04
+name: 一般意识品牌筛选型
+budget_band: "mid_high"
+
+# 原型: 人群4：关注意识一般，预防性的
+# 代表: 马女士(41岁/行政主管/月入2.3万), 陈女士(37岁/烟酒店老板/月入4万)
+# 特征: 受专家推荐影响, 精挑细选, 品牌+成分是核心, 品牌忠诚(陈)或不忠诚(马)
+
+decision_weights:
+  efficacy_clarity: 0.30
+  trust_signal: 0.30
+  convenience: 0.15
+  price_fit: 0.25
+
+veto_trigger: "无专业推荐 / 成分不明 / 品牌不可靠"
+
+veto_rules:
+  - code: "no_expert_recommendation"
+    description: "无任何专家或KOL推荐"
+  - code: "unclear_ingredients"
+    description: "成分信息不透明"
+  - code: "unreliable_brand"
+    description: "品牌口碑不可靠"
+
+feature_scoring_rubric:
+  efficacy_clarity:
+    5: "功效清晰有数据支撑，含氟量明确标注，分年龄段有差异化设计"
+    3: "功效表述一般，缺乏具体数据或成分信息"
+    1: "功效模糊，无法判断是否适合孩子"
+  trust_signal:
+    5: "有KOL/KOC推荐，专家背书，进口品牌或老牌国产，有临床数据"
+    3: "普通品牌，有一定知名度但无特别推荐"
+    1: "完全无推荐来源，品牌陌生"
+  convenience:
+    5: "线上线下都能买到，使用简单，分龄设计清晰"
+    3: "需要网上购买或专门找渠道"
+    1: "购买渠道复杂，使用繁琐"
+  price_fit:
+    5: "价格合理，符合品质预期，有性价比"
+    3: "价格偏高但在可接受范围内"
+    1: "价格不合理，偏高或偏低到不放心"
