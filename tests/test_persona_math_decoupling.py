@@ -126,6 +126,115 @@ class TestPersonaMathDecoupling(unittest.TestCase):
                 price_fit=3,
             )
 
+    def test_below_2_8_threshold_is_reject(self):
+        """Score below 2.8 must be 'reject'."""
+        evaluation = PersonaEvaluation(
+            efficacy_clarity=2,
+            trust_signal=4,
+            convenience=2,
+            price_fit=2,
+            decision_weights={
+                "efficacy_clarity": 0.40,
+                "trust_signal": 0.20,
+                "convenience": 0.20,
+                "price_fit": 0.20,
+            },
+        )
+        # 2*0.40 + 4*0.20 + 2*0.20 + 2*0.20 = 0.80 + 0.80 + 0.40 + 0.40 = 2.40 -> reject
+        self.assertLess(evaluation.purchase_score, 2.8)
+        self.assertEqual(evaluation.purchase_intent, "reject")
+
+    def test_exact_boundary_at_2_8_is_maybe(self):
+        """Score exactly at or above 2.8 threshold must be 'maybe'."""
+        # Use weights to produce a score exactly at 2.8
+        # 3*0.50 + 2*0.50 = 1.50 + 1.00 = 2.50 (reject)
+        # 3*0.50 + 3*0.50 = 1.50 + 1.50 = 3.00 (maybe)
+        # Try to land at exactly 2.8:
+        evaluation = PersonaEvaluation(
+            rubric_scores={"dim_a": 3, "dim_b": 2},
+            decision_weights={
+                "dim_a": 0.60,
+                "dim_b": 0.40,
+            },
+        )
+        # 3*0.60 + 2*0.40 = 1.80 + 0.80 = 2.60 -> reject (below 2.8)
+        self.assertLess(evaluation.purchase_score, 2.8)
+
+        evaluation2 = PersonaEvaluation(
+            rubric_scores={"dim_a": 3, "dim_b": 3},
+            decision_weights={
+                "dim_a": 0.50,
+                "dim_b": 0.50,
+            },
+        )
+        # 3*0.50 + 3*0.50 = 3.00 -> maybe
+        self.assertGreaterEqual(evaluation2.purchase_score, 2.8)
+        self.assertLess(evaluation2.purchase_score, 4.0)
+        self.assertEqual(evaluation2.purchase_intent, "maybe")
+
+        # Now test exactly at 2.8 boundary
+        evaluation_boundary = PersonaEvaluation(
+            efficacy_clarity=4,
+            trust_signal=2,
+            convenience=2,
+            price_fit=2,
+            decision_weights={
+                "efficacy_clarity": 0.40,
+                "trust_signal": 0.20,
+                "convenience": 0.20,
+                "price_fit": 0.20,
+            },
+        )
+        # 4*0.40 + 2*0.20 + 2*0.20 + 2*0.20 = 1.60 + 0.40 + 0.40 + 0.40 = 2.80 -> maybe (>= 2.8)
+        self.assertAlmostEqual(evaluation_boundary.purchase_score, 2.8, places=4)
+        self.assertEqual(evaluation_boundary.purchase_intent, "maybe")
+
+    def test_exact_boundary_at_4_0_threshold(self):
+        """Score exactly at 4.0 must be 'buy', not 'maybe'."""
+        evaluation = PersonaEvaluation(
+            efficacy_clarity=4,
+            trust_signal=4,
+            convenience=4,
+            price_fit=4,
+        )
+        self.assertAlmostEqual(evaluation.purchase_score, 4.0, places=4)
+        self.assertEqual(evaluation.purchase_intent, "buy")
+
+        # Just below 4.0
+        evaluation_below = PersonaEvaluation(
+            efficacy_clarity=4,
+            trust_signal=4,
+            convenience=4,
+            price_fit=3,
+            decision_weights={
+                "efficacy_clarity": 0.35,
+                "trust_signal": 0.25,
+                "convenience": 0.25,
+                "price_fit": 0.15,
+            },
+        )
+        # 4*0.35 + 4*0.25 + 4*0.25 + 3*0.15 = 1.40 + 1.00 + 1.00 + 0.45 = 3.85 -> maybe
+        self.assertAlmostEqual(evaluation_below.purchase_score, 3.85, places=4)
+        self.assertEqual(evaluation_below.purchase_intent, "maybe")
+
+    def test_final_rejection_reason_set_correctly(self):
+        """final_rejection_reason must be set for reject, empty for non-reject."""
+        veto_eval = PersonaEvaluation(
+            efficacy_clarity=5, trust_signal=5, convenience=5, price_fit=5,
+            veto_triggered=True,
+        )
+        self.assertEqual(veto_eval.final_rejection_reason, "veto_override")
+
+        low_eval = PersonaEvaluation(
+            efficacy_clarity=1, trust_signal=1, convenience=1, price_fit=1,
+        )
+        self.assertEqual(low_eval.final_rejection_reason, "low_score")
+
+        buy_eval = PersonaEvaluation(
+            efficacy_clarity=5, trust_signal=5, convenience=5, price_fit=5,
+        )
+        self.assertEqual(buy_eval.final_rejection_reason, "")
+
     def test_persona_output_must_not_contain_weighted_fields(self):
         """Validate that the mom payload validator rejects weighted fields."""
         from qualitative_research import IncompleteResearchRunError, _validate_mom_payload
@@ -153,6 +262,29 @@ class TestPersonaMathDecoupling(unittest.TestCase):
             _validate_mom_payload(payload, "M04", "purchase_decision")
 
         self.assertIn("purchase_score", str(context.exception))
+
+    def test_structured_veto_codes_override_without_keyword_matching(self):
+        """Structured veto codes should be honored even if text does not contain trigger keywords."""
+        from persona_scoring import check_veto
+
+        persona_yaml = {
+            "veto_rules": [
+                {"code": "unsafe_signal", "description": "Safety concern"},
+            ],
+            "veto_trigger": "安全存疑 / 使用太麻烦",
+        }
+        persona_output = {
+            "verbatim_answer": "我会再看看",
+            "triggered_veto_codes": ["unsafe_signal"],
+            "rubric_scores": {
+                "efficacy_clarity": 4,
+                "trust_signal": 4,
+                "convenience": 4,
+                "price_fit": 4,
+            },
+        }
+
+        self.assertTrue(check_veto(persona_yaml, "儿童牙膏", persona_output))
 
 
 if __name__ == "__main__":
