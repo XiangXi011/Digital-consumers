@@ -1,0 +1,7 @@
+{
+    "name": "E2E-concept-test-v2",
+    "project_type": "concept",
+    "persona_ids": ["M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08"],
+    "business_brief": "Children probiotics toothpaste for ages 3-12. Core: probiotics (lactobacillus) colonize oral cavity during brushing, inhibit harmful bacteria, reduce cavities. Strawberry flavor, price 39.9 CNY/60g. Distribution: online e-commerce + offline baby stores.",
+    "user_question": "Is the concept clear? Can mothers understand probiotics anti-cavity logic? Purchase intent?"
+}

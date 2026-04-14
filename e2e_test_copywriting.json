@@ -1,0 +1,8 @@
+{
+    "name": "E2E-copywriting-test",
+    "project_type": "copywriting",
+    "persona_ids": ["M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08"],
+    "business_brief": "Children probiotics toothpaste marketing copy review.",
+    "copy_material": "Headline: 'Good bacteria fight bad bacteria! Probiotic toothpaste, the new choice for children's oral health.' Body: 'Each brush delivers billions of active probiotics that colonize the oral cavity, forming a protective barrier. Clinically proven to reduce cavities by 67%. Strawberry flavor kids love. Endorsed by pediatric dentists nationwide. Only 39.9 yuan, give your child a scientific smile.'",
+    "user_question": "Is the copy memorable? Does it build trust? Will it drive purchase? What needs improvement?"
+}

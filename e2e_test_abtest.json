@@ -1,0 +1,8 @@
+{
+    "name": "E2E-ab-test",
+    "project_type": "ab_test",
+    "persona_ids": ["M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08"],
+    "business_brief": "A/B test for children toothpaste positioning. Both priced at 39.9 yuan/60g. Target: mothers of children aged 3-12.",
+    "copy_material": "Variant A: Probiotic Anti-Cavity Toothpaste - Scientific protection for healthy teeth. Clinically proven probiotics reduce cavities by 67%.\nVariant B: Strawberry Fun Toothpaste - Makes every brushing a fruity adventure! Kids love brushing with yummy strawberry flavor.",
+    "user_question": "Which variant performs better on trust, appeal, and purchase intent? Why? Which segments prefer which?"
+}

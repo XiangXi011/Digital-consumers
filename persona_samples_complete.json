@@ -625,6 +625,88 @@
         "impulse_tendency": "不冲动，需要他人推荐和背书",
         "brand_loyalty_desc": "渠道筛选的品牌作为加分项，不忠诚"
       }
+    },
+    {
+      "sample_id": "M07-01",
+      "segment_id": "M07",
+      "segment_name": "全能优等家",
+      "basic_profile": {
+        "nickname": "李女士",
+        "age": 35,
+        "city": "一线城市",
+        "marital_status": "已婚",
+        "child_age_stage": "3-8岁",
+        "occupation": "外企顾问",
+        "household_income_band": "月入5万",
+        "education": "硕士"
+      },
+      "mindset_profile": {
+        "decision_mode": "系统性研究型",
+        "openness_level": "high",
+        "price_sensitivity": "low",
+        "brand_loyalty": "mid",
+        "research_depth": "high"
+      },
+      "consumption_profile": {
+        "core_needs": [
+          "专业背书",
+          "数据支撑",
+          "系统方案"
+        ],
+        "preferred_channels": [
+          "京东自营",
+          "天猫旗舰店",
+          "小红书"
+        ],
+        "kol_preferences": "医生、育儿博主、专业测评",
+        "key_decision_factors": "专业认证 > 数据效果 > 品牌口碑"
+      },
+      "behavior_profile": {
+        "decision_speed": "中",
+        "comparison_behavior": "深度研究多个品牌后决策",
+        "impulse_tendency": "不冲动，理性决策",
+        "brand_loyalty_desc": "关注专业性和系统性，不盲目忠诚于单一品牌"
+      }
+    },
+    {
+      "sample_id": "M08-01",
+      "segment_id": "M08",
+      "segment_name": "佛系粗养家",
+      "basic_profile": {
+        "nickname": "王女士",
+        "age": 33,
+        "city": "二线城市",
+        "marital_status": "已婚",
+        "child_age_stage": "5-10岁",
+        "occupation": "自由职业",
+        "household_income_band": "月入1.5万",
+        "education": "本科"
+      },
+      "mindset_profile": {
+        "decision_mode": "随性型",
+        "openness_level": "mid",
+        "price_sensitivity": "high",
+        "brand_loyalty": "low",
+        "research_depth": "low"
+      },
+      "consumption_profile": {
+        "core_needs": [
+          "便宜实惠",
+          "用着方便"
+        ],
+        "preferred_channels": [
+          "拖妈尺至",
+          "护肤衣服店"
+        ],
+        "kol_preferences": "生活记录、家庆好物",
+        "key_decision_factors": "价格实惠 > 用着简单 > 安全可靠"
+      },
+      "behavior_profile": {
+        "decision_speed": "快",
+        "comparison_behavior": "基本不比较，好用就行",
+        "impulse_tendency": "容易冲动，看到好评就买",
+        "brand_loyalty_desc": "不在乎品牌，实惠好用就行"
+      }
     }
   ]
 }

@@ -1,0 +1,7 @@
+{
+    "name": "E2E-packaging-test",
+    "project_type": "packaging",
+    "persona_ids": ["M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08"],
+    "business_brief": "Children probiotics toothpaste packaging design review. Package: pink tube with cartoon strawberry character, 'Probiotic Kids Toothpaste' in large font, age 3-12 marked, 60g net weight. Shelf placement: eye-level in baby product section.",
+    "user_question": "Is the packaging visible on shelf? Is the text legible? Does the design appeal to mothers? What improvements are needed?"
+}

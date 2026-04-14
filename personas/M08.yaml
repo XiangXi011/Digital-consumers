@@ -1,0 +1,37 @@
+id: M08
+name: 佛系粗养家
+budget_band: "low"
+
+decision_weights:
+  efficacy_clarity: 0.20
+  trust_signal: 0.15
+  convenience: 0.30
+  price_fit: 0.35
+
+veto_trigger: "太贵 / 使用太麻烦 / 安全存疑"
+
+veto_rules:
+  - code: "too_expensive"
+    description: "太贵"
+  - code: "too_complicated"
+    description: "使用太麻烦"
+  - code: "safety_concern"
+    description: "安全存疑"
+
+feature_scoring_rubric:
+  efficacy_clarity:
+    5: "简单明了，知道是干什么的就行"
+    3: "说了很多但不确定有没有用"
+    1: "完全看不懂有什么用"
+  trust_signal:
+    5: "安全，大品牌或身边人用过"
+    3: "品牌一般但不至于不放心"
+    1: "看着不靠谱，不敢给孩子用"
+  convenience:
+    5: "随便用用就行，不需要特别关注"
+    3: "需要注意用法"
+    1: "太麻烦了不想折腾"
+  price_fit:
+    5: "便宜实惠，不心疼"
+    3: "比平时用的贵一点"
+    1: "太贵了，没必要花这个钱"

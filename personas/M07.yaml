@@ -1,0 +1,37 @@
+id: M07
+name: 全能优等家
+budget_band: "high"
+
+decision_weights:
+  efficacy_clarity: 0.35
+  trust_signal: 0.35
+  convenience: 0.15
+  price_fit: 0.15
+
+veto_trigger: "无专业背书 / 无数据支撑 / 缺配套方案"
+
+veto_rules:
+  - code: "no_professional_endorsement"
+    description: "无专业背书"
+  - code: "no_data_support"
+    description: "无数据支撑"
+  - code: "missing_integrated_solution"
+    description: "缺配套方案"
+
+feature_scoring_rubric:
+  efficacy_clarity:
+    5: "功效有数据支撑，能融入系统性管理方案"
+    3: "功效单一，无整体解决方案视角"
+    1: "功效模糊，无法评估实际价值"
+  trust_signal:
+    5: "有权威专业机构认证，系统性解决方案"
+    3: "普通品牌认证，缺乏深度专业背书"
+    1: "缺乏任何可信的专业证明"
+  convenience:
+    5: "能与现有育儿方案无缝衔接"
+    3: "需要额外适配"
+    1: "与现有方案冲突"
+  price_fit:
+    5: "物有所值，匹配专业品质"
+    3: "价格尚可，但需更强理由"
+    1: "溢价无理由"

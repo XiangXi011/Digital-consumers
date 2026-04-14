@@ -198,7 +198,7 @@ def make_readiness_gate_node(workflow):
             if not session.fields["persona_id"]["value"]:
                 blocking_reasons.append("persona_id")
         if brief.task_type in {"copy_feedback", "ab_test"} and not (
-            brief.copy_candidates or brief.key_claims
+            brief.copy_candidates or brief.key_claims or (brief.task_type == "ab_test" and has_substantive_product_context)
         ):
             blocking_reasons.append("copy_candidates")
         if brief.task_type == "price_test":
