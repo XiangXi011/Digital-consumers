@@ -1,0 +1,111 @@
+{
+  "app": {
+    "title": "Digital Consumer Insights Platform",
+    "subtitle": "AI-Powered Market Research"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "newProject": "New Project",
+    "personas": "Persona Library",
+    "reports": "Reports",
+    "docs": "Docs",
+    "settings": "Settings",
+    "logout": "Logout"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "email": "Email",
+    "password": "Password",
+    "displayName": "Display Name",
+    "loginTitle": "Sign in to your account",
+    "registerTitle": "Create a new account",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "loginFailed": "Login failed",
+    "registerFailed": "Registration failed"
+  },
+  "dashboard": {
+    "totalReports": "Reports Generated",
+    "weeklyReviews": "Reviews This Week",
+    "totalProjects": "Total Projects",
+    "avgCompletion": "Avg. Completion Time",
+    "quickReview": "Quick Review",
+    "newConcept": "New Concept Review",
+    "newPackaging": "New Packaging Review",
+    "newCopy": "New Copy Review",
+    "newAB": "New A/B Test",
+    "recentTasks": "Recent Tasks",
+    "statusDist": "Status Distribution",
+    "newProject": "New Project",
+    "noTasks": "No tasks yet. Click above to create your first review.",
+    "loading": "Loading..."
+  },
+  "project": {
+    "name": "Project Name",
+    "type": "Review Type",
+    "question": "Core Research Question",
+    "product": "Product Info",
+    "brief": "Background / Business Brief",
+    "copy": "Copy Material",
+    "attachments": "Attachments",
+    "personas": "Target Personas",
+    "selectAll": "Select All",
+    "deselectAll": "Deselect All",
+    "create": "Start Review",
+    "creating": "Creating...",
+    "cancel": "Cancel",
+    "created": "Project Created Successfully",
+    "sessionId": "Session ID",
+    "currentStage": "Current Stage",
+    "progress": "Progress",
+    "backHome": "Back to Home",
+    "continueCreate": "Create Another",
+    "methodology": "Research Methodology",
+    "groupDiscussion": "Focus Group Discussion",
+    "groupDiscussionDesc": "Simulate structured debate among 3-4 consumers to discover consensus and divergence",
+    "deepDive": "Deep Dive Interview",
+    "deepDiveDesc": "In-depth exploration with consumers holding opposing views (requires focus group first)"
+  },
+  "status": {
+    "collecting": "Collecting",
+    "planning": "Planning",
+    "running": "Running",
+    "synthesizing": "Synthesizing",
+    "awaiting_clarification": "Needs Clarification",
+    "awaiting_run_confirmation": "Awaiting Confirmation",
+    "completed": "Completed",
+    "error": "Error"
+  },
+  "report": {
+    "summary": "Summary",
+    "personas": "Persona Feedback",
+    "discussion": "Focus Discussion",
+    "evidence": "Evidence",
+    "metrics": "Metrics",
+    "noReport": "Report not yet generated",
+    "noReportDesc": "Report will appear automatically after the project completes",
+    "coreFindings": "Core Findings",
+    "recommendation": "Recommendation",
+    "keyConflicts": "Key Conflicts",
+    "consensus": "Consensus",
+    "noDiscussion": "Focus group discussion was not enabled for this review",
+    "minority": "Minority",
+    "majority": "Majority"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Failed to load",
+    "retry": "Retry",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "confirm": "Confirm",
+    "back": "Back",
+    "hours": "hours"
+  },
+  "language": {
+    "zhCN": "中文",
+    "en": "English"
+  }
+}

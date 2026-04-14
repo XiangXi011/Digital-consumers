@@ -1,0 +1,111 @@
+{
+  "app": {
+    "title": "数字消费者洞察平台",
+    "subtitle": "AI 驱动的市场研究平台"
+  },
+  "nav": {
+    "dashboard": "仪表盘",
+    "newProject": "新建项目",
+    "personas": "画像库",
+    "reports": "报告中心",
+    "docs": "文档",
+    "settings": "设置",
+    "logout": "退出登录"
+  },
+  "auth": {
+    "login": "登录",
+    "register": "注册",
+    "email": "邮箱",
+    "password": "密码",
+    "displayName": "显示名称",
+    "loginTitle": "登录您的账户",
+    "registerTitle": "创建新账户",
+    "noAccount": "还没有账户？",
+    "hasAccount": "已有账户？",
+    "loginFailed": "登录失败",
+    "registerFailed": "注册失败"
+  },
+  "dashboard": {
+    "totalReports": "已生成报告数",
+    "weeklyReviews": "本周评审次数",
+    "totalProjects": "总项目数",
+    "avgCompletion": "平均完成时长",
+    "quickReview": "快速发起评审",
+    "newConcept": "新建概念评审",
+    "newPackaging": "新建包装评审",
+    "newCopy": "新建文案评审",
+    "newAB": "新建对比测试",
+    "recentTasks": "最近任务",
+    "statusDist": "项目状态分布",
+    "newProject": "新建项目",
+    "noTasks": "暂无任务，点击上方按钮创建第一个评审项目",
+    "loading": "加载中……"
+  },
+  "project": {
+    "name": "项目名称",
+    "type": "评审类型",
+    "question": "核心研究问题",
+    "product": "产品信息",
+    "brief": "背景描述",
+    "copy": "测试文案",
+    "attachments": "附件上传",
+    "personas": "目标数字画像",
+    "selectAll": "全选",
+    "deselectAll": "取消全选",
+    "create": "发起评审",
+    "creating": "创建中...",
+    "cancel": "取消",
+    "created": "项目创建成功",
+    "sessionId": "项目编号",
+    "currentStage": "当前阶段",
+    "progress": "进度",
+    "backHome": "返回首页",
+    "continueCreate": "继续创建",
+    "methodology": "研究方法增强",
+    "groupDiscussion": "焦点小组讨论",
+    "groupDiscussionDesc": "模拟 3-4 位消费者进行结构化辩论，发现共识与分歧",
+    "deepDive": "深度访谈",
+    "deepDiveDesc": "对持不同立场的消费者进行深度探询（需先启用焦点讨论）"
+  },
+  "status": {
+    "collecting": "收集中",
+    "planning": "规划中",
+    "running": "进行中",
+    "synthesizing": "结果综合中",
+    "awaiting_clarification": "待补充信息",
+    "awaiting_run_confirmation": "待运行确认",
+    "completed": "已完成",
+    "error": "异常"
+  },
+  "report": {
+    "summary": "摘要",
+    "personas": "画像反馈",
+    "discussion": "焦点讨论",
+    "evidence": "证据",
+    "metrics": "指标",
+    "noReport": "报告尚未生成",
+    "noReportDesc": "项目运行完成后将自动显示报告",
+    "coreFindings": "核心发现",
+    "recommendation": "结构化建议",
+    "keyConflicts": "关键分歧",
+    "consensus": "达成共识",
+    "noDiscussion": "本次评审未启用焦点小组讨论",
+    "minority": "少数",
+    "majority": "多数"
+  },
+  "common": {
+    "loading": "加载中...",
+    "error": "加载失败",
+    "retry": "重试",
+    "save": "保存",
+    "delete": "删除",
+    "edit": "编辑",
+    "confirm": "确认",
+    "back": "返回",
+    "hours": "小时"
+  },
+  "language": {
+    "zhCN": "中文",
+    "en": "English"
+  }
+}
