@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { api } from '../lib/api';
+import { notifySuccess, notifyError } from '../components/Toast';
 
 const REVIEW_TYPE_CONFIG = {
   concept: {
@@ -142,7 +143,7 @@ export default function NewProject() {
         const res = await api.uploadFile(file);
         setUploadedFiles(prev => [...prev, res]);
       } catch (err) {
-        alert(`上传失败: ${err.message}`);
+        notifyError(`上传失败: ${err.message}`);
       }
     }
     e.target.value = '';
@@ -162,15 +163,15 @@ export default function NewProject() {
       if (navigator.clipboard?.writeText) {
         await navigator.clipboard.writeText(absolute);
       }
-      alert('附件链接已复制');
+      notifySuccess('附件链接已复制');
     } catch {
-      alert('复制失败，请手动复制链接');
+      notifyError('复制失败，请手动复制链接');
     }
   };
 
   const validateForm = () => {
     if (!projectType || !activeTypeConfig) {
-      alert('请先选择评审类型');
+      notifyError('请先选择评审类型');
       return false;
     }
 
@@ -183,7 +184,7 @@ export default function NewProject() {
           brief: '背景描述 / Business Brief',
           copy: '测试文案',
         };
-        alert(`请填写：${fieldLabelMap[field] || field}`);
+        notifyError(`请填写：${fieldLabelMap[field] || field}`);
         return false;
       }
     }
@@ -213,7 +214,7 @@ export default function NewProject() {
       await api.runProject(res.session_id);
       navigate(`/projects/${res.session_id}`);
     } catch (err) {
-      alert(`创建失败: ${err.message}`);
+      notifyError(`创建失败: ${err.message}`);
     } finally {
       setSubmitting(false);
     }
@@ -315,11 +316,11 @@ export default function NewProject() {
                       <input type="checkbox" checked={selectedPersonas.includes(persona.id)} readOnly
                         className="absolute top-4 right-4 w-4 h-4 text-primary rounded focus:ring-primary accent-primary" />
                       <div>
-                        <span className="text-[10px] font-bold text-slate-400 block mb-1">{persona.id}</span>
+                        <span className="text-xs font-bold text-slate-400 block mb-1">{persona.id}</span>
                         <span className="text-sm font-bold text-on-surface block">{persona.name}</span>
                       </div>
                       {persona.tags.length > 0 && (
-                        <span className="inline-block mt-3 px-2 py-1 bg-surface-container text-[10px] font-bold text-on-surface-variant rounded w-max">
+                        <span className="inline-block mt-3 px-2 py-1 bg-surface-container text-xs font-bold text-on-surface-variant rounded w-max">
                           {persona.tags[0]}
                         </span>
                       )}
