@@ -110,13 +110,12 @@ def check_veto(
         scores = persona_output.get("rubric_scores", {})
         return any(v == 1 for v in scores.values() if isinstance(v, int))
 
-    combined_text = f"{product_context} {persona_output.get('verbatim_answer', '')}"
-    combined_text_lower = combined_text.lower()
+    combined_text = persona_output.get('verbatim_answer', '')
 
     for condition in conditions:
         # Simple keyword match in the combined context
         keywords = [kw.strip() for kw in re.split(r"[，、,]", condition) if kw.strip()]
-        if any(kw in combined_text_lower for kw in keywords):
+        if any(kw in combined_text for kw in keywords):
             return True
 
     # Also trigger veto if any dimension score is 1 (minimum)
@@ -158,10 +157,20 @@ def compute_purchase_intent(
     Returns:
         PersonaEvaluation with computed purchase_score and purchase_intent.
     """
-    # Use task_type-specific weights if available, else persona YAML weights
+    # Use task_type-specific dimensions with persona-specific weights
     if task_type:
         config = get_scoring_config(task_type)
-        weights = config["weights"]
+        base_weights = config["weights"]
+        weight_mapping = config.get("persona_weight_mapping", {})
+        persona_weights = get_decision_weights(persona_yaml)
+        # Override registry weights with persona-specific weights via mapping
+        if weight_mapping:
+            weights = {
+                dim: persona_weights.get(yaml_key, base_weights.get(dim, 0.25))
+                for dim, yaml_key in weight_mapping.items()
+            }
+        else:
+            weights = base_weights
         buy_threshold = config["buy_threshold"]
         reject_threshold = config["reject_threshold"]
     else:

@@ -839,49 +839,57 @@ def _extract_evidence_atoms(mom_outputs: List[Dict[str, Any]]) -> List[Dict[str,
         # Extract from concerns → evidence atoms
         for concern in output.get("concerns", []):
             field_type = _classify_evidence_field(concern)
-            atoms.append(EvidenceAtom(
+            atom = EvidenceAtom(
                 agent_id=persona_id,
                 persona_name=persona_name,
                 field=field_type,
                 value=concern,
                 weight_hint=1.0,
                 is_minority=is_minority,
-            ).model_dump())
+            ).model_dump()
+            atom["stance"] = stance
+            atoms.append(atom)
 
         # Extract from motivations → evidence atoms
         for motivation in output.get("motivations", []):
             field_type = _classify_evidence_field(motivation)
-            atoms.append(EvidenceAtom(
+            atom = EvidenceAtom(
                 agent_id=persona_id,
                 persona_name=persona_name,
                 field=field_type,
                 value=motivation,
                 weight_hint=1.0,
                 is_minority=False,
-            ).model_dump())
+            ).model_dump()
+            atom["stance"] = stance
+            atoms.append(atom)
 
         # Extract from core_needs → evidence atoms
         for need in output.get("core_needs", []):
-            atoms.append(EvidenceAtom(
+            atom = EvidenceAtom(
                 agent_id=persona_id,
                 persona_name=persona_name,
                 field=_classify_evidence_field(need),
                 value=need,
                 weight_hint=0.8,
                 is_minority=is_minority,
-            ).model_dump())
+            ).model_dump()
+            atom["stance"] = stance
+            atoms.append(atom)
 
         # Extract from rubric low scores as evidence of weakness
         for dim, score in rubric_scores.items():
             if isinstance(score, int) and score <= 2:
-                atoms.append(EvidenceAtom(
+                atom = EvidenceAtom(
                     agent_id=persona_id,
                     persona_name=persona_name,
                     field=_rubric_dim_to_evidence_field(dim),
                     value=f"{persona_name}给{dim}打了{score}分（满分5）",
                     weight_hint=1.5,
                     is_minority=is_minority,
-                ).model_dump())
+                ).model_dump()
+                atom["stance"] = stance
+                atoms.append(atom)
 
     return atoms
 
@@ -992,6 +1000,13 @@ def _group_evidence_atoms(atoms: List[Dict[str, Any]]) -> Dict[str, List[Dict[st
             consensus.extend(majority_atoms[:3])
         elif majority_atoms:
             divergence.extend(majority_atoms)
+
+        # Stance-based divergence: if interested and hesitant both present in same field
+        stances_in_field = {a.get("stance", "") for a in majority_atoms if a.get("stance")}
+        if "interested" in stances_in_field and "hesitant" in stances_in_field:
+            for atom in majority_atoms:
+                if atom not in consensus and atom not in divergence:
+                    divergence.append(atom)
 
     return {
         "top_consensus_evidence": consensus,
@@ -1172,10 +1187,11 @@ class MomPersonaAgent:
                 result = self.ai_client.generate_text(
                     prompt=self._prompt(research_input, research_plan),
                     system_prompt=(
-                        "You are speaking as one specific Chinese mother consumer persona. "
-                        "You must output ONLY discrete 1-5 rubric scores for each dimension. "
-                        "Do NOT output any weighted totals, purchase scores, or purchase intent. "
-                        "Return strict JSON only."
+                        "你扮演一位具体的中国妈妈消费者画像。"
+                        "只输出每个维度的1-5整数评分。"
+                        "不要输出加权总分、购买分数或购买意愿。"
+                        "只返回严格的JSON。"
+                        "所有文本字段必须使用中文。"
                     ),
                 )
             except AssertionError as exc:
@@ -1388,9 +1404,11 @@ class MomPersonaAgent:
                 "- core_needs: 核心需求列表",
                 "- motivations: 购买动机列表",
                 "- concerns: 顾虑列表",
-                "- decision_logic: 决策逻辑（一段话）",
+                "- decision_logic: 决策逻辑（一段话，说明你会买/不会买的核心原因和影响因素）",
                 "- verbatim_answer: 你的原话回答",
-                "- evidence_trace: 你的判断依据",
+                "- evidence_trace: 你做出判断的具体依据（引用产品/文案中的具体信息）",
+                "- confidence_note: 你对自己判断的信心程度（和evidence_trace不同：evidence_trace是判断依据，confidence_note是你对这个判断有多确定、有什么不确定的地方）",
+                "- what_would_change_my_mind: 什么具体条件会改变你当前的判断（列出具体条件，不要重复decision_logic的内容）",
                 "",
                 "【评分解释（重要！）",
                 "每个评分维度必须给出解释，格式：",
@@ -1442,9 +1460,10 @@ class ResearchSynthesizerAgent:
                 result = self.ai_client.generate_text(
                     prompt=self._prompt(research_input, research_plan, evidence_groups, winner_signals),
                     system_prompt=(
-                        "You are a qualitative research synthesizer. Return strict JSON only. "
-                        "You must cite specific evidence atoms in your synthesis. "
-                        "You must preserve minority rejection reasons in the output."
+                        "你是一个定性研究综合分析器。只返回严格的JSON。"
+                        "你必须引用具体的证据原子来支撑结论。"
+                        "你必须在输出中保留少数派的反对理由。"
+                        "所有输出文本（除JSON key外）必须使用中文。"
                     ),
                 )
             except AssertionError as exc:
@@ -1503,15 +1522,15 @@ class ResearchSynthesizerAgent:
         }.get(research_input.question_type, "Focus on evidence-based synthesis and preserve minority views.")
 
         lines = [
-            "You are a qualitative research synthesizer. Return JSON only.",
-            "The output must contain research_summary and structured_recommendation.",
+            "你是一个定性研究综合分析器。只返回JSON。输出必须包含 research_summary 和 structured_recommendation。",
             f"research_summary keys: {', '.join(SUMMARY_KEYS)}",
             f"structured_recommendation keys: {', '.join(STRUCTURED_RECOMMENDATION_KEYS)}",
             "",
-            "Rules:",
-            "1. Base every conclusion on the structured evidence below.",
-            "2. Preserve minority rejection reasons.",
-            "3. Cite which persona each evidence atom came from.",
+            "规则:",
+            "1. 所有结论必须基于下方的结构化证据。",
+            "2. 保留少数派的反对理由。",
+            "3. 引用每个证据原子来自哪个persona。",
+            "4. JSON中所有文本值必须使用中文（JSON key除外）。汇总、建议、分析全部用中文。",
             "",
             f"mode_focus: {synthesis_focus}",
             f"question_type: {research_input.question_type}",
