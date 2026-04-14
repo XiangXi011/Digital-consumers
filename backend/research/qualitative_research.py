@@ -1,6 +1,7 @@
 import asyncio
 import json
 import logging
+import os
 import random
 import re
 import time
@@ -981,6 +982,8 @@ def _group_evidence_atoms(atoms: List[Dict[str, Any]]) -> Dict[str, List[Dict[st
 
 
 class ResearchPlannerAgent:
+    PLANNER_MODEL = os.environ.get("PLANNER_MODEL", "")
+
     def __init__(self, ai_client: Any):
         self.ai_client = ai_client
 
@@ -990,10 +993,13 @@ class ResearchPlannerAgent:
         last_errors: List[str] = []
         last_parse_error: IncompleteResearchRunError | None = None
         for attempt in range(PLANNER_RESPONSE_ATTEMPTS):
-            result = self.ai_client.generate_text(
+            _kwargs: Dict[str, Any] = dict(
                 prompt=prompt,
                 system_prompt="You are a research planner agent. Return strict JSON only.",
             )
+            if self.PLANNER_MODEL:
+                _kwargs["model"] = self.PLANNER_MODEL
+            result = self.ai_client.generate_text(**_kwargs)
             if result.get("mode") != "live_text":
                 last_errors = [str(item) for item in result.get("errors", []) if str(item).strip()]
                 logger.warning(
