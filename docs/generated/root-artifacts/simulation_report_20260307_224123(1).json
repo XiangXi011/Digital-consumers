@@ -1,0 +1,93 @@
+{
+  "report_meta": {
+    "generated_at": "2026-03-07 22:41:23",
+    "product_tested": "舒客儿童益生菌牙膏",
+    "total_agents": 200,
+    "tiers_executed": [
+      "batch_evaluation",
+      "group_discussion",
+      "deep_interview"
+    ]
+  },
+  "executive_summary": {
+    "overall_acceptance": "26%",
+    "estimated_conversion": "7.9%",
+    "key_opportunity_segments": [
+      "宠爱富养家",
+      "全能优等家"
+    ],
+    "main_barriers": [
+      "支持者: 4人, 反对者: 4人"
+    ]
+  },
+  "tier1_batch_results": {
+    "sample_size": 200,
+    "avg_score": 6.09,
+    "decision_distribution": {
+      "考虑购买": 53,
+      "明确拒绝": 129,
+      "犹豫观望": 18
+    },
+    "segment_analysis": {
+      "宠爱富养家": {
+        "count": 25,
+        "avg_score": 6.03,
+        "avg_intention": 0.6
+      },
+      "自在成长家": {
+        "count": 25,
+        "avg_score": 6.07,
+        "avg_intention": 0.11
+      },
+      "传统关爱妈": {
+        "count": 25,
+        "avg_score": 6.02,
+        "avg_intention": 0.06
+      },
+      "高线忙碌派": {
+        "count": 25,
+        "avg_score": 6.17,
+        "avg_intention": 0.36
+      },
+      "品质精算师": {
+        "count": 25,
+        "avg_score": 6.12,
+        "avg_intention": 0.21
+      },
+      "小镇贵妇妈": {
+        "count": 25,
+        "avg_score": 6.15,
+        "avg_intention": 0.07
+      },
+      "全能优等家": {
+        "count": 25,
+        "avg_score": 6.07,
+        "avg_intention": 0.6
+      },
+      "佛系粗养家": {
+        "count": 25,
+        "avg_score": 6.09,
+        "avg_intention": 0.06
+      }
+    }
+  },
+  "tier2_discussion_summary": {
+    "participants": 8,
+    "consensus_level": "73%",
+    "key_insights": [
+      "支持者: 4人, 反对者: 4人"
+    ]
+  },
+  "tier3_deep_insights": {
+    "interviews_conducted": 3,
+    "representative_quotes": [
+      "[曹诗涵] 我觉得吧，还是要听专业人士的意见。牙医说用什么我就用什么",
+      "[谢丽华] 这个包装太好看了，小红书刷到就下单了",
+      "[梁小芳] 我先看看价格合不合适，便宜就行，太贵买不起"
+    ]
+  },
+  "recommendations": [
+    "当前产品定位需要调整，建议重新评估目标人群",
+    "优先 targeting 人群: 宠爱富养家, 全能优等家"
+  ]
+}

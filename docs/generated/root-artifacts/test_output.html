@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>定性研究报告</title>
+  <style>
+    :root {
+      --bg: #f4f7fa;
+      --paper: #ffffff;
+      --ink: #1e293b;
+      --text-main: #334155;
+      --muted: #64748b;
+      --line: #e2e8f0;
+      --accent: #6366f1;
+      --accent-hover: #4f46e5;
+      --accent-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+      --accent-soft: #e0e7ff;
+      --ok: #10b981;
+      --ok-soft: #d1fae5;
+      --ok-text: #047857;
+      --warn: #f59e0b;
+      --warn-soft: #fef3c7;
+      --warn-text: #b45309;
+      --danger: #ef4444;
+      --danger-soft: #fee2e2;
+      --danger-text: #b91c1c;
+      --radius-sm: 8px;
+      --radius: 16px;
+      --radius-lg: 24px;
+      --shadow-sm: 0 2px 4px rgba(148, 163, 184, 0.05);
+      --shadow-md: 0 10px 25px -5px rgba(148, 163, 184, 0.15), 0 8px 10px -6px rgba(148, 163, 184, 0.05);
+      --shadow-hover: 0 20px 25px -5px rgba(148, 163, 184, 0.2), 0 10px 10px -5px rgba(148, 163, 184, 0.04);
+      --maxw: 1160px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    .page {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+    .panel {
+      background: var(--paper);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      padding: 36px 40px;
+      margin-bottom: 32px;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      position: relative;
+    }
+    .cover {
+      background: var(--accent-gradient);
+      color: #ffffff;
+      padding: 48px 40px 64px;
+      box-shadow: 0 15px 35px -10px rgba(99, 102, 241, 0.4);
+      border: none;
+    }
+    .cover::after {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      background: url("data:image/svg+xml;utf8,<svg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'><circle cx='50' cy='50' r='40' stroke='rgba(255,255,255,0.05)' stroke-width='2' fill='none'/></svg>") repeat;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .title { margin: 0; font-size: 38px; line-height: 1.3; font-weight: 800; letter-spacing: -0.5px; color: #ffffff; position: relative; z-index: 1; }
+    .subtitle { margin: 12px 0 0; color: rgba(255,255,255,0.85); font-size: 18px; font-weight: 400; position: relative; z-index: 1; }
+    .meta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; position: relative; z-index: 1; }
+    .chip {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 13px;
+      color: #ffffff;
+      font-weight: 500;
+    }
+    .summary-box {
+      margin-top: -40px;
+      margin-bottom: 32px;
+      padding: 24px 32px;
+      background: #ffffff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      border-left: 6px solid var(--accent);
+      position: relative;
+      z-index: 10;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .summary-box strong { color: var(--ink); font-size: 18px; display: block; margin-bottom: 4px; }
+    .summary-box p { margin: 0; color: var(--text-main); font-size: 15px; line-height: 1.6; }
+    h2 {
+      margin: 0 0 16px;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-note { margin: -8px 0 20px; color: var(--muted); font-size: 14px; }
+    .grid { display: grid; gap: 20px; }
+    .g2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .g3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .g4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .split { display: grid; gap: 24px; grid-template-columns: 1.2fr 1fr; }
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      min-height: 90px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: #cbd5e1;
+    }
+    .card h3 {
+      margin: 0 0 14px;
+      font-size: 14px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+    }
+    .card h3::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 16px;
+      background: var(--accent-gradient);
+      border-radius: 4px;
+      margin-right: 10px;
+    }
+    .card.card-ok { border-top: 4px solid var(--ok); }
+    .card.card-ok h3::before { background: var(--ok); }
+    .card.card-danger { border-top: 4px solid var(--danger); }
+    .card.card-danger h3::before { background: var(--danger); }
+    .card.card-warn { background: #fffbeb; border-color: #fde68a; }
+    .card.card-warn h3::before { background: var(--warn); }
+    .value { margin: 0; font-size: 15px; color: var(--text-main); margin-bottom: 8px; white-space: pre-wrap; word-break: break-word; }
+    .value strong { color: var(--ink); }
+    .big-number {
+      font-size: 32px;
+      font-weight: 800;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 4px 0;
+      line-height: 1.2;
+    }
+    .bullets { margin: 0; padding-left: 20px; color: var(--text-main); }
+    .bullets li { margin-bottom: 10px; padding-left: 4px; }
+    .bullets li::marker { color: var(--accent); }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+    .badge-interested { background: var(--ok-soft); color: var(--ok-text); border: 1px solid #a7f3d0; }
+    .badge-hesitant { background: var(--warn-soft); color: var(--warn-text); border: 1px solid #fde68a; }
+    .badge-reject { background: var(--danger-soft); color: var(--danger-text); border: 1px solid #fca5a5; }
+    .quote {
+      margin: 16px 0 0;
+      padding: 16px 20px;
+      background: #f8fafc;
+      border-radius: var(--radius-sm);
+      border-left: 3px solid var(--line);
+      font-style: italic;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+      position: relative;
+    }
+    .quote::before {
+      content: '“';
+      position: absolute;
+      left: 8px;
+      top: -8px;
+      font-size: 40px;
+      color: var(--line);
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+    }
+    table { width: 100%; border-collapse: collapse; min-width: 680px; background: #fff; }
+    th, td { padding: 16px 20px; text-align: left; vertical-align: middle; font-size: 14px; border-bottom: 1px solid var(--line); }
+    th {
+      background: #f8fafc;
+      color: var(--ink);
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    tbody tr { transition: background-color 0.2s; }
+    tbody tr:hover { background-color: var(--accent-soft); }
+    tbody tr:last-child td { border-bottom: none; }
+    details {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      background: var(--paper);
+      margin-bottom: 12px;
+      transition: all 0.2s;
+      box-shadow: var(--shadow-sm);
+    }
+    summary { cursor: pointer; font-weight: 700; color: var(--ink); outline: none; }
+    pre {
+      margin: 16px 0 0;
+      background: #0f172a;
+      color: #e2e8f0;
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      overflow: auto;
+      font-size: 13px;
+      line-height: 1.5;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    .label { margin-bottom: 6px; color: var(--muted); font-size: 13px; font-weight: 500; }
+    .footer-text { text-align: center; margin-top: 40px; color: var(--muted); font-size: 13px; font-weight: 500; }
+    @media (max-width: 980px) {
+      .g2, .g3, .g4, .split { grid-template-columns: 1fr; }
+      .panel { padding: 24px; }
+      .cover { padding: 40px 24px 60px; }
+      .summary-box { flex-direction: column; gap: 8px; padding: 20px; margin-left: 20px; margin-right: 20px; }
+    }
+    @media print {
+      body { background: #fff; }
+      .page { max-width: none; padding: 0; }
+      .cover { background: #fff; color: #000; box-shadow: none; padding: 20px 0; border-bottom: 2px solid #000; }
+      .title, .subtitle { color: #000; }
+      .chip { border-color: #000; color: #000; }
+      .panel { box-shadow: none; border: none; page-break-inside: avoid; margin-bottom: 20px; padding: 0; }
+      .summary-box { margin-top: 20px; border: 1px solid #ddd; box-shadow: none; }
+      .card { border: 1px solid #ddd; box-shadow: none !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <section class="panel cover">
+      <h1 class="title">定性研究报告</h1>
+      <p class="subtitle">test question</p>
+      <div class="meta">
+        <span class="chip">🎯 研究主题：产品概念</span>
+        <span class="chip">🔬 研究方式：多人模式 · 虚拟消费者定性评估</span>
+        <span class="chip">📅 生成时间：2026-03-25</span>
+      </div>
+    </section>
+
+    <div class="summary-box">
+      <div style="font-size: 28px; line-height: 1;">💡</div>
+      <div>
+        <strong>一句话结论</strong>
+        <p>conclusion</p>
+      </div>
+    </div>
+
+    <section class="panel">
+      <h2>📌 核心结论摘要</h2>
+      <p class="section-note">先给管理层可直接使用的结论，细节证据见后续模块。</p>
+      <ul class="bullets">
+        <li>action1</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>📊 关键判断卡片</h2>
+      <div class="grid g3">
+        <div class="card">
+          <h3>概念吸引力</h3>
+          <ul class="bullets"><li>point1</li></ul>
+        </div>
+        <div class="card card-ok">
+          <h3>最大购买驱动</h3>
+          <ul class="bullets"><li>driver1</li></ul>
+        </div>
+        <div class="card card-danger">
+          <h3>最大阻力</h3>
+          <ul class="bullets"><li>pain1</li></ul>
+        </div>
+        <div class="card card-warn">
+          <h3>信任风险 / 证据缺口</h3>
+          <ul class="bullets"><li>gap1</li></ul>
+        </div>
+        <div class="card">
+          <h3>少数反对意见</h3>
+          <ul class="bullets"><li>暂无少数反对意见。</li></ul>
+        </div>
+        <div class="card">
+          <h3>分歧观点</h3>
+          <ul class="bullets"><li>diff1</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>🔍 总体洞察</h2>
+      <div class="split">
+        <div class="card" style="border-top: 4px solid var(--accent);">
+          <h3>✅ 为何有潜力</h3>
+          <ul class="bullets"><li>driver1</li></ul>
+        </div>
+        <div class="card" style="border-top: 4px solid var(--muted);">
+          <h3>⚠️ 为何会犹豫</h3>
+          <ul class="bullets"><li>pain1</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>💬 典型人群观点</h2>
+      <p class="section-note">仅保留高价值字段，摘录最具代表性的用户原声。</p>
+      <div class="grid g2">
+        
+        <div class="card">
+          <span class="badge badge-interested">感兴趣</span>
+          <h3 style="font-size: 20px; color: var(--ink);">Alice</h3>
+          <p class="value"><strong>最打动点：</strong>fun</p>
+          <p class="value"><strong>最大顾虑：</strong>price</p>
+          <p class="value"><strong>触发条件：</strong>lower price</p>
+          <div class="quote">great product</div>
+        </div>
+        <div class="card">
+          <span class="badge badge-hesitant">犹豫</span>
+          <h3 style="font-size: 20px; color: var(--ink);">Bob</h3>
+          <p class="value"><strong>最打动点：</strong>safety</p>
+          <p class="value"><strong>最大顾虑：</strong>unknown brand</p>
+          <p class="value"><strong>触发条件：</strong>brand trust</p>
+          <div class="quote">not sure</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>📋 建议动作与下一步</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>方向</th>
+              <th>建议动作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>优化建议</strong></td><td>action1</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel" style="box-shadow:none; border:none; background:transparent; padding:0; margin-bottom: 0;">
+      <details>
+        <summary>⚙️ 原始数据附录（点击展开）</summary>
+        <p style="margin-top:12px; color: var(--muted);">包含系统生成的原始结构化 JSON 与 Prompt 追溯记录。</p>
+        <pre>{
+  &quot;meta&quot;: {
+    &quot;mode&quot;: &quot;multi&quot;,
+    &quot;question_type&quot;: &quot;product_concept&quot;,
+    &quot;generated_at&quot;: &quot;2026-03-25&quot;,
+    &quot;total_agents&quot;: 4
+  },
+  &quot;research_brief&quot;: {
+    &quot;user_question&quot;: &quot;test question&quot;,
+    &quot;product_info&quot;: &quot;test product&quot;
+  },
+  &quot;research_summary&quot;: {
+    &quot;consensus&quot;: [
+      &quot;point1&quot;
+    ],
+    &quot;differences&quot;: [
+      &quot;diff1&quot;
+    ],
+    &quot;pain_points&quot;: [
+      &quot;pain1&quot;
+    ],
+    &quot;drivers&quot;: [
+      &quot;driver1&quot;
+    ]
+  },
+  &quot;structured_recommendation&quot;: {
+    &quot;objective_answers&quot;: [
+      &quot;conclusion&quot;
+    ],
+    &quot;recommended_actions&quot;: [
+      &quot;action1&quot;
+    ],
+    &quot;evidence_gaps&quot;: [
+      &quot;gap1&quot;
+    ]
+  },
+  &quot;consumer_voice&quot;: [
+    {
+      &quot;persona_name&quot;: &quot;Alice&quot;,
+      &quot;stance&quot;: &quot;interested&quot;,
+      &quot;voice_line&quot;: &quot;great product&quot;,
+      &quot;motivations&quot;: [
+        &quot;fun&quot;
+      ],
+      &quot;concerns&quot;: [
+        &quot;price&quot;
+      ],
+      &quot;what_would_change_my_mind&quot;: &quot;lower price&quot;
+    },
+    {
+      &quot;persona_name&quot;: &quot;Bob&quot;,
+      &quot;stance&quot;: &quot;hesitant&quot;,
+      &quot;voice_line&quot;: &quot;not sure&quot;,
+      &quot;motivations&quot;: [
+        &quot;safety&quot;
+      ],
+      &quot;concerns&quot;: [
+        &quot;unknown brand&quot;
+      ],
+      &quot;what_would_change_my_mind&quot;: &quot;brand trust&quot;
+    }
+  ],
+  &quot;appendix&quot;: {},
+  &quot;research_plan&quot;: {}
+}</pre>
+      </details>
+    </section>
+
+    <div class="footer-text">数字消费者洞察报告 · 面向业务决策展示</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+[project]
+name = "market-agent-teams"
+version = "0.2.0"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 120
+select = ["E", "F", "I", "W"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true

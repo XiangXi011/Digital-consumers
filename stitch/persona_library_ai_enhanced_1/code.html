@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface": "#f8f9fb",
+              "inverse-primary": "#b2c5ff",
+              "primary-container": "#0052cc",
+              "inverse-on-surface": "#f0f1f3",
+              "on-surface-variant": "#434654",
+              "secondary-container": "#c2d5fd",
+              "tertiary-container": "#a33500",
+              "tertiary": "#7b2600",
+              "on-tertiary-container": "#ffc6b2",
+              "surface-container": "#edeef0",
+              "on-secondary-fixed-variant": "#344768",
+              "on-tertiary-fixed": "#380d00",
+              "on-tertiary": "#ffffff",
+              "secondary-fixed": "#d6e3ff",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed-dim": "#b4c7ee",
+              "on-primary": "#ffffff",
+              "primary-fixed": "#dae2ff",
+              "inverse-surface": "#2e3132",
+              "surface-container-high": "#e7e8ea",
+              "outline-variant": "#c3c6d6",
+              "surface-tint": "#0c56d0",
+              "on-primary-fixed": "#001848",
+              "outline": "#737685",
+              "error-container": "#ffdad6",
+              "surface-variant": "#e1e2e4",
+              "on-background": "#191c1e",
+              "on-primary-fixed-variant": "#0040a2",
+              "on-primary-container": "#c4d2ff",
+              "surface-container-low": "#f3f4f6",
+              "error": "#ba1a1a",
+              "on-tertiary-fixed-variant": "#812800",
+              "on-error-container": "#93000a",
+              "on-secondary-fixed": "#051b3a",
+              "secondary": "#4c5f81",
+              "primary-fixed-dim": "#b2c5ff",
+              "tertiary-fixed": "#ffdbcf",
+              "on-secondary-container": "#495c7e",
+              "primary": "#003d9b",
+              "surface-container-highest": "#e1e2e4",
+              "on-error": "#ffffff",
+              "on-secondary": "#ffffff",
+              "background": "#f8f9fb",
+              "surface-bright": "#f8f9fb",
+              "on-surface": "#191c1e",
+              "tertiary-fixed-dim": "#ffb59b",
+              "surface-dim": "#d9dadc"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9fb; color: #191c1e; }
+        .font-headline { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-size: 20px; }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #e1e2e4; border-radius: 10px; }
+        
+        /* Updated Sidebar Active Style with Glow */
+        .sidebar-active {
+            box-shadow: 0 0 15px rgba(0, 82, 204, 0.15), 0 0 5px rgba(0, 82, 204, 0.1);
+            position: relative;
+        }
+        .sidebar-active::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 15%;
+            height: 70%;
+            width: 3px;
+            background-color: #0052cc;
+            border-radius: 4px 0 0 4px;
+        }
+
+        /* AI Insight Animation */
+        @keyframes slideInUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .animate-slide-in {
+            animation: slideInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+    </style>
+</head>
+<body class="bg-surface antialiased overflow-hidden">
+<!-- SideNavBar Anchor -->
+<aside class="bg-slate-100 dark:bg-slate-900 h-screen w-64 fixed left-0 top-0 flex flex-col p-4 space-y-2 font-['Manrope'] antialiased">
+<div class="mb-8 px-4">
+<h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">数字体验官</h1>
+<p class="text-xs text-slate-500 font-medium tracking-wider">DXO Platform</p>
+</div>
+<nav class="flex-1 space-y-1">
+<div class="flex items-center px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-blue-500 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors duration-200 cursor-pointer group">
+<span class="material-symbols-outlined mr-3">dashboard</span>
+<span class="text-sm font-medium">仪表盘</span>
+</div>
+<div class="flex items-center px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-blue-500 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors duration-200 cursor-pointer group">
+<span class="material-symbols-outlined mr-3">add_box</span>
+<span class="text-sm font-medium">新建评审</span>
+</div>
+<div class="flex items-center px-4 py-3 text-blue-600 dark:text-blue-400 bg-white dark:bg-slate-800 font-semibold rounded-lg cursor-pointer sidebar-active">
+<span class="material-symbols-outlined mr-3" style="font-variation-settings: 'FILL' 1;">face</span>
+<span class="text-sm font-medium">数字画像库</span>
+</div>
+<div class="flex items-center px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-blue-500 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors duration-200 cursor-pointer group">
+<span class="material-symbols-outlined mr-3">assessment</span>
+<span class="text-sm font-medium">评审项目</span>
+</div>
+<div class="flex items-center px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-blue-500 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors duration-200 cursor-pointer group">
+<span class="material-symbols-outlined mr-3">description</span>
+<span class="text-sm font-medium">报告中心</span>
+</div>
+<div class="flex items-center px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-blue-500 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors duration-200 cursor-pointer group">
+<span class="material-symbols-outlined mr-3">settings</span>
+<span class="text-sm font-medium">系统设置</span>
+</div>
+</nav>
+<div class="mt-auto p-4 bg-white/50 dark:bg-slate-800/50 rounded-xl">
+<div class="flex items-center space-x-3">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-white text-xs font-bold">JD</div>
+<div>
+<p class="text-xs font-bold text-slate-900 dark:text-white">Jane Doe</p>
+<p class="text-[10px] text-slate-500">Senior Research Lead</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Shell -->
+<main class="ml-64 flex flex-col h-screen">
+<!-- TopAppBar Anchor -->
+<header class="bg-white/85 dark:bg-slate-950/85 backdrop-blur-md fixed top-0 right-0 left-64 h-16 z-40 border-b border-slate-200/50 dark:border-slate-800/50 shadow-sm flex items-center justify-between px-8">
+<div class="flex items-center space-x-4">
+<span class="text-slate-400 text-sm font-medium">数字画像库</span>
+<span class="material-symbols-outlined text-slate-300 text-xs">chevron_right</span>
+<h2 class="font-headline text-lg font-extrabold text-on-surface tracking-tight">小镇贵妇妈</h2>
+</div>
+<div class="flex items-center space-x-6">
+<div class="flex items-center bg-surface-container px-3 py-1.5 rounded-full">
+<span class="material-symbols-outlined text-outline text-sm mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-xs w-48 placeholder:text-outline p-0" placeholder="搜索画像或标签..." type="text"/>
+</div>
+<button class="hover:bg-slate-50 dark:hover:bg-slate-900 rounded-full p-2 transition-all duration-300 ease-in-out relative">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<img alt="Profile" class="w-8 h-8 rounded-full object-cover border-2 border-white shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdkDXWIbI6XuU6jyZNZa7o_MfiCA_2VvOWc4fai2v1lrrh-wJ8vt4Uljnbdlm3ddlqvnoSawv21N5eatylEatWZNERkgnhQSQVbC3E7y_8kyPV9KMrv1Cjr6JOpT2zU7Sn9ByBIrR5mllYGWxw-a4CLprWWJFpQW2XZ_jvgMmWaD-K1LfugG124vZEiw8DFO3h8UaFh4KXSdkFyeh_My8nu9ho1Won-K3PfDjfpQVRHWoi6WAsOfUBXa9iVN93CiXD8IejSgWqdRwe"/>
+</div>
+</header>
+<!-- Page Content Layout -->
+<div class="mt-16 flex flex-1 overflow-hidden relative">
+<!-- Sidebar: Persona List -->
+<section class="w-80 bg-surface-container-low border-r border-outline-variant/10 overflow-y-auto custom-scrollbar p-6 space-y-4">
+<div class="flex items-center justify-between mb-2">
+<h3 class="text-[0.6875rem] font-bold uppercase tracking-widest text-outline">画像库 (12)</h3>
+<button class="text-primary text-xs font-semibold hover:underline">管理</button>
+</div>
+<!-- Persona Cards -->
+<div class="space-y-3">
+<!-- Active Card -->
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm border-l-4 border-primary ring-1 ring-black/5 transition-all">
+<div class="flex justify-between items-start mb-2">
+<span class="text-sm font-bold text-on-surface">小镇贵妇妈</span>
+<span class="text-[10px] px-1.5 py-0.5 bg-primary-fixed text-on-primary-fixed rounded font-bold">ACTIVE</span>
+</div>
+<p class="text-xs text-on-surface-variant line-clamp-1 mb-3">注重生活品质与邻里社交，是县域消费的意见领袖。</p>
+<div class="flex flex-wrap gap-1.5">
+<span class="text-[9px] bg-surface-container px-2 py-0.5 rounded-full text-on-secondary-fixed-variant">#品质至上</span>
+<span class="text-[9px] bg-surface-container px-2 py-0.5 rounded-full text-on-secondary-fixed-variant">#下沉市场</span>
+</div>
+</div>
+<!-- Inactive Cards -->
+<div class="bg-surface-container-low hover:bg-white p-4 rounded-xl transition-all cursor-pointer group border border-transparent hover:border-outline-variant/30">
+<div class="flex justify-between items-start mb-2">
+<span class="text-sm font-semibold text-on-surface group-hover:text-primary">高线忙碌派</span>
+<span class="material-symbols-outlined text-outline text-sm">more_horiz</span>
+</div>
+<p class="text-xs text-on-surface-variant line-clamp-1 mb-3">追求极速响应与效率工具，碎片化时间消费者。</p>
+<div class="flex flex-wrap gap-1.5">
+<span class="text-[9px] bg-surface-container px-2 py-0.5 rounded-full text-on-secondary-fixed-variant">#效率第一</span>
+<span class="text-[9px] bg-surface-container px-2 py-0.5 rounded-full text-on-secondary-fixed-variant">#一二线城市</span>
+</div>
+</div>
+<div class="bg-surface-container-low hover:bg-white p-4 rounded-xl transition-all cursor-pointer group border border-transparent hover:border-outline-variant/30">
+<div class="flex justify-between items-start mb-2">
+<span class="text-sm font-semibold text-on-surface group-hover:text-primary">赛博养生族</span>
+</div>
+<p class="text-xs text-on-surface-variant line-clamp-1">关注成分党，迷恋科技养生与情绪价值。</p>
+</div>
+<div class="bg-surface-container-low hover:bg-white p-4 rounded-xl transition-all cursor-pointer group border border-transparent hover:border-outline-variant/30">
+<div class="flex justify-between items-start mb-2">
+<span class="text-sm font-semibold text-on-surface group-hover:text-primary">潮流独居派</span>
+</div>
+<p class="text-xs text-on-surface-variant line-clamp-1">颜控至上，愿意为精致的单身生活溢价买单。</p>
+</div>
+<div class="bg-surface-container-low hover:bg-white p-4 rounded-xl transition-all cursor-pointer group border border-transparent hover:border-outline-variant/30">
+<div class="flex justify-between items-start mb-2">
+<span class="text-sm font-semibold text-on-surface group-hover:text-primary">硬核技术宅</span>
+</div>
+<p class="text-xs text-on-surface-variant line-clamp-1">关注参数配置与生态联动，极度理性。</p>
+</div>
+<div class="bg-surface-container-low hover:bg-white p-4 rounded-xl transition-all cursor-pointer group border border-transparent hover:border-outline-variant/30">
+<div class="flex justify-between items-start mb-2">
+<span class="text-sm font-semibold text-on-surface group-hover:text-primary">退休活力党</span>
+</div>
+<p class="text-xs text-on-surface-variant line-clamp-1">有钱有闲，社交圈相对固定，对信任感要求极高。</p>
+</div>
+</div>
+</section>
+<!-- Main Detail Pane -->
+<section class="flex-1 bg-surface p-8 overflow-y-auto custom-scrollbar relative">
+<!-- Detail Header -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0px_20px_40px_rgba(25,28,30,0.06)] mb-8 border border-outline-variant/10">
+<div class="flex items-start justify-between">
+<div class="space-y-4 max-w-2xl">
+<div class="flex items-center space-x-3">
+<h2 class="text-4xl font-headline font-extrabold text-on-surface tracking-tight">小镇贵妇妈</h2>
+<div class="flex gap-2">
+<span class="bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">High LTV</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Social Driver</span>
+</div>
+</div>
+<p class="text-lg text-on-surface-variant font-medium leading-relaxed italic">
+                                “比起追求性价比，我更在意这个品牌是否能提升我在社交圈中的形象和家庭的生活质感。”
+                            </p>
+<div class="flex items-center space-x-8 pt-2">
+<div class="flex flex-col">
+<span class="text-[0.6875rem] uppercase tracking-widest text-outline font-bold">核心城市</span>
+<span class="text-sm font-semibold text-on-surface">三四线城市/县城</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[0.6875rem] uppercase tracking-widest text-outline font-bold">年龄跨度</span>
+<span class="text-sm font-semibold text-on-surface">30-45 岁</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[0.6875rem] uppercase tracking-widest text-outline font-bold">置信系数</span>
+<span class="text-sm font-mono font-medium text-on-surface">$r = 0.92, p &lt; 0.01$</span>
+</div>
+</div>
+</div>
+<div class="w-32 h-32 bg-surface-container-low rounded-2xl flex items-center justify-center p-4 border border-outline-variant/10">
+<span class="material-symbols-outlined text-6xl text-primary-container" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+</div>
+</div>
+<!-- Analysis Grid (Asymmetric Bento) -->
+<div class="grid grid-cols-12 gap-6 mb-8">
+<!-- Radar Chart Section -->
+<div class="col-span-12 lg:col-span-5 bg-surface-container-low p-6 rounded-xl border border-outline-variant/10">
+<div class="flex justify-between items-center mb-6">
+<h4 class="text-[0.6875rem] font-bold uppercase tracking-widest text-outline">决策偏好度 Radar</h4>
+<button class="flex items-center text-xs font-bold text-primary hover:bg-primary/5 px-2 py-1 rounded transition-colors">
+<span class="material-symbols-outlined text-sm mr-1">tune</span>
+调整权重
+</button>
+</div>
+<div class="flex flex-col items-center">
+<div class="relative w-full h-64 flex items-center justify-center">
+<!-- Visual placeholder for Radar Chart -->
+<div class="absolute inset-0 flex items-center justify-center opacity-20">
+<div class="w-48 h-48 border border-outline rounded-full"></div>
+<div class="absolute w-32 h-32 border border-outline rounded-full"></div>
+<div class="absolute w-16 h-16 border border-outline rounded-full"></div>
+</div>
+<svg class="w-full h-full drop-shadow-lg" viewbox="0 0 200 200">
+<polygon fill="rgba(12, 86, 208, 0.15)" points="100,20 170,70 140,160 60,160 30,70" stroke="#0c56d0" stroke-width="2"></polygon>
+<circle cx="100" cy="20" fill="#0c56d0" r="3"></circle>
+<circle cx="170" cy="70" fill="#0c56d0" r="3"></circle>
+<circle cx="140" cy="160" fill="#0c56d0" r="3"></circle>
+<circle cx="60" cy="160" fill="#0c56d0" r="3"></circle>
+<circle cx="30" cy="70" fill="#0c56d0" r="3"></circle>
+<text class="text-[8px] font-bold fill-on-surface" text-anchor="middle" x="100" y="15">质量 (95)</text>
+<text class="text-[8px] font-bold fill-on-surface" text-anchor="start" x="175" y="70">品牌 (88)</text>
+<text class="text-[8px] font-bold fill-on-surface" text-anchor="middle" x="145" y="175">便捷 (60)</text>
+<text class="text-[8px] font-bold fill-on-surface" text-anchor="middle" x="55" y="175">价格 (40)</text>
+<text class="text-[8px] font-bold fill-on-surface" text-anchor="end" x="25" y="70">创新 (75)</text>
+</svg>
+</div>
+<!-- Interaction Cues: Sliders -->
+<div class="w-full mt-4 space-y-3 px-2">
+<div class="flex items-center space-x-3">
+<span class="text-[10px] text-outline font-bold w-12 text-right">质量权重</span>
+<input class="flex-1 h-1.5 bg-surface-container-high rounded-full appearance-none cursor-pointer accent-primary" max="100" min="0" type="range" value="95"/>
+</div>
+<div class="flex items-center space-x-3">
+<span class="text-[10px] text-outline font-bold w-12 text-right">品牌权重</span>
+<input class="flex-1 h-1.5 bg-surface-container-high rounded-full appearance-none cursor-pointer accent-primary" max="100" min="0" type="range" value="88"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Motivators vs Put-offs -->
+<div class="col-span-12 lg:col-span-7 grid grid-cols-2 gap-6">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10">
+<div class="flex items-center space-x-2 mb-4 text-primary">
+<span class="material-symbols-outlined">bolt</span>
+<h4 class="text-sm font-bold">决策触发动机</h4>
+</div>
+<ul class="space-y-4">
+<li class="flex items-start space-x-3">
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0"></span>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+<strong class="text-on-surface block mb-0.5">熟人圈层推荐</strong>
+                                        核心圈层内的一致好评是其入手的决定性因素。
+                                    </p>
+</li>
+<li class="flex items-start space-x-3">
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0"></span>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+<strong class="text-on-surface block mb-0.5">生活质感溢价</strong>
+                                        具有仪式感的产品包装或具有故事性的品牌背景。
+                                    </p>
+</li>
+</ul>
+<div class="mt-4 pt-4 border-t border-outline-variant/5">
+<p class="text-[10px] text-outline italic">相关性分析: $r = 0.85, p &lt; 0.05$</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10">
+<div class="flex items-center space-x-2 mb-4 text-tertiary">
+<span class="material-symbols-outlined">block</span>
+<h4 class="text-sm font-bold">决策排斥点</h4>
+</div>
+<ul class="space-y-4">
+<li class="flex items-start space-x-3">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary mt-1.5 shrink-0"></span>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+<strong class="text-on-surface block mb-0.5">过度折扣宣传</strong>
+                                        会降低品牌档次感，让其担心产品“不值钱”。
+                                    </p>
+</li>
+<li class="flex items-start space-x-3">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary mt-1.5 shrink-0"></span>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+<strong class="text-on-surface block mb-0.5">繁琐的操作链路</strong>
+                                        对APP交互的耐心度较低，倾向于极简的确认流程。
+                                    </p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- User Samples Grid -->
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<h4 class="text-[0.6875rem] font-bold uppercase tracking-widest text-outline">代表性样本 (8)</h4>
+<button class="bg-surface-container-highest text-on-surface px-4 py-2 rounded-full text-xs font-semibold hover:bg-surface-container-high transition-colors">导出数据样本</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 pb-20">
+<!-- Sample 1 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/10 hover:shadow-md transition-shadow group">
+<div class="flex items-center space-x-4 mb-4">
+<img class="w-12 h-12 rounded-full object-cover grayscale group-hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA2J5AIQmd7TZ_Zi6DrczT3720J5zyEqA2ImNMEJRz08-sajtNTnIHOvemHlZjSZfAVwPK-QkJi3Y1uuGXn33QN8QPPJar3cwTKuuDKgOYags5nl13Pvi8braPDswQANBrx5NMJjL8oGDv_lRYl0eTpGHWCFxY5Xrc55jh4THg7555PHGh07FuMHhj3VVOQtFOUaZ7h7IOtOkZetSxoglCdYLpTCssRR-6-FYx_iyVzivavZLhgf4rNMfgsv8cI4dx7qglPKG3ZD8W"/>
+<div>
+<p class="text-sm font-bold text-on-surface">林晓月</p>
+<p class="text-[10px] text-outline font-medium">38岁 · 县城事业单位</p>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed italic">“我是单位里的购物理事长，我用的好，大家都跟着买。”</p>
+<div class="mt-4 pt-4 border-t border-outline-variant/5 flex justify-between items-center">
+<span class="text-[10px] font-bold text-primary">匹配度: 98%</span>
+<span class="material-symbols-outlined text-outline text-sm">open_in_new</span>
+</div>
+</div>
+<!-- Sample 2 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/10 hover:shadow-md transition-shadow group">
+<div class="flex items-center space-x-4 mb-4">
+<img class="w-12 h-12 rounded-full object-cover grayscale group-hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC65xK-KTrHeO1lbsUvTJfxCK48ZevidV6GKPeBHCQzY54iwXVvltgkUtbRfWWcRLGa0i695YZKydxSKJzXRGG9Y0lBR7CfNQZifzBf4Yl7m3O2Pmv_cy6OClJh7G20OYWirDj9Nt5DRGkrxTfv8UvXZuxnYwt6hQuJtPfYx1fZuPjRB6uS2huuvsqtDxkyVI9devHwDwYvnW1NVFdvQriIxUPKPfm3YBhoelwp5xjgMbiE09FM6QoING2T631wKjYRVHYeaV7Odn1G"/>
+<div>
+<p class="text-sm font-bold text-on-surface">陈姐</p>
+<p class="text-[10px] text-outline font-medium">42岁 · 餐饮品牌老板</p>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed italic">“不看价格，只看能不能省心，售后一定要随叫随到。”</p>
+<div class="mt-4 pt-4 border-t border-outline-variant/5 flex justify-between items-center">
+<span class="text-[10px] font-bold text-primary">匹配度: 94%</span>
+<span class="material-symbols-outlined text-outline text-sm">open_in_new</span>
+</div>
+</div>
+<!-- Sample 3 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/10 hover:shadow-md transition-shadow group">
+<div class="flex items-center space-x-4 mb-4">
+<img class="w-12 h-12 rounded-full object-cover grayscale group-hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmO10J4cDrrPcDV5XPsIR4WKcFwQib17DJHah-Bz8BDnbLRkqCr2ybv-1OOhu2nozm5QpfS0lvcAypSP8IK0gyQFLtB0lx6_Zgmar8QS6-9SKzYaqtJfx-ThpIOELhjO2R0hroHIoMR4aZ2RP1d5QkwdjQFbsDO2-cPFup--gDN8n-l0_O94SYNUAjSyua66E0GAqaOmuhBtr4O9CvAG-vTDZdRzhWOjzL5x7auu-E5rruNNRT1azbe6GvqtrAirAo0KPI5uJHII43"/>
+<div>
+<p class="text-sm font-bold text-on-surface">Sophie Wang</p>
+<p class="text-[10px] text-outline font-medium">35岁 · 全职妈妈</p>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed italic">“孩子的奶粉和教辅一定要用进口的，社群里妈妈们都看我。”</p>
+<div class="mt-4 pt-4 border-t border-outline-variant/5 flex justify-between items-center">
+<span class="text-[10px] font-bold text-primary">匹配度: 91%</span>
+<span class="material-symbols-outlined text-outline text-sm">open_in_new</span>
+</div>
+</div>
+<!-- Sample 4 -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/10 hover:shadow-md transition-shadow group">
+<div class="flex items-center space-x-4 mb-4">
+<img class="w-12 h-12 rounded-full object-cover grayscale group-hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDN-QWCXL3Qxg9ygmExseaydggFvcKrEcZ22ec565r56F7MafiMgvkxOcNHJahARv7blowhSj9cIPV4qV4FfhwtKQI2S6m4l0BJUVCmkL-UbO79qfRfE3NtpYW9UwQ2BAL3L2wT8aqt7aw8gid7E9v4XFPbomGiKJ72zg3KQFMW1Pm46mkHo4m5ToqdzxaJHi3OXw4L_2_wJJIbwTUtQen9SOMCHWxM2XNCc98h1d2n15n49sE0X1fuUuISrHgkMw_UA7BQdMGDn2W3"/>
+<div>
+<p class="text-sm font-bold text-on-surface">赵雅楠</p>
+<p class="text-[10px] text-outline font-medium">40岁 · 银行中层</p>
+</div>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed italic">“我有固定的小圈子，品牌只要进驻我们这种高端社区就行。”</p>
+<div class="mt-4 pt-4 border-t border-outline-variant/5 flex justify-between items-center">
+<span class="text-[10px] font-bold text-primary">匹配度: 89%</span>
+<span class="material-symbols-outlined text-outline text-sm">open_in_new</span>
+</div>
+</div>
+</div>
+</div>
+<!-- AI Insight Overlay -->
+<div class="absolute bottom-6 right-6 w-80 bg-slate-900 text-white p-4 rounded-xl shadow-2xl animate-slide-in z-50 border border-slate-700">
+<div class="flex items-center space-x-2 mb-2">
+<span class="material-symbols-outlined text-blue-400 text-lg">psychology</span>
+<span class="text-xs font-bold uppercase tracking-wider text-slate-300">AI Insight</span>
+<button class="ml-auto text-slate-500 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</div>
+<p class="text-xs leading-relaxed text-slate-200">
+                该画像近期对<span class="text-blue-400 font-bold">“国潮”</span>元素的点击率提升了 <span class="font-bold">12%</span>，建议在包装评审中加入对比方案。
+            </p>
+<div class="mt-3 flex justify-end">
+<button class="text-[10px] font-bold text-blue-400 hover:underline">查看分析详情 →</button>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- FAB Overlay -->
+<button class="fixed bottom-8 right-8 bg-gradient-to-br from-primary to-primary-container text-white px-6 py-3 rounded-full flex items-center space-x-2 shadow-2xl hover:scale-105 active:scale-95 transition-all z-50">
+<span class="material-symbols-outlined">add</span>
+<span class="text-sm font-bold">新建画像</span>
+</button>
+</body></html>

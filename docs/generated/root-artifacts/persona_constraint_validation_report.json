@@ -1,0 +1,138 @@
+{
+  "metadata": {
+    "generated_at": "2026-03-09 10:22:50",
+    "validated_file": "persona_samples_complete.json",
+    "rules_file": "persona_generation_rules(1).yaml",
+    "total_samples": 200,
+    "status": "PASS"
+  },
+  "summary": {
+    "core_needs_within_segment_whitelist": {
+      "pass": 200,
+      "rate": 1.0
+    },
+    "preferred_channels_within_segment_whitelist": {
+      "pass": 200,
+      "rate": 1.0
+    },
+    "content_habit_within_segment_whitelist": {
+      "pass": 200,
+      "rate": 1.0
+    },
+    "decision_style_within_segment_whitelist": {
+      "pass": 200,
+      "rate": 1.0
+    },
+    "family_role_within_segment_whitelist": {
+      "pass": 200,
+      "rate": 1.0
+    },
+    "openness_level": {
+      "pass": 200,
+      "rate": 1.0
+    },
+    "time_investment": {
+      "pass": 200,
+      "rate": 1.0
+    },
+    "appearance_sensitivity": {
+      "pass": 200,
+      "rate": 1.0
+    },
+    "evidence_sensitivity": {
+      "pass": 200,
+      "rate": 1.0
+    },
+    "trend_sensitivity": {
+      "pass": 200,
+      "rate": 1.0
+    },
+    "price_sensitivity": {
+      "pass": 200,
+      "rate": 1.0
+    },
+    "switching_willingness": {
+      "pass": 200,
+      "rate": 1.0
+    },
+    "violation_count": 0,
+    "unique_segments": 8,
+    "unique_occupations": 78,
+    "unique_cities": 40
+  },
+  "per_segment": {
+    "M01": {
+      "count": 25,
+      "hard_pass_rate": 1.0,
+      "whitelist_pass_rate": 1.0,
+      "ordinal_pass_rate": 1.0
+    },
+    "M02": {
+      "count": 25,
+      "hard_pass_rate": 1.0,
+      "whitelist_pass_rate": 1.0,
+      "ordinal_pass_rate": 1.0
+    },
+    "M03": {
+      "count": 25,
+      "hard_pass_rate": 1.0,
+      "whitelist_pass_rate": 1.0,
+      "ordinal_pass_rate": 1.0
+    },
+    "M04": {
+      "count": 25,
+      "hard_pass_rate": 1.0,
+      "whitelist_pass_rate": 1.0,
+      "ordinal_pass_rate": 1.0
+    },
+    "M05": {
+      "count": 25,
+      "hard_pass_rate": 1.0,
+      "whitelist_pass_rate": 1.0,
+      "ordinal_pass_rate": 1.0
+    },
+    "M06": {
+      "count": 25,
+      "hard_pass_rate": 1.0,
+      "whitelist_pass_rate": 1.0,
+      "ordinal_pass_rate": 1.0
+    },
+    "M07": {
+      "count": 25,
+      "hard_pass_rate": 1.0,
+      "whitelist_pass_rate": 1.0,
+      "ordinal_pass_rate": 1.0
+    },
+    "M08": {
+      "count": 25,
+      "hard_pass_rate": 1.0,
+      "whitelist_pass_rate": 1.0,
+      "ordinal_pass_rate": 1.0
+    }
+  },
+  "distributions": {
+    "segment_counts": {
+      "M01": 25,
+      "M02": 25,
+      "M03": 25,
+      "M04": 25,
+      "M05": 25,
+      "M06": 25,
+      "M07": 25,
+      "M08": 25
+    },
+    "subtype_counts_top10": {
+      "实用主义型": 20,
+      "经验主义型": 12,
+      "效率至上型": 12,
+      "成分党型": 12,
+      "颜值种草型": 10,
+      "面子消费型": 10,
+      "数据驱动型": 10,
+      "价格敏感型": 10,
+      "权威依赖型": 8,
+      "新概念尝鲜型": 8
+    }
+  },
+  "violations_preview": []
+}

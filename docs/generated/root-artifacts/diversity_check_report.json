@@ -1,0 +1,38 @@
+{
+  "check_summary": {
+    "total_agents_checked": 200,
+    "overall_diversity_score": "95%",
+    "status": "PASS",
+    "warning_count": 0
+  },
+  "detailed_metrics": {
+    "occupation_diversity": {
+      "unique_occupations": 76,
+      "diversity_score": "98%",
+      "status": "✅"
+    },
+    "city_diversity": {
+      "unique_cities": 39,
+      "diversity_score": "95%",
+      "status": "✅"
+    },
+    "quote_style_diversity": {
+      "diversity_score": "89%",
+      "status": "✅"
+    },
+    "trust_trigger_diversity": {
+      "diversity_score": "90%",
+      "status": "✅"
+    },
+    "rejection_reason_diversity": {
+      "diversity_score": "95%",
+      "status": "✅"
+    },
+    "subtype_boundary_clarity": {
+      "clarity_score": "100%",
+      "status": "✅"
+    }
+  },
+  "warnings": [],
+  "recommendations": []
+}

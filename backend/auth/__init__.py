@@ -1,0 +1,1 @@
+"""Authentication & authorization — JWT + RBAC."""

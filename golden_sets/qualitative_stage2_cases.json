@@ -1,0 +1,43 @@
+[
+  {
+    "id": "multi-copy-feedback",
+    "input": {
+      "mode": "multi",
+      "question_type": "copy_feedback",
+      "user_question": "这套文案对 8 类妈妈分别会产生什么反应？",
+      "copy_material": "专业防蛀，孩子喜欢，妈妈省心。"
+    },
+    "expected": {
+      "mode": "multi",
+      "agent_count": 8
+    }
+  },
+  {
+    "id": "single-copy-feedback",
+    "input": {
+      "mode": "single",
+      "question_type": "copy_feedback",
+      "persona_id": "M04",
+      "user_question": "高线忙碌妈会被哪句话打动？",
+      "copy_material": "专业防蛀，孩子喜欢，妈妈省心。"
+    },
+    "expected": {
+      "mode": "single",
+      "agent_count": 1,
+      "persona_id": "M04"
+    }
+  },
+  {
+    "id": "multi-purchase-decision",
+    "input": {
+      "mode": "multi",
+      "question_type": "purchase_decision",
+      "user_question": "8类妈妈会不会买，最大的顾虑是什么？",
+      "product_info": "儿童牙膏，主打低氟防蛀和孩子更愿意坚持刷牙。"
+    },
+    "expected": {
+      "mode": "multi",
+      "agent_count": 8
+    }
+  }
+]
