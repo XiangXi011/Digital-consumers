@@ -1,0 +1,55 @@
+id: FP08
+name: 价格敏感但想变白型
+category: 遮瑕美白牙膏
+mapped_system_personas: [M05, M08]
+age_range: "18-38"
+job_types: ["学生", "普通白领", "服务业", "兼职人群"]
+city_tier: ["一线", "新一线", "二线", "三线", "下沉市场"]
+budget_band: "low"
+veto_trigger: "太贵 / 效果不确定 / 步骤复杂"
+decision_weights:
+  price_fit: 0.35
+  efficacy_clarity: 0.25
+  convenience: 0.20
+  trust_signal: 0.20
+consumption_traits:
+  - "想变白但预算有限"
+  - "对性价比非常敏感"
+  - "容易被促销和套餐驱动"
+core_pains:
+  - "不想花太多钱"
+  - "怕买了没效果"
+  - "不想步骤复杂"
+veto_rules:
+  - code: too_expensive
+    description: "太贵"
+  - code: uncertain_effect
+    description: "效果不确定"
+  - code: complex_usage
+    description: "步骤复杂"
+feature_scoring_rubric:
+  efficacy_clarity:
+    5: "低成本也能看见改善"
+    3: "有一点效果预期"
+    1: "不确定能不能变白"
+  trust_signal:
+    5: "价格合理且不显廉价"
+    3: "一般"
+    1: "像低质平替"
+  convenience:
+    5: "简单好用，没学习成本"
+    3: "有一点说明"
+    1: "太复杂"
+  price_fit:
+    5: "高性价比"
+    3: "中规中矩"
+    1: "超预算"
+preferred_messages:
+  - "高性价比"
+  - "简单好用"
+  - "轻量美白"
+  - "经济型方案"
+typical_scenarios:
+  - "看折扣后下单"
+  - "优先选平替"
+  - "希望小投入有改善"

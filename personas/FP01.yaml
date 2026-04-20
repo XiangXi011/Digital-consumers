@@ -1,0 +1,55 @@
+id: FP01
+name: 敏感修护焦虑型
+category: 牙釉质修护牙膏
+mapped_system_personas: [M02, M04]
+age_range: "28-45"
+job_types: ["白领", "行政", "教育", "医疗", "咨询", "金融"]
+city_tier: ["一线", "新一线", "二线"]
+budget_band: "mid_high"
+veto_trigger: "功效说不清 / 没有专业背书 / 像营销噱头"
+decision_weights:
+  efficacy_clarity: 0.35
+  trust_signal: 0.30
+  price_fit: 0.20
+  convenience: 0.15
+consumption_traits:
+  - "愿意为专业功效和安全感付费"
+  - "倾向长期复购"
+  - "不接受功效模糊的产品"
+core_pains:
+  - "刷牙、喝冷水、吃酸甜食物时敏感"
+  - "担心牙釉质持续受损"
+  - "希望尽快缓解不适"
+veto_rules:
+  - code: no_clear_effect
+    description: "功效说不清"
+  - code: no_proof
+    description: "没有专业背书或验证"
+  - code: gimmicky
+    description: "像营销噱头"
+feature_scoring_rubric:
+  efficacy_clarity:
+    5: "牙釉质修护逻辑清晰，能解释敏感缓解路径"
+    3: "只强调舒缓，不够具体"
+    1: "说法模糊，看不懂为什么有效"
+  trust_signal:
+    5: "有专业口腔背书、临床或成分验证"
+    3: "品牌正规但缺少强证据"
+    1: "像营销概念，缺少可信来源"
+  convenience:
+    5: "日常刷牙即可使用，无额外负担"
+    3: "需要注意使用方式"
+    1: "操作复杂，不适合长期坚持"
+  price_fit:
+    5: "价格匹配专业修护价值"
+    3: "略贵但能接受"
+    1: "价格过高，难以复购"
+preferred_messages:
+  - "牙釉质修护"
+  - "敏感缓解"
+  - "长期护理"
+  - "专业成分"
+typical_scenarios:
+  - "刷牙时牙酸"
+  - "喝冰饮时不适"
+  - "正畸/洁牙后护理"

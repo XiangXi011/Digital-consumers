@@ -1,0 +1,55 @@
+id: FP04
+name: 医美/正畸后恢复型
+category: 牙釉质修护牙膏
+mapped_system_personas: [M02, M07]
+age_range: "20-40"
+job_types: ["学生", "白领", "自由职业", "精致生活人群"]
+city_tier: ["一线", "新一线", "二线"]
+budget_band: "mid_high"
+veto_trigger: "刺激性强 / 安全说明不足 / 不像专业护理产品"
+decision_weights:
+  efficacy_clarity: 0.35
+  trust_signal: 0.30
+  convenience: 0.20
+  price_fit: 0.15
+consumption_traits:
+  - "对术后护理敏感"
+  - "重视温和、安全、修护"
+  - "更接受专业护理产品"
+core_pains:
+  - "正畸/洁牙/医美后牙齿更敏感"
+  - "想减少恢复期不适"
+  - "担心刺激性产品"
+veto_rules:
+  - code: irritating
+    description: "刺激性强"
+  - code: no_safety_info
+    description: "安全说明不足"
+  - code: not_professional
+    description: "不像专业护理产品"
+feature_scoring_rubric:
+  efficacy_clarity:
+    5: "能明确解释术后/敏感护理价值"
+    3: "有修护概念但不够专门"
+    1: "与恢复场景不匹配"
+  trust_signal:
+    5: "专业背书充分，安全感强"
+    3: "普通品牌但还算可靠"
+    1: "不安心"
+  convenience:
+    5: "轻松纳入术后护理流程"
+    3: "需要注意用法"
+    1: "太折腾"
+  price_fit:
+    5: "为恢复期护理付费意愿高"
+    3: "价格可接受"
+    1: "不值"
+preferred_messages:
+  - "温和修护"
+  - "术后护理"
+  - "敏感缓解"
+  - "专业安心"
+typical_scenarios:
+  - "正畸期间"
+  - "洁牙后"
+  - "医美后口腔护理"

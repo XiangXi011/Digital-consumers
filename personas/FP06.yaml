@@ -1,0 +1,55 @@
+id: FP06
+name: 美妆联想型
+category: 遮瑕美白牙膏
+mapped_system_personas: [M03, M06]
+age_range: "18-35"
+job_types: ["学生", "白领", "美妆博主", "设计/内容岗位"]
+city_tier: ["一线", "新一线", "二线", "三线"]
+budget_band: "mid"
+veto_trigger: "没有美妆感 / 视觉效果不明显 / 表达太普通"
+decision_weights:
+  efficacy_clarity: 0.30
+  trust_signal: 0.25
+  price_fit: 0.25
+  convenience: 0.20
+consumption_traits:
+  - "熟悉美妆话语体系"
+  - "愿意为颜值和情绪价值买单"
+  - "偏好有设计感、表达新鲜的产品"
+core_pains:
+  - "牙齿黄会影响整体精致感"
+  - "不喜欢传统牙膏的表达方式"
+  - "希望有更美妆化的口腔护理体验"
+veto_rules:
+  - code: not_beauty_like
+    description: "没有美妆感"
+  - code: weak_visual_result
+    description: "视觉效果不明显"
+  - code: boring_copy
+    description: "表达太普通"
+feature_scoring_rubric:
+  efficacy_clarity:
+    5: "像美妆产品一样，价值点明确"
+    3: "有一定视觉改善概念"
+    1: "不够新鲜"
+  trust_signal:
+    5: "包装、内容、表达都有美妆认同感"
+    3: "还可以"
+    1: "没有吸引力"
+  convenience:
+    5: "融入日常口腔护理很自然"
+    3: "需要适应"
+    1: "不顺手"
+  price_fit:
+    5: "愿意为颜值溢价"
+    3: "看活动价格"
+    1: "不接受溢价"
+preferred_messages:
+  - "遮瑕美白"
+  - "视觉提亮"
+  - "美妆级护理"
+  - "笑容精致感"
+typical_scenarios:
+  - "买美妆联名产品"
+  - "关注社媒种草"
+  - "喜欢新鲜表达和包装"

@@ -1,0 +1,55 @@
+id: FP03
+name: 成分/专业背书关注型
+category: 牙釉质修护牙膏
+mapped_system_personas: [M03, M04]
+age_range: "26-42"
+job_types: ["白领", "宝妈", "知识工作者", "服务业主管"]
+city_tier: ["一线", "新一线", "二线", "三线"]
+budget_band: "mid"
+veto_trigger: "无专家或KOL背书 / 产品定位不清晰 / 品牌信任不足"
+decision_weights:
+  efficacy_clarity: 0.30
+  trust_signal: 0.35
+  price_fit: 0.20
+  convenience: 0.15
+consumption_traits:
+  - "会看专家/KOL/KOC推荐"
+  - "偏好信息透明、说得清楚的产品"
+  - "购买前会比较多个品牌"
+core_pains:
+  - "担心品牌不靠谱"
+  - "怕买到成分不明的产品"
+  - "担心不适合自己"
+veto_rules:
+  - code: no_expert_recommendation
+    description: "无专家或KOL背书"
+  - code: unclear_positioning
+    description: "产品定位不清晰"
+  - code: weak_brand_trust
+    description: "品牌信任不足"
+feature_scoring_rubric:
+  efficacy_clarity:
+    5: "功效和适用人群表达清楚"
+    3: "有功效但不够具体"
+    1: "看不出产品解决什么问题"
+  trust_signal:
+    5: "专家推荐、成分透明、品牌有口碑"
+    3: "有一定推荐但不够强"
+    1: "缺乏可信背书"
+  convenience:
+    5: "购买和使用都简单"
+    3: "需要做一点功课"
+    1: "门槛高"
+  price_fit:
+    5: "价格匹配品质预期"
+    3: "略贵但可接受"
+    1: "价格与感知价值不符"
+preferred_messages:
+  - "专家推荐"
+  - "成分透明"
+  - "科学修护"
+  - "品牌可信"
+typical_scenarios:
+  - "对比多个同类产品"
+  - "看种草笔记和测评"
+  - "习惯先做功课再买"

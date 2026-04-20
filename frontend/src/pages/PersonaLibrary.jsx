@@ -78,6 +78,16 @@ export default function PersonaLibrary() {
   const vetoRules = d.veto_rules || [];
   const samples = d.representative_samples || [];
 
+  const category = d.category || '';
+  const mappedSystemPersonas = d.mapped_system_personas || [];
+  const ageRange = d.age_range || '';
+  const cityTier = d.city_tier || [];
+  const jobTypes = d.job_types || [];
+  const consumptionTraits = d.consumption_traits || [];
+  const corePains = d.core_pains || [];
+  const preferredMessages = d.preferred_messages || [];
+  const typicalScenarios = d.typical_scenarios || [];
+
   // 为雷达图计算 SVG 点坐标
   const dims = Object.keys(weights);
   const dimLabels = { efficacy_clarity: '功效', trust_signal: '信任', convenience: '便利', price_fit: '价格' };
@@ -151,6 +161,75 @@ export default function PersonaLibrary() {
                   ) : (
                     <span className="text-3xl font-extrabold text-primary">{d.id}</span>
                   )}
+                </div>
+              </div>
+            </div>
+
+            {/* Profile Overview */}
+            <div className="grid grid-cols-12 gap-6 mb-8">
+              <div className="col-span-12 lg:col-span-4 bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10 space-y-3">
+                <div className="flex items-center space-x-2 text-primary">
+                  <span className="material-symbols-outlined">badge</span>
+                  <h4 className="text-sm font-bold">画像概览</h4>
+                </div>
+                <div className="text-xs text-on-surface-variant space-y-2">
+                  <p><span className="font-bold text-on-surface">品类：</span>{category || '—'}</p>
+                  <p><span className="font-bold text-on-surface">年龄：</span>{ageRange || '—'}</p>
+                  <p><span className="font-bold text-on-surface">城市：</span>{cityTier.length ? cityTier.join(' / ') : '—'}</p>
+                  <p><span className="font-bold text-on-surface">职业：</span>{jobTypes.length ? jobTypes.join(' / ') : '—'}</p>
+                  <p><span className="font-bold text-on-surface">系统映射：</span>{mappedSystemPersonas.length ? mappedSystemPersonas.join(' / ') : '—'}</p>
+                </div>
+                {consumptionTraits.length > 0 && (
+                  <div>
+                    <h5 className="text-xs font-bold text-on-surface mb-2">消费特征</h5>
+                    <ul className="space-y-1 text-xs text-on-surface-variant">
+                      {consumptionTraits.slice(0, 4).map((item) => <li key={item}>• {item}</li>)}
+                    </ul>
+                  </div>
+                )}
+              </div>
+
+              <div className="col-span-12 lg:col-span-4 bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10 space-y-3">
+                <div className="flex items-center space-x-2 text-secondary">
+                  <span className="material-symbols-outlined">sentiment_very_satisfied</span>
+                  <h4 className="text-sm font-bold">核心痛点</h4>
+                </div>
+                {corePains.length > 0 ? (
+                  <ul className="space-y-2 text-xs text-on-surface-variant">
+                    {corePains.map((item) => <li key={item}>• {item}</li>)}
+                  </ul>
+                ) : (
+                  <p className="text-xs text-on-surface-variant">—</p>
+                )}
+                <div>
+                  <h5 className="text-xs font-bold text-on-surface mb-2">偏好表达</h5>
+                  <div className="flex flex-wrap gap-1.5">
+                    {preferredMessages.slice(0, 6).map(tag => (
+                      <span key={tag} className="text-xs bg-surface-container px-2 py-0.5 rounded-full text-on-secondary-fixed-variant">#{tag}</span>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <h5 className="text-xs font-bold text-on-surface mb-2">典型场景</h5>
+                  <ul className="space-y-1 text-xs text-on-surface-variant">
+                    {typicalScenarios.slice(0, 4).map((item) => <li key={item}>• {item}</li>)}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="col-span-12 lg:col-span-4 bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/10 space-y-3">
+                <div className="flex items-center space-x-2 text-tertiary">
+                  <span className="material-symbols-outlined">insights</span>
+                  <h4 className="text-sm font-bold">决策结构</h4>
+                </div>
+                <p className="text-xs text-on-surface-variant">适用于系统推荐、营销定位和内容表达。</p>
+                <div className="space-y-2">
+                  {dims.map(dim => (
+                    <div key={dim} className="flex items-center justify-between text-xs">
+                      <span className="text-on-surface-variant">{dimLabels[dim] || dim}</span>
+                      <span className="font-bold text-on-surface">{(weights[dim] * 100).toFixed(0)}%</span>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>

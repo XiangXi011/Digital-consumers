@@ -52,10 +52,20 @@ def _load_persona_yaml(yaml_path: Path) -> Dict[str, Any]:
 
 def _load_all_personas() -> Dict[str, Dict[str, Any]]:
     personas: Dict[str, Dict[str, Any]] = {}
-    for path in sorted(PERSONAS_DIR.glob("M*.yaml")):
+    for path in sorted(PERSONAS_DIR.glob("*.yaml")):
         try:
             data = _load_persona_yaml(path)
-            personas[data["id"]] = data
+            # Support two formats:
+            # 1) single persona file: {id, name, ...}
+            # 2) bundled file: {personas: [{id, name, ...}, ...]}
+            if isinstance(data, dict) and isinstance(data.get("personas"), list):
+                for item in data["personas"]:
+                    if isinstance(item, dict) and item.get("id"):
+                        personas[str(item["id"])] = item
+            elif isinstance(data, dict) and data.get("id"):
+                personas[str(data["id"])] = data
+            else:
+                logger.warning("Skipped persona file with unsupported structure: %s", path.name)
         except Exception as exc:
             logger.warning("Failed to load persona %s: %s", path.name, exc)
     return personas
@@ -65,11 +75,14 @@ def _extract_tags(persona: Dict[str, Any]) -> List[str]:
     tags: List[str] = []
     budget = persona.get("budget_band", "")
     if budget:
-        budget_labels = {"high": "高预算", "mid": "中预算", "low": "低预算"}
+        budget_labels = {"high": "高预算", "mid": "中预算", "low": "低预算", "mid_high": "中高预算", "low_mid": "中低预算"}
         tags.append(budget_labels.get(budget, budget))
     trigger = persona.get("veto_trigger", "")
     if trigger:
         tags.extend([part.strip() for part in str(trigger).split("/") if part.strip()][:3])
+    category = persona.get("category", "")
+    if category:
+        tags.append(str(category))
     return tags
 
 

@@ -1,0 +1,55 @@
+id: FP02
+name: 健康投资理性型
+category: 牙釉质修护牙膏
+mapped_system_personas: [M01, M02]
+age_range: "30-48"
+job_types: ["中高收入白领", "管理岗", "专业人士", "企业主"]
+city_tier: ["一线", "新一线", "二线"]
+budget_band: "mid_high"
+veto_trigger: "成分不透明 / 缺少证据支撑 / 品牌不稳或不可信"
+decision_weights:
+  efficacy_clarity: 0.30
+  trust_signal: 0.30
+  price_fit: 0.20
+  convenience: 0.20
+consumption_traits:
+  - "把口腔护理当成长期健康投资"
+  - "会看成分、机制、临床验证"
+  - "不轻易被低价吸引"
+core_pains:
+  - "担心产品只是短期缓解"
+  - "不确定修护是否真的有效"
+  - "希望选到值得长期用的产品"
+veto_rules:
+  - code: unclear_ingredients
+    description: "成分信息不透明"
+  - code: weak_evidence
+    description: "缺少证据支撑"
+  - code: unstable_brand
+    description: "品牌不稳或不可信"
+feature_scoring_rubric:
+  efficacy_clarity:
+    5: "机理清晰、临床或实证支持充分"
+    3: "知道是修护型，但证据一般"
+    1: "讲不清楚效果来源"
+  trust_signal:
+    5: "专业机构、医生推荐、长期口碑稳定"
+    3: "品牌正规但缺少强背书"
+    1: "可信度不足"
+  convenience:
+    5: "无需额外学习，直接纳入日常流程"
+    3: "需要简单了解使用方式"
+    1: "使用复杂"
+  price_fit:
+    5: "价格合理，匹配长期使用价值"
+    3: "略高但可接受"
+    1: "溢价太明显"
+preferred_messages:
+  - "临床验证"
+  - "成分机理"
+  - "长期修护"
+  - "安全可靠"
+typical_scenarios:
+  - "定期更换口腔护理产品"
+  - "会主动查评价和成分"
+  - "为家庭健康做长期规划"

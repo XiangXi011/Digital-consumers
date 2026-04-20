@@ -1,0 +1,56 @@
+id: FP05
+name: 上镜急救型
+category: 遮瑕美白牙膏
+mapped_system_personas: [M03, M05]
+age_range: "20-35"
+job_types: ["白领", "主播", "销售", "学生", "内容创作者"]
+city_tier: ["一线", "新一线", "二线", "三线"]
+budget_band: "mid"
+veto_trigger: "见效太慢 / 看不出效果 / 使用太麻烦"
+decision_weights:
+  efficacy_clarity: 0.40
+  convenience: 0.20
+  trust_signal: 0.20
+  price_fit: 0.20
+consumption_traits:
+  - "追求即时可见效果"
+  - "强场景驱动"
+  - "愿意为上镜、约会、面试临时补救"
+core_pains:
+  - "临时发现牙黄"
+  - "担心上镜不好看"
+  - "需要快速改善外观"
+veto_rules:
+  - code: too_slow
+    description: "见效太慢"
+  - code: no_visible_effect
+    description: "看不出效果"
+  - code: too_complicated
+    description: "使用太麻烦"
+feature_scoring_rubric:
+  efficacy_clarity:
+    5: "一眼知道能快速显白"
+    3: "有美白概念但不够快"
+    1: "看不出立竿见影的价值"
+  trust_signal:
+    5: "有清楚的口碑和对比感"
+    3: "一般"
+    1: "不敢信"
+  convenience:
+    5: "开盖即用，场景友好"
+    3: "有一点步骤"
+    1: "麻烦"
+  price_fit:
+    5: "为临时效果买单"
+    3: "可以接受"
+    1: "不值得"
+preferred_messages:
+  - "即时显白"
+  - "上镜提亮"
+  - "1次见效"
+  - "场景急救"
+typical_scenarios:
+  - "拍照前"
+  - "约会前"
+  - "面试前"
+  - "直播前"
