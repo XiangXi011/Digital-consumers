@@ -213,6 +213,7 @@ class BusinessBrief(BaseModel):
         *,
         mode: str = "",
         persona_id: str = "",
+        persona_ids: Optional[List[str]] = None,
         attachments: Optional[List[str]] = None,
         follow_up_context: str = "",
         background_material: str = "",
@@ -267,6 +268,7 @@ class BusinessBrief(BaseModel):
             "question_type": self.question_type
             or self._TASK_TYPE_TO_QUESTION_TYPE.get(self.task_type, "copy_feedback"),
             "persona_id": persona_id,
+            "persona_ids": list(persona_ids or []),
             "user_question": self.research_goal,
             "background_material": "\n".join(line for line in background_lines if line.strip()),
             "product_info": self.product_context,

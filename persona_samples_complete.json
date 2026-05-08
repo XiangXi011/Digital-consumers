@@ -707,6 +707,666 @@
         "impulse_tendency": "容易冲动，看到好评就买",
         "brand_loyalty_desc": "不在乎品牌，实惠好用就行"
       }
+    },
+    {
+      "sample_id": "FP01-01",
+      "segment_id": "FP01",
+      "segment_name": "敏感修护焦虑型",
+      "basic_profile": {
+        "nickname": "巩女士(敏感修护焦虑型)",
+        "age": 37,
+        "city": "一线城市",
+        "marital_status": "已婚",
+        "child_age_stage": "10-12岁",
+        "occupation": "建筑行业运营经理",
+        "household_income_band": "月入3.5万"
+      },
+      "mindset_profile": {
+        "decision_mode": "理性比较型",
+        "openness_level": "medium",
+        "price_sensitivity": "medium",
+        "brand_loyalty": "low",
+        "research_depth": "high"
+      },
+      "consumption_profile": {
+        "core_needs": [
+          "品牌可靠性",
+          "测评比较",
+          "外观设计"
+        ],
+        "preferred_channels": [
+          "小红书",
+          "天猫"
+        ],
+        "kol_preferences": "旅行、护肤精华、二次元，关注崔玉涛",
+        "key_decision_factors": "品牌（大牌）> 外观 > 口味 > 功效"
+      },
+      "behavior_profile": {
+        "decision_speed": "快但有选择",
+        "comparison_behavior": "需要测评和比较，非盲目",
+        "impulse_tendency": "不是冲动消费",
+        "brand_loyalty_desc": "大品牌背书，品牌可靠性，不忠诚"
+      }
+    },
+    {
+      "sample_id": "FP01-02",
+      "segment_id": "FP01",
+      "segment_name": "敏感修护焦虑型",
+      "basic_profile": {
+        "nickname": "陈女士(敏感修护焦虑型)",
+        "age": 37,
+        "city": "二三线城市",
+        "marital_status": "已婚",
+        "child_age_stage": "10-12岁",
+        "occupation": "烟酒店老板",
+        "household_income_band": "月入4万"
+      },
+      "mindset_profile": {
+        "decision_mode": "品牌忠诚型",
+        "openness_level": "low",
+        "price_sensitivity": "low",
+        "brand_loyalty": "high",
+        "research_depth": "low"
+      },
+      "consumption_profile": {
+        "core_needs": [
+          "品牌认可",
+          "进口品质",
+          "分龄设计"
+        ],
+        "preferred_channels": [
+          "小红书",
+          "淘宝",
+          "线下超市"
+        ],
+        "kol_preferences": "烘焙、运动、育儿博主，李佳琦直播",
+        "key_decision_factors": "一直以来认可的品牌，进口>国产，含氟且分龄"
+      },
+      "behavior_profile": {
+        "decision_speed": "快",
+        "comparison_behavior": "选择一直在用的产品",
+        "impulse_tendency": "不是冲动，只选信任的品牌",
+        "brand_loyalty_desc": "品牌是主要的，专业度，进口品牌，品牌忠诚"
+      }
+    },
+    {
+      "sample_id": "FP02-01",
+      "segment_id": "FP02",
+      "segment_name": "健康投资理性型",
+      "basic_profile": {
+        "nickname": "许女士(健康投资理性型)",
+        "age": 34,
+        "city": "二三线城市",
+        "marital_status": "已婚",
+        "child_age_stage": "6-9岁",
+        "occupation": "教育行业教师",
+        "household_income_band": "月入1.5万",
+        "education": "本科"
+      },
+      "mindset_profile": {
+        "decision_mode": "体验忠诚型",
+        "openness_level": "medium",
+        "price_sensitivity": "medium",
+        "brand_loyalty": "high",
+        "research_depth": "high"
+      },
+      "consumption_profile": {
+        "core_needs": [
+          "品牌推荐人信任",
+          "评测对比",
+          "配方安全"
+        ],
+        "preferred_channels": [
+          "抖音直播",
+          "小红书",
+          "淘宝"
+        ],
+        "kol_preferences": "直播带货与评测（信赖董宇辉），教育类+短剧",
+        "key_decision_factors": "品牌 > 外观 > 含氟/配方温和，防蛀，低泡"
+      },
+      "behavior_profile": {
+        "decision_speed": "慢",
+        "comparison_behavior": "会对比，看测评，做功课",
+        "impulse_tendency": "不冲动，直播间可能冲动购买有推荐的产品",
+        "brand_loyalty_desc": "品牌基本决定，依赖品牌体验特性，对负反馈品牌不再接受"
+      }
+    },
+    {
+      "sample_id": "FP02-02",
+      "segment_id": "FP02",
+      "segment_name": "健康投资理性型",
+      "basic_profile": {
+        "nickname": "凌女士(健康投资理性型)",
+        "age": 29,
+        "city": "一线城市",
+        "marital_status": "已婚",
+        "child_age_stage": "1-5岁",
+        "occupation": "建筑石材销售",
+        "household_income_band": "月入5万",
+        "education": "本科"
+      },
+      "mindset_profile": {
+        "decision_mode": "品牌专业型",
+        "openness_level": "medium",
+        "price_sensitivity": "low",
+        "brand_loyalty": "medium",
+        "research_depth": "medium"
+      },
+      "consumption_profile": {
+        "core_needs": [
+          "品牌专业属性",
+          "权威推荐",
+          "新品兴趣"
+        ],
+        "preferred_channels": [
+          "小红书",
+          "抖音直播",
+          "淘宝",
+          "盒马",
+          "山姆"
+        ],
+        "kol_preferences": "搞笑视频，品牌自播，天猫小黑盒上新",
+        "key_decision_factors": "品牌（专业产品）> 适合孩子的功能"
+      },
+      "behavior_profile": {
+        "decision_speed": "慢",
+        "comparison_behavior": "精挑细选，细致比较",
+        "impulse_tendency": "不是冲动消费，细致比较",
+        "brand_loyalty_desc": "品牌基本决定，依赖专业属性，不忠诚源自没有好的体验"
+      }
+    },
+    {
+      "sample_id": "FP03-01",
+      "segment_id": "FP03",
+      "segment_name": "成分/专业背书关注型",
+      "basic_profile": {
+        "nickname": "罗女士(成分/专业背书关注型)",
+        "age": 30,
+        "city": "二三线城市",
+        "marital_status": "已婚",
+        "child_age_stage": "6-9岁",
+        "occupation": "个体老板",
+        "household_income_band": "月入2万",
+        "education": "大专"
+      },
+      "mindset_profile": {
+        "decision_mode": "功能导向型",
+        "openness_level": "medium",
+        "price_sensitivity": "medium",
+        "brand_loyalty": "low",
+        "research_depth": "medium"
+      },
+      "consumption_profile": {
+        "core_needs": [
+          "功能实用",
+          "品牌可靠"
+        ],
+        "preferred_channels": [
+          "抖音",
+          "小红书",
+          "京东"
+        ],
+        "kol_preferences": "美妆、穿搭、美食，看红黑榜不记名字",
+        "key_decision_factors": "品牌 > 成分"
+      },
+      "behavior_profile": {
+        "decision_speed": "慢",
+        "comparison_behavior": "精挑细选",
+        "impulse_tendency": "不是冲动消费",
+        "brand_loyalty_desc": "品牌加分项，不忠诚"
+      }
+    },
+    {
+      "sample_id": "FP03-02",
+      "segment_id": "FP03",
+      "segment_name": "成分/专业背书关注型",
+      "basic_profile": {
+        "nickname": "陈女士(成分/专业背书关注型)",
+        "age": 37,
+        "city": "二三线城市",
+        "marital_status": "已婚",
+        "child_age_stage": "10-12岁",
+        "occupation": "烟酒店老板",
+        "household_income_band": "月入4万"
+      },
+      "mindset_profile": {
+        "decision_mode": "品牌忠诚型",
+        "openness_level": "low",
+        "price_sensitivity": "low",
+        "brand_loyalty": "high",
+        "research_depth": "low"
+      },
+      "consumption_profile": {
+        "core_needs": [
+          "品牌认可",
+          "进口品质",
+          "分龄设计"
+        ],
+        "preferred_channels": [
+          "小红书",
+          "淘宝",
+          "线下超市"
+        ],
+        "kol_preferences": "烘焙、运动、育儿博主，李佳琦直播",
+        "key_decision_factors": "一直以来认可的品牌，进口>国产，含氟且分龄"
+      },
+      "behavior_profile": {
+        "decision_speed": "快",
+        "comparison_behavior": "选择一直在用的产品",
+        "impulse_tendency": "不是冲动，只选信任的品牌",
+        "brand_loyalty_desc": "品牌是主要的，专业度，进口品牌，品牌忠诚"
+      }
+    },
+    {
+      "sample_id": "FP04-01",
+      "segment_id": "FP04",
+      "segment_name": "医美/正畸后恢复型",
+      "basic_profile": {
+        "nickname": "李女士(医美/正畸后恢复型)",
+        "age": 35,
+        "city": "一线城市",
+        "marital_status": "已婚",
+        "child_age_stage": "3-8岁",
+        "occupation": "外企顾问",
+        "household_income_band": "月入5万",
+        "education": "硕士"
+      },
+      "mindset_profile": {
+        "decision_mode": "系统性研究型",
+        "openness_level": "high",
+        "price_sensitivity": "low",
+        "brand_loyalty": "mid",
+        "research_depth": "high"
+      },
+      "consumption_profile": {
+        "core_needs": [
+          "专业背书",
+          "数据支撑",
+          "系统方案"
+        ],
+        "preferred_channels": [
+          "京东自营",
+          "天猫旗舰店",
+          "小红书"
+        ],
+        "kol_preferences": "医生、育儿博主、专业测评",
+        "key_decision_factors": "专业认证 > 数据效果 > 品牌口碑"
+      },
+      "behavior_profile": {
+        "decision_speed": "中",
+        "comparison_behavior": "深度研究多个品牌后决策",
+        "impulse_tendency": "不冲动，理性决策",
+        "brand_loyalty_desc": "关注专业性和系统性，不盲目忠诚于单一品牌"
+      }
+    },
+    {
+      "sample_id": "FP04-02",
+      "segment_id": "FP04",
+      "segment_name": "医美/正畸后恢复型",
+      "basic_profile": {
+        "nickname": "巩女士(医美/正畸后恢复型)",
+        "age": 37,
+        "city": "一线城市",
+        "marital_status": "已婚",
+        "child_age_stage": "10-12岁",
+        "occupation": "建筑行业运营经理",
+        "household_income_band": "月入3.5万"
+      },
+      "mindset_profile": {
+        "decision_mode": "理性比较型",
+        "openness_level": "medium",
+        "price_sensitivity": "medium",
+        "brand_loyalty": "low",
+        "research_depth": "high"
+      },
+      "consumption_profile": {
+        "core_needs": [
+          "品牌可靠性",
+          "测评比较",
+          "外观设计"
+        ],
+        "preferred_channels": [
+          "小红书",
+          "天猫"
+        ],
+        "kol_preferences": "旅行、护肤精华、二次元，关注崔玉涛",
+        "key_decision_factors": "品牌（大牌）> 外观 > 口味 > 功效"
+      },
+      "behavior_profile": {
+        "decision_speed": "快但有选择",
+        "comparison_behavior": "需要测评和比较，非盲目",
+        "impulse_tendency": "不是冲动消费",
+        "brand_loyalty_desc": "大品牌背书，品牌可靠性，不忠诚"
+      }
+    },
+    {
+      "sample_id": "FP05-01",
+      "segment_id": "FP05",
+      "segment_name": "上镜急救型",
+      "basic_profile": {
+        "nickname": "郑女士(上镜急救型)",
+        "age": 36,
+        "city": "二三线城市",
+        "marital_status": "已婚",
+        "child_age_stage": "6-9岁",
+        "occupation": "物业部门文员",
+        "household_income_band": "月入1万",
+        "education": "大专"
+      },
+      "mindset_profile": {
+        "decision_mode": "冲动型",
+        "openness_level": "high",
+        "price_sensitivity": "very_high",
+        "brand_loyalty": "low",
+        "research_depth": "low"
+      },
+      "consumption_profile": {
+        "core_needs": [
+          "适合自己的",
+          "价格实惠"
+        ],
+        "preferred_channels": [
+          "抖音",
+          "小红书",
+          "妈妈群"
+        ],
+        "kol_preferences": "美食、吃播视频",
+        "key_decision_factors": "适合自己的（没有特别考虑孩子）"
+      },
+      "behavior_profile": {
+        "decision_speed": "快",
+        "comparison_behavior": "不比较",
+        "impulse_tendency": "冲动消费",
+        "brand_loyalty_desc": "品牌不重要，不忠诚"
+      }
+    },
+    {
+      "sample_id": "FP05-02",
+      "segment_id": "FP05",
+      "segment_name": "上镜急救型",
+      "basic_profile": {
+        "nickname": "苏女士(上镜急救型)",
+        "age": 37,
+        "city": "二三线城市",
+        "marital_status": "已婚",
+        "child_age_stage": "6-9岁",
+        "occupation": "会计行业财务",
+        "household_income_band": "月入1.6万"
+      },
+      "mindset_profile": {
+        "decision_mode": "性价比型",
+        "openness_level": "low",
+        "price_sensitivity": "high",
+        "brand_loyalty": "low",
+        "research_depth": "low"
+      },
+      "consumption_profile": {
+        "core_needs": [
+          "性价比",
+          "大品牌",
+          "权威推荐"
+        ],
+        "preferred_channels": [
+          "微信视频号",
+          "公众号",
+          "b站",
+          "线下超市"
+        ],
+        "kol_preferences": "财经、社会新闻，没有特别关注的KOL",
+        "key_decision_factors": "品牌 > 价格"
+      },
+      "behavior_profile": {
+        "decision_speed": "快",
+        "comparison_behavior": "产品对比少，关注性价比",
+        "impulse_tendency": "不是冲动，还需要比较",
+        "brand_loyalty_desc": "大超市里熟知的品牌，不忠诚"
+      }
+    },
+    {
+      "sample_id": "FP06-01",
+      "segment_id": "FP06",
+      "segment_name": "美妆联想型",
+      "basic_profile": {
+        "nickname": "张女士(美妆联想型)",
+        "age": 26,
+        "city": "二三线城市",
+        "marital_status": "已婚",
+        "child_age_stage": "1-5岁",
+        "occupation": "电商行业财务主管",
+        "household_income_band": "月入2万"
+      },
+      "mindset_profile": {
+        "decision_mode": "流行跟随型",
+        "openness_level": "high",
+        "price_sensitivity": "medium",
+        "brand_loyalty": "low",
+        "research_depth": "medium"
+      },
+      "consumption_profile": {
+        "core_needs": [
+          "抖音种草",
+          "亲友推荐",
+          "外观孩子喜欢"
+        ],
+        "preferred_channels": [
+          "抖音",
+          "小红书",
+          "淘宝",
+          "线下超市"
+        ],
+        "kol_preferences": "追剧、直播带货、八卦娱乐，愿意接受明广",
+        "key_decision_factors": "推广过都可以接受，孩子喜欢的外观 > 功效（清新口气）"
+      },
+      "behavior_profile": {
+        "decision_speed": "慢",
+        "comparison_behavior": "做功课前置，推送到第三次再买",
+        "impulse_tendency": "不是非常冲动，有背书价格合适决策更快",
+        "brand_loyalty_desc": "推广多的品牌，不忠诚"
+      }
+    },
+    {
+      "sample_id": "FP06-02",
+      "segment_id": "FP06",
+      "segment_name": "美妆联想型",
+      "basic_profile": {
+        "nickname": "臧女士(美妆联想型)",
+        "age": 32,
+        "city": "一线城市",
+        "marital_status": "已婚",
+        "child_age_stage": "2岁前&2胎",
+        "occupation": "互联网行业翻译",
+        "household_income_band": "月入4万"
+      },
+      "mindset_profile": {
+        "decision_mode": "功效研究型",
+        "openness_level": "high",
+        "price_sensitivity": "medium",
+        "brand_loyalty": "low",
+        "research_depth": "high"
+      },
+      "consumption_profile": {
+        "core_needs": [
+          "对症下药",
+          "功效明确",
+          "配方安全"
+        ],
+        "preferred_channels": [
+          "淘宝",
+          "小红书",
+          "天猫"
+        ],
+        "kol_preferences": "老爸测评，年糕妈妈，李玫瑾",
+        "key_decision_factors": "功效 > 口味/外观（大宝需防蛀、清新口气、美白）"
+      },
+      "behavior_profile": {
+        "decision_speed": "慢",
+        "comparison_behavior": "对症下药、仔细比较",
+        "impulse_tendency": "不是冲动消费",
+        "brand_loyalty_desc": "品牌加分项，不忠诚"
+      }
+    },
+    {
+      "sample_id": "FP07-01",
+      "segment_id": "FP07",
+      "segment_name": "咖啡茶饮牙黄补救型",
+      "basic_profile": {
+        "nickname": "王女士(咖啡茶饮牙黄补救型)",
+        "age": 33,
+        "city": "二线城市",
+        "marital_status": "已婚",
+        "child_age_stage": "5-10岁",
+        "occupation": "自由职业",
+        "household_income_band": "月入1.5万",
+        "education": "本科"
+      },
+      "mindset_profile": {
+        "decision_mode": "随性型",
+        "openness_level": "mid",
+        "price_sensitivity": "high",
+        "brand_loyalty": "low",
+        "research_depth": "low"
+      },
+      "consumption_profile": {
+        "core_needs": [
+          "便宜实惠",
+          "用着方便"
+        ],
+        "preferred_channels": [
+          "拖妈尺至",
+          "护肤衣服店"
+        ],
+        "kol_preferences": "生活记录、家庆好物",
+        "key_decision_factors": "价格实惠 > 用着简单 > 安全可靠"
+      },
+      "behavior_profile": {
+        "decision_speed": "快",
+        "comparison_behavior": "基本不比较，好用就行",
+        "impulse_tendency": "容易冲动，看到好评就买",
+        "brand_loyalty_desc": "不在乎品牌，实惠好用就行"
+      }
+    },
+    {
+      "sample_id": "FP07-02",
+      "segment_id": "FP07",
+      "segment_name": "咖啡茶饮牙黄补救型",
+      "basic_profile": {
+        "nickname": "苏女士(咖啡茶饮牙黄补救型)",
+        "age": 37,
+        "city": "二三线城市",
+        "marital_status": "已婚",
+        "child_age_stage": "6-9岁",
+        "occupation": "会计行业财务",
+        "household_income_band": "月入1.6万"
+      },
+      "mindset_profile": {
+        "decision_mode": "性价比型",
+        "openness_level": "low",
+        "price_sensitivity": "high",
+        "brand_loyalty": "low",
+        "research_depth": "low"
+      },
+      "consumption_profile": {
+        "core_needs": [
+          "性价比",
+          "大品牌",
+          "权威推荐"
+        ],
+        "preferred_channels": [
+          "微信视频号",
+          "公众号",
+          "b站",
+          "线下超市"
+        ],
+        "kol_preferences": "财经、社会新闻，没有特别关注的KOL",
+        "key_decision_factors": "品牌 > 价格"
+      },
+      "behavior_profile": {
+        "decision_speed": "快",
+        "comparison_behavior": "产品对比少，关注性价比",
+        "impulse_tendency": "不是冲动，还需要比较",
+        "brand_loyalty_desc": "大超市里熟知的品牌，不忠诚"
+      }
+    },
+    {
+      "sample_id": "FP08-01",
+      "segment_id": "FP08",
+      "segment_name": "价格敏感但想变白型",
+      "basic_profile": {
+        "nickname": "郑女士(价格敏感但想变白型)",
+        "age": 36,
+        "city": "二三线城市",
+        "marital_status": "已婚",
+        "child_age_stage": "6-9岁",
+        "occupation": "物业部门文员",
+        "household_income_band": "月入1万",
+        "education": "大专"
+      },
+      "mindset_profile": {
+        "decision_mode": "冲动型",
+        "openness_level": "high",
+        "price_sensitivity": "very_high",
+        "brand_loyalty": "low",
+        "research_depth": "low"
+      },
+      "consumption_profile": {
+        "core_needs": [
+          "适合自己的",
+          "价格实惠"
+        ],
+        "preferred_channels": [
+          "抖音",
+          "小红书",
+          "妈妈群"
+        ],
+        "kol_preferences": "美食、吃播视频",
+        "key_decision_factors": "适合自己的（没有特别考虑孩子）"
+      },
+      "behavior_profile": {
+        "decision_speed": "快",
+        "comparison_behavior": "不比较",
+        "impulse_tendency": "冲动消费",
+        "brand_loyalty_desc": "品牌不重要，不忠诚"
+      }
+    },
+    {
+      "sample_id": "FP08-02",
+      "segment_id": "FP08",
+      "segment_name": "价格敏感但想变白型",
+      "basic_profile": {
+        "nickname": "王女士(价格敏感但想变白型)",
+        "age": 33,
+        "city": "二线城市",
+        "marital_status": "已婚",
+        "child_age_stage": "5-10岁",
+        "occupation": "自由职业",
+        "household_income_band": "月入1.5万",
+        "education": "本科"
+      },
+      "mindset_profile": {
+        "decision_mode": "随性型",
+        "openness_level": "mid",
+        "price_sensitivity": "high",
+        "brand_loyalty": "low",
+        "research_depth": "low"
+      },
+      "consumption_profile": {
+        "core_needs": [
+          "便宜实惠",
+          "用着方便"
+        ],
+        "preferred_channels": [
+          "拖妈尺至",
+          "护肤衣服店"
+        ],
+        "kol_preferences": "生活记录、家庆好物",
+        "key_decision_factors": "价格实惠 > 用着简单 > 安全可靠"
+      },
+      "behavior_profile": {
+        "decision_speed": "快",
+        "comparison_behavior": "基本不比较，好用就行",
+        "impulse_tendency": "容易冲动，看到好评就买",
+        "brand_loyalty_desc": "不在乎品牌，实惠好用就行"
+      }
     }
   ]
 }

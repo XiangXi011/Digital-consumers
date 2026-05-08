@@ -120,6 +120,8 @@ def _scan_reports() -> List[Dict[str, Any]]:
                 continue
             if "persona_constraint" in name or "persona_report" in name or "simulation_report" in name:
                 continue
+            if "report_shares" in name:
+                continue
 
             try:
                 data = json.loads(json_path.read_text(encoding="utf-8"))
@@ -147,10 +149,15 @@ def _scan_reports() -> List[Dict[str, Any]]:
                         "has_html": html_path.exists(),
                         "json_path": str(json_path),
                         "html_path": str(html_path) if html_path.exists() else "",
+                        "_sort_key": json_path.stat().st_mtime,
                     }
                 )
             except Exception as exc:
                 logger.warning("Failed to parse report %s: %s", json_path.name, exc)
+    # Sort by file mtime descending (newest first), then strip internal key
+    reports.sort(key=lambda r: r.get("_sort_key", 0), reverse=True)
+    for r in reports:
+        r.pop("_sort_key", None)
     return reports
 
 

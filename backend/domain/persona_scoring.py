@@ -30,7 +30,7 @@ def load_persona_yaml(yaml_path: Path) -> Dict[str, Any]:
 def load_all_persona_yamls(personas_dir: Path) -> Dict[str, Dict[str, Any]]:
     """Load all persona YAML files from a directory, keyed by persona id."""
     personas: Dict[str, Dict[str, Any]] = {}
-    for path in sorted(personas_dir.glob("M*.yaml")):
+    for path in sorted(personas_dir.glob("*.yaml")):
         data = load_persona_yaml(path)
         personas[data["id"]] = data
     return personas

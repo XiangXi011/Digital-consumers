@@ -629,9 +629,12 @@ class TaskSessionManager:
         from backend.domain.business_brief import BusinessBrief
 
         brief = BusinessBrief.model_validate(brief_data)
+        persona_id_raw = self._field_text(session, "persona_id")
+        persona_ids = [p.strip() for p in persona_id_raw.split(",") if p.strip()] if persona_id_raw else []
         payload = brief.to_research_input_payload(
             mode=self._field_text(session, "mode"),
-            persona_id=self._field_text(session, "persona_id"),
+            persona_id=persona_ids[0] if persona_ids else "",
+            persona_ids=persona_ids,
             attachments=list(session.attachments),
             follow_up_context=session.follow_up_context,
             background_material=self._field_text(session, "background_material"),

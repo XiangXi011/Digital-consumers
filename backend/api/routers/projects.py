@@ -404,8 +404,8 @@ def create_project(request: CreateProjectRequest, user=Depends(get_current_user)
     _set_field(session, "background_material", request.business_brief)
     _set_field(session, "product_info", request.product_info)
     _set_field(session, "copy_material", request.copy_material)
-    if mode == "single" and request.persona_ids:
-        _set_field(session, "persona_id", request.persona_ids[0])
+    if request.persona_ids:
+        _set_field(session, "persona_id", ",".join(request.persona_ids))
     session.attachments = [
         item for item in (_normalize_attachment_ref(v) for v in request.attachments) if item
     ]

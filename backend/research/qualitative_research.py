@@ -149,6 +149,7 @@ class QualitativeResearchInput:
     question_type: str
     user_question: str
     persona_id: str = ""
+    persona_ids: List[str] = field(default_factory=list)
     background_material: str = ""
     product_info: str = ""
     copy_material: str = ""
@@ -352,7 +353,7 @@ def _normalize_target_persona_ids(
         token = str(raw).strip()
         if not token:
             continue
-        # Accept canonical ids directly
+        # Accept canonical M ids directly
         if token in DEFAULT_MULTI_PERSONA_IDS:
             normalized.append(token)
             continue
@@ -361,16 +362,18 @@ def _normalize_target_persona_ids(
         if match:
             normalized.append(f"M0{match.group(1)}")
             continue
+        # Accept any other explicit persona id (e.g. FP01, custom segments)
+        normalized.append(token)
 
     # single mode: fall back to explicit persona_id if available
     if dispatch_scope == "single":
         if normalized:
             return [normalized[0]]
-        if research_input.persona_id and research_input.persona_id in DEFAULT_MULTI_PERSONA_IDS:
+        if research_input.persona_id:
             return [research_input.persona_id]
         return [DEFAULT_MULTI_PERSONA_IDS[0]]
 
-    # multi mode: if model produced non-canonical labels, fall back to default 8-pack
+    # multi mode: dedupe and return; fall back to defaults only if truly empty
     deduped = list(dict.fromkeys(normalized))
     return deduped if deduped else list(DEFAULT_MULTI_PERSONA_IDS)
 
@@ -562,13 +565,17 @@ def _normalize_research_plan_payload(
 
     target_personas = _coerce_string_list_value(normalized.get("target_personas")) or []
     if not target_personas and can_fill_structural_defaults:
-        if normalized["dispatch_scope"] == "single":
+        if research_input.persona_ids:
+            target_personas = list(research_input.persona_ids)
+            repairs.append("user_persona_ids->target_personas")
+        elif normalized["dispatch_scope"] == "single":
             target_personas = [
                 research_input.persona_id or DEFAULT_MULTI_PERSONA_IDS[0]
             ]
         else:
             target_personas = list(DEFAULT_MULTI_PERSONA_IDS)
-        repairs.append("default->target_personas")
+        if "user_persona_ids->target_personas" not in repairs:
+            repairs.append("default->target_personas")
 
     normalized_target_personas = _normalize_target_persona_ids(
         target_personas,
@@ -582,6 +589,7 @@ def _normalize_research_plan_payload(
         _uses_default_eight_mom_pack(research_input)
         and normalized["dispatch_scope"] == "multi"
         and any(persona_id not in DEFAULT_MULTI_PERSONA_IDS for persona_id in normalized_target_personas)
+        and not research_input.persona_ids
     ):
         normalized_target_personas = list(DEFAULT_MULTI_PERSONA_IDS)
         repairs.append("default_eight_moms->target_personas")
@@ -676,6 +684,15 @@ def _enforce_explicit_user_scope(
         note = (
             f"Dispatch scope normalized to explicit user single-persona request: "
             f"{research_input.persona_id}."
+        )
+        if note not in normalized_plan["planner_notes"]:
+            normalized_plan["planner_notes"].append(note)
+    elif research_input.mode == "multi" and research_input.persona_ids:
+        normalized_plan["dispatch_scope"] = "multi"
+        normalized_plan["target_personas"] = list(research_input.persona_ids)
+        note = (
+            f"Dispatch scope normalized to explicit user multi-persona request: "
+            f"{', '.join(research_input.persona_ids)}."
         )
         if note not in normalized_plan["planner_notes"]:
             normalized_plan["planner_notes"].append(note)
@@ -1098,7 +1115,7 @@ class ResearchPlannerAgent:
             "clarifying_questions": ["请检查 OPENAI_API_KEY / OPENAI_BASE_URL / OPENAI_MODEL 配置"],
             "ready_to_dispatch": False,
             "dispatch_scope": _infer_dispatch_scope(research_input),
-            "target_personas": [research_input.persona_id] if research_input.mode == "single" and research_input.persona_id else list(DEFAULT_MULTI_PERSONA_IDS),
+            "target_personas": [research_input.persona_id] if research_input.mode == "single" and research_input.persona_id else (list(research_input.persona_ids) if research_input.persona_ids else list(DEFAULT_MULTI_PERSONA_IDS)),
             "planner_notes": [
                 "Planner fallback plan generated due to upstream LLM authentication or availability issue.",
                 "建议检查 OPENAI_API_KEY / OPENAI_BASE_URL / OPENAI_MODEL 配置。",
@@ -1145,6 +1162,7 @@ class ResearchPlannerAgent:
                 f"用户问题: {user_question}",
                 f"用户要求模式: {research_input.mode}",
                 f"指定画像: {research_input.persona_id}",
+                f"指定画像列表: {json.dumps(research_input.persona_ids, ensure_ascii=False)}",
                 f"画像包标识: {research_input.persona_pack_id}",
                 f"细分人群定义: {json.dumps(research_input.audience_segments, ensure_ascii=False)}",
                 f"产品信息: {product_info}",
