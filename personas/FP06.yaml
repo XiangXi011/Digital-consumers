@@ -53,3 +53,29 @@ typical_scenarios:
   - "买美妆联名产品"
   - "关注社媒种草"
   - "喜欢新鲜表达和包装"
+audience_profile:
+  primary_segment: "宠夫女主"
+  secondary_segment: "潮流先锋派"
+  conversion_priority: 1
+  consumer_tags: ["精致妈妈", "GenZ", "小镇青年", "新锐白领"]
+  demographics:
+    gender_female_pct: 0.9774
+    age_peak: ["24-30", "36-40"]
+    age_tgi_top: { "20-23": 195, "31-35": 199 }
+    city_tier_share: { "三线": 0.2190, "新一线": 0.2119, "二线": 0.1885, "四线": 0.1839, "一线": 0.0888 }
+    note: "5 类人群中女性占比最高（97.74%），已婚妈妈/家庭女性为核心"
+  content_interests:
+    primary_category_tgi: ["美妆(170,人群最高)", "出行旅游(137)", "母婴(134)", "个护清洁(133)"]
+    secondary_category_tgi: ["彩妆(184,人群最高)", "母婴洗护(175)", "内衣裤袜(171)"]
+    high_attention_keywords: ["遮瑕", "提亮", "暗沉", "透亮", "玻尿酸", "胶原成分", "嘭弹"]
+    note: "与本品『遮瑕/提亮/暗沉』关键词匹配度为 5 类人群最高"
+    search_keywords: ["内衣", "0-3岁儿童早教", "美甲", "裙子", "内裤"]
+  brand_landscape:
+    daily_chem_top: { "维达": 0.6936, "她研社": 0.4656, "立白": 0.4591, "舒肤佳": 0.4522, "德佑": 0.4280 }
+    oral_care_penetration: { "舒客+": 0.2514, "佳洁士": 0.1928, "好来": 0.1457, "高露洁": 0.0998 }
+    note: "口腔护理渗透率为 5 类人群最高，是核心转化群体"
+  creative_angles:
+    - "彩妆联想 × 牙齿『遮瑕提亮』（笑容即妆容）"
+    - "妈妈群口碑：家庭场景／全家可用"
+    - "美妆级包装设计、KOL/KOC 妆容前后对比"
+  channel_priorities: ["抖音/小红书母婴+美妆KOC", "私域妈妈群拼团", "下沉直播间"]

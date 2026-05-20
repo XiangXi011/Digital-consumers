@@ -53,3 +53,26 @@ typical_scenarios:
   - "对比多个同类产品"
   - "看种草笔记和测评"
   - "习惯先做功课再买"
+audience_profile:
+  primary_segment: "成分美学品鉴官"
+  secondary_segment: "精致悦己"
+  conversion_priority: 3
+  consumer_tags: ["新锐白领", "资深中产", "精致妈妈"]
+  demographics:
+    gender_female_pct: 0.6751
+    age_peak: ["24-30", "31-35", "36-40"]
+    city_tier_share: { "新一线": 0.2134, "三线": 0.2161, "二线": 0.2063, "一线": 0.0985 }
+    city_tier_tgi_top: ["一线(131)", "新一线(126)"]
+  content_interests:
+    primary_category_tgi: ["美妆(117)", "宠物(115)", "出行旅游(111)", "个护清洁(108)"]
+    secondary_category_tgi: ["母婴洗护(158)", "彩妆(156)", "内衣裤袜(152)"]
+    high_attention_keywords: ["玻尿酸", "胶原成分", "成分", "有料", "细腻", "嘭弹"]
+    search_keywords: ["裤子", "鞋", "内衣", "美甲", "0-3岁儿童早教"]
+  brand_landscape:
+    daily_chem_top: { "维达": 0.5571, "清风": 0.3897, "心相印": 0.3591, "洁丽雅": 0.3511, "立白": 0.3383 }
+    oral_care_penetration: { "舒客+": 0.1742, "好来": 0.1133, "佳洁士": 0.0914, "高露洁": 0.0892 }
+  creative_angles:
+    - "专家+成分双背书（口腔医生 × 临床数据）"
+    - "种草测评 KOC 矩阵（成分对照表）"
+    - "新一线/一线写字楼成分友好型沟通"
+  channel_priorities: ["小红书测评", "微博 KOL", "B站成分科普"]

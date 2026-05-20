@@ -53,3 +53,28 @@ typical_scenarios:
   - "看折扣后下单"
   - "优先选平替"
   - "希望小投入有改善"
+audience_profile:
+  primary_segment: "潮流先锋派"
+  secondary_segment: "职场新贵"
+  conversion_priority: 4
+  consumer_tags: ["小镇青年", "GenZ", "新锐白领"]
+  demographics:
+    gender_female_pct: 0.6141
+    age_peak: ["18-19", "20-23", "24-30"]
+    age_tgi_top: { "20-23": 236, "18-19": 230 }
+    city_tier_share: { "三线": 0.2182, "新一线": 0.2035, "二线": 0.1917, "四线": 0.1849, "一线": 0.0867 }
+    note: "下沉市场（三线+四线+下沉）占比超 50%"
+  content_interests:
+    primary_category_tgi: ["美妆(117)", "宠物(115)", "出行旅游(111)", "个护清洁(108)"]
+    secondary_category_tgi: ["彩妆(126)", "网络设备/3C(122)", "个护健康(119)"]
+    high_attention_keywords: ["好喝", "嘭弹", "有料"]
+    search_keywords: ["土豆", "短袖", "美甲", "洛克王国"]
+  brand_landscape:
+    daily_chem_top: { "维达": 0.4731, "立白": 0.3053, "心相印": 0.2911, "舒肤佳": 0.2592, "清风": 0.2520 }
+    oral_care_penetration: { "舒客+": 0.1542, "佳洁士": 0.1295, "好来": 0.0850, "高露洁": 0.0677 }
+    note: "口腔渗透最低，价格敏感+变白刚需，国货平替最易突破"
+  creative_angles:
+    - "9.9 / 拼团 / 平替大牌（强价格锚点）"
+    - "新款黑科技但便宜（潮流 + 低门槛）"
+    - "下沉直播间 BOGO、社群拼单"
+  channel_priorities: ["拼多多/快手直播", "下沉KOC种草", "学校+社群拼团"]

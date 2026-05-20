@@ -53,3 +53,27 @@ typical_scenarios:
   - "正畸期间"
   - "洁牙后"
   - "医美后口腔护理"
+audience_profile:
+  primary_segment: "精致悦己"
+  secondary_segment: "成分美学品鉴官"
+  conversion_priority: 2
+  consumer_tags: ["新锐白领", "精致妈妈", "小镇青年"]
+  demographics:
+    gender_female_pct: 0.7481
+    age_peak: ["24-30", "36-40"]
+    age_tgi_top: { "24-30": 200, "31-35": 221 }
+    city_tier_share: { "新一线": 0.2249, "三线": 0.2160, "二线": 0.1899, "四线": 0.1759, "一线": 0.0935 }
+    city_tier_tgi_top: ["新一线(133)", "一线(125)"]
+  content_interests:
+    primary_category_tgi: ["美妆(149)", "出行旅游(136)", "母婴/家装(122)", "个护清洁(119)"]
+    secondary_category_tgi: ["母婴洗护(158)", "彩妆(156)", "内衣裤袜(152)"]
+    high_attention_keywords: ["玻尿酸", "胶原成分", "细腻", "嘭弹", "紧致", "熬夜", "安全"]
+    search_keywords: ["裤子", "内衣", "0-3岁儿童早教", "美甲"]
+  brand_landscape:
+    daily_chem_top: { "维达": 0.6577, "舒肤佳": 0.4026, "立白": 0.3959, "心相印": 0.3791, "清风": 0.3736 }
+    oral_care_penetration: { "舒客+": 0.2038, "佳洁士": 0.1622, "好来": 0.1263, "高露洁": 0.1046 }
+  creative_angles:
+    - "正畸/洁牙/医美术后温和修护"
+    - "高线城市精致女性·术后护理仪式感"
+    - "安全无刺激 + 敏感缓解 = 专业可托付"
+  channel_priorities: ["医美/口腔机构联营", "小红书术后笔记", "短视频前后对比"]

@@ -53,3 +53,27 @@ typical_scenarios:
   - "刷牙时牙酸"
   - "喝冰饮时不适"
   - "正畸/洁牙后护理"
+audience_profile:
+  primary_segment: "职场新贵"
+  secondary_segment: "精致悦己"
+  conversion_priority: 2
+  consumer_tags: ["新锐白领", "精致妈妈", "小镇青年"]
+  demographics:
+    gender_female_pct: 0.7578
+    age_peak: ["24-30", "36-40"]
+    age_tgi_top: { "20-23": 204, "31-35": 192 }
+    city_tier_share: { "新一线": 0.2106, "三线": 0.2194, "二线": 0.1908, "四线": 0.1824, "一线": 0.0877 }
+    city_tier_tgi_top: ["新一线(124)", "一线(117)"]
+  content_interests:
+    primary_category_tgi: ["美妆(149)", "出行旅游(129)", "个护清洁(121)"]
+    secondary_category_tgi: ["彩妆(158)", "母婴洗护(153)", "内衣裤袜(149)"]
+    high_attention_keywords: ["玻尿酸", "胶原成分", "细腻", "嘭弹", "紧致", "熬夜"]
+    search_keywords: ["裤子", "内衣", "短袖", "美甲", "0-3岁儿童早教"]
+  brand_landscape:
+    daily_chem_top: { "维达": 0.6437, "立白": 0.4262, "舒肤佳": 0.3932, "清风": 0.3858, "心相印": 0.3721 }
+    oral_care_penetration: { "舒客+": 0.2286, "佳洁士": 0.1661, "好来": 0.1298, "高露洁": 0.0992 }
+  creative_angles:
+    - "专业修护话术（临床/医生背书）"
+    - "职场抗压×牙釉质长期投资"
+    - "熬夜场景钩子（紧致/嘭弹同框）"
+  channel_priorities: ["短视频专业测评", "电商成分种草", "新一线写字楼场景"]

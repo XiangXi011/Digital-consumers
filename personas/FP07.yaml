@@ -53,3 +53,27 @@ typical_scenarios:
   - "每天喝咖啡"
   - "长期喝茶"
   - "想维持牙齿观感"
+audience_profile:
+  primary_segment: "职场新贵"
+  secondary_segment: "潮流先锋派"
+  conversion_priority: 2
+  consumer_tags: ["新锐白领", "小镇青年", "GenZ"]
+  demographics:
+    gender_female_pct: 0.7578
+    age_peak: ["24-30", "36-40"]
+    age_tgi_top: { "20-23": 204, "31-35": 192 }
+    city_tier_share: { "新一线": 0.2106, "三线": 0.2194, "二线": 0.1908, "四线": 0.1824, "一线": 0.0877 }
+    note: "咖啡/茶饮高频 = 职场+下沉小镇青年场景双重叠加"
+  content_interests:
+    primary_category_tgi: ["美妆(149)", "出行旅游(129)", "个护清洁(121)"]
+    secondary_category_tgi: ["彩妆(158)", "母婴洗护(153)", "内衣裤袜(149)"]
+    high_attention_keywords: ["细腻", "嘭弹", "熬夜", "胶原成分", "好喝"]
+    search_keywords: ["裤子", "鞋", "短袖", "美甲"]
+  brand_landscape:
+    daily_chem_top: { "维达": 0.6437, "立白": 0.4262, "舒肤佳": 0.3932, "清风": 0.3858, "心相印": 0.3721 }
+    oral_care_penetration: { "舒客+": 0.2286, "佳洁士": 0.1661, "好来": 0.1298, "高露洁": 0.0992 }
+  creative_angles:
+    - "咖啡/奶茶/茶染色补救（不用戒咖啡）"
+    - "每日刷牙=日常美白维护，对抗熬夜暗黄"
+    - "性价比套装 + 高频复购钩子"
+  channel_priorities: ["抖音咖啡场景 KOC", "电商套装促销", "便利店/瑞幸跨界"]
